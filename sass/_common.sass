@@ -39,11 +39,455 @@
 // +font(book, cytiapro-black-webfont)  
 // =book
 // 	font-family: "book", Arial, sans-serif 
+
+$blue: #0094da
+$orange: #ec441e
 	
 body
-	font-family: Arial, sans-serif 
-	font-size: 12px 
-	line-height: 1.4
+	background: url(../img/bg.jpg) no-repeat 50% 0 #f8f5ec 
+	background-size: cover 
+	font-family: "Roboto", Arial, sans-serif 
+	font-weight: 400 
+	font-size: 13px
+	line-height: 1.3
+	color: #363636 
+
+a
+	color: $blue 
+	text-decoration: underline
+	+tr(color .2s linear)
+	&:hover
+		color: $orange 
+
+input[type="text"], textarea
+	width: 100%
+	+box
+
+input, button, textarea
+	font-family: "Roboto", Arial, sans-serif 
+	font-size: 13px
+	color: #363636 
+
+// common blocks
+.wrapper
+	max-width: 1200px
+	margin: 0 auto  
+
+.l-center
+	max-width: 960px
+	margin: 0 auto
+	+clr
+
+.container
+	border-radius: 8px
+	background-color: #fff
+	box-shadow: 0 0 4px #c1c9cd
+     
+.topper
+	height: 38px
+	color: #FFF
+	.topper__phones, .topper__ask
+		float: left 
+		margin-top: 11px
+	.topper__phones
+		margin-right: 30px
+		span
+			padding: 0 6px
+	.topper__ask
+		a
+			color: #FFF 
+	.enter
+		float: right
+		margin-top: 5px
+
+.enter
+	font-size: 0
+	.enter__link, .enter__throw, .enter__social
+		display: inline-block
+		vertical-align: middle
+	.enter__link, .enter__throw
+		font-size: 13px
+		color: #FFF 
+		a
+			color: #FFF 
+	.enter__link
+		margin-right: 11px
+		a
+			border-bottom: 1px dotted rgba(255,255,255,.5)
+			text-decoration: none
+	.enter__throw
+		margin-right: 12px
+		font-style: italic
+	.enter__social
+		padding-top: 2px
+		a
+			display: inline-block
+			margin-left: 9px
+			vertical-align: top
+			&:first-child
+				margin: 0
+			&:before
+				content: ""
+				display: block
+				opacity: 0
+				+tr(opacity .2s linear) 
+			&:hover
+				&:before
+					opacity: 1 
+	.enter__social-fb
+		+s(fb)
+		&:before
+			+s(fb-h)
+	.enter__social-vk
+		+s(vk)
+		&:before
+			+s(vk-h)
+	.enter__social-gp
+		+s(gp)
+		&:before
+			+s(gp-h)
+
+.header
+	height: 85px
+	
+.nav
+	float: right
+	margin-top: 29px
+	a
+		position: relative
+		float: left
+		padding: 3px 10px 4px
+		font-weight: 700
+		font-size: 17px 
+		&:before
+			content: ""
+			position: absolute
+			top: 50%
+			left: -2px
+			width: 4px
+			height: 4px
+			margin-top: -2px
+			background: #8EA0A7 
+			border-radius: 50px
+		&:first-child
+			&:before
+				display: none
+		&.is-active
+			border-radius: 14px
+			background-color: #6dbb41
+			box-shadow: inset 0 3px 7px rgba(24,120,44,.75)
+			+background-image(linear-gradient(bottom, rgba(255,255,255,.5) 0%, rgba(0,0,0,.5) 100%))
+			color: #FFF
+			text-decoration: none 
+			text-shadow: 0 1px 2px rgba(25,82,13,.75)
+			cursor: default
+			&:before
+				display: none
+			& + a
+				&:before
+					display: none
+
+.logo
+	float: left
+	margin: 22px 48px 0 0 
+	+s(logo)
+
+.stamp
+	float: left
+	margin-top: 6px
+	+s(stamp)
+
+.checkbox
+	position: relative
+	display: block
+	padding-left: 23px
+	+nosel
+	input
+		position: absolute
+		top: 2px
+		left: 0
+		opacity: 0 
+		z-index: 4 
+		&:checked + .checkbox__text
+			&:after
+				opacity: 1 
+	.checkbox__text
+		display: block
+		vertical-align: top
+		&:before, &:after
+			content: ""
+			position: absolute
+			top: 1px
+			left: 0
+			z-index: 2 
+		&:before
+			+s(checkbox)
+		&:after
+			opacity: 0 
+			+s(checkbox-a)
+			+tr(opacity .2s linear)
+	&.checkbox_white
+		.checkbox__text
+			&:after
+				+s(checkbox-a-white)
+
+.btn
+	position: relative
+	height: 38px
+	padding: 0 20px
+	border: 1px solid #d06a2d
+	border-radius: 19px
+	background-color: #f17937
+	box-shadow: 0 1px 2px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.15)
+	+g(#f59b46, #ef5b29)
+	color: #fff
+	font-size: 16px
+	text-shadow: 0 1px 2px rgba(228,104,50,.75)
+	font-weight: 700 
+	text-transform: uppercase
+	overflow: visible
+	+tr(box-shadow .2s linear)
+	z-index: 3
+	&:before, &:after
+		content: ""
+		position: absolute
+		opacity: 0
+		border-radius: 19px
+		+tr(opacity .2s linear)
+	&:before
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		+g(#f9c056, #eb3718)
+		z-index: -2
+	&:after
+		top: -1px
+		left: -1px
+		right: -1px
+		bottom: -1px
+		+g(#b32d0d, #ec894e)
+		box-shadow: inset 0 3px 7px rgba(151,41,1,.75)
+		z-index: -1 
+	&:hover
+		&:before
+			opacity: 1 
+	&:active
+		box-shadow: 0 1px 2px rgba(0,0,0,0), inset 0 1px 0 rgba(255,255,255,0)
+		&:after
+			opacity: 1 
+	&.btn_big
+		height: 50px
+		border-radius: 25px
+		font-size: 18px
+		&:before, &:after
+			border-radius: 25px
+	&.btn_bigger
+		height: 60px
+		padding: 0 28px
+		border-radius: 30px
+		font-size: 20px 
+		&:before, &:after
+			border-radius: 30px
+	&.btn_small
+		height: 30px
+		border-radius: 15px
+		font-size: 14px
+		text-transform: none
+		&:before, &:after
+			border-radius: 15px
+	&.btn_smaller
+		height: 24px
+		padding: 0 15px
+		border-radius: 12px
+		font-size: 12px
+		text-transform: none
+		&:before, &:after
+			border-radius: 12px
+
+.ui-helper-hidden-accessible
+	display: none
+.ui-autocomplete
+	position: absolute
+	padding: 5px 0 
+	border-radius: 0 3px 3px 3px
+	background-color: #fff
+	box-shadow: 0 5px 7px rgba(0,0,0,.3), inset 0 1px 2px rgba(49,86,163,.35)
+	z-index: 9999 
+	&:before
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		width: 120px
+		height: 5px
+		background: #FFF  
+		z-index: 2 
+	.ui-corner-all
+		position: relative
+		display: block
+		width: 210px
+		padding: 10px 
+		cursor: pointer 
+		+tr(background .2s linear)
+		text-decoration: none
+		color: #363636 
+		z-index: 4
+		&:hover
+			background: #FBDAD2 
 
 
-// common blocks      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
