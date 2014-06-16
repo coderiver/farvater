@@ -90,7 +90,7 @@
 						<div class="search__fieldset">
 							<div class="search__field">
 								<div class="search__el">
-									<input class="js-autocomplete" type="text" value="">
+									<input class="js-autocomplete" type="text" placeholder="у">
 								</div>
 							</div>
 							<div class="search__field">
@@ -175,34 +175,94 @@
 					</div>
 			</div>
 			<div class="map__filter">
-					<div class="select select_fancy-right js-select">
-						<div class="select__head">
-							<div class="select__current">Популярные</div>
-							<i class="select__arr"></i>
-						</div>
-						<ul class="select__list">
-							<li>Европа: пляж</li>
-							<li>Европа: интересные места</li>
-							<li>Закарпатье</li>
-							<li>Азия</li>
-						</ul>
-						<input class="select__value" type="hidden" value="4 ночей">
+				<div class="select select_fancy-right js-select">
+					<div class="select__head">
+						<div class="select__current">Популярные</div>
+						<i class="select__arr"></i>
+						<div class="select__circle"><i></i></div>
 					</div>
-					<div class="map__filter-list">
-						<a class="is-hot is-active" href="#">Горящие предложения<i></i></a>
-						<a href="#">Раннее бронирование</a>
-						<a href="#">Все туры</a>
-					</div>
+					<ul class="select__list">
+						<li>Европа: пляж</li>
+						<li>Европа: интересные места</li>
+						<li>Закарпатье</li>
+						<li>Азия</li>
+					</ul>
+					<input class="select__value" type="hidden" value="4 ночей">
+				</div>
+				<!-- filter -->
+				<div class="filter">
+					<a class="is-hot is-active" href="#">Горящие предложения<i></i></a>
+					<a href="#">Раннее бронирование</a>
+					<a href="#">Все туры</a>
+				</div>
 			</div>
 			<div id="map" class="map__el"></div>
 		</div>
-		<!-- pop -->
-		<div class="pop">
-			<button class="btn btn_bigger">Найти</button>
-			<button class="btn btn_big">Найти</button>
-			<button class="btn">Найти</button>
-			<button class="btn btn_small">Найти</button>
-			<button class="btn btn_smaller">Найти</button>
+		<!-- tours -->
+		<div class="tours">
+			<div class="tours__head">
+				<div class="tours__title">Туры с вылетом</div>
+				<div class="select js-select">
+					<div class="select__head">
+						<div class="select__current">из Киева</div>
+						<i class="select__arr"></i>
+						<div class="select__circle"><i></i></div>
+					</div>
+					<ul class="select__list">
+						<li>из Днепропетровска</li>
+						<li>из Донецка</li>
+						<li>из Львова</li>
+					</ul>
+					<input class="select__value" type="hidden">
+				</div>
+			</div>
+			<div class="tours__filter">
+				<!-- filter -->
+				<div class="filter">
+					<a class="is-hot is-active" href="#">Горящие предложения<i></i></a>
+					<a href="#">Раннее бронирование</a>
+					<a href="#">Все туры</a>
+				</div>
+			</div>
+			<div class="tours__in">
+				<ul class="tours__nav">
+					<li><a href="#"><span>Восточная Европа</span></a></li>
+					<li><a href="#"><span>Восточная Европа</span></a></li>
+					<li><a href="#"><span>Восточная Европа</span></a></li>
+					<li><a href="#"><span>Восточная Европа</span></a></li>
+					<li><a href="#"><span>Восточная Европа</span></a></li>
+					<li class="is-active"><a href="#"><span>Восточная Европа</span></a></li>
+					<li><a href="#"><span>Восточная Европа</span></a></li>
+					<li><a href="#"><span>Восточная Европа</span></a></li>
+					<li><a href="#"><span>Восточная Европа</span></a></li>
+					<li><a href="#"><span>Восточная Европа</span></a></li>
+				</ul>
+				<div class="tours__list">
+					<!-- tour -->
+					<a class="tour" href="#">
+						<div class="tour__in">
+							<div class="tour__data">
+								<div class="tour__title"></div>
+								<div class="tour__way"></div>
+								<div class="tour__date"></div>
+								<div class="tour__details">
+									<ul>
+										<li><span></span></li>
+										<li><span></span></li>
+									</ul>
+									<ul>
+										<li><span></span></li>
+										<li><span></span></li>
+									</ul>
+								</div>
+							</div>
+							<div class="tour__pic">
+								<img src="http://placehold.it/240x160" alt="">
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

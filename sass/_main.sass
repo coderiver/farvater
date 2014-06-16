@@ -21,46 +21,13 @@
 		left: 0
 		right: 0
 		bottom: 0
+		background: #FFF 
 		z-index: 4 
 	.map__filter
 		position: absolute
 		top: 40px
 		right: 120px
 		z-index: 6 
-	.map__filter-list
-		float: right
-		padding: 3px
-		box-shadow: 0 1px 3px #c1c9cd
-		+g(#fbfbfb, #f3f1f1)
-		border-radius: 18px
-		font-size: 0
-		a
-			position: relative
-			display: inline-block
-			height: 30px
-			padding: 0 10px
-			border-radius: 15px
-			font-weight: bold
-			font-size: 16px
-			text-decoration: none
-			vertical-align: top
-			color: $blue
-			line-height: 30px 
-			&.is-hot
-				padding: 0 10px 0 30px 
-				i
-					position: absolute
-					top: 9px
-					left: 11px
-					+s(map-filter-hot)
-			&.is-active
-				background-color: #6dbb41
-				box-shadow: inset 0 3px 7px rgba(24,120,44,.75)
-				+g(#4ea329, #89cb61)
-				color: #FFF
-				text-decoration: none 
-				text-shadow: 0 1px 2px rgba(25,82,13,.75)
-				cursor: default
 	.map__marker
 		+s(marker)
 		&:before
@@ -113,238 +80,523 @@
 		margin-left: 10px
 		.select__current
 			max-width: 73px
-	
+	.filter
+		float: right
 
-		
-
-.search
-	position: absolute
-	top: 40px
-	left: 120px
-	z-index: 6 
-	width: 260px 
-	padding: 12px 20px 20px
-	border-radius: 8px
-	background-color: #3155a3
-	box-shadow: 0 1px 2px rgba(2,26,75,.5)
-	+g(#4274c3, #203883)
-	.search__item
+.tours
+	padding: 45px 0 50px
+	background: url(../img/tours-bg.jpg) no-repeat 50% 50%
+	background-size: cover 
+	.tours__head
 		margin-bottom: 15px
-	.search__label
-		margin-bottom: 10px
-		color: #8DA9E3 
-	.search__fieldset
-		+clr
-		.search__field
-			float: left
-			width: 120px
-			&:first-child
-				margin-right: 20px
-	.search__el
-		input
-			padding: 0 10px
-			height: 37px
-			border-radius: 3px
-			background-color: #fff
-			box-shadow: inset 0 1px 2px rgba(49,86,163,.35)
-			&.is-open
-				border-radius: 3px 3px 0 0
-	.search__el_plain, .search__el_date
+		text-align: center
+		font-weight: 700 
+		font-size: 26px
+		color: #fff 
+	.tours__title, .select
 		position: relative
-		i
-			position: absolute
-			right: 10px
-	.search__el_plain
-		input
-			padding: 0 40px 0 10px
-		i
-			top: 9px
-			+s(search-plain)
-	.search__people
-		padding-bottom: 10px
+		display: inline-block
+		vertical-align: top
+	.tours__title
+		text-shadow: 0 1px 2px #63819d
+		z-index: 4
+	.tours__filter
+		margin-bottom: 25px
+		text-align: center
+		.filter
+			display: inline-block
+			vertical-align: top 
+	.tours__in
+		max-width: 960px
+		margin: 0 auto
 		+clr
-		.search__label
-			margin-bottom: 5px
-			span
-				font-weight: 700 
-				color: #FFF 
-	.search__adults, .search__kids, .search__babies
+	.tours__nav
 		float: left
-	.search__adults-list, .search__kids-list, .search__babies-list
-		display: table-cell
-		height: 34px
-		vertical-align: bottom
-		font-size: 0
-		//&:hover
-		//	img[src^="img/adult-h.png"],
-		//	img[src^="img/kid-h.png"],
-		//	img[src^="img/baby-h.png"]
-		//		opacity: .25 
-		img
-			margin-left: 2px
-			//+tr(opacity .2s linear)
+		width: 290px
+		li
+			background: #000
+			background: rgba(0,0,0,.5)
 			&:first-child
-				margin: 0
-	.search__babies-list
-		img
-			margin: 0
-	.search__adults, .search__babies
-		width: 90px
-	.search__kids
-		width: 80px
-	.serach__btn
-		margin-bottom: 20px
-		text-align: center
-	.seach__link
-		text-align: center
+				border-radius: 8px 0 0 0
+			&:last-child
+				border-radius: 0 0 0 8px
+			&.is-active
+				background: #fff
+				background: rgba(255,255,255,.95)
+				border-radius: 8px 0 0 8px
+				a
+					cursor: default
+				span
+					border-color: transparent
+					font-weight: 700
+					color: $green 
+				& + li
+					border-radius: 8px 0 0 0
 		a
-			color: #8DA9E3 
-	.search__add
-		padding-top: 2px
-		color: #8DA9E3 
-		a
+			display: block
+			padding: 10px 35px 10px 17px
 			text-decoration: none
-			color: #8DA9E3 
 		span
-			margin-left: 5px
-			border-bottom: 1px dotted 
-	.checkbox
-		margin-top: 5px
-		color: #8DA9E3 
+			display: inline-block
+			font-size: 15px
+			color: #FFF
+			border-bottom: 1px dotted rgba(255,255,255,.5)
+			line-height: 1   
+	.tours__list
+		float: right
+		width: 630px
+		margin-left: -20px
+		padding: 30px
+		border-radius: 8px
+		background: #fff
+		background: rgba(255,255,255,.95)
+		box-shadow: 0 7px 15px rgba(100,129,158,.75)
 	.select
-		position: relative
+		margin-left: -15px
+		line-height: 1
+		z-index: 2 
 		&.is-open
+			color: $blue 
 			.select__head
-				border-radius: 3px 3px 0 0
+				+g(#fbfbfb, #faf9f9)
+				text-shadow: none
+			.select__current
+				box-shadow: none
+			.select__arr
+				right: 11px
+				+s(tours-select-arr-a)
+			.select__circle
+				display: block
 	.select__head
 		position: relative
-		padding: 0 25px 0 10px
-		border-radius: 3px
-		background-color: #fff
-		box-shadow: inset 0 1px 2px rgba(49,86,163,.35)
+		padding: 0 25px 6px 15px
+		border-radius: 18px 18px 0 0
+		text-shadow: 0 1px 2px #63819d
 		cursor: pointer
+		+nosel
 	.select__current
-		height: 37px
-		color: #363636 
-		line-height: 37px
-		overflow: hidden
-		text-overflow: ellipsis
-		white-space: nowrap
+		display: inline-block
+		border-bottom: 1px dotted
+		box-shadow: 0 2px 1px -1px rgba(0,0,0,.1) 
+		vertical-align: middle
 	.select__arr
 		position: absolute
 		top: 17px
-		right: 9px
-		+arr(8,5,#98aad1,b)
-	.select__ico-date
+		right: 10px
+		+s(tours-select-arr)
+	.select__circle
+		display: none
 		position: absolute
-		right: 9px
-		top: 14px
-		+s(date)
-		&:before
-			content: ""
-			display: block
-			opacity: 0
-			+tr(opacity .2s linear) 
-			+s(date-a)
+		bottom: 0
+		right: -14px
+		width: 14px
+		height: 14px
+		overflow: hidden
+		i
+			position: absolute
+			left: 0
+			bottom: 0
+			width: 28px
+			height: 28px
+			box-shadow: 0 0 0 10px #faf9f9
+			border-radius: 50%
 	.select__list
 		display: none
 		position: absolute
-		top: 37px
-		left: 0
-		right: 0
-		padding: 5px 0 
-		border-radius: 0 0 3px 3px
-		background-color: #fff
-		box-shadow: 0 5px 7px rgba(0,0,0,.3), inset 0 1px 2px rgba(49,86,163,.35)
-		z-index: 10 
-		&:before
-			content: ""
-			position: absolute
-			top: 0
-			left: 0
-			width: 120px
-			height: 5px
-			background: #FFF  
-			z-index: 2 
+		top: 100%
+		left: 0 
+		min-width: 100%
+		padding: 10px 15px
+		border-radius: 0 18px 18px 18px
+		box-shadow: 0 1px 2px #c1c9cd
+		+g(#faf9f9, #f3f1f1)
+		text-align: left
+		white-space: nowrap
 		li
-			position: relative
-			padding: 10px 
-			cursor: pointer 
-			+tr(background .2s linear)
-			z-index: 4
-			&:hover
-				background: #FBDAD2 
-	.select__date
-		display: none
-		position: absolute
-		top: 37px
-		left: 0
-		width: 220px
-		border-radius: 0 3px 3px 3px
-		background-color: #fff
-		box-shadow: 0 5px 7px rgba(0,0,0,.3), inset 0 1px 2px rgba(49,86,163,.35)
-		z-index: 10 
-		&:before
-			content: ""
-			position: absolute
-			top: 0
-			left: 0
-			width: 120px
-			height: 5px
-			background: #FFF  
-			z-index: 2 
-		.ui-datepicker-inline
-			position: relative
-			padding: 3px
-			z-index: 4 
-		.ui-datepicker-header
-			position: relative
-			margin-bottom: 5px
-		.ui-datepicker-title
-			padding: 4px 0
-			text-align: center
-			font-size: 14px
-		.ui-datepicker-prev, .ui-datepicker-next
-			position: absolute
-			top: 50%
-			margin-top: -5px
-			opacity: .7
-			+tr(opacity .2s linear)
+			margin-top: 7px
 			cursor: pointer
-			&:hover
-				opacity: 1 
-			&.ui-state-disabled
-				opacity: 0 
-		.ui-datepicker-prev
-			left: 10px
-			.ui-icon
-				+s(dp-prev)
-		.ui-datepicker-next
-			right: 10px
-			.ui-icon
-				+s(dp-next)
-		.ui-icon
-			display: block
-			font-size: 0
-		.ui-datepicker-calendar
-			text-align: center
-		.ui-state-default
-			display: inline-block
-			width: 26px
-			height: 26px
-			line-height: 26px
-			text-align: center
-			border-radius: 50%
-			color: #363636
-			text-decoration: none
-			+tr(all .2s linear)
-		span.ui-state-default
-			color: #999 
-		a.ui-state-default
-			&.ui-state-active, &:hover
-				background: #f5a18e
-				//color: #fff  
-			
+			&:first-child
+				margin: 0
+	
 
-.pop
-	padding: 60px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
