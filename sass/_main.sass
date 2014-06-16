@@ -22,13 +22,106 @@
 		right: 0
 		bottom: 0
 		z-index: 4 
-	.l-center
-		position: relative
-		padding-top: 40px
+	.map__filter
+		position: absolute
+		top: 40px
+		right: 120px
 		z-index: 6 
+	.map__filter-list
+		float: right
+		padding: 3px
+		box-shadow: 0 1px 3px #c1c9cd
+		+g(#fbfbfb, #f3f1f1)
+		border-radius: 18px
+		font-size: 0
+		a
+			position: relative
+			display: inline-block
+			height: 30px
+			padding: 0 10px
+			border-radius: 15px
+			font-weight: bold
+			font-size: 16px
+			text-decoration: none
+			vertical-align: top
+			color: $blue
+			line-height: 30px 
+			&.is-hot
+				padding: 0 10px 0 30px 
+				i
+					position: absolute
+					top: 9px
+					left: 11px
+					+s(map-filter-hot)
+			&.is-active
+				background-color: #6dbb41
+				box-shadow: inset 0 3px 7px rgba(24,120,44,.75)
+				+g(#4ea329, #89cb61)
+				color: #FFF
+				text-decoration: none 
+				text-shadow: 0 1px 2px rgba(25,82,13,.75)
+				cursor: default
+	.map__marker
+		+s(marker)
+		&:before
+			content: ""
+			display: block
+			opacity: 0
+			+tr(opacity .2s linear) 
+			+s(marker-h)
+		img
+			position: absolute
+			top: 8px
+			left: 10px
+			border-radius: 50%
+		i
+			position: absolute
+			top: 8px
+			left: 10px
+			width: 40px
+			height: 40px
+			border-radius: 50%
+			box-shadow: inset 0 2px 5px rgba(0,0,0,.25)
+		&:hover
+			&:before, .map__marker-in	
+				opacity: 1
+			.map__marker-in
+				overflow: visible
+	.map__marker-in
+		position: absolute
+		top: 70px
+		left: 40px
+		padding: 7px 10px
+		border-radius: 5px
+		background-clip: padding-box
+		background-color: #fffbcf
+		box-shadow: 0 5px 12px rgba(63,76,85,.75)
+		font-size: 11px
+		opacity: 0
+		overflow: hidden
+		+tr(opacity .2s linear) 
+		a
+			font-weight: bold
+		ul
+			padding-top: 3px
+		li
+			padding-top: 3px
+			white-space: nowrap
+	.select_fancy-right
+		float: right
+		width: 113px
+		margin-left: 10px
+		.select__current
+			max-width: 73px
+	
+
+		
 
 .search
-	float: left
+	position: absolute
+	top: 40px
+	left: 120px
+	z-index: 6 
 	width: 260px 
 	padding: 12px 20px 20px
 	border-radius: 8px

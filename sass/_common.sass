@@ -159,6 +159,7 @@ input, button, textarea
 		padding: 3px 10px 4px
 		font-weight: 700
 		font-size: 17px 
+		color: $blue 
 		&:before
 			content: ""
 			position: absolute
@@ -176,7 +177,7 @@ input, button, textarea
 			border-radius: 14px
 			background-color: #6dbb41
 			box-shadow: inset 0 3px 7px rgba(24,120,44,.75)
-			+background-image(linear-gradient(bottom, rgba(255,255,255,.5) 0%, rgba(0,0,0,.5) 100%))
+			+g(#4ea329, #89cb61)
 			color: #FFF
 			text-decoration: none 
 			text-shadow: 0 1px 2px rgba(25,82,13,.75)
@@ -336,7 +337,73 @@ input, button, textarea
 		&:hover
 			background: #FBDAD2 
 
-
+.select_fancy, .select_fancy-right
+	position: relative
+	color: #64707d
+	font-size: 14px
+	&.is-open
+		.select__head
+			border-radius: 18px 18px 0 0
+			+g(#fbfbfb, #faf9f9)
+	.select__head
+		position: relative
+		height: 36px
+		padding: 0 25px 0 15px
+		border-radius: 18px
+		background-color: #f7f5f5
+		box-shadow: 0 1px 3px #c1c9cd
+		+g(#fbfbfb, #f3f1f1)
+		line-height: 34px
+		cursor: pointer
+	.select__current
+		display: inline-block
+		border-bottom: 1px dotted 
+		overflow: hidden
+		text-overflow: ellipsis
+		white-space: nowrap
+		line-height: 1
+		vertical-align: middle
+	.select__arr
+		position: absolute
+		top: 13px
+		right: 11px
+		+s(select-fancy-arr)
+	.select__ico-date
+		position: absolute
+		right: 9px
+		top: 14px
+		+s(date)
+		&:before
+			content: ""
+			display: block
+			opacity: 0
+			+tr(opacity .2s linear) 
+			+s(date-a)
+	.select__list
+		display: none
+		position: absolute
+		top: 36px
+		left: 0
+		width: 210px
+		border-radius: 0 18px 18px 18px
+		+g(#faf9f9, #f3f1f1)
+		box-shadow: 0 2px 3px #c1c9cd
+		overflow: hidden
+		z-index: 10 
+		li
+			position: relative
+			padding: 7px 15px
+			cursor: pointer 
+			+tr(background .2s linear)
+			z-index: 4
+			&:hover
+				background: #FBDAD2 
+.select_fancy-right
+	.select__list
+		right: 0
+		left: auto
+		border-radius: 18px 0 18px 18px
+		text-align: right
 
 
 

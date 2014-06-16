@@ -7,6 +7,42 @@
 	<link rel="stylesheet" media="screen" href="css/screen.css" >
 	<!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+	<script src="js/lib/richmarker.js"></script>
+	<script>
+	function initialize() {
+	  var mapOptions = {
+	    zoom: 2,
+	    center: new google.maps.LatLng(50.445881, 30.553892),
+	    disableDefaultUI: true,
+	    scrollwheel: false,
+	 		zoomControl: true,
+			zoomControlOptions: {
+	      style: google.maps.ZoomControlStyle.DEFAULT
+	    },
+	    mapTypeId: google.maps.MapTypeId.ROADMAP
+	  }
+	  var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+	  var image = 'img/marker.png';
+	  var myLatLng = new google.maps.LatLng(50.445881, 30.553892);
+		var marker = new RichMarker({
+	    position: myLatLng,
+	    map: map,
+	    content: '<div class="map__marker">'+
+	    						'<img src="http://placehold.it/40x40">'+
+	    						'<i></i>'+
+	    						'<div class="map__marker-in">'+
+	    							'<a href="#">Турция</a>'+
+	    							'<ul>'+
+	    								'<li>от 2 450 грн</li>'+
+	    								'<li>до 19 600 грн</li>'+
+	    							'</ul>'+
+	    					'</div>'
+	  });
+	  marker.setFlat(!marker.getFlat());
+	}
+	google.maps.event.addDomListener(window, 'load', initialize);
+	</script>
 </head>
 <body>
 <!-- wrapper -->
@@ -47,9 +83,8 @@
 		</div>
 		<!-- map -->
 		<div class="map">
-			<div class="l-center">
-				<!-- search -->
-				<div class="search">
+			<!-- search -->
+			<div class="search">
 					<div class="search__item">
 						<div class="search__label">Где хотите отдохнуть?</div>
 						<div class="search__fieldset">
@@ -138,11 +173,28 @@
 					<div class="seach__link">
 						<a href="#">Расширенный поиск</a>
 					</div>
-				</div>
 			</div>
-			<div class="map__el">
-				<img src="http://placehold.it/1200x543" alt="">
+			<div class="map__filter">
+					<div class="select select_fancy-right js-select">
+						<div class="select__head">
+							<div class="select__current">Популярные</div>
+							<i class="select__arr"></i>
+						</div>
+						<ul class="select__list">
+							<li>Европа: пляж</li>
+							<li>Европа: интересные места</li>
+							<li>Закарпатье</li>
+							<li>Азия</li>
+						</ul>
+						<input class="select__value" type="hidden" value="4 ночей">
+					</div>
+					<div class="map__filter-list">
+						<a class="is-hot is-active" href="#">Горящие предложения<i></i></a>
+						<a href="#">Раннее бронирование</a>
+						<a href="#">Все туры</a>
+					</div>
 			</div>
+			<div id="map" class="map__el"></div>
 		</div>
 		<!-- pop -->
 		<div class="pop">
