@@ -1,9 +1,22 @@
 // default layout
-.l
+.l-center, .l-layout
+	position: relative
+	max-width: 960px
+	margin: 0 auto
 	+clr
-	.l-col1
-		float: left
-		width: 20%
-	.l-col2
-		float: right
-		width: 70%
+	+rt(1020)
+		max-width: 748px
+	+rt(764)
+		max-width: 300px
+
+.l-layout
+	padding-bottom: 40px
+		
+.l-aside
+	float: left
+	width: 300px
+	
+.l-section
+	float: right
+	width: 630px 
+

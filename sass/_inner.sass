@@ -1,7 +1,16 @@
 // Normally inner pages styles
 .tour
-	display: block
 	position: relative
+	margin-bottom: 30px
+	width: 100%
+	+rt(764)
+		margin: 0
+	&:hover
+		&:before
+			visibility: visible
+			opacity: 1 
+		.tour__in
+			box-shadow: 0 0 0 #b7bfc5
 	&:before
 		content: ""
 		position: absolute
@@ -9,14 +18,37 @@
 		left: -2px
 		right: -2px
 		bottom: -2px
+		+g(#f7a84c, #ed4c22)
+		box-shadow: 0 8px 20px rgba(255,55,0,.55)
+		border-radius: 9px
+		visibility: hidden
+		opacity: 0
+		+tr(all .2s linear) 
+		z-index: 2 
+		+rt(764)
+			display: none
 	.tour__in
+		position: relative
 		+g(#fef8e8, #fcf4d8)
+		box-shadow: 0 1px 2px #b7bfc5
+		border-radius: 8px
+		+tr(box-shadow .2s linear)
 		+clr
-	.tour__pic
-		float: left
+		z-index: 4 
+		+rt(764)	
+			box-shadow: none
+			border-radius: none
+			background: none 
+	.tour__right
+		float: right
 		position: relative
 		width: 240px
 		height: 160px
+		+rt(764)
+			float: none
+			display: block
+			width: auto
+			height: 200px 
 		&:before
 			content: ""
 			position: absolute
@@ -24,17 +56,323 @@
 			left: -3px
 			bottom: 2px
 			width: 6px
-			background: url(../img/tour-circles.png) 
-	.tour__data
+			background: url(../img/tour-circles.png) repeat-y
+			z-index: 4 
+			+rt(764)
+				top: auto
+				left: 2px
+				right: 2px
+				bottom: -3px
+				width: auto
+				height: 6px
+				background: url(../img/tour-circles-horz.png) repeat-x
+	.tour__left
+		position: relative
 		float: left
-		width: 390px  
-	
+		width: 360px  
+		padding: 10px 15px
+		+rt(764)
+			float: none
+			width: auto
+			padding: 10px
+	.tour__pic
+		position: relative
+		font-size: 0
+		z-index: 2 
+		img
+			width: 100%
+			border-radius: 0 8px 8px 0
+			+rt(764)
+				border-radius: 8px 8px 0 0
+	.tour__head
+		margin-bottom: 10px
+		font-size: 0
+		white-space: nowrap
+	.tour__title, .rating
+		display: inline-block
+		vertical-align: middle
+	.tour__title
+		font-size: 21px
+		font-weight: 700 
+		+rt(764)
+			display: block
+	.tour__price
+		position: absolute
+		bottom: 15px
+		left: 0
+		right: 0 
+		text-align: center
+		color: #363636 
+		z-index: 4 
+	.tours__price-in
+		display: inline-block
+		vertical-align: top
+	.tour__price-in
+		position: relative
+		display: inline-block
+		height: 38px
+		padding: 0 10px
+		margin-top: 5px
+		border-radius: 3px
+		+g(#fff100, #ffe300)
+		line-height: 38px
+		font-size: 14px
+		z-index: 2 
+		&:before, &:after
+			content: ""
+			position: absolute
+			top: 4px
+			width: 20px
+			height: 30px
+			border-radius: 50%
+			+g(#fff000, #ffe400)
+			z-index: -1 
+		&:before
+			left: -4px
+		&:after
+			right: -4px
+		span
+			font-size: 28px
+			font-weight: 700
+		.tour__price-old
+			position: absolute
+			top: 13px
+			left: 50%
+			margin-left: -59px
+			+s(tour-price-old)
+		.tour__price-hot
+			position: relative
+			top: 8px
+			display: inline-block
+			margin-right: 10px
+			vertical-align: top
+			+s(tour-price-hot)
+	.tour__way
+		margin-bottom: 10px
+		+clr
+		i, a
+			float: left
+		i
+			margin: 4px 9px 0 0 
+			&.tour__way-plain
+				+s(plain)
+			&.tour__way-train
+				+s(train)
+		a
+			border-bottom: 1px dotted 
+			font-size: 13px
+			color: #363636
+			text-decoration: none
+			&:hover
+				color: $orange 
+	.tour__date
+		margin-bottom: 15px
+		span
+			font-weight: 700  
+	.tour__details
+		+clr
+		ul
+			float: left
+			+rt(764)
+				float: none
+			&:first-child
+				margin-right: 25px
+				span
+					width: 65px
+				+rt(764)
+					margin: 0
+					span
+						width: 95px
+		li
+			+clr
+			+rt(764)
+				margin-bottom: 3px
+			&:first-child
+				margin-bottom: 3px
+		span
+			float: left
+			width: 95px
+			color: #64707D 
+	.tour__discount
+		position: absolute
+		top: -4px
+		right: -4px
+		+s(tour-discount)
+		z-index: 4 
+		span
+			display: block
+			width: 58px
+			height: 58px
+			text-align: center
+			line-height: 22px
+			+transform(rotate(45deg) translate3d(0,0,0))
+			font-size: 15px
+			color: #FFF 
+	.tour__only-today
+		position: absolute
+		top: 30px
+		right: 165px
+		+s(tour-only-today)
+		z-index: 4
+		+rt(764)
+			top: 10px
+			left: 10px
+	.rating
+		margin-left: 10px
+		+rt(764)
+			margin: 7px 0 0 0
+	.rating__stars, .rating__counter
+		display: inline-block
+		vertical-align: middle
+	.rating__counter
+		position: relative
+		top: 2px
+		margin-left: 10px
+		font-size: 12px
+		span
+			font-weight: 700
+			font-size: 16px 
+		
+.more
+	width: 100%
+	height: 50px
+	border-radius: 5px
+	background-color: #f7f5f1
+	+g(#f9f8f5, #f5f4ed)
+	box-shadow: 0 1px 2px #b7bfc5
+	text-align: center
+	font-size: 0
+	i, span
+		display: inline-block
+		vertical-align: middle
+		line-height: 1
+	i
+		margin-right: 10px 
+		+s(more)
+	span
+		border-bottom: 1px dotted #969593
+		font-size: 14px
+		
+.breadcrumbs
+	padding: 17px 0
+	font-size: 0
+	li
+		display: inline
+		font-size: 12px
+		color: #99A8B7 
+	i
+		display: inline-block
+		margin: 0 6px
+		+s(breadcrumbs-arr)
 
+.catalog
+	.catalog__head
+		margin-bottom: 15px
+	.catalog__title
+		margin-bottom: 5px
+		font-size: 24px
+		span
+			font-weight: 700 
+	.catalog__details
+		margin-bottom: 5px
+		li
+			display: inline
+		span
+			font-weight: 700 
+	.catalog__sort
+		margin-bottom: 30px
+		+clr
+		.sort
+			float: left
+		.select
+			float: right
+		.select__current
+			span
+				max-width: 90px
 
-
-
-
-
+.filter
+	.filter__item
+		padding: 16px 20px
+		margin-bottom: 30px
+		border-radius: 8px
+		background-color: #e3f1fc
+		box-shadow: 0 1px 2px #b7bfc5
+		+g(#eaf5fd, #dceffb)
+	.filter__item_rating
+		.checkbox
+			margin-top: 3px
+			&:first-child
+				margin: 0
+	.filter__item_hotel
+		.filter__container
+			+clr
+		.field
+			float: left
+			width: 200px
+		.btn
+			float: right
+			margin-top: 3px
+	.filter__title
+		position: relative
+		padding-right: 15px
+		font-size: 16px
+		font-weight: 700 
+		line-height: 1
+		cursor: pointer
+		i
+			position: absolute
+			top: 5px
+			right: 0
+			+arr(8,6,#979da1,b)
+		& + .filter__container
+			padding-top: 16px
+	.filter__container
+		.checkbox
+			margin-top: 7px
+			&:first-child
+				margin: 0
+	.filter__map-link
+		padding: 10px 0 0 25px
+		font-size: 0
+		text-decoration: none 
+		i, span
+			display: inline-block
+			vertical-align: middle
+		i
+			margin-right: 5px
+			+s(filter-map-point)
+		span
+			border-bottom: 1px dotted 
+			font-size: 12px
+			color: #363636
+			&:hover
+				color: $orange 
+	.filter__slider
+		padding-top: 8px
+	.filter__slider-el
+		position: relative
+		height: 4px
+		margin-bottom: 18px
+		background: #D3DCDB 
+		.ui-slider-range
+			position: absolute
+			top: 0
+			left: 0
+			height: 4px
+			background: #eba37c
+		.ui-slider-handle
+			position: absolute
+			top: -8px
+			+s(filter-slider-prev)
+			&:last-child
+				+s(filter-slider-next)
+	.filter__slider-details	
+		.field, .field__label, .field__el, .btn
+			display: inline-block
+			margin-right: 5px
+			vertical-align: middle
+			input
+				width: 65px
 
 
 

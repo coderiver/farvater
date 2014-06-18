@@ -16,7 +16,7 @@
 	    center: new google.maps.LatLng(50.445881, 30.553892),
 	    disableDefaultUI: true,
 	    scrollwheel: false,
-	 		zoomControl: true,
+	 		zoomControl: false,
 			zoomControlOptions: {
 	      style: google.maps.ZoomControlStyle.DEFAULT
 	    },
@@ -28,7 +28,7 @@
 		var marker = new RichMarker({
 	    position: myLatLng,
 	    map: map,
-	    content: '<div class="map__marker">'+
+	    content:  '<div class="map__marker">'+
 	    						'<img src="http://placehold.it/40x40">'+
 	    						'<i></i>'+
 	    						'<div class="map__marker-in">'+
@@ -47,225 +47,612 @@
 <body>
 <!-- wrapper -->
 <div class="wrapper">
-	<!-- topper -->
-	<div class="topper">
-		<div class="l-center">
-			<div class="topper__phones">(044) 555-55-55<span>•</span>(050) 432-70-70</div>
-			<div class="topper__ask"><a href="#">Задать вопрос</a></div>
-			<!-- enter -->
-			<div class="enter">
-				<div class="enter__link"><a href="#">Войти</a></div>
-				<div class="enter__throw">через</div>
-				<div class="enter__social">
-					<a class="enter__social-fb" href="#"></a>
-					<a class="enter__social-vk" href="#"></a>
-					<a class="enter__social-gp" href="#"></a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- container -->
-	<div class="container">
-		<!-- header -->
-		<div class="header">
+	<div class="wrapper__in">
+		<!-- topper -->
+		<div class="topper">
 			<div class="l-center">
-				<a class="logo" href="#"></a>
-				<div class="stamp"></div>
-				<!-- nav -->
-				<nav class="nav">
-					<a class="is-active" href="#">Туры</a>
-					<a href="#">Авиабилеты</a>
-					<a href="#">Отели</a>
-					<a href="#">Роуминг</a>
-					<a href="#">Страхование</a>
-				</nav>
+				<button class="topper__menu js-topper-menu"></button>
+				<div class="topper__phones">(044) 555-55-55<span>•</span>(050) 432-70-70</div>
+				<div class="topper__ask"><a href="#">Задать вопрос</a></div>
+				<!-- enter -->
+				<div class="enter">
+					<div class="enter__link"><a href="#">Войти</a></div>
+					<div class="enter__throw">через</div>
+					<!-- social -->
+					<div class="social">
+						<a class="social__fb" href="#"></a>
+						<a class="social__vk" href="#"></a>
+						<a class="social__gp" href="#"></a>
+					</div>
+				</div>
 			</div>
 		</div>
-		<!-- map -->
-		<div class="map">
-			<!-- search -->
-			<div class="search">
-					<div class="search__item">
-						<div class="search__label">Где хотите отдохнуть?</div>
-						<div class="search__fieldset">
-							<div class="search__field">
-								<div class="search__el">
-									<input class="js-autocomplete" type="text" placeholder="у">
-								</div>
+		<!-- mob-menu -->
+		<nav class="mob-menu js-mob-menu">
+			<a href="#">О компании</a>
+			<a href="#">Блог</a>
+			<a href="#">Контакты</a>
+			<a href="#">Задать вопрос</a>
+			<a href="#">Программа лояльности</a>
+			<a href="#">Вход в личный кабинет</a>
+		</nav>
+		<!-- container -->
+		<div class="container">
+			<div class="container__in">
+				<!-- header -->
+				<div class="header">
+					<div class="l-center">
+						<a class="logo" href="#"></a>
+						<div class="stamp"></div>
+						<!-- nav -->
+						<nav class="nav">
+							<a class="is-active" href="#">Туры</a>
+							<a href="#">Авиабилеты</a>
+							<a href="#">Отели</a>
+							<a href="#">Роуминг</a>
+							<a href="#">Страхование</a>
+						</nav>
+						<!-- native-select -->
+						<div class="mob-nav native-select js-native-select">
+							<div class="native-select__head">
+								<span>Туры</span><i></i>
 							</div>
-							<div class="search__field">
-								<div class="search__el">
-									<input class="js-autocomplete" type="text" value="Стамбул">
-								</div>
-							</div>
-						</div>
-						<div class="search__add">
-							<a href="#">+<span>добавить страну</span></a>
+							<select class="native-select__el" name="" id="">
+								<option value="">Туры</option>
+								<option value="">Авиабилеты</option>
+								<option value="">Отели</option>
+								<option value="">Роуминг</option>
+								<option value="">Страхование</option>
+							</select>
 						</div>
 					</div>
-					<div class="search__item">
-						<div class="search__label">Откуда?</div>
-						<div class="search__field">
-							<div class="search__el search__el_plain">
-								<input type="text" value="Киев, Украина">
-								<i class="search__ico"></i>
-							</div>
-						</div>
-					</div>
-					<div class="search__item">
-						<div class="search__fieldset">
-							<div class="search__field">
-								<div class="search__label">Туда</div>
-								<!-- select -->
-								<div class="select js-select-date">
-									<div class="select__head">
-										<div class="select__current">03.05.2014</div>
-										<i class="select__ico-date"></i>
+				</div>
+				<!-- map -->
+				<div class="map">
+					<!-- search -->
+					<div class="search">
+						<div class="search__item">
+							<div class="search__label">Где хотите отдохнуть?</div>
+							<div class="search__fieldset">
+								<div class="search__field">
+									<div class="search__el">
+										<input class="js-autocomplete" type="text" placeholder="у">
 									</div>
-									<div class="select__date"></div>
-									<input class="select__value" type="hidden">
 								</div>
-							</div>
-							<div class="search__field">
-								<div class="search__label">Ночей</div>
-								<!-- select -->
-								<div class="select js-select">
-									<div class="select__head">
-										<div class="select__current">5 ночей</div>
-										<i class="select__arr"></i>
+								<div class="search__field">
+									<div class="search__el">
+										<input class="js-autocomplete" type="text" value="Стамбул">
 									</div>
-									<ul class="select__list">
-										<li>3 ночей</li>
-										<li>4 ночей</li>
-										<li>5 ночей</li>
-										<li>6 ночей</li>
-										<li>7 ночей</li>
-									</ul>
-									<input class="select__value" type="hidden">
+								</div>
+							</div>
+							<div class="search__add">
+								<a href="#">+<span>добавить страну</span></a>
+							</div>
+						</div>
+						<div class="search__item">
+							<div class="search__label">Откуда?</div>
+							<div class="search__field">
+								<div class="search__el search__el_plain">
+									<input type="text" value="Киев, Украина">
+									<i class="search__ico"></i>
 								</div>
 							</div>
 						</div>
-						<!-- checkbox -->
-						<label class="checkbox checkbox_white">
-							<input type="checkbox">
-							<span class="checkbox__text">Гибкие даты (±3 дня)</span>
-						</label>
-					</div>
-					<div class="search__item">
-						<div class="search__people">
-							<div class="search__adults">
-								<div class="search__label">Взрослых: <span id="counter-adults">2</span></div>
-								<div class="search__adults-list"></div>
-							</div>
-							<div class="search__kids">
-								<div class="search__label">Детей: <span id="counter-kids">1</span></div>
-								<div class="search__kids-list"></div>
-							</div>
-							<div class="search__babies">
-								<div class="search__label">Младенцев: <span id="counter-babies">1</span></div>
-								<div class="search__babies-list"></div>
-							</div>
-						</div>
-					</div>
-					<div class="serach__btn">
-						<button class="btn">Найти</button>
-					</div>
-					<div class="seach__link">
-						<a href="#">Расширенный поиск</a>
-					</div>
-			</div>
-			<div class="map__filter">
-				<div class="select select_fancy-right js-select">
-					<div class="select__head">
-						<div class="select__current">Популярные</div>
-						<i class="select__arr"></i>
-						<div class="select__circle"><i></i></div>
-					</div>
-					<ul class="select__list">
-						<li>Европа: пляж</li>
-						<li>Европа: интересные места</li>
-						<li>Закарпатье</li>
-						<li>Азия</li>
-					</ul>
-					<input class="select__value" type="hidden" value="4 ночей">
-				</div>
-				<!-- filter -->
-				<div class="filter">
-					<a class="is-hot is-active" href="#">Горящие предложения<i></i></a>
-					<a href="#">Раннее бронирование</a>
-					<a href="#">Все туры</a>
-				</div>
-			</div>
-			<div id="map" class="map__el"></div>
-		</div>
-		<!-- tours -->
-		<div class="tours">
-			<div class="tours__head">
-				<div class="tours__title">Туры с вылетом</div>
-				<div class="select js-select">
-					<div class="select__head">
-						<div class="select__current">из Киева</div>
-						<i class="select__arr"></i>
-						<div class="select__circle"><i></i></div>
-					</div>
-					<ul class="select__list">
-						<li>из Днепропетровска</li>
-						<li>из Донецка</li>
-						<li>из Львова</li>
-					</ul>
-					<input class="select__value" type="hidden">
-				</div>
-			</div>
-			<div class="tours__filter">
-				<!-- filter -->
-				<div class="filter">
-					<a class="is-hot is-active" href="#">Горящие предложения<i></i></a>
-					<a href="#">Раннее бронирование</a>
-					<a href="#">Все туры</a>
-				</div>
-			</div>
-			<div class="tours__in">
-				<ul class="tours__nav">
-					<li><a href="#"><span>Восточная Европа</span></a></li>
-					<li><a href="#"><span>Восточная Европа</span></a></li>
-					<li><a href="#"><span>Восточная Европа</span></a></li>
-					<li><a href="#"><span>Восточная Европа</span></a></li>
-					<li><a href="#"><span>Восточная Европа</span></a></li>
-					<li class="is-active"><a href="#"><span>Восточная Европа</span></a></li>
-					<li><a href="#"><span>Восточная Европа</span></a></li>
-					<li><a href="#"><span>Восточная Европа</span></a></li>
-					<li><a href="#"><span>Восточная Европа</span></a></li>
-					<li><a href="#"><span>Восточная Европа</span></a></li>
-				</ul>
-				<div class="tours__list">
-					<!-- tour -->
-					<a class="tour" href="#">
-						<div class="tour__in">
-							<div class="tour__data">
-								<div class="tour__title"></div>
-								<div class="tour__way"></div>
-								<div class="tour__date"></div>
-								<div class="tour__details">
-									<ul>
-										<li><span></span></li>
-										<li><span></span></li>
-									</ul>
-									<ul>
-										<li><span></span></li>
-										<li><span></span></li>
-									</ul>
+						<div class="search__item">
+							<div class="search__fieldset">
+								<div class="search__field">
+									<div class="search__label">Туда</div>
+									<!-- select -->
+									<div class="select select_date js-select-date">
+										<div class="select__head">
+											<div class="select__current">03.05.2014</div>
+											<i class="select__ico-date"></i>
+										</div>
+										<div class="select__date"></div>
+										<input class="select__value" type="hidden">
+									</div>
+								</div>
+								<div class="search__field">
+									<div class="search__label">Ночей</div>
+									<!-- select -->
+									<div class="select js-select">
+										<div class="select__head">
+											<div class="select__current">5 ночей</div>
+											<i class="select__arr"></i>
+										</div>
+										<ul class="select__list">
+											<li>3 ночей</li>
+											<li>4 ночей</li>
+											<li>5 ночей</li>
+											<li>6 ночей</li>
+											<li>7 ночей</li>
+										</ul>
+										<input class="select__value" type="hidden">
+									</div>
+									<!-- native-select -->
+									<div class="native-select js-native-select">
+										<div class="native-select__head">
+											<span>Туры</span><i></i>
+										</div>
+										<select class="native-select__el" name="" id="">
+											<option value="">Туры</option>
+											<option value="">Авиабилеты</option>
+											<option value="">Отели</option>
+											<option value="">Роуминг</option>
+											<option value="">Страхование</option>
+										</select>
+									</div>
 								</div>
 							</div>
-							<div class="tour__pic">
-								<img src="http://placehold.it/240x160" alt="">
+							<!-- checkbox -->
+							<label class="checkbox checkbox_white">
+								<input type="checkbox">
+								<span class="checkbox__text">Гибкие даты (±3 дня)</span>
+							</label>
+						</div>
+						<div class="search__item">
+							<div class="search__people">
+								<div class="search__adults">
+									<div class="search__label">Взрослых: <span id="counter-adults">2</span></div>
+									<div class="search__adults-list"></div>
+								</div>
+								<div class="search__kids">
+									<div class="search__label">Детей: <span id="counter-kids">1</span></div>
+									<div class="search__kids-list"></div>
+								</div>
+								<div class="search__babies">
+									<div class="search__label">Младенцев: <span id="counter-babies">1</span></div>
+									<div class="search__babies-list"></div>
+								</div>
 							</div>
 						</div>
-					</a>
+						<div class="serach__btn">
+							<button class="btn">Найти</button>
+						</div>
+						<div class="seach__link">
+							<a href="#">Расширенный поиск</a>
+						</div>
+					</div>
+					<div class="map__sort">
+						<!-- select -->
+						<div class="select select_fancy-right js-select">
+							<div class="select__head">
+								<div class="select__current"><span>Популярные</span></div>
+								<i class="select__arr"></i>
+								<div class="select__circle"><i></i></div>
+							</div>
+							<ul class="select__list">
+								<li><span>Популярные</span></li>
+								<li><span>Европа: пляж</span></li>
+								<li><span>Европа: интересные места</span></li>
+								<li><span>Закарпатье</span></li>
+								<li><span>Азия</span></li>
+							</ul>
+							<input class="select__value" type="hidden" value="4 ночей">
+						</div>
+						<!-- select -->
+						<div class="select select_fancy js-select">
+							<div class="select__head">
+								<div class="select__current"><i class="select__ico-hot"></i><span>Горящие предложения</span></div>
+								<i class="select__arr"></i>
+								<div class="select__circle"><i></i></div>
+							</div>
+							<ul class="select__list">
+								<li><i class="select__ico-hot"></i><span>Горящие предложения</span></li>
+								<li><span>Раннее бронирование</span></li>
+								<li><span>Все туры</span></li>
+							</ul>
+							<input class="select__value" type="hidden" value="4 ночей">
+						</div>
+						<!-- sort -->
+						<div class="sort">
+							<a class="is-hot is-active" href="#">Горящие предложения<i></i></a>
+							<a href="#">Раннее бронирование</a>
+							<a href="#">Все туры</a>
+						</div>
+					</div>
+					<div id="map" class="map__el"></div>
+				</div>
+				<!-- pop -->
+				<div class="pop">
+					<div class="l-center">
+						<div class="title">Популярные категории путешествий</div>
+						<div class="pop__list js-pop">
+							<div class="pop__item">
+								<div class="pop__pic">
+									<a class="pop__ico-1" href="#"></a>
+								</div>
+								<div class="pop__link"><a href="#">Море до 7 000 грн</a></div>
+								<div class="pop__counter">8 888 туров</div>
+							</div>
+							<div class="pop__item">
+								<div class="pop__pic">
+									<a class="pop__ico-2" href="#"></a>
+								</div>
+								<div class="pop__link"><a href="#">Теплое море, белый песок</a></div>
+								<div class="pop__counter">5 681 тур</div>
+							</div>
+							<div class="pop__item">
+								<div class="pop__pic">
+									<a class="pop__ico-3" href="#"></a>
+								</div>
+								<div class="pop__link"><a href="#">Без визы</a></div>
+								<div class="pop__counter">3 250 туров</div>
+							</div>
+							<div class="pop__item">
+								<div class="pop__pic">
+									<a class="pop__ico-4" href="#"></a>
+								</div>
+								<div class="pop__link"><a href="#">Короткий перелет</a></div>
+								<div class="pop__counter">6 452 тура</div>
+							</div>
+							<div class="pop__item">
+								<div class="pop__pic">
+									<a class="pop__ico-5" href="#"></a>
+								</div>
+								<div class="pop__link"><a href="#">Шоппинг-туры</a></div>
+								<div class="pop__counter">3 252 тура</div>
+							</div>
+							<div class="pop__item">
+								<div class="pop__pic">
+									<a class="pop__ico-6" href="#"></a>
+								</div>
+								<div class="pop__link"><a href="#">Отдых с детьми</a></div>
+								<div class="pop__counter">3 264 тура</div>
+							</div>
+							<div class="pop__item">
+								<div class="pop__pic">
+									<a class="pop__ico-7" href="#"></a>
+								</div>
+								<div class="pop__link"><a href="#">Автобусные туры</a></div>
+								<div class="pop__counter">5 431 тур</div>
+							</div>
+							<div class="pop__item">
+								<div class="pop__pic">
+									<a class="pop__ico-8" href="#"></a>
+								</div>
+								<div class="pop__link"><a href="#">Острова</a></div>
+								<div class="pop__counter">8 870 туров</div>
+							</div>
+							<div class="pop__item">
+								<div class="pop__pic">
+									<a class="pop__ico-9" href="#"></a>
+								</div>
+								<div class="pop__link"><a href="#">Горы, лыжи, снег</a></div>
+								<div class="pop__counter">6 533 тура</div>
+							</div>
+							<div class="pop__item">
+								<div class="pop__pic">
+									<a class="pop__ico-10" href="#"></a>
+								</div>
+								<div class="pop__link"><a href="#">Круизы</a></div>
+								<div class="pop__counter">4 265 туров</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- tours -->
+				<div class="tours tours_main">
+					<div class="tours__head">
+						<div class="tours__title">Туры с вылетом</div>
+						<!-- select -->
+						<div class="select js-select">
+							<div class="select__head">
+								<div class="select__current">из Киева</div>
+								<i class="select__arr"></i>
+								<div class="select__circle"><i></i></div>
+							</div>
+							<ul class="select__list">
+								<li>из Днепропетровска</li>
+								<li>из Донецка</li>
+								<li>из Львова</li>
+							</ul>
+							<input class="select__value" type="hidden">
+						</div>
+						<!-- native-select -->
+						<div class="native-select js-native-select">
+							<div class="native-select__head">
+								<span>из Киева</span><i></i>
+							</div>
+							<select class="native-select__el" name="" id="">
+								<option value="">из Киева</option>
+								<option value="">из Днепропетровска</option>
+								<option value="">из Донецка</option>
+								<option value="">из Львова</option>
+							</select>
+						</div>
+					</div>
+					<div class="tours__sort">
+						<!-- sort -->
+						<div class="sort">
+							<a class="is-hot is-active" href="#">Горящие предложения<i></i></a>
+							<a href="#">Раннее бронирование</a>
+							<a href="#">Все туры</a>
+						</div>
+						<!-- select -->
+						<div class="select select_fancy-right js-select">
+							<div class="select__head">
+								<div class="select__current"><span>Европа: интересные места</span></div>
+								<i class="select__arr"></i>
+								<div class="select__circle"><i></i></div>
+							</div>
+							<ul class="select__list">
+								<li><span>Популярные</span></li>
+								<li><span>Европа: пляж</span></li>
+								<li><span>Европа: интересные места</span></li>
+								<li><span>Закарпатье</span></li>
+								<li><span>Азия</span></li>
+							</ul>
+							<input class="select__value" type="hidden" value="4 ночей">
+						</div>
+						<!-- native-select -->
+						<div class="native-select js-native-select">
+							<div class="native-select__head">
+								<span>Европа: интересные места</span><i></i>
+							</div>
+							<select class="native-select__el" name="" id="">
+								<option value="">Популярные</option>
+								<option value="">Европа: пляж</option>
+								<option value="">Европа: интересные места</option>
+								<option value="">Закарпатье</option>
+								<option value="">Азия</option>
+							</select>
+						</div>
+					</div>
+					<div class="tours__in">
+						<ul class="tours__nav">
+							<li><a href="#"><span>Восточная Европа</span><i></i></a></li>
+							<li><a href="#"><span>Восточная Европа</span><i></i></a></li>
+							<li><a href="#"><span>Восточная Европа</span><i></i></a></li>
+							<li><a href="#"><span>Восточная Европа</span><i></i></a></li>
+							<li class="is-active-prev"><a href="#"><span>Восточная Европа</span><i></i></a></li>
+							<li class="is-active"><a href="#"><span>Восточная Европа</span><i></i></a></li>
+							<li><a href="#"><span>Восточная Европа</span><i></i></a></li>
+							<li><a href="#"><span>Восточная Европа</span><i></i></a></li>
+							<li><a href="#"><span>Восточная Европа</span><i></i></a></li>
+							<li><a href="#"><span>Восточная Европа</span><i></i></a></li>
+						</ul>
+						<div class="tours__list">
+							<div class="tours__items js-tours">
+								<!-- tour -->
+								<div class="tour" data-counter="1">
+									<div class="tour__in">
+										<a class="tour__right" href="#">
+											<div class="tour__discount"><span>-8%</span></div>
+											<div class="tour__pic">
+												<img src="http://placehold.it/240x160" alt="">
+											</div>
+											<div class="tour__price">
+												<div class="tour__price-item">
+													<div class="tour__price-in"><span>2 485</span> грн</div>
+												</div>
+											</div>
+										</a>
+										<div class="tour__left">
+											<div class="tour__head">
+												<div class="tour__title"><a href="#">Le Meridien Istanbul</a></div>
+												<!-- rating -->
+												<div class="rating js-rating-read">
+													<div class="rating__stars" data-score="4.5" data-number="4"></div>
+													<div class="rating__counter"><span></span>/5</div>
+												</div>
+											</div>
+											<div class="tour__way">
+												<i class="tour__way-plain"></i>
+												<a href="#">Taksim, Istanbul, Turkey</a>
+											</div>
+											<div class="tour__date"><span>3—8 мая</span> (5 ночей)</div>
+											<div class="tour__details">
+												<ul>
+													<li><span>Номер:</span>DBL (standard room)</li>
+													<li><span>Питание:</span>ВВ (завтраки)</li>
+												</ul>
+												<ul>
+													<li><span>От аэропорта:</span>67 км</li>
+													<li><span>От центра:</span>1,5 км</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- tour -->
+								<div class="tour" data-counter="2">
+									<div class="tour__in">
+										<a class="tour__right" href="#">
+											<div class="tour__only-today"></div>
+											<div class="tour__discount"><span>-23%</span></div>
+											<div class="tour__pic">
+												<img src="http://placehold.it/240x160" alt="">
+											</div>
+											<div class="tour__price">
+												<div class="tour__price-item">
+													<div class="tour__price-in"><i class="tour__price-old"></i><span>2 485</span> грн</div>
+												</div>
+												<div class="tour__price-item">
+													<div class="tour__price-in"><i class="tour__price-hot"></i><span>999</span> грн</div>
+												</div>
+											</div>
+										</a>
+										<div class="tour__left">
+											<div class="tour__head">
+												<div class="tour__title"><a href="#">A’jia Hotel</a></div>
+												<!-- rating -->
+												<div class="rating js-rating-read">
+													<div class="rating__stars" data-score="3.5" data-number="3"></div>
+													<div class="rating__counter"><span></span>/5</div>
+												</div>
+											</div>
+											<div class="tour__way">
+												<i class="tour__way-train"></i>
+												<a href="#">Taksim, Istanbul, Turkey</a>
+											</div>
+											<div class="tour__date"><span>3—8 мая</span> (5 ночей)</div>
+											<div class="tour__details">
+												<ul>
+													<li><span>Номер:</span>DBL (standard room)</li>
+													<li><span>Питание:</span>ВВ (завтраки)</li>
+												</ul>
+												<ul>
+													<li><span>От аэропорта:</span>67 км</li>
+													<li><span>От центра:</span>1,5 км</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- tour -->
+								<div class="tour" data-counter="3">
+									<div class="tour__in">
+										<a class="tour__right" href="#">
+											<div class="tour__discount"><span>-8%</span></div>
+											<div class="tour__pic">
+												<img src="http://placehold.it/240x160" alt="">
+											</div>
+											<div class="tour__price">
+												<div class="tour__price-item">
+													<div class="tour__price-in"><span>2 485</span> грн</div>
+												</div>
+											</div>
+										</a>
+										<div class="tour__left">
+											<div class="tour__head">
+												<div class="tour__title"><a href="#">Le Meridien Istanbul</a></div>
+												<!-- rating -->
+												<div class="rating js-rating-read">
+													<div class="rating__stars" data-score="4.5" data-number="4"></div>
+													<div class="rating__counter"><span></span>/5</div>
+												</div>
+											</div>
+											<div class="tour__way">
+												<i class="tour__way-plain"></i>
+												<a href="#">Taksim, Istanbul, Turkey</a>
+											</div>
+											<div class="tour__date"><span>3—8 мая</span> (5 ночей)</div>
+											<div class="tour__details">
+												<ul>
+													<li><span>Номер:</span>DBL (standard room)</li>
+													<li><span>Питание:</span>ВВ (завтраки)</li>
+												</ul>
+												<ul>
+													<li><span>От аэропорта:</span>67 км</li>
+													<li><span>От центра:</span>1,5 км</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tours__counter js-tours-counter"><span class="tours__counter-current">1</span>из<span class="tours__counter-all"></span></div>
+							<!-- more -->
+							<button class="more">
+								<i></i>
+								<span>Показать больше туров</span>
+							</button>
+						</div>
+					</div>
+				</div>
+				<!-- benefits -->
+				<div class="l-center benefits">
+					<!-- title -->
+					<div class="title">Преимущества</div>
+					<div class="benefits__list js-benefits">
+						<div class="benefits__item">
+							<div class="benefits__pic">
+								<a class="benefits__ico-1" href="#"></a>
+							</div>
+							<div class="benefits__title">
+								<a href="#">Мгновенная покупка с доставкой</a>
+							</div>
+							<div class="benefits__text">Приобретайте тур в любую точку мира всего за 2 минуты. Работает доставка! Вы можете оплатить и получить весь пакет документов, не выходя из дома.</div>
+						</div>
+						<div class="benefits__item">
+							<div class="benefits__pic">
+								<a class="benefits__ico-2" href="#"></a>
+							</div>
+							<div class="benefits__title">
+								<a href="#">Минимальные цены, горящие путевки, бонусы</a>
+							</div>
+							<div class="benefits__text">Мы делаем своим клиентам самые выгодные предложения! Система бонусов позволит максимально экономить на всех поездках.</div>
+						</div>
+						<div class="benefits__item">
+							<div class="benefits__pic">
+								<a class="benefits__ico-3" href="#"></a>
+							</div>
+							<div class="benefits__title">
+								<a href="#">52 000 000 туров, доступных здесь и сейчас</a>
+							</div>
+							<div class="benefits__text">Самый большой выбор предложений: 881 курорт, 182 страны, 27 операторов, 12988 отелей.</div>
+						</div>
+						<div class="benefits__item">
+							<div class="benefits__pic">
+								<a class="benefits__ico-4" href="#"></a>
+							</div>
+							<div class="benefits__title">
+								<a href="#">Надежные операторы</a>
+							</div>
+							<div class="benefits__text">Мы сотрудничаем с 35 лучшими  туристическими операторами страны. Наши менеджеры лично посетили 750 отелей по всему миру, и их число увеличивается.</div>
+						</div>
+					</div>
 				</div>
 			</div>
+			<i class="container__shadow-tl"></i>
+			<i class="container__shadow-tr"></i>
+			<i class="container__shadow-dl"></i>
+			<i class="container__shadow-dr"></i>
+			<i class="container__shadow-angle"></i>
 		</div>
 	</div>
 </div>
+<!-- footer -->
+<footer class="footer">
+	<div class="l-center">
+		<div class="footer__about">
+			<div class="footer__logo"></div>
+			<div class="footer__text">«Фарватер» объединил вокруг себя людей, для которых путешествия и ежедневные открытия являются необходимой частью жизни.</div>
+			<label class="footer__subscribe">
+				<input type="text" placeholder="Рассылка горящих туров">
+				<i class="footer__subscribe-arr"></i>
+				<span class="footer__subscribe-discount"><span>-50%</span></span>
+			</label>
+		</div>
+		<nav class="footer__nav">
+			<ul>
+				<li><div class="footer__nav-title">О проекте</div></li>
+				<li><a href="#">Как это работает</a></li>
+				<li><a href="#">Оплата и доставка</a></li>
+				<li><a href="#">Ответы на вопросы</a></li>
+				<li><a href="#">Компания</a></li>
+				<li><a href="#">Программа лояльности</a></li>
+			</ul>
+			<ul>
+				<li><div class="footer__nav-title">Дополнительно</div></li>
+				<li><a href="#">Купить туры</a></li>
+				<li><a href="#">Ответы на вопросы</a></li>
+				<li><a href="#">Советы туристам</a></li>
+				<li><a href="#">Отели</a></li>
+				<li><a href="#">Пресса</a></li>
+			</ul>
+		</nav>
+		<div class="footer__right">
+			<div class="footer__license">Номер лицензии Ассоциации лидеров турбизнеса Украины <span>АВ566760</span><i></i></div>
+			<div class="footer__social">
+				<!-- social -->
+				<div class="social">
+					<a class="social__fb" href="#"></a>
+					<a class="social__vk" href="#"></a>
+					<a class="social__gp" href="#"></a>
+				</div>
+				<div class="footer__pay">
+					<i class="footer__pay-visa"></i>
+					<i class="footer__pay-master-card"></i>
+				</div>
+			</div>
+			<div class="footer__kiselev">
+				<a class="#" href="#"></a>
+			</div>
+		</div>
+	</div>
+</footer>
 <!-- load script -->
 <script src="js/lib/head.js" data-headjs-load="js/init.js"></script>
 </body>
