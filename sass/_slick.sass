@@ -89,10 +89,12 @@ $slick-dot-character: "\2022" !default
 	&:focus
 		outline: none
 	&.slick-disabled
-		opacity: 0.2
+		opacity: 0
 .slick-prev
 	left: -10px
 	+s(prev)
+	+rt(764)
+		left: 0
 	&:hover
 		+sp(prev-h)
 	&:active
@@ -100,6 +102,8 @@ $slick-dot-character: "\2022" !default
 .slick-next
 	right: -10px
 	+s(next)
+	+rt(764)
+		right: 0
 	&:hover
 		+sp(next-h)
 	&:active	

@@ -68,9 +68,10 @@
 				background: url(../img/tour-circles-horz.png) repeat-x
 	.tour__left
 		position: relative
-		float: left
-		width: 360px  
+		//float: left
+		//width: 360px  
 		padding: 10px 15px
+		overflow: hidden
 		+rt(764)
 			float: none
 			width: auto
@@ -88,10 +89,9 @@
 		margin-bottom: 10px
 		font-size: 0
 		white-space: nowrap
-	.tour__title, .rating
+	.tour__title
 		display: inline-block
 		vertical-align: middle
-	.tour__title
 		font-size: 21px
 		font-weight: 700 
 		+rt(764)
@@ -221,17 +221,6 @@
 		margin-left: 10px
 		+rt(764)
 			margin: 7px 0 0 0
-	.rating__stars, .rating__counter
-		display: inline-block
-		vertical-align: middle
-	.rating__counter
-		position: relative
-		top: 2px
-		margin-left: 10px
-		font-size: 12px
-		span
-			font-weight: 700
-			font-size: 16px 
 		
 .more
 	width: 100%
@@ -256,6 +245,8 @@
 .breadcrumbs
 	padding: 17px 0
 	font-size: 0
+	+rt(764)
+		display: none
 	li
 		display: inline
 		font-size: 12px
@@ -268,9 +259,12 @@
 .catalog
 	.catalog__head
 		margin-bottom: 15px
+		+rt(1020)
+			display: none
 	.catalog__title
-		margin-bottom: 5px
+		margin-bottom: 10px
 		font-size: 24px
+		line-height: 1
 		span
 			font-weight: 700 
 	.catalog__details
@@ -278,10 +272,108 @@
 		li
 			display: inline
 		span
+			font-weight: 700
+	.catalog__top
+		position: relative
+		display: none
+		margin-bottom: 20px
+		+clr
+		+rt(1020)
+			display: block
+		.catalog__head
+			position: relative
+			float: left
+			width: 340px
+			margin: 0
+			padding: 11px 20px
+			border-radius: 8px
+			background-color: #3155a3
+			+g(#4274c3, #203883)
+			box-shadow: 0 1px 2px rgba(2,26,75,.5)
+			+box
+			color: #fff 
+			text-decoration: none
+			z-index: 100 
+			+rt(1020)
+				display: block
+			+rt(764)
+				float: none
+				width: auto
+				margin-bottom: 30px
+		.catalog__title
+			position: relative
+			padding-left: 34px
+			i
+				position: absolute
+				top: 3px
+				left: 0
+				+s(menu)
+		.catalog__details
+			margin: 0
+			li
+				display: block
+				margin-top: 5px
+		.filter
+			position: absolute
+			top: 144px
+			left: 0
+			right: 0
+			z-index: 100  
+		.filter__column
+			float: left
+			width: 340px
+			&:first-child
+				margin-right: 28px
+	.catalog__filter
+		position: relative
+		float: right
+		width: 340px
+		z-index: 100 
+		+rt(764)
+			float: none
+			width: auto
+	.catalog__filter-bg
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background: rgb(0,39,81) 
+		background: rgba(0,39,81,.75) 
+		z-index: 90 
+	.catalog__filter-button
+		width: 100%
+		height: 114px 
+		border-radius: 8px
+		background-color: #e3f1fb
+		box-shadow: 0 1px 2px #b7bfc5
+		+g(#eaf5fd, #dceffb)
+		font-size: 0
+		+rt(764)
+			height: 40px
+			padding: 0 15px
+			text-align: left
+		i, span
+			display: inline-block
+			vertical-align: middle
+		i
+			position: relative
+			top: 1px
+			margin-right: 8px
+			+s(menu-dark)
+			+rt(764)
+				margin-right: 15px
+		span
+			color: #636f7d
+			font-size: 24px
 			font-weight: 700 
+			+rt(764)
+				font-size: 16px
 	.catalog__sort
 		margin-bottom: 30px
 		+clr
+		+rt(764)
+			display: none
 		.sort
 			float: left
 		.select
@@ -374,29 +466,404 @@
 			input
 				width: 65px
 
+.research
+	margin-bottom: 30px
+	.btn
+		width: 100%
 
+.widgets
+	.widgets__item
+		margin-bottom: 30px
+	.widgets__title
+		margin-bottom: 15px
+		font-size: 16px
+		font-weight: 700
 
+.tour-info
+	position: relative
+	margin-bottom: 10px
+	+rt(764)
+		padding-bottom: 50px
+		margin-bottom: 15px
+	.tour-info__head
+		+clr
+		.btn
+			float: right
+			+rt(764)
+				position: absolute
+				bottom: 0
+				right: 0
+	.tour-info__title
+		padding: 7px 0
+		white-space: nowrap
+		text-overflow: ellipsis
+		overflow: hidden
+		font-size: 26px
+		font-weight: 700 
+		line-height: 1
+		+rt(764)
+			white-space: normal
+	.tour-info__details
+		+clr
+	.tour-info__comment-counter
+		float: left
+		margin: 10px 0 0 15px 
+		font-size: 14px
+	.rating
+		float: left
+	.price
+		float: right
+		+rt(764)
+			position: absolute
+			left: 0
+			bottom: 0
+			margin: 0 8px
 
+.actions
+	margin-bottom: 20px
+	padding: 11px 15px
+	border-radius: 8px
+	background-color: #f7f5f1
+	box-shadow: 0 1px 2px #b7bfc5
+	+g(#f9f8f5, #f5f4ed)
+	+clr
+	&.actions_mob
+		+rt(764)
+			display: none
+	.actions__item
+		float: left
+		margin: 1px 15px 0 0
+		+rt(764)
+			display: none
+		i, span
+			display: inline-block
+			vertical-align: middle
+		i
+			margin-right: 5px
+		span
+			border-bottom: 1px dotted 
+			font-size: 13px
+	.actions__item_mob
+		+rt(764)
+			display: block
+	.actions__ico-fav
+		+s(actions-fav)
+	.actions__ico-send
+		+s(actions-send)
+	.actions__ico-print
+		+s(actions-print)
+	.actions__ico-save
+		+s(actions-save)
+	.actions__like
+		float: right
+		margin-left: 15px
+		font-size: 0
+		+rt(764)
+			display: none
 
+.gallery
+	position: relative
+	margin-bottom: 25px
+	.gallery__pic
+		position: relative
+		margin-bottom: 5px
+		.cycle-slideshow
+			border-radius: 8px
+			overflow: hidden
+		img
+			display: block
+			width: 100%
+	.gallery__preview
+		font-size: 0
+		a
+			display: inline-block
+			margin: 0 5px 5px 0
+			border-radius: 3px
+			vertical-align: top
+			&.cycle-pager-active
+				box-shadow: 0 0 0 3px #68b039
+		img
+			border-radius: 3px
+	.prev, .next
+		z-index: 101
 
+.tour-settings
+	margin-bottom: 30px
+	padding: 15px 20px
+	border-radius: 8px
+	background-color: #e3f1fb
+	box-shadow: 0 1px 2px #b7bfc5
+	+g(#eaf5fd, #dceffb)
+	+rt(764)
+		padding: 15px
+	.tour-settings__title
+		margin-bottom: 15px
+		font-size: 20px
+		font-weight: 700
+		text-align: center
+	.tour-settings__sort	
+		margin-bottom: 20px
+		text-align: center
+		.sort
+			+rt(764)
+				display: none
+		.native-select
+			display: none
+			+rt(764)
+				display: inline-block
+				vertical-align: top
+	.tour-settings__list
+		font-size: 0
+	.tour-settings__item
+		display: inline-block
+		width: 50%
+		padding-right: 20px
+		margin-bottom: 15px
+		vertical-align: top
+		+box
+		+rt(764)
+			width: 100%
+			padding: 0
+		&.tour-settings__item_big
+			padding: 0
+		.radio
+			margin-bottom: 7px
+		.radio__text
+			font-size: 14px
+			line-height: 1.2
+			overflow: hidden
+		.radio__right
+			float: right
+			margin-left: 3px
+			&.is-red
+				color: #eb331b 
+			&.is-green	
+				color: #5ea533 
+		.radio__left
+			float: left
+			margin-right: 3px
+			border-bottom: 1px dotted 
+			font-size: 14px
+		.radio__dots
+			display: block
+			height: 12px
+			border-bottom: 1px dotted #b8c3ca
+			overflow: hidden
+	.tour-settings__name
+		margin-bottom: 10px
+		font-weight: 700
+		font-size: 16px  
+	.tour-settings__price
+		text-align: right
+		font-size: 0
+		+rt(764)
+			text-align: center
+		.btn, .price
+			display: inline-block
+			vertical-align: middle
+		.btn
+			+rt(764)
+				margin-top: 17px
+		.price
+			float: none
+			+rt(764)
+				padding: 0 3px
+				margin: 0 8px
+	.tour-settings__price-title
+		display: inline-block
+		font-size: 16px
+		font-weight: 700 
+		vertical-align: middle
+		+rt(764)
+			margin-right: 10px
+	.tour-settings__help
+		padding-top: 20px
+		font-size: 11px
+		span
+			font-weight: 700 
 
+.similar
+	margin-bottom: 35px
+	padding: 0 2px 5px 
+	overflow: hidden
+	+rt(1020)
+		margin: 0 50px 35px
+	+rt(764)
+		margin: 0 0 35px
+		padding: 0
+		overflow: visible
+	.similar__slider
+		+rt(764)
+			display: none
+	.similar__item
+		text-align: center
+	.similar__item-in	
+		display: inline-block
+		width: 180px
+		min-height: 200px
+		+g(#fef8e8, #fcf4d8)
+		box-shadow: 0 1px 2px #b7bfc5
+		border-radius: 8px
+		vertical-align: middle
+		text-align: left
+	.similar__data
+		padding: 12px
+	.similar__pic
+		position: relative
+		&:after
+			left: 2px
+			right: 2px
+			bottom: -3px
+			width: auto
+			height: 6px
+			background: url(../img/tour-circles-horz.png) repeat-x
+		img
+			display: block
+			border-radius: 8px 8px 0 0
+	.similar__title
+		margin-bottom: 5px
+		font-size: 14px
+		font-weight: 700 
+	.price
+		position: absolute
+		left: 0
+		right: 0
+		bottom: 40px
+		color: #4a4a4a 
+	.slick-prev, .slick-next
+		top: 50%
+		margin-top: -20px
+	.slick-prev
+		left: 0
+	.slick-next
+		right: 0
+	.tours
+		display: none
+		+rt(764)
+			display: block
+		
+.watched
+	margin-bottom: 35px
+	padding: 0 2px 5px
+	overflow: hidden
+	+rt(1020)
+		margin: 0 50px 35px
+	+rt(764)
+		margin: 0 0 35px
+	.watched__item
+		text-align: center
+	.watched__item-in	
+		display: inline-block
+		width: 100px
+		min-height: 150px
+		+g(#fef8e8, #fcf4d8)
+		box-shadow: 0 1px 2px #b7bfc5
+		border-radius: 8px
+		vertical-align: top
+		text-align: left
+	.watched__data
+		padding: 12px
+	.watched__pic
+		position: relative
+		&:after
+			left: 2px
+			right: 2px
+			bottom: -3px
+			width: auto
+			height: 6px
+			background: url(../img/tour-circles-horz.png) repeat-x
+		img
+			display: block
+			border-radius: 8px 8px 0 0
+	.watched__title
+		margin-bottom: 5px
+		font-size: 14px
+		font-weight: 700 
+	.slick-prev, .slick-next
+		top: 50%
+		margin-top: -20px
+	.slick-prev
+		left: 0
+	.slick-next
+		right: 0
+		
+.page
+	margin-bottom: 40px
+	.page__center
+		max-width: 640px
+		margin: 0 auto 30px
+	.page__title
+		margin-bottom: 15px
+		font-size: 32px
+		font-weight: 700 
+		text-align: center
+		line-height: 1.2
+	.page__details
+		margin-bottom: 20px
+		font-size: 14px
+		color: #99A8B7 
+		+clr
+	.page__author
+		float: left
+	.page__date
+		float: right
+	.photogallery
+		margin-bottom: 25px
+		
+.photogallery
+	position: relative
+	.photogallery__list	
+		overflow: hidden
+	.photogallery__pic
+		img
+			display: block
+			width: 100%
+			border-radius: 8px
+	.photogallery__description
+		padding-top: 7px
+		color: #64707D 
+		text-align: center 
+	.prev, .next
+		z-index: 101 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.man
+	margin-bottom: 25px
+	+clr
+	.man__details
+		float: left
+		width: 130px
+		margin-right: 15px
+		text-align: center
+	.man__pic
+		margin-bottom: 5px
+		img
+			border-radius: 50%
+	.man__name
+		margin-bottom: 3px
+		font-size: 14px
+		font-weight: bold 
+	.man__position
+		font-size: 12px
+	.man__comment
+		position: relative
+		display: table
+		padding: 15px 20px
+		border-radius: 8px
+		background-color: #f7f5f1
+		+g(#f9f8f5, #f5f4ed)
+		box-shadow: 0 1px 2px #b7bfc5
+		+slab
+		font-size: 16px
+		p
+			margin-top: 10px
+			&:first-child
+				margin: 0
+		&:after
+			content: ""
+			position: absolute
+			top: 45px
+			left: -11px
+			+s(man-arr)
 
 
 

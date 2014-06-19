@@ -7,6 +7,7 @@
 	<link rel="stylesheet" media="screen" href="css/screen.css" >
 	<!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <!-- wrapper -->
@@ -72,10 +73,12 @@
 					</div>
 				</div>
 				<!-- breadcrumbs -->
-				<ul class="breadcrumbs l-center">
-					<li><a href="#">Главная</a><i></i></li>
-					<li>Каталог туров</li>
-				</ul>
+				<div class="l-center">
+					<ul class="breadcrumbs">
+						<li><a href="#">Главная</a><i></i></li>
+						<li>Каталог туров</li>
+					</ul>
+				</div>
 				<!-- l-layout -->
 				<div class="l-layout l-center">
 					<div class="l-aside">
@@ -353,6 +356,19 @@
 									<li><span>Человек:</span> двое</li>
 								</ul>
 								<div class="catalog__text">Цены указаны за одного человека в двухместном номере.</div>
+							</div>
+							<div class="catalog__top">
+								<a class="catalog__head" href="#">
+									<div class="catalog__title"><i></i><span>Стамбул:</span> 547 туров</div>
+									<ul class="catalog__details">
+										<li><span>Вылет:</span> суббота, 03 мая 2014</li>
+										<li><span>Обратно:</span> четверг, 08 мая 2014</li>
+										<li><span>Человек:</span> двое</li>
+									</ul>
+								</a>
+								<div class="catalog__filter">
+									<button class="catalog__filter-button"><i></i><span>Фильтры поиска</span></button>
+								</div>
 							</div>
 							<div class="catalog__sort">
 								<!-- sort -->
@@ -647,12 +663,13 @@
 						</div>
 					</div>
 				</div>
+				<!-- container angle -->
+				<i class="container__shadow-angle"></i>
 			</div>
 			<i class="container__shadow-tl"></i>
 			<i class="container__shadow-tr"></i>
 			<i class="container__shadow-dl"></i>
 			<i class="container__shadow-dr"></i>
-			<i class="container__shadow-angle"></i>
 		</div>
 	</div>
 </div>

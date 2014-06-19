@@ -117,10 +117,10 @@
 .pop
 	padding-top: 45px
 	+rt(1020)
-		padding: 45px 20px
+		padding: 45px 0
 		overflow: hidden
 	+rt(764)
-		padding: 25px 20px
+		padding: 25px 0
 	.pop__list
 		text-align: center
 		font-size: 0
@@ -172,9 +172,6 @@
 			background: #fff
 			background: rgba(255,255,255,.95)
 			box-shadow: 0 7px 15px rgba(100,129,158,.75)
-			.more
-				+rt(764)
-					display: none
 			+rt(1020)
 				float: none
 				width: auto
@@ -317,24 +314,6 @@
 			display: none
 			+rt(764)
 				display: block
-		.native-select__head
-			position: relative
-			padding: 10px 25px 7px 12px
-			border-radius: 18px
-			background-color: #f7f5f5
-			box-shadow: 0 1px 3px #c1c9cd
-			+g(#fbfbfb, #f3f1f1)
-			text-align: left
-			span
-				display: inline-block
-				border-bottom: 1px dotted 
-				font-size: 14px
-				color: #64707D 
-				line-height: 1
-			i
-				top: 13px
-				right: 11px
-				+s(select-fancy-arr)
 	.tours__in
 		position: relative
 		max-width: 960px
@@ -417,7 +396,10 @@
 			padding: 0 5px
 		+rt(764)
 			display: block
-	
+	.more
+		+rt(764)
+			display: none
+
 .benefits
 	padding: 45px 0 30px
 	overflow: hidden

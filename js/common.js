@@ -194,6 +194,9 @@ head.ready(function() {
 	// slick slider
 	var pop = $('.js-pop'),
 			benefits = $('.js-benefits'),
+			similar = $('.js-similar'),
+			watched = $('.js-watched'),
+			benefits = $('.js-benefits'),
 			tours = $('.js-tours'),
 			tours_item = tours.find('.tour'),
 			tours_item_val = tours_item.length,
@@ -265,6 +268,54 @@ head.ready(function() {
 			]
 		});
 	};
+	if (similar.length) {
+		similar.slick({
+			slide: '.similar__item',
+			slidesToShow: 5,
+			infinite: false,
+			responsive: [
+				{
+				  breakpoint: 1020,
+				  settings: {
+				    slidesToShow: 3,
+				    infinite: false,
+				    arrows: true
+				  }
+				},
+				{
+				  breakpoint: 764,
+				  settings: {
+				  	infinite: false,
+				    slidesToShow: 1
+				  }
+				}
+			]
+		});
+	};
+	if (watched.length) {
+		watched.slick({
+			slide: '.watched__item',
+			slidesToShow: 9,
+			infinite: false,
+			responsive: [
+				{
+				  breakpoint: 1020,
+				  settings: {
+				    slidesToShow: 5,
+				    infinite: false,
+				    arrows: true
+				  }
+				},
+				{
+				  breakpoint: 764,
+				  settings: {
+				  	infinite: false,
+				    slidesToShow: 2
+				  }
+				}
+			]
+		});
+	};
 
 	// mobile menu
 	var top_menu = $('.js-topper-menu'),
@@ -298,6 +349,28 @@ head.ready(function() {
 		filter_slider_to.val(filter_slider_el.slider('values', 1));
 	};
 	
+	// photogallery
+	function photogallery () {
+		var el = $('.js-photogallery');
+		if (el.length > 0) {
+			el.each(function(){
+				el_next = $(this).find('.next');
+				el_prev = $(this).find('.prev');
+				el_item = $(this).find('.photogallery__item');
+				el_in = $(this).find('.photogallery__list');
+				el_in.cycle({
+					fx: 'fade',
+				  timeout: 0,
+				  prev: el_prev,
+				  next: el_next,
+				  slides: el_item,
+				  autoHeight: 'container'
+				});
+			});
+		};	
+	}
+	photogallery();
+
 });
 
 
