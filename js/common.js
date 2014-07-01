@@ -81,6 +81,15 @@ head.ready(function() {
 			});
 		};
 
+	// add country 
+	var add_country = $('.js-add-country'),
+			add_country_template = $('.js-add-country-template').html();
+
+	add_country.on('click', function(){
+		add_country.parent().parent().before(add_country_template);
+		return false;
+	});
+
 	// select
 	function select() {
 	  var el = $('.js-select'),
@@ -332,6 +341,7 @@ head.ready(function() {
 			filter_slider_to = filter_slider.find('.filter__slider-to');
 	filter.find('.filter__title').on('click', function(){
 		$(this).next().slideToggle();
+		$(this).parent().toggleClass('is-active');
 	});
 	if (filter_slider_el.length) {
 		filter_slider_el.slider({

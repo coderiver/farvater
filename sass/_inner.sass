@@ -3,6 +3,7 @@
 	position: relative
 	margin-bottom: 30px
 	width: 100%
+	cursor: pointer
 	+rt(764)
 		margin: 0
 	&:hover
@@ -11,6 +12,8 @@
 			opacity: 1 
 		.tour__in
 			box-shadow: 0 0 0 #b7bfc5
+		.tour__title
+			color: $orange
 	&:before
 		content: ""
 		position: absolute
@@ -23,7 +26,6 @@
 		border-radius: 9px
 		visibility: hidden
 		opacity: 0
-		+tr(all .2s linear) 
 		z-index: 2 
 		+rt(764)
 			display: none
@@ -68,8 +70,6 @@
 				background: url(../img/tour-circles-horz.png) repeat-x
 	.tour__left
 		position: relative
-		//float: left
-		//width: 360px  
 		padding: 10px 15px
 		overflow: hidden
 		+rt(764)
@@ -94,6 +94,8 @@
 		vertical-align: middle
 		font-size: 21px
 		font-weight: 700 
+		color: $blue
+		text-decoration: underline 
 		+rt(764)
 			display: block
 	.tour__price
@@ -102,7 +104,7 @@
 		left: 0
 		right: 0 
 		text-align: center
-		color: #363636 
+		color: $cl 
 		z-index: 4 
 	.tours__price-in
 		display: inline-block
@@ -161,7 +163,7 @@
 		a
 			border-bottom: 1px dotted 
 			font-size: 13px
-			color: #363636
+			color: $cl
 			text-decoration: none
 			&:hover
 				color: $orange 
@@ -239,8 +241,12 @@
 		margin-right: 10px 
 		+s(more)
 	span
-		border-bottom: 1px dotted #969593
+		border-bottom: 1px dotted
 		font-size: 14px
+	&:hover
+		color: $orange
+		i
+			+sp(more-h)
 		
 .breadcrumbs
 	padding: 17px 0
@@ -390,6 +396,10 @@
 		background-color: #e3f1fc
 		box-shadow: 0 1px 2px #b7bfc5
 		+g(#eaf5fd, #dceffb)
+		&.is-active
+			.filter__title
+				i
+					+rotate(180)
 	.filter__item_rating
 		.checkbox
 			margin-top: 3px
@@ -436,7 +446,7 @@
 		span
 			border-bottom: 1px dotted 
 			font-size: 12px
-			color: #363636
+			color: $cl
 			&:hover
 				color: $orange 
 	.filter__slider
@@ -556,7 +566,7 @@
 		+s(actions-save)
 	.actions__like
 		float: right
-		margin-left: 15px
+		margin-left: 10px
 		font-size: 0
 		+rt(764)
 			display: none

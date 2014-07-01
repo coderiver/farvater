@@ -17,11 +17,12 @@
 	    center: new google.maps.LatLng(50.445881, 30.553892),
 	    disableDefaultUI: true,
 	    scrollwheel: false,
-	 		zoomControl: false,
+	 		zoomControl: true,
 			zoomControlOptions: {
-	      style: google.maps.ZoomControlStyle.DEFAULT
+	      style: google.maps.ZoomControlStyle.DEFAULT,
+	      position: google.maps.ControlPosition.RIGHT_BOTTOM
 	    },
-	    mapTypeId: google.maps.MapTypeId.ROADMAP
+	    mapTypeId: google.maps.MapTypeId.TERRAIN
 	  }
 	  var map = new google.maps.Map(document.getElementById('map'), mapOptions);
 	  var image = 'img/marker.png';
@@ -30,14 +31,17 @@
 	    position: myLatLng,
 	    map: map,
 	    content:  '<div class="map__marker">'+
-	    						'<img src="http://placehold.it/40x40">'+
-	    						'<i></i>'+
+	    						'<a class="map__marker-link" href="#">'+
+	    							'<img src="http://placehold.it/40x40">'+
+	    							'<i></i>'+
+	    						'</a>'+
 	    						'<div class="map__marker-in">'+
 	    							'<a href="#">Турция</a>'+
 	    							'<ul>'+
 	    								'<li>от 2 450 грн</li>'+
 	    								'<li>до 19 600 грн</li>'+
 	    							'</ul>'+
+	    						'</div'+
 	    					'</div>'
 	  });
 	  marker.setFlat(!marker.getFlat());
@@ -117,24 +121,43 @@
 							<div class="search__fieldset">
 								<div class="search__field">
 									<div class="search__el">
-										<input class="js-autocomplete" type="text" placeholder="у">
+										<input class="js-autocomplete" type="text" placeholder="Турция">
 									</div>
 								</div>
 								<div class="search__field">
 									<div class="search__el">
-										<input class="js-autocomplete" type="text" value="Стамбул">
+										<input class="js-autocomplete" type="text" placeholder="Стамбул">
 									</div>
 								</div>
 							</div>
+						</div>
+						<!-- search country template -->
+						<div class="js-add-country-template" style="display: none">
+							<div class="search__item">
+								<div class="search__fieldset">
+									<div class="search__field">
+										<div class="search__el">
+											<input class="js-autocomplete" type="text">
+										</div>
+									</div>
+									<div class="search__field">
+										<div class="search__el">
+											<input class="js-autocomplete" type="text">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="search__item search__item_add">
 							<div class="search__add">
-								<a href="#">+<span>добавить страну</span></a>
+								<a class="js-add-country" href="#">+<span>добавить страну</span></a>
 							</div>
 						</div>
 						<div class="search__item">
 							<div class="search__label">Откуда?</div>
 							<div class="search__field">
 								<div class="search__el search__el_plain">
-									<input type="text" value="Киев, Украина">
+									<input type="text" placeholder="Киев, Украина">
 									<i class="search__ico"></i>
 								</div>
 							</div>
@@ -186,7 +209,7 @@
 								</div>
 							</div>
 							<!-- checkbox -->
-							<label class="checkbox checkbox_white">
+							<label class="checkbox">
 								<input type="checkbox">
 								<span class="checkbox__text">Гибкие даты (±3 дня)</span>
 							</label>
@@ -260,74 +283,94 @@
 						<div class="title">Популярные категории путешествий</div>
 						<div class="pop__list js-pop">
 							<div class="pop__item">
-								<div class="pop__pic">
-									<a class="pop__ico-1" href="#"></a>
-								</div>
-								<div class="pop__link"><a href="#">Море до 7 000 грн</a></div>
-								<div class="pop__counter">8 888 туров</div>
+								<a class="pop__link" href="#">
+									<div class="pop__pic">
+										<i class="pop__ico-1"></i>
+									</div>
+									<div class="pop__title">Море до 7 000 грн</div>
+									<div class="pop__counter">8 888 туров</div>
+								</a>
 							</div>
 							<div class="pop__item">
-								<div class="pop__pic">
-									<a class="pop__ico-2" href="#"></a>
-								</div>
-								<div class="pop__link"><a href="#">Теплое море, белый песок</a></div>
-								<div class="pop__counter">5 681 тур</div>
+								<a class="pop__link" href="#">
+									<div class="pop__pic">
+										<i class="pop__ico-2"></i>
+									</div>
+									<div class="pop__title">Теплое море, белый песок</div>
+									<div class="pop__counter">5 681 тур</div>
+								</a>
 							</div>
 							<div class="pop__item">
-								<div class="pop__pic">
-									<a class="pop__ico-3" href="#"></a>
-								</div>
-								<div class="pop__link"><a href="#">Без визы</a></div>
-								<div class="pop__counter">3 250 туров</div>
+								<a class="pop__link" href="#">
+									<div class="pop__pic">
+										<i class="pop__ico-3"></i>
+									</div>
+									<div class="pop__title">Без визы</div>
+									<div class="pop__counter">3 250 туров</div>
+								</a>
 							</div>
 							<div class="pop__item">
-								<div class="pop__pic">
-									<a class="pop__ico-4" href="#"></a>
-								</div>
-								<div class="pop__link"><a href="#">Короткий перелет</a></div>
-								<div class="pop__counter">6 452 тура</div>
+								<a class="pop__link" href="#">
+									<div class="pop__pic">
+										<i class="pop__ico-4"></i>
+									</div>
+									<div class="pop__title">Короткий перелет</div>
+									<div class="pop__counter">6 452 тура</div>
+								</a>
 							</div>
 							<div class="pop__item">
-								<div class="pop__pic">
-									<a class="pop__ico-5" href="#"></a>
-								</div>
-								<div class="pop__link"><a href="#">Шоппинг-туры</a></div>
-								<div class="pop__counter">3 252 тура</div>
+								<a class="pop__link" href="#">
+									<div class="pop__pic">
+										<i class="pop__ico-5"></i>
+									</div>
+									<div class="pop__title">Шоппинг-туры</div>
+									<div class="pop__counter">3 252 тура</div>
+								</a>
 							</div>
 							<div class="pop__item">
-								<div class="pop__pic">
-									<a class="pop__ico-6" href="#"></a>
-								</div>
-								<div class="pop__link"><a href="#">Отдых с детьми</a></div>
-								<div class="pop__counter">3 264 тура</div>
+								<a class="pop__link" href="#">
+									<div class="pop__pic">
+										<i class="pop__ico-6"></i>
+									</div>
+									<div class="pop__title">Отдых с детьми</div>
+									<div class="pop__counter">3 264 тура</div>
+								</a>
 							</div>
 							<div class="pop__item">
-								<div class="pop__pic">
-									<a class="pop__ico-7" href="#"></a>
-								</div>
-								<div class="pop__link"><a href="#">Автобусные туры</a></div>
-								<div class="pop__counter">5 431 тур</div>
+								<a class="pop__link" href="#">
+									<div class="pop__pic">
+										<i class="pop__ico-7"></i>
+									</div>
+									<div class="pop__title">Автобусные туры</div>
+									<div class="pop__counter">5 431 тур</div>
+								</a>
 							</div>
 							<div class="pop__item">
-								<div class="pop__pic">
-									<a class="pop__ico-8" href="#"></a>
-								</div>
-								<div class="pop__link"><a href="#">Острова</a></div>
-								<div class="pop__counter">8 870 туров</div>
+								<a class="pop__link" href="#">
+									<div class="pop__pic">
+										<i class="pop__ico-8"></i>
+									</div>
+									<div class="pop__title">Острова</div>
+									<div class="pop__counter">8 870 туров</div>
+								</a>
 							</div>
 							<div class="pop__item">
-								<div class="pop__pic">
-									<a class="pop__ico-9" href="#"></a>
-								</div>
-								<div class="pop__link"><a href="#">Горы, лыжи, снег</a></div>
-								<div class="pop__counter">6 533 тура</div>
+								<a class="pop__link" href="#">
+									<div class="pop__pic">
+										<i class="pop__ico-9"></i>
+									</div>
+									<div class="pop__title">Горы, лыжи, снег</div>
+									<div class="pop__counter">6 533 тура</div>
+								</a>
 							</div>
 							<div class="pop__item">
-								<div class="pop__pic">
-									<a class="pop__ico-10" href="#"></a>
-								</div>
-								<div class="pop__link"><a href="#">Круизы</a></div>
-								<div class="pop__counter">4 265 туров</div>
+								<a class="pop__link" href="#">
+									<div class="pop__pic">
+										<i class="pop__ico-10"></i>
+									</div>
+									<div class="pop__title">Круизы</div>
+									<div class="pop__counter">4 265 туров</div>
+								</a>
 							</div>
 						</div>
 					</div>
@@ -418,7 +461,7 @@
 								<!-- tour -->
 								<div class="tour" data-counter="1">
 									<div class="tour__in">
-										<a class="tour__right" href="#">
+										<div class="tour__right">
 											<div class="tour__discount"><span>-8%</span></div>
 											<div class="tour__pic">
 												<img src="http://placehold.it/240x160" alt="">
@@ -428,10 +471,10 @@
 													<div class="tour__price-in"><span>2 485</span> грн</div>
 												</div>
 											</div>
-										</a>
+										</div>
 										<div class="tour__left">
 											<div class="tour__head">
-												<div class="tour__title"><a href="#">Le Meridien Istanbul</a></div>
+												<div class="tour__title">Le Meridien Istanbul</div>
 												<!-- rating -->
 												<div class="rating js-rating-read">
 													<div class="rating__stars" data-score="4.5" data-number="4"></div>
@@ -459,7 +502,7 @@
 								<!-- tour -->
 								<div class="tour" data-counter="2">
 									<div class="tour__in">
-										<a class="tour__right" href="#">
+										<div class="tour__right">
 											<div class="tour__only-today"></div>
 											<div class="tour__discount"><span>-23%</span></div>
 											<div class="tour__pic">
@@ -473,10 +516,10 @@
 													<div class="tour__price-in"><i class="tour__price-hot"></i><span>999</span> грн</div>
 												</div>
 											</div>
-										</a>
+										</div>
 										<div class="tour__left">
 											<div class="tour__head">
-												<div class="tour__title"><a href="#">A’jia Hotel</a></div>
+												<div class="tour__title">A’jia Hotel</div>
 												<!-- rating -->
 												<div class="rating js-rating-read">
 													<div class="rating__stars" data-score="3.5" data-number="3"></div>
@@ -504,7 +547,7 @@
 								<!-- tour -->
 								<div class="tour" data-counter="3">
 									<div class="tour__in">
-										<a class="tour__right" href="#">
+										<div class="tour__right">
 											<div class="tour__discount"><span>-8%</span></div>
 											<div class="tour__pic">
 												<img src="http://placehold.it/240x160" alt="">
@@ -514,10 +557,10 @@
 													<div class="tour__price-in"><span>2 485</span> грн</div>
 												</div>
 											</div>
-										</a>
+										</div>
 										<div class="tour__left">
 											<div class="tour__head">
-												<div class="tour__title"><a href="#">Le Meridien Istanbul</a></div>
+												<div class="tour__title">Le Meridien Istanbul</div>
 												<!-- rating -->
 												<div class="rating js-rating-read">
 													<div class="rating__stars" data-score="4.5" data-number="4"></div>
@@ -558,40 +601,40 @@
 					<div class="title">Преимущества</div>
 					<div class="benefits__list js-benefits">
 						<div class="benefits__item">
-							<div class="benefits__pic">
-								<a class="benefits__ico-1" href="#"></a>
-							</div>
-							<div class="benefits__title">
-								<a href="#">Мгновенная покупка с доставкой</a>
-							</div>
-							<div class="benefits__text">Приобретайте тур в любую точку мира всего за 2 минуты. Работает доставка! Вы можете оплатить и получить весь пакет документов, не выходя из дома.</div>
+							<a class="benefits__link" href="#">
+								<div class="benefits__pic">
+									<i class="benefits__ico-1"></i>
+								</div>
+								<div class="benefits__title">Мгновенная покупка с доставкой</div>
+								<div class="benefits__text">Приобретайте тур в любую точку мира всего за 2 минуты. Работает доставка! Вы можете оплатить и получить весь пакет документов, не выходя из дома.</div>
+							</a>
 						</div>
 						<div class="benefits__item">
-							<div class="benefits__pic">
-								<a class="benefits__ico-2" href="#"></a>
-							</div>
-							<div class="benefits__title">
-								<a href="#">Минимальные цены, горящие путевки, бонусы</a>
-							</div>
-							<div class="benefits__text">Мы делаем своим клиентам самые выгодные предложения! Система бонусов позволит максимально экономить на всех поездках.</div>
+							<a class="benefits__link" href="#">
+								<div class="benefits__pic">
+									<i class="benefits__ico-2"></i>
+								</div>
+								<div class="benefits__title">Минимальные цены, горящие путевки, бонусы</div>
+								<div class="benefits__text">Мы делаем своим клиентам самые выгодные предложения! Система бонусов позволит максимально экономить на всех поездках.</div>
+							</a>
 						</div>
 						<div class="benefits__item">
-							<div class="benefits__pic">
-								<a class="benefits__ico-3" href="#"></a>
-							</div>
-							<div class="benefits__title">
-								<a href="#">52 000 000 туров, доступных здесь и сейчас</a>
-							</div>
-							<div class="benefits__text">Самый большой выбор предложений: 881 курорт, 182 страны, 27 операторов, 12988 отелей.</div>
+							<a class="benefits__link" href="#">
+								<div class="benefits__pic">
+									<i class="benefits__ico-3"></i>
+								</div>
+								<div class="benefits__title">52 000 000 туров, доступных здесь и сейчас</div>
+								<div class="benefits__text">Самый большой выбор предложений: 881 курорт, 182 страны, 27 операторов, 12988 отелей.</div>
+							</a>
 						</div>
 						<div class="benefits__item">
-							<div class="benefits__pic">
-								<a class="benefits__ico-4" href="#"></a>
-							</div>
-							<div class="benefits__title">
-								<a href="#">Надежные операторы</a>
-							</div>
-							<div class="benefits__text">Мы сотрудничаем с 35 лучшими  туристическими операторами страны. Наши менеджеры лично посетили 750 отелей по всему миру, и их число увеличивается.</div>
+							<a class="benefits__link" href="#">
+								<div class="benefits__pic">
+									<i class="benefits__ico-4"></i>
+								</div>
+								<div class="benefits__title">Надежные операторы</div>
+								<div class="benefits__text">Мы сотрудничаем с 35 лучшими  туристическими операторами страны. Наши менеджеры лично посетили 750 отелей по всему миру, и их число увеличивается.</div>
+							</a>
 						</div>
 					</div>
 				</div>

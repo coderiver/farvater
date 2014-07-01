@@ -89,24 +89,43 @@
 								<div class="search__fieldset">
 									<div class="search__field">
 										<div class="search__el">
-											<input class="js-autocomplete" type="text" placeholder="у">
+											<input class="js-autocomplete" type="text" placeholder="Турция">
 										</div>
 									</div>
 									<div class="search__field">
 										<div class="search__el">
-											<input class="js-autocomplete" type="text" value="Стамбул">
+											<input class="js-autocomplete" type="text" placeholder="Стамбул">
 										</div>
 									</div>
 								</div>
+							</div>
+							<!-- search country template -->
+							<div class="js-add-country-template" style="display: none">
+								<div class="search__item">
+									<div class="search__fieldset">
+										<div class="search__field">
+											<div class="search__el">
+												<input class="js-autocomplete" type="text">
+											</div>
+										</div>
+										<div class="search__field">
+											<div class="search__el">
+												<input class="js-autocomplete" type="text">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="search__item search__item_add">
 								<div class="search__add">
-									<a href="#">+<span>добавить страну</span></a>
+									<a class="js-add-country" href="#">+<span>добавить страну</span></a>
 								</div>
 							</div>
 							<div class="search__item">
 								<div class="search__label">Откуда?</div>
 								<div class="search__field">
 									<div class="search__el search__el_plain">
-										<input type="text" value="Киев, Украина">
+										<input type="text" placeholder="Киев, Украина">
 										<i class="search__ico"></i>
 									</div>
 								</div>
@@ -158,7 +177,7 @@
 									</div>
 								</div>
 								<!-- checkbox -->
-								<label class="checkbox checkbox_white">
+								<label class="checkbox">
 									<input type="checkbox">
 									<span class="checkbox__text">Гибкие даты (±3 дня)</span>
 								</label>
@@ -188,7 +207,7 @@
 						</div>
 						<!-- filter -->
 						<div class="filter js-filter">
-							<div class="filter__item">
+							<div class="filter__item is-active">
 								<div class="filter__container">
 									<!-- checkbox -->
 									<label class="checkbox checkbox_white">
@@ -202,7 +221,7 @@
 									</label>
 								</div>
 							</div>
-							<div class="filter__item filter__item_rating">
+							<div class="filter__item filter__item_rating is-active">
 								<div class="filter__title">Категория отеля<i></i></div>
 								<div class="filter__container">
 									<!-- checkbox -->
@@ -252,7 +271,7 @@
 									</label>
 								</div>
 							</div>
-							<div class="filter__item filter__item_region">
+							<div class="filter__item filter__item_region is-active">
 								<div class="filter__title">Регион<i></i></div>
 								<div class="filter__container">
 									<!-- checkbox -->
@@ -275,7 +294,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="filter__item filter__item_hotel">
+							<div class="filter__item filter__item_hotel is-active">
 								<div class="filter__title">Отель<i></i></div>
 								<div class="filter__container">
 									<!-- field -->
@@ -288,7 +307,7 @@
 									<button class="btn btn_small btn_gray">OK</button>
 								</div>
 							</div>
-							<div class="filter__item">
+							<div class="filter__item is-active">
 								<div class="filter__title">Пансион<i></i></div>
 								<div class="filter__container">
 									<!-- checkbox -->
@@ -318,7 +337,7 @@
 									</label>
 								</div>
 							</div>
-							<div class="filter__item">
+							<div class="filter__item is-active">
 								<div class="filter__title">Цена<i></i></div>
 								<div class="filter__container">
 									<div class="filter__slider js-filter-slider">
@@ -400,7 +419,7 @@
 										<!-- tour -->
 										<div class="tour" data-counter="1">
 											<div class="tour__in">
-												<a class="tour__right" href="#">
+												<div class="tour__right">
 													<div class="tour__discount"><span>-8%</span></div>
 													<div class="tour__pic">
 														<img src="http://placehold.it/240x160" alt="">
@@ -410,10 +429,10 @@
 															<div class="tour__price-in"><span>2 485</span> грн</div>
 														</div>
 													</div>
-												</a>
+												</div>
 												<div class="tour__left">
 													<div class="tour__head">
-														<div class="tour__title"><a href="#">Le Meridien Istanbul</a></div>
+														<div class="tour__title">Le Meridien Istanbul</div>
 														<!-- rating -->
 														<div class="rating js-rating-read">
 															<div class="rating__stars" data-score="4.5" data-number="4"></div>
@@ -441,7 +460,7 @@
 										<!-- tour -->
 										<div class="tour" data-counter="2">
 											<div class="tour__in">
-												<a class="tour__right" href="#">
+												<div class="tour__right">
 													<div class="tour__only-today"></div>
 													<div class="tour__discount"><span>-23%</span></div>
 													<div class="tour__pic">
@@ -455,10 +474,10 @@
 															<div class="tour__price-in"><i class="tour__price-hot"></i><span>999</span> грн</div>
 														</div>
 													</div>
-												</a>
+												</div>
 												<div class="tour__left">
 													<div class="tour__head">
-														<div class="tour__title"><a href="#">A’jia Hotel</a></div>
+														<div class="tour__title">A’jia Hotel</div>
 														<!-- rating -->
 														<div class="rating js-rating-read">
 															<div class="rating__stars" data-score="3.5" data-number="3"></div>
@@ -486,7 +505,7 @@
 										<!-- tour -->
 										<div class="tour" data-counter="3">
 											<div class="tour__in">
-												<a class="tour__right" href="#">
+												<div class="tour__right">
 													<div class="tour__discount"><span>-8%</span></div>
 													<div class="tour__pic">
 														<img src="http://placehold.it/240x160" alt="">
@@ -496,10 +515,10 @@
 															<div class="tour__price-in"><span>2 485</span> грн</div>
 														</div>
 													</div>
-												</a>
+												</div>
 												<div class="tour__left">
 													<div class="tour__head">
-														<div class="tour__title"><a href="#">Le Meridien Istanbul</a></div>
+														<div class="tour__title">Le Meridien Istanbul</div>
 														<!-- rating -->
 														<div class="rating js-rating-read">
 															<div class="rating__stars" data-score="4.5" data-number="4"></div>
@@ -527,7 +546,7 @@
 										<!-- tour -->
 										<div class="tour" data-counter="4">
 											<div class="tour__in">
-												<a class="tour__right" href="#">
+												<div class="tour__right">
 													<div class="tour__discount"><span>-8%</span></div>
 													<div class="tour__pic">
 														<img src="http://placehold.it/240x160" alt="">
@@ -537,10 +556,10 @@
 															<div class="tour__price-in"><span>2 485</span> грн</div>
 														</div>
 													</div>
-												</a>
+												</div>
 												<div class="tour__left">
 													<div class="tour__head">
-														<div class="tour__title"><a href="#">Le Meridien Istanbul</a></div>
+														<div class="tour__title">Le Meridien Istanbul</div>
 														<!-- rating -->
 														<div class="rating js-rating-read">
 															<div class="rating__stars" data-score="4.5" data-number="4"></div>
@@ -568,7 +587,7 @@
 										<!-- tour -->
 										<div class="tour" data-counter="5">
 											<div class="tour__in">
-												<a class="tour__right" href="#">
+												<div class="tour__right">
 													<div class="tour__only-today"></div>
 													<div class="tour__discount"><span>-23%</span></div>
 													<div class="tour__pic">
@@ -582,10 +601,10 @@
 															<div class="tour__price-in"><i class="tour__price-hot"></i><span>999</span> грн</div>
 														</div>
 													</div>
-												</a>
+												</div>
 												<div class="tour__left">
 													<div class="tour__head">
-														<div class="tour__title"><a href="#">A’jia Hotel</a></div>
+														<div class="tour__title">A’jia Hotel</div>
 														<!-- rating -->
 														<div class="rating js-rating-read">
 															<div class="rating__stars" data-score="3.5" data-number="3"></div>
@@ -613,7 +632,7 @@
 										<!-- tour -->
 										<div class="tour" data-counter="6">
 											<div class="tour__in">
-												<a class="tour__right" href="#">
+												<div class="tour__right">
 													<div class="tour__discount"><span>-8%</span></div>
 													<div class="tour__pic">
 														<img src="http://placehold.it/240x160" alt="">
@@ -623,10 +642,10 @@
 															<div class="tour__price-in"><span>2 485</span> грн</div>
 														</div>
 													</div>
-												</a>
+												</div>
 												<div class="tour__left">
 													<div class="tour__head">
-														<div class="tour__title"><a href="#">Le Meridien Istanbul</a></div>
+														<div class="tour__title">Le Meridien Istanbul</div>
 														<!-- rating -->
 														<div class="rating js-rating-read">
 															<div class="rating__stars" data-score="4.5" data-number="4"></div>

@@ -50,6 +50,14 @@
 				span
 					max-width: 85px
 	.map__marker
+		&:hover
+			.map__marker-link:before, .map__marker-in	
+				opacity: 1
+			.map__marker-in
+				overflow: visible
+	.map__marker-link
+		display: block
+		position: relative
 		+s(marker)
 		&:before
 			content: ""
@@ -70,11 +78,6 @@
 			height: 40px
 			border-radius: 50%
 			box-shadow: inset 0 2px 5px rgba(0,0,0,.25)
-		&:hover
-			&:before, .map__marker-in	
-				opacity: 1
-			.map__marker-in
-				overflow: visible
 	.map__marker-in
 		position: absolute
 		top: 70px
@@ -85,7 +88,9 @@
 		background-color: #fffbcf
 		box-shadow: 0 5px 12px rgba(63,76,85,.75)
 		font-size: 11px
+		color: $cl 
 		opacity: 0
+		cursor: default
 		overflow: hidden
 		+tr(opacity .2s linear) 
 		a
@@ -132,20 +137,24 @@
 		+rt(1020)
 			margin: 0
 	.pop__link
+		display: block
+		text-decoration: none
+	.pop__title
 		margin-bottom: 10px
 		padding: 0 10px
+		font-size: 19px
+		font-weight: 700
 		line-height: 1
+		text-decoration: underline
 		+rt(764)
 			padding: 0 20px
-		a
-			font-size: 19px
-			font-weight: 700
 	.pop__counter
 		font-size: 14px
+		color: $cl 
 	.pop__pic
 		margin-bottom: 5px
 		text-align: center
-		a
+		i
 			display: inline-block
 			vertical-align: top
 	@for $i from 1 through 10
@@ -190,7 +199,7 @@
 		z-index: 20 
 		+rt(764)
 			font-size: 20px
-			color: #363636
+			color: $cl
 			line-height: 1
 		.select
 			position: relative
@@ -278,7 +287,7 @@
 			i
 				position: relative
 				top: -7px
-				+arr(6,4,#363636,b)
+				+arr(6,4,$cl,b)
 	.tours__title
 		position: relative
 		display: inline-block
@@ -364,22 +373,26 @@
 						bottom: -6px
 				a
 					cursor: default
-				span
-					border-color: transparent
-					font-weight: 700
-					color: $green 
+					span
+						border-color: transparent
+						font-weight: 700
+						color: $green 
 				& + li
 					border-radius: 8px 0 0 0
 		a
 			display: block
 			padding: 10px 35px 10px 17px
 			text-decoration: none
-		span
-			display: inline-block
-			font-size: 15px
-			color: #FFF
-			border-bottom: 1px dotted rgba(255,255,255,.5)
-			line-height: 1   
+			&:hover
+				span
+					color: $orange 
+					border-bottom: 1px dotted rgba(236,68,30,.5)
+			span
+				display: inline-block
+				font-size: 15px
+				color: #FFF
+				border-bottom: 1px dotted rgba(255,255,255,.5)
+				line-height: 1   
 	.tours__items
 		+rt(764)
 			+g(#fef8e8, #fcf4d8)
@@ -415,6 +428,26 @@
 		width: 25%
 		vertical-align: top
 		font-size: 13px
+	.benefits__link
+		text-decoration: none
+		&:hover
+			.benefits__ico-1
+				+sp(benefits1-h)
+			.benefits__ico-2
+				+sp(benefits2-h)
+			.benefits__ico-3
+				+sp(benefits3-h)
+			.benefits__ico-4
+				+sp(benefits4-h)
+		&:active
+			.benefits__ico-1
+				+sp(benefits1-a)
+			.benefits__ico-2
+				+sp(benefits2-a)
+			.benefits__ico-3
+				+sp(benefits3-a)
+			.benefits__ico-4
+				+sp(benefits4-a)
 	.benefits__title
 		padding: 0 20px
 		min-height: 65px
@@ -422,39 +455,24 @@
 		font-weight: 700
 		font-size: 19px
 		line-height: 1.1
+		text-decoration: underline
 	.benefits__text
 		padding: 0 20px
 		color: #808080 
 	.benefits__pic
 		margin-bottom: 20px
 		text-align: center
-		a
+		i
 			display: inline-block
 			vertical-align: top
 	.benefits__ico-1
 		+s(benefits1)
-		&:hover	
-			+sp(benefits1-h)
-		&:active
-			+sp(benefits1-a)
 	.benefits__ico-2
 		+s(benefits2)
-		&:hover	
-			+sp(benefits2-h)
-		&:active
-			+sp(benefits2-a)
 	.benefits__ico-3
 		+s(benefits3)
-		&:hover	
-			+sp(benefits3-h)
-		&:active
-			+sp(benefits3-a)
 	.benefits__ico-4
 		+s(benefits4)
-		&:hover	
-			+sp(benefits4-h)
-		&:active
-			+sp(benefits4-a)
 	.slick-prev, .slick-next
 		top: 42px
 
