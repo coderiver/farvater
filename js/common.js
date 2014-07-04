@@ -89,6 +89,10 @@ head.ready(function() {
 		add_country.parent().parent().before(add_country_template);
 		return false;
 	});
+	$('.search').on('click', '.js-remove-country', function(){
+		$(this).parents('.search__item_new').remove();
+		return false;
+	});
 
 	// select
 	function select() {

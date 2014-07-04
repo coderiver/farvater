@@ -139,6 +139,10 @@
 	.pop__link
 		display: block
 		text-decoration: none
+		&:hover
+			.pop__pic
+				i
+					+transform(rotate(-10deg) scale(1.1))
 	.pop__title
 		margin-bottom: 10px
 		padding: 0 10px
@@ -156,6 +160,7 @@
 		text-align: center
 		i
 			display: inline-block
+			+tr(transform .2s)
 			vertical-align: top
 	@for $i from 1 through 10
 		.pop__ico-#{$i}
@@ -431,23 +436,13 @@
 	.benefits__link
 		text-decoration: none
 		&:hover
-			.benefits__ico-1
-				+sp(benefits1-h)
-			.benefits__ico-2
-				+sp(benefits2-h)
-			.benefits__ico-3
-				+sp(benefits3-h)
-			.benefits__ico-4
-				+sp(benefits4-h)
+			i
+				&:before
+					+transform(rotate(20deg) scale(1))
 		&:active
-			.benefits__ico-1
-				+sp(benefits1-a)
-			.benefits__ico-2
-				+sp(benefits2-a)
-			.benefits__ico-3
-				+sp(benefits3-a)
-			.benefits__ico-4
-				+sp(benefits4-a)
+			i
+				&:before
+					+transform(rotate(0) scale(.8))
 	.benefits__title
 		padding: 0 20px
 		min-height: 65px
@@ -460,19 +455,47 @@
 		padding: 0 20px
 		color: #808080 
 	.benefits__pic
+		position: relative
 		margin-bottom: 20px
 		text-align: center
+		z-index: 5 
 		i
+			position: relative
 			display: inline-block
 			vertical-align: top
+			&:before
+				content: ""
+				position: absolute
+				top: 0
+				left: 0
+				+transform(rotate(0) scale(.92))
+				+tr(transform .2s)
+				z-index: 1
+			&:after	
+				position: relative
+				content: ""
+				display: block
+				z-index: 2 
 	.benefits__ico-1
-		+s(benefits1)
+		&:before
+			+s(benefits1-h)
+		&:after
+			+s(benefits1-a)
 	.benefits__ico-2
-		+s(benefits2)
+		&:before
+			+s(benefits2-h)
+		&:after
+			+s(benefits2-a)
 	.benefits__ico-3
-		+s(benefits3)
+		&:before
+			+s(benefits3-h)
+		&:after
+			+s(benefits3-a)
 	.benefits__ico-4
-		+s(benefits4)
+		&:before
+			+s(benefits4-h)
+		&:after
+			+s(benefits4-a)
 	.slick-prev, .slick-next
 		top: 42px
 
