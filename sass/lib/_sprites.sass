@@ -1,5 +1,6 @@
 //	sprites with padding
 $icons: sprite-map("icons/*.png", $spacing: 10px)
+$icons-main: sprite-map("icons-main/*.png", $spacing: 10px)
 
 // sized sprites
 =image-size($path)
@@ -25,6 +26,10 @@ $icons: sprite-map("icons/*.png", $spacing: 10px)
 
 //shortcut
 =s($sprite, $map: $icons)
+	background: sprite($map, $sprite) no-repeat
+	//background-image: inline-image('icons/'+$sprite+'.png','image/png')
+	+image-size(sprite-file($map, $sprite))
+=sm($sprite, $map: $icons-main)
 	background: sprite($map, $sprite) no-repeat
 	//background-image: inline-image('icons/'+$sprite+'.png','image/png')
 	+image-size(sprite-file($map, $sprite))

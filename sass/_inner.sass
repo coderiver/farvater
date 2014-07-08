@@ -252,11 +252,13 @@
 	padding: 17px 0
 	font-size: 0
 	+rt(764)
-		display: none
+		padding: 10px 0
 	li
 		display: inline
 		font-size: 12px
-		color: #99A8B7 
+		color: #99A8B7
+		+rt(764)
+			display: none 
 	i
 		display: inline-block
 		margin: 0 6px
@@ -387,6 +389,14 @@
 		.select__current
 			span
 				max-width: 90px
+	.catalog__sort-info
+		float: left
+		padding: 8px 30px
+		border-radius: 18px
+		+g(#ec5a21, #f59456)
+		font-size: 16px
+		text-shadow: 0 1px 2px rgba(228,104,50,.75)
+		color: #FFF 
 
 .filter
 	.filter__item
@@ -461,6 +471,7 @@
 			top: 0
 			left: 0
 			height: 4px
+			margin-left: 4px
 			background: #eba37c
 		.ui-slider-handle
 			position: absolute
@@ -694,17 +705,10 @@
 
 .similar
 	margin-bottom: 35px
-	padding: 0 2px 5px 
-	overflow: hidden
 	+rt(1020)
 		margin: 0 50px 35px
 	+rt(764)
 		margin: 0 0 35px
-		padding: 0
-		overflow: visible
-	.similar__slider
-		+rt(764)
-			display: none
 	.similar__item
 		text-align: center
 	.similar__item-in	
@@ -743,23 +747,13 @@
 	.slick-prev, .slick-next
 		top: 50%
 		margin-top: -20px
-	.slick-prev
-		left: 0
-	.slick-next
-		right: 0
-	.tours
-		display: none
-		+rt(764)
-			display: block
 		
 .watched
 	margin-bottom: 35px
-	padding: 0 2px 5px
-	overflow: hidden
 	+rt(1020)
-		margin: 0 50px 35px
+		margin: 0 50px
 	+rt(764)
-		margin: 0 0 35px
+		margin: 0
 	.watched__item
 		text-align: center
 	.watched__item-in	
@@ -789,19 +783,66 @@
 		margin-bottom: 5px
 		font-size: 14px
 		font-weight: 700 
+
+.read-more
+	margin-bottom: 35px
+	.read-more__item
+		text-align: center
+	.read-more__item-in	
+		display: inline-block
+		width: 225px
+		vertical-align: top
+		text-align: left	
+	.read-more__pic
+		margin-bottom: 10px
+		img
+			display: block
+			border-radius: 8px
+			box-shadow: 0 1px 2px #b7bfc5
+	.read-more__title
+		font-size: 16px
+		font-weight: 700 
+
+.watched, .similar, .read-more
+	padding: 0 0 5px 
+	overflow: hidden
 	.slick-prev, .slick-next
 		top: 50%
 		margin-top: -20px
+		background: none 
+		z-index: 10 
+		&:before
+			content: ""
+			display: block
+		&:after
+			content: ""
+			position: absolute
+			top: -100px
+			bottom: -100px
+			right: 0
+			width: 50px
+			z-index: -2 
 	.slick-prev
 		left: 0
+		&:after
+			+gh(rgba(255,255,255,1), rgba(255,255,255,0))
+		&:before
+			+s(prev)
+		&:hover
+			&:before
+				+sp(prev-h)
 	.slick-next
 		right: 0
+		&:after
+			+gh(rgba(255,255,255,0), rgba(255,255,255,1))
+		&:before
+			+s(next)
+		&:hover
+			&:before
+				+sp(next-h)
 		
 .page
 	margin-bottom: 40px
-	.page__center
-		max-width: 640px
-		margin: 0 auto 30px
 	.page__title
 		margin-bottom: 15px
 		font-size: 32px
@@ -817,14 +858,17 @@
 		float: left
 	.page__date
 		float: right
+	.l-center
+		margin-bottom: 30px
 	.photogallery
 		margin-bottom: 25px
 		
 .photogallery
 	position: relative
+	.photogallery__slider
+		position: relative
 	.photogallery__list	
 		overflow: hidden
-	.photogallery__pic
 		img
 			display: block
 			width: 100%
@@ -844,6 +888,9 @@
 		width: 130px
 		margin-right: 15px
 		text-align: center
+		+rt(764)
+			float: none
+			margin: 0 0 15px  
 	.man__pic
 		margin-bottom: 5px
 		img
@@ -864,6 +911,8 @@
 		box-shadow: 0 1px 2px #b7bfc5
 		+slab
 		font-size: 16px
+		+rt(764)
+			display: block
 		p
 			margin-top: 10px
 			&:first-child
@@ -874,31 +923,376 @@
 			top: 45px
 			left: -11px
 			+s(man-arr)
+			+rt(764)
+				display: none
 
+.p404
+	padding: 120px 0
+	text-align: center
+	color: #FFF
+	+rt(764)
+		padding: 50px 10px
+	.p404__ico
+		display: inline-block
+		margin-bottom: 40px
+		+s(p404)
+		vertical-align: top
+		+rt(1020)
+			margin-bottom: 30px
+	.p404__title
+		margin-bottom: 40px
+		font-size: 65px 
+		font-weight: 100 
+		line-height: 1
+		+rt(1020)
+			margin-bottom: 30px
+			font-size: 40px
+	.p404__content	
+		font-size: 28px
+		font-weight: 300 
+		+rt(1020)
+			font-size: 18px
+		a
+			color: #FFF
+			text-decoration: underline 
 
+.p503
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	background: url(../img/p503.jpg) 50% 50% no-repeat
+	background-size: cover  
+	+vertical
+	color: #fff 
+	.p503__center
+		display: inline-block
+		max-width: 640px
+		padding: 0 10px
+		vertical-align: middle
+	.p503__ico
+		display: inline-block
+		margin-bottom: 35px
+		+s(p503)
+		vertical-align: top
+		+rt(764)
+			margin-bottom: 10px
+	.p503__title
+		margin-bottom: 10px
+		font-weight: 100
+		font-size: 65px 
+		+rt(764)
+			font-size: 40px 
+	.p503__content
+		font-size: 28px
+		font-weight: 300 
+		+rt(764)
+			font-size: 18px
+		p
+			margin-bottom: 15px
+		a
+			color: #fff 
 
+.about
+	.l-center_small
+		margin-bottom: 10px
+	.about__how
+		margin-bottom: 40px
+		padding: 35px 0 40px
+		background: url(../img/bg-about.jpg) no-repeat 50% 0
+		background-size: cover 
+		+rt(764)
+			padding: 25px 0 30px
+			background: #A0CCEA 
+		.title
+			margin-bottom: 25px
+			color: #FFF 
+			text-shadow: 0 1px 2px #63819d
+	.about__how-list
+		font-size: 0
+		text-align: center
+	.about__how-item
+		position: relative
+		display: inline-block
+		width: 320px
+		vertical-align: top
+		+rt(1020)
+			margin-bottom: 10px
+		+rt(764)
+			width: 100%
+		img
+			display: block
+			+rt(764)
+				width: 100%
+	.about__how-text
+		i, span
+			display: inline-block
+			vertical-align: middle
+		i
+			margin-right: 7px 
+		span
+			max-width: 180px
+			+flow
+			font-size: 24px
+			text-shadow: 0 1px 2px #63819d
+			color: #FFF
+			text-align: left
+			line-height: 1
+	.about__one
+		+s(about-one)
+	.about__two
+		+s(about-two)
+	.about__three
+		+s(about-three)
+	.about__arr
+		position: absolute
+	.about__arr_1
+		right: -35px
+		bottom: 90px
+		+s(about-arr1)
+		+rt(768)
+			display: none
+	.about__arr_2
+		right: -40px
+		bottom: 300px
+		+s(about-arr2)
+		+rt(1020)
+			display: none
+	.about__benefits-item
+		+clr
+		&:nth-child(2n)
+			.about__benefits-ico
+				float: right
+				margin: 0 0 30px 30px
+		.content
+			display: table
+	.about__benefits-ico
+		float: left
+		margin: 0 30px 30px 0 
+		+rt(764)
+			display: none
+		img
+			width: 100%
+	.about__video-title
+		margin-bottom: 30px
+		+flow
+		font-size: 24px
+		text-align: center
+		+rt(764)
+			font-size: 18px
+			
+.avia
+	.avia__banner
+		position: relative
+		height: 476px
+		background: url(../img/avia-banner.jpg) no-repeat 50% 50%
+		background-size: cover
+		border-radius: 8px
+		box-shadow: 0 1px 2px rgba(2,26,75,.5)
+	.avia__banner-title
+		position: absolute
+		top: 40px
+		left: 40px
+		right: 40px
+		text-align: center
+		font-size: 29px
+		color: #FFF
+		text-shadow: 0 1px 2px rgba(0,0,0,.2)
+		line-height: 1.2
+		span
+			display: block
+		+rt(764)
+			left: 10px
+			right: 10px
+			font-size: 18px
+	.avia__banner-footer
+		position: absolute
+		bottom: 25px
+		left: 40px
+		right: 40px
+		text-align: center
+		color: #fff
+		+rt(764)
+			left: 10px
+			right: 10px
+	.avia__banner-text
+		margin-bottom: 20px
+		font-size: 18px
+		+rt(764)
+			font-size: 14px
+	.avia__banner-use
+		>span
+			padding-left: 10px
+			text-transform: uppercase
+			font-size: 18px 
+			font-weight: bold
+			+rt(764)
+				display: block
+				padding: 20px 0 0 0 
+		
+.blog
+	.l-center
+		margin-bottom: 30px
+	.blog__search
+		padding: 15px
+		border-radius: 8px
+		background-color: #f7f5eb
+		+clr
+		+rt(764)
+			padding: 10px
+		.select
+			float: left
+			margin-right: 15px
+			+rt(764)
+				display: none
+		.native-select
+			display: none
+			margin-bottom: 10px
+			+rt(764)
+				display: block
+	.field
+		overflow: hidden
+		.field__el
+			position: relative
+			&:after
+				content: ""
+				position: absolute
+				top: 12px
+				right: 15px
+				+s(blog-search-ico)
+			input
+				padding: 0 40px 0 10px 
+	.blog__list
+		margin: 0 auto
+	.blog__item
+		width: 225px
+		margin-bottom: 20px
+		&.blog__item_a
+			.blog__pic
+				&:after
+					+s(blog-a)
+		&.blog__item_video
+			.blog__pic
+				&:after
+					+s(blog-video)
+		&.blog__item_photo
+			.blog__pic
+				&:after
+					+s(blog-photo)
+	.blog__pic
+		position: relative
+		display: block
+		margin-bottom: 7px
+		&:after
+			content: ""
+			position: absolute
+			left: 10px
+			bottom: 17px
+		img
+			display: block
+			border-radius: 8px
+			background-color: #f7f5f1
+			box-shadow: 0 1px 2px #b7bfc5
+	.blog__category
+		margin-bottom: 5px
+		a
+			color: #64707d
+			text-decoration: none
+			&:hover
+				color: $orange 
+	.blog__title
+		margin-bottom: 7px
+		line-height: 1.1
+		a
+			font-size: 18px
+			font-weight: 700 
 
+.pager
+	margin-top: 20px
+	text-align: center
+	font-size: 0
+	.btn, .pager__list
+		display: inline-block
+		vertical-align: middle
+	.pager__list
+		padding: 0 8px
+		a, span
+			display: inline-block
+			min-width: 20px
+			height: 30px
+			padding: 0 5px
+			margin: 0 2px
+			border-radius: 15px
+			font-size: 14px
+			vertical-align: top
+			line-height: 30px
+		a
+			&.is-active
+				background-color: #6dbb41
+				box-shadow: inset 0 2px 3px rgba(24,120,44,.75)
+				+g(#4ea329, #8fce6a)
+				cursor: default
+				text-decoration: none
+				color: #FFF 
 
+.tags
+	.tags__list
+		+clr
+		li
+			float: left
+			margin: 0 10px 10px 0
+		a
+			display: block
+			height: 28px
+			padding: 0 15px
+			border-radius: 15px
+			border: 1px solid #ccc 
+			line-height: 28px
+			text-decoration: none
+			color: $cl
+			&:hover
+				color: $orange 
 
+.bonus
+	position: relative
+	&:after
+		content: ""
+		position: absolute
+		left: 0
+		right: 0
+		bottom: 0
+		height: 20px
+		border-radius: 50%
+		box-shadow: 0 0 10px #90aac5
+		z-index: 2 
+	.bonus__in
+		position: relative
+		height: 540px
+		padding-left: 50%
+		background: url(../img/bg-bonus.jpg) no-repeat 0 0
+		background-size: cover 
+		z-index: 4 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.counter
+	font-size: 0
+	.counter__digital, .counter__dot
+		display: inline-block
+		margin-left: 3px
+		vertical-align: top
+		&:first-child
+			margin: 0
+	.counter__digital
+		+s(counter-digital)
+		text-align: center
+		font-size: 36px
+		font-weight: 700
+		line-height: 48px
+		color: #FFF  
+	.counter__dot
+		position: relative
+		top: 33px
+		+s(counter-dot)
 
 
 

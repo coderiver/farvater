@@ -164,12 +164,13 @@
 			vertical-align: top
 	@for $i from 1 through 10
 		.pop__ico-#{$i}
-			+s(pop#{$i})
+			+sm(pop#{$i})
 	.slick-prev, .slick-next
 		top: 80px
 
 .tours
 	&.tours_main
+		margin-bottom: 45px
 		padding: 45px 0 50px
 		background: url(../img/tours-bg.jpg) no-repeat 50% 50%
 		background-size: cover 
@@ -419,10 +420,9 @@
 			display: none
 
 .benefits
-	padding: 45px 0 30px
 	overflow: hidden
 	+rt(1020)
-		padding: 45px 20px 30px
+		padding: 0 20px
 	+rt(764)
 		display: none
 	.benefits__list
@@ -478,24 +478,24 @@
 				z-index: 2 
 	.benefits__ico-1
 		&:before
-			+s(benefits1-h)
+			+sm(benefits1-h)
 		&:after
-			+s(benefits1-a)
+			+sm(benefits1-a)
 	.benefits__ico-2
 		&:before
-			+s(benefits2-h)
+			+sm(benefits2-h)
 		&:after
-			+s(benefits2-a)
+			+sm(benefits2-a)
 	.benefits__ico-3
 		&:before
-			+s(benefits3-h)
+			+sm(benefits3-h)
 		&:after
-			+s(benefits3-a)
+			+sm(benefits3-a)
 	.benefits__ico-4
 		&:before
-			+s(benefits4-h)
+			+sm(benefits4-h)
 		&:after
-			+s(benefits4-a)
+			+sm(benefits4-a)
 	.slick-prev, .slick-next
 		top: 42px
 

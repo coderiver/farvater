@@ -5,9 +5,8 @@
 	<title>Template</title>
 	<meta name="viewport" content="initial-scale=1"/>
 	<link rel="stylesheet" media="screen" href="css/screen.css" >
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,700|Roboto+Slab&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 	<!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
-	<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 	<script src="js/lib/richmarker.js"></script>
 	<script>
@@ -271,9 +270,11 @@
 						</div>
 						<!-- sort -->
 						<div class="sort">
-							<a class="is-hot is-active" href="#">Горящие предложения<i></i></a>
-							<a href="#">Раннее бронирование</a>
-							<a href="#">Все туры</a>
+							<div class="sort__list">
+								<a class="is-hot is-active" href="#">Горящие предложения<i></i></a>
+								<a href="#">Раннее бронирование</a>
+								<a href="#">Все туры</a>
+							</div>
 						</div>
 					</div>
 					<div id="map" class="map__el"></div>
@@ -410,9 +411,11 @@
 					<div class="tours__sort">
 						<!-- sort -->
 						<div class="sort">
-							<a class="is-hot is-active" href="#">Горящие предложения<i></i></a>
-							<a href="#">Раннее бронирование</a>
-							<a href="#">Все туры</a>
+							<div class="sort__list">
+								<a class="is-hot is-active" href="#">Горящие предложения<i></i></a>
+								<a href="#">Раннее бронирование</a>
+								<a href="#">Все туры</a>
+							</div>
 						</div>
 						<!-- select -->
 						<div class="select select_fancy-right js-select">
@@ -648,6 +651,7 @@
 			<i class="container__shadow-dr"></i>
 		</div>
 	</div>
+	<div class="wrapper__push"></div>
 </div>
 <!-- footer -->
 <footer class="footer">

@@ -1,0 +1,480 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Template</title>
+	<meta name="viewport" content="initial-scale=1"/>
+	<link rel="stylesheet" media="screen" href="css/screen.css" >
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,700|Roboto+Slab&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	<!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
+</head>
+<body>
+<!-- wrapper -->
+<div class="wrapper">
+	<div class="wrapper__in">
+		<!-- topper -->
+		<div class="topper">
+			<div class="l-center">
+				<button class="topper__menu js-topper-menu"></button>
+				<div class="topper__phones">(044) 555-55-55<span>•</span>(050) 432-70-70</div>
+				<div class="topper__ask"><a href="#">Задать вопрос</a></div>
+				<!-- enter -->
+				<div class="enter">
+					<div class="enter__link"><a href="#">Войти</a></div>
+					<div class="enter__throw">через</div>
+					<!-- social -->
+					<div class="social">
+						<a class="social__fb" href="#"></a>
+						<a class="social__vk" href="#"></a>
+						<a class="social__gp" href="#"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- mob-menu -->
+		<nav class="mob-menu js-mob-menu">
+			<a href="#">О компании</a>
+			<a href="#">Блог</a>
+			<a href="#">Контакты</a>
+			<a href="#">Задать вопрос</a>
+			<a href="#">Программа лояльности</a>
+			<a href="#">Вход в личный кабинет</a>
+		</nav>
+		<!-- container -->
+		<div class="container">
+			<div class="container__in">
+				<!-- header -->
+				<div class="header">
+					<div class="l-center">
+						<a class="logo" href="#"></a>
+						<div class="stamp"></div>
+						<!-- nav -->
+						<nav class="nav">
+							<a class="is-active" href="#">Туры</a>
+							<a href="#">Авиабилеты</a>
+							<a href="#">Отели</a>
+							<a href="#">Роуминг</a>
+							<a href="#">Страхование</a>
+						</nav>
+						<!-- native-select -->
+						<div class="mob-nav native-select js-native-select">
+							<div class="native-select__head">
+								<span>Туры</span><i></i>
+							</div>
+							<select class="native-select__el" name="" id="">
+								<option value="">Туры</option>
+								<option value="">Авиабилеты</option>
+								<option value="">Отели</option>
+								<option value="">Роуминг</option>
+								<option value="">Страхование</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<!-- breadcrumbs -->
+				<div class="l-center">
+					<ul class="breadcrumbs">
+						<li><a href="#">Главная</a><i></i></li>
+						<li>Каталог туров</li>
+					</ul>
+				</div>
+				<!-- l-layout -->
+				<div class="l-layout l-center">
+					<div class="l-aside">
+						<!-- search -->
+						<div class="search">
+							<div class="search__item">
+								<div class="search__label">Откуда?</div>
+								<label class="search__field search__field_avia">
+									<span class="search__el">
+										<input type="text" placeholder="Киев, Украина">
+										<span class="search__code">IEV</span>
+									</span>
+								</label>
+							</div>
+							<div class="search__item">
+								<div class="search__label">Где хотите отдохнуть?</div>
+								<label class="search__field search__field_avia">
+									<span class="search__el">
+										<input type="text" placeholder="Стамбул, Турция">
+										<span class="search__code">IST</span>
+									</span>
+								</label>
+							</div>
+							<!-- search country template -->
+							<div class="js-add-country-template" style="display: none">
+								<div class="search__item search__item_new">
+									<div class="search__fieldset">
+										<div class="search__field">
+											<div class="search__el">
+												<input class="js-autocomplete" type="text">
+											</div>
+										</div>
+										<div class="search__field">
+											<div class="search__el">
+												<input class="js-autocomplete" type="text">
+											</div>
+										</div>
+										<button class="search__remove-fields js-remove-country"></button>
+									</div>
+								</div>
+							</div>
+							<div class="search__item search__item_add">
+								<div class="search__add">
+									<a class="js-add-country" href="#">+<span>добавить страну</span></a>
+								</div>
+							</div>
+							<div class="search__item search__item_group">
+								<!-- checkbox -->
+								<label class="checkbox">
+									<input type="checkbox">
+									<span class="checkbox__text">Туда и обратно</span>
+								</label>
+								<!-- checkbox -->
+								<label class="checkbox">
+									<input type="checkbox">
+									<span class="checkbox__text">В один конец</span>
+								</label>
+							</div>
+							<div class="search__item">
+								<div class="search__fieldset">
+									<div class="search__field">
+										<div class="search__label">Туда</div>
+										<!-- select -->
+										<div class="select select_date js-select-date">
+											<div class="select__head">
+												<div class="select__current">03.05.2014</div>
+												<i class="select__ico-date"></i>
+											</div>
+											<div class="select__date"></div>
+											<input class="select__value" type="hidden">
+										</div>
+									</div>
+									<div class="search__field">
+										<div class="search__label">Ночей</div>
+										<!-- select -->
+										<div class="select js-select">
+											<div class="select__head">
+												<div class="select__current">5 ночей</div>
+												<i class="select__arr"></i>
+											</div>
+											<ul class="select__list">
+												<li>3 ночей</li>
+												<li>4 ночей</li>
+												<li>5 ночей</li>
+												<li>6 ночей</li>
+												<li>7 ночей</li>
+											</ul>
+											<input class="select__value" type="hidden">
+										</div>
+										<!-- native-select -->
+										<div class="native-select js-native-select">
+											<div class="native-select__head">
+												<span>Туры</span><i></i>
+											</div>
+											<select class="native-select__el" name="" id="">
+												<option value="">Туры</option>
+												<option value="">Авиабилеты</option>
+												<option value="">Отели</option>
+												<option value="">Роуминг</option>
+												<option value="">Страхование</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<!-- checkbox -->
+								<label class="checkbox">
+									<input type="checkbox">
+									<span class="checkbox__text">Гибкие даты (±3 дня)</span>
+								</label>
+							</div>
+							<div class="search__item">
+								<div class="search__people">
+									<div class="search__adults">
+										<div class="search__label">Взрослых: <span id="counter-adults">2</span></div>
+										<div class="search__adults-list"></div>
+									</div>
+									<div class="search__kids">
+										<div class="search__label">Детей: <span id="counter-kids">1</span></div>
+										<div class="search__kids-list"></div>
+									</div>
+									<div class="search__babies">
+										<div class="search__label">Младенцев: <span id="counter-babies">1</span></div>
+										<div class="search__babies-list"></div>
+									</div>
+								</div>
+							</div>
+							<div class="serach__btn">
+								<button class="btn">Найти</button>
+							</div>
+							<div class="seach__link">
+								<a href="#">Расширенный поиск</a>
+							</div>
+						</div>
+						<!-- filter -->
+						<div class="filter js-filter">
+							<div class="filter__item is-active">
+								<div class="filter__title">Цена<i></i></div>
+								<div class="filter__container">
+									<div class="filter__slider js-filter-slider" data-min="1000" data-max="40000" data-step="1000">
+										<div class="filter__slider-el"></div>
+										<div class="filter__slider-details">
+											<label class="field field_small">
+												<div class="field__label">от</div>
+												<div class="field__el">
+													<input class="filter__slider-from" type="text">
+												</div>
+											</label>
+											<label class="field field_small">
+												<div class="field__label">до</div>
+												<div class="field__el">
+													<input class="filter__slider-to" type="text">
+												</div>
+											</label>
+											<button class="btn btn_smaller btn_gray">OK</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="filter__item filter__item_region is-active">
+								<div class="filter__title">Аэропорт прибытия<i></i></div>
+								<div class="filter__container">
+									<!-- checkbox -->
+									<label class="checkbox checkbox_white">
+										<input type="checkbox">
+										<span class="checkbox__text">Латроб (IST)</span>
+									</label>
+									<!-- checkbox -->
+									<label class="checkbox checkbox_white">
+										<input type="checkbox">
+										<span class="checkbox__text">Сабиха Гехчен Аэропорт (SAW)</span>
+									</label>
+									<div class="filter__map-link">
+										<a href="#"><i></i><span>Поиск региона на карте</span></a>
+									</div>
+								</div>
+							</div>
+							<div class="filter__item is-active">
+								<div class="filter__title">Время в пути<i></i></div>
+								<div class="filter__container">
+									<div class="filter__slider js-filter-slider" data-min="0" data-max="24" data-step="1">
+										<div class="filter__slider-el"></div>
+										<div class="filter__slider-details">
+											<label class="field field_small">
+												<div class="field__label">от</div>
+												<div class="field__el">
+													<input class="filter__slider-from" type="text">
+												</div>
+											</label>
+											<label class="field field_small">
+												<div class="field__label">до</div>
+												<div class="field__el">
+													<input class="filter__slider-to" type="text">
+												</div>
+											</label>
+											<button class="btn btn_smaller btn_gray">OK</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="filter__item is-active">
+								<div class="filter__title">Время отправки<i></i></div>
+								<div class="filter__container">
+									<div class="filter__slider js-filter-slider" data-min="0" data-max="24" data-step="1">
+										<div class="filter__slider-el"></div>
+										<div class="filter__slider-details">
+											<label class="field field_small">
+												<div class="field__label">от</div>
+												<div class="field__el">
+													<input class="filter__slider-from" type="text">
+												</div>
+											</label>
+											<label class="field field_small">
+												<div class="field__label">до</div>
+												<div class="field__el">
+													<input class="filter__slider-to" type="text">
+												</div>
+											</label>
+											<button class="btn btn_smaller btn_gray">OK</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="filter__item is-active">
+								<div class="filter__title">Время прибытия<i></i></div>
+								<div class="filter__container">
+									<div class="filter__slider js-filter-slider" data-min="0" data-max="24" data-step="1">
+										<div class="filter__slider-el"></div>
+										<div class="filter__slider-details">
+											<label class="field field_small">
+												<div class="field__label">от</div>
+												<div class="field__el">
+													<input class="filter__slider-from" type="text">
+												</div>
+											</label>
+											<label class="field field_small">
+												<div class="field__label">до</div>
+												<div class="field__el">
+													<input class="filter__slider-to" type="text">
+												</div>
+											</label>
+											<button class="btn btn_smaller btn_gray">OK</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="filter__item is-active">
+								<div class="filter__title">Пансион<i></i></div>
+								<div class="filter__container">
+									<!-- checkbox -->
+									<label class="checkbox checkbox_white">
+										<input type="checkbox">
+										<span class="checkbox__text">ОВ (Без питания)</span>
+									</label>
+									<!-- checkbox -->
+									<label class="checkbox checkbox_white">
+										<input type="checkbox">
+										<span class="checkbox__text">ВВ (Завтраки)</span>
+									</label>
+									<!-- checkbox -->
+									<label class="checkbox checkbox_white">
+										<input type="checkbox">
+										<span class="checkbox__text">НВ (Завтраки и ужины)</span>
+									</label>
+									<!-- checkbox -->
+									<label class="checkbox checkbox_white">
+										<input type="checkbox">
+										<span class="checkbox__text">FB (Полный пансион)</span>
+									</label>
+									<!-- checkbox -->
+									<label class="checkbox checkbox_white">
+										<input type="checkbox">
+										<span class="checkbox__text">AI (Все включено)</span>
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="l-section">
+						<!-- catalog -->
+						<div class="catalog">
+							<div class="catalog__head">
+								<div class="catalog__title"><span>Стамбул:</span> 547 доступных рейсов</div>
+								<ul class="catalog__details">
+									<li><span>Вылет:</span> суббота, 03 мая 2014</li>
+									<li>—</li>
+									<li><span>Обратно:</span> четверг, 08 мая 2014</li>
+									<li>—</li>
+									<li><span>Человек:</span> двое</li>
+								</ul>
+								<div class="catalog__text">Цены указаны за одного человека в двухместном номере.</div>
+							</div>
+							<div class="catalog__top">
+								<a class="catalog__head" href="#">
+									<div class="catalog__title"><i></i><span>Стамбул:</span> 547 туров</div>
+									<ul class="catalog__details">
+										<li><span>Вылет:</span> суббота, 03 мая 2014</li>
+										<li><span>Обратно:</span> четверг, 08 мая 2014</li>
+										<li><span>Человек:</span> двое</li>
+									</ul>
+								</a>
+								<div class="catalog__filter">
+									<button class="catalog__filter-button"><i></i><span>Фильтры поиска</span></button>
+								</div>
+							</div>
+							<div class="catalog__sort">
+								<!-- sort -->
+								<div class="catalog__sort-info">Подбирайте тур вместе с перелетом — это выгоднее!</div>
+								<!-- select -->
+								<div class="select select_fancy-right js-select">
+									<div class="select__head">
+										<div class="select__current"><span>Сортировать</span></div>
+										<i class="select__arr"></i>
+										<div class="select__circle"><i></i></div>
+									</div>
+									<ul class="select__list">
+										<li><span>Сортировать по</span></li>
+										<li><span>Сортировать по</span></li>
+										<li><span>Сортировать по</span></li>
+										<li><span>Сортировать по</span></li>
+									</ul>
+									<input class="select__value" type="hidden" value="4 ночей">
+								</div>
+							</div>
+							<!-- avia -->
+							<div class="avia">
+
+							</div>
+							<!-- more -->
+							<button class="more">
+								<i></i>
+								<span>Показать больше рейсов</span>
+							</button>
+						</div>
+					</div>
+				</div>
+				<!-- container angle -->
+				<i class="container__shadow-angle"></i>
+			</div>
+			<i class="container__shadow-tl"></i>
+			<i class="container__shadow-tr"></i>
+			<i class="container__shadow-dl"></i>
+			<i class="container__shadow-dr"></i>
+		</div>
+	</div>
+	<div class="wrapper__push"></div>
+</div>
+<!-- footer -->
+<footer class="footer">
+	<div class="l-center">
+		<div class="footer__about">
+			<div class="footer__logo"></div>
+			<div class="footer__text">«Фарватер» объединил вокруг себя людей, для которых путешествия и ежедневные открытия являются необходимой частью жизни.</div>
+			<label class="footer__subscribe">
+				<input type="text" placeholder="Рассылка горящих туров">
+				<i class="footer__subscribe-arr"></i>
+				<span class="footer__subscribe-discount"><span>-50%</span></span>
+			</label>
+		</div>
+		<nav class="footer__nav">
+			<ul>
+				<li><div class="footer__nav-title">О проекте</div></li>
+				<li><a href="#">Как это работает</a></li>
+				<li><a href="#">Оплата и доставка</a></li>
+				<li><a href="#">Ответы на вопросы</a></li>
+				<li><a href="#">Компания</a></li>
+				<li><a href="#">Программа лояльности</a></li>
+			</ul>
+			<ul>
+				<li><div class="footer__nav-title">Дополнительно</div></li>
+				<li><a href="#">Купить туры</a></li>
+				<li><a href="#">Ответы на вопросы</a></li>
+				<li><a href="#">Советы туристам</a></li>
+				<li><a href="#">Отели</a></li>
+				<li><a href="#">Пресса</a></li>
+			</ul>
+		</nav>
+		<div class="footer__right">
+			<div class="footer__license">Номер лицензии Ассоциации лидеров турбизнеса Украины <span>АВ566760</span><i></i></div>
+			<div class="footer__social">
+				<!-- social -->
+				<div class="social">
+					<a class="social__fb" href="#"></a>
+					<a class="social__vk" href="#"></a>
+					<a class="social__gp" href="#"></a>
+				</div>
+				<div class="footer__pay">
+					<i class="footer__pay-visa"></i>
+					<i class="footer__pay-master-card"></i>
+				</div>
+			</div>
+			<div class="footer__kiselev">
+				<a class="#" href="#"></a>
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- load script -->
+<script src="js/lib/head.js" data-headjs-load="js/init.js"></script>
+</body>
+</html>

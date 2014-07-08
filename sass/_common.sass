@@ -36,10 +36,14 @@
 //				display: none
 // ## fonts 
 // Save fonts to /css/fonts, after that write (eot, woff, ttf):
-// +font(book, cytiapro-black-webfont)  
++font(Flow Regular, flowregular) 
+=flow
+	font-family: "Flow Regular", Arial, sans-serif  
++font(Flow Bold, flowbold) 
+=flowb
+	font-family: "Flow Bold", Arial, sans-serif  
 =slab
 	font-family: "Roboto Slab", Arial, sans-serif 
-
 $blue: #0094da
 $orange: #ec441e
 $green: #5ea533
@@ -80,10 +84,16 @@ input, button, textarea
 // common blocks
 .wrapper
 	position: relative
+	min-height: 100%
+	height: auto !important
+	height: 100%
+	margin-bottom: -270px
 	background: url(../img/bg-down.jpg) repeat-x 0 100% 
 	z-index: 2 
 	+rt(764)
 		background: none 
+		min-height: 0
+		margin: 0
 	.wrapper__in
 		max-width: 1200px
 		margin: 0 auto
@@ -94,13 +104,25 @@ input, button, textarea
 		+rt(764)
 			max-width: 100%
 			padding: 0
+	.wrapper__push
+		height: 270px
+		+rt(764)
+			display: none
+	&.wrapper_p404
+		background: url(../img/p404.jpg) no-repeat 0 50%
+		background-size: cover  
 
 .container
 	position: relative
 	+rt(764)
 		background: #FFF 
+	&.container_narrow
+		.container__in
+			border-radius: 8px
+			padding: 0
 	.container__in
 		position: relative
+		padding-bottom: 40px
 		border-radius: 8px 8px 40px 8px
 		background-color: #fff
 		box-shadow: 0 0 4px #c1c9cd
@@ -270,6 +292,9 @@ input, button, textarea
 		border-radius: 50%
 		box-shadow: 0 0 10px #90aac5
 		z-index: 2 
+	&.no-shadow
+		&:after
+			display: none
 	.mob-nav
 		display: none
 		float: right
@@ -400,6 +425,7 @@ input, button, textarea
 				+s(checkbox-a-white)
 
 .btn
+	display: inline-block
 	position: relative
 	height: 38px
 	padding: 0 20px
@@ -414,6 +440,7 @@ input, button, textarea
 	font-weight: 700 
 	text-transform: uppercase
 	overflow: visible
+	text-decoration: none
 	z-index: 3
 	&:before, &:after
 		content: ""
@@ -469,6 +496,7 @@ input, button, textarea
 		height: 50px
 		border-radius: 25px
 		font-size: 18px
+		line-height: 48px
 		&:before, &:after
 			border-radius: 25px
 	&.btn_bigger
@@ -476,6 +504,7 @@ input, button, textarea
 		padding: 0 28px
 		border-radius: 30px
 		font-size: 20px 
+		line-height: 60px
 		&:before, &:after
 			border-radius: 30px
 	&.btn_small
@@ -484,6 +513,7 @@ input, button, textarea
 		border-radius: 15px
 		font-size: 14px
 		text-transform: none
+		line-height: 28px
 		&:before, &:after
 			border-radius: 15px
 	&.btn_smaller
@@ -494,6 +524,17 @@ input, button, textarea
 		text-transform: none
 		&:before, &:after
 			border-radius: 12px
+a
+	&.btn
+		line-height: 38px
+	&.btn_big
+		line-height: 50px
+	&.btn_bigger
+		line-height: 60px
+	&.btn_small
+		line-height: 30px
+	&.btn_smaller
+		line-height: 24px
 
 .ui-helper-hidden-accessible
 	display: none
@@ -655,6 +696,19 @@ input, button, textarea
 			margin: 0 0 0 -35px 
 			+rt(764)
 				margin: 0
+.select_fancy-menu
+	width: 39px 
+	&.is-open
+		.select__head
+			border-radius: 9px 9px 0 0
+	.select__head
+		padding: 11px 12px
+		border-radius: 9px
+	.select__menu-ico
+		display: block
+		+s(select-fancy-menu)
+	.select__list
+		border-radius: 0 9px 9px 9px
 
 .native-select
 	position: relative
@@ -698,14 +752,28 @@ input, button, textarea
 				right: 11px
 				+s(select-fancy-arr)
 
+.sort-wrapper
+	margin-bottom: 30px
+	.sort
+		+rt(764)
+			display: none
+	.native-select
+		display: none
+		+rt(764)	
+			display: block
+
 .sort
-	display: inline-block
-	padding: 3px
-	box-shadow: 0 1px 3px #c1c9cd
-	+g(#fbfbfb, #f3f1f1)
-	border-radius: 18px
-	font-size: 0
-	vertical-align: top
+	&.sort_center
+		margin-bottom: 25px
+		text-align: center
+	.sort__list
+		display: inline-block
+		padding: 3px
+		box-shadow: 0 1px 3px #c1c9cd
+		+g(#fbfbfb, #f3f1f1)
+		border-radius: 18px
+		font-size: 0
+		vertical-align: top
 	a
 		position: relative
 		display: inline-block
@@ -770,6 +838,13 @@ input, button, textarea
 		margin-top: 15px
 		&:first-child
 			margin: 0
+	.search__item_group
+		.checkbox
+			display: inline-block
+			margin-left: 15px
+			vertical-align: top
+			&:first-child
+				margin: 0
 	.search__item_add
 		margin-top: 3px
 	.search__remove-fields
@@ -782,11 +857,27 @@ input, button, textarea
 		color: #8DA9E3 
 	.search__fieldset
 		+clr
+		& + .checkbox
+			margin-top: 5px
 		.search__field
 			float: left
 			width: 120px
 			&:first-child
 				margin-right: 20px
+	.search__field_avia
+		display: block
+		.search__el
+			position: relative
+			display: block
+			input
+				padding: 0 45px 0 10px
+		.search__code
+			position: absolute
+			top: 0
+			right: 0
+			width: 45px
+			line-height: 37px
+			text-align: center
 	.search__el
 		input
 			padding: 0 10px
@@ -863,7 +954,6 @@ input, button, textarea
 			margin-left: 5px
 			border-bottom: 1px dotted 
 	.checkbox
-		margin-top: 5px
 		color: #8DA9E3 
 	.select
 		position: relative
@@ -1032,9 +1122,9 @@ input, button, textarea
 	font-weight: 700
 	font-size: 26px
 	text-align: center 
+	line-height: 1.2
 	+rt(764)
 		font-size: 20px
-		line-height: 1
 	&.title_level-2
 		margin-bottom: 25px
 		font-size: 22px
@@ -1042,12 +1132,16 @@ input, button, textarea
 
 .footer
 	position: relative
-	padding: 30px 10px 50px
+	min-height: 270px
+	padding: 30px 10px
 	background: #002751 
 	overflow: hidden
+	box-sizing: border-box
+	z-index: 4 
 	+rt(1020)
-		padding: 30px 20px 50px 30px 
+		padding: 30px 20px
 	+rt(764)
+		min-height: 0
 		padding: 30px 0
 	&:after
 		content: ""
@@ -1228,7 +1322,9 @@ input, button, textarea
 				opacity: 1
 
 .field
+	display: block
 	.field__el
+		display: block
 		input
 			padding: 0 10px
 			height: 37px
@@ -1354,9 +1450,13 @@ input, button, textarea
 		th
 			padding: 0 20px 10px 
 			text-align: right
+			+rt(764)
+				padding: 0 5px 5px
 		td
 			padding: 20px
 			text-align: right
+			+rt(764)
+				padding: 5px
 			&:first-child
 				text-align: left
 				font-weight: 700
@@ -1385,13 +1485,7 @@ input, button, textarea
 				position: absolute
 				top: 0
 				left: 0
-				color: #a3a3a3 
-
-
-
-
-
-
+				color: #a3a3a3
 
 
 
