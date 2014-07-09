@@ -300,8 +300,9 @@
 			box-shadow: 0 1px 2px rgba(2,26,75,.5)
 			+box
 			color: #fff 
-			text-decoration: none
-			z-index: 100 
+			text-decoration: none 
+			&.is-active
+				z-index: 9999 
 			+rt(1020)
 				display: block
 			+rt(764)
@@ -321,36 +322,10 @@
 			li
 				display: block
 				margin-top: 5px
-		.filter
-			position: absolute
-			top: 144px
-			left: 0
-			right: 0
-			z-index: 100  
-		.filter__column
-			float: left
-			width: 340px
-			&:first-child
-				margin-right: 28px
-	.catalog__filter
+	.catalog__filter-button
 		position: relative
 		float: right
 		width: 340px
-		z-index: 100 
-		+rt(764)
-			float: none
-			width: auto
-	.catalog__filter-bg
-		position: fixed
-		top: 0
-		left: 0
-		right: 0
-		bottom: 0
-		background: rgb(0,39,81) 
-		background: rgba(0,39,81,.75) 
-		z-index: 90 
-	.catalog__filter-button
-		width: 100%
 		height: 114px 
 		border-radius: 8px
 		background-color: #e3f1fb
@@ -358,6 +333,8 @@
 		+g(#eaf5fd, #dceffb)
 		font-size: 0
 		+rt(764)
+			float: none
+			width: 100%
 			height: 40px
 			padding: 0 15px
 			text-align: left
@@ -377,6 +354,8 @@
 			font-weight: 700 
 			+rt(764)
 				font-size: 16px
+		&.is-active
+			z-index: 9999 
 	.catalog__sort
 		margin-bottom: 30px
 		+clr
@@ -399,6 +378,17 @@
 		color: #FFF 
 
 .filter
+	.filter__row
+		+clr
+	.filter__col
+		float: left
+		width: 340px
+		+rt(764)
+			width: 300px
+		&:first-child
+			margin-right: 28px 
+			+rt(764)
+				margin: 0
 	.filter__item
 		padding: 16px 20px
 		margin-bottom: 30px
@@ -534,6 +524,7 @@
 		float: left
 	.price
 		float: right
+		margin: 0 23px
 		+rt(764)
 			position: absolute
 			left: 0
@@ -687,6 +678,7 @@
 				margin-top: 17px
 		.price
 			float: none
+			margin: 0 23px
 			+rt(764)
 				padding: 0 3px
 				margin: 0 8px
@@ -879,52 +871,6 @@
 		text-align: center 
 	.prev, .next
 		z-index: 101 
-
-.man
-	margin-bottom: 25px
-	+clr
-	.man__details
-		float: left
-		width: 130px
-		margin-right: 15px
-		text-align: center
-		+rt(764)
-			float: none
-			margin: 0 0 15px  
-	.man__pic
-		margin-bottom: 5px
-		img
-			border-radius: 50%
-	.man__name
-		margin-bottom: 3px
-		font-size: 14px
-		font-weight: bold 
-	.man__position
-		font-size: 12px
-	.man__comment
-		position: relative
-		display: table
-		padding: 15px 20px
-		border-radius: 8px
-		background-color: #f7f5f1
-		+g(#f9f8f5, #f5f4ed)
-		box-shadow: 0 1px 2px #b7bfc5
-		+slab
-		font-size: 16px
-		+rt(764)
-			display: block
-		p
-			margin-top: 10px
-			&:first-child
-				margin: 0
-		&:after
-			content: ""
-			position: absolute
-			top: 45px
-			left: -11px
-			+s(man-arr)
-			+rt(764)
-				display: none
 
 .p404
 	padding: 120px 0
@@ -1255,24 +1201,91 @@
 				color: $orange 
 
 .bonus
-	position: relative
-	&:after
-		content: ""
-		position: absolute
-		left: 0
-		right: 0
-		bottom: 0
-		height: 20px
-		border-radius: 50%
-		box-shadow: 0 0 10px #90aac5
-		z-index: 2 
+	&.bonus_banner
+		position: relative
+		margin-bottom: 40px
+		+rt(764)
+			margin-bottom: 20px
+		&:after
+			content: ""
+			position: absolute
+			left: 0
+			right: 0
+			bottom: 0
+			height: 20px
+			border-radius: 50%
+			box-shadow: 0 0 10px #90aac5
+			z-index: 2 
 	.bonus__in
 		position: relative
 		height: 540px
-		padding-left: 50%
-		background: url(../img/bg-bonus.jpg) no-repeat 0 0
-		background-size: cover 
+		padding: 50px 40px 0 50%
+		background: url(../img/bg-bonus.jpg) no-repeat 50% 0
+		box-sizing: border-box
 		z-index: 4 
+		+rt(1020)
+			padding: 30px 30px 0 50% 
+		+rt(764)
+			height: auto
+			padding: 10px
+			background: #d9e6f6 
+	.bonus__title
+		margin-bottom: 40px
+		font-size: 65px
+		font-weight: 100
+		line-height: 1
+		+rt(1020)	
+			margin-bottom: 30px
+		+rt(764)
+			margin-bottom: 20px
+			font-size: 50px
+	.bonus__title-sub
+		margin-bottom: 40px
+		font-size: 28px
+		font-weight: 300 
+		+rt(1020)
+			margin-bottom: 30px
+		+rt(764)
+			margin-bottom: 20px
+			font-size: 20px
+	.bonus__counter
+		margin-bottom: 50px
+		+rt(1020)
+			margin-bottom: 30px
+		+rt(764)
+			margin-bottom: 20px
+		.counter, .bonus__counter-text
+			display: inline-block
+			vertical-align: middle
+		.counter
+			margin-right: 10px 
+	.bonus__counter-text
+		font-weight: 300
+		font-size: 28px
+		+rt(764)
+			font-size: 20px
+	.bonus__content
+		margin-bottom: 40px
+		padding: 0 80px
+		+clr
+		+rt(764)
+			margin-bottom: 20px
+			padding: 0 10px
+	.bonus__content-col
+		float: left
+		width: 360px
+		+rt(1020)
+			float: none
+			width: 100%
+			margin-bottom: 20px
+		&:first-child
+			margin-right: 80px
+			+rt(1020)
+				margin: 0
+		.content
+			img
+				+rt(764)
+					width: 100%
 
 .counter
 	font-size: 0
@@ -1293,23 +1306,270 @@
 		position: relative
 		top: 33px
 		+s(counter-dot)
+		
+.response
+	margin-bottom: 25px
+	+clr
+	&.response_small
+		max-width: 800px
+		margin: 0 auto 25px
+	.response__user
+		float: left
+		width: 130px
+		margin-right: 15px
+		text-align: center
+		+rt(764)
+			float: none
+			margin: 0 auto 15px  
+	.response__avatar
+		margin-bottom: 5px
+		img
+			border-radius: 50%
+	.response__name
+		margin-bottom: 3px
+		font-size: 14px
+		font-weight: bold 
+	.response__position
+		font-size: 12px
+	.response__comment
+		position: relative
+		display: table
+		padding: 15px 20px
+		border-radius: 8px
+		background-color: #f7f5f1
+		+g(#f9f8f5, #f5f4ed)
+		box-shadow: 0 1px 2px #b7bfc5
+		+slab
+		font-size: 16px
+		+rt(764)
+			display: block
+		p
+			margin-top: 10px
+			&:first-child
+				margin: 0
+		&:after
+			content: ""
+			position: absolute
+			top: 45px
+			left: -11px
+			+s(man-arr)
+			+rt(764)
+				display: none
+	.response__slider
+		min-height: 200px
+		overflow: hidden
+		.response__item-in
+			padding: 0 90px 5px
+			overflow: hidden
+			+rt(764)
+				padding: 0 10px 5px
+		.slick-prev, .slick-next
+			top: 80px
+		.slick-prev
+			left: 0
+		.slick-next
+			right: 0
 
+.cart
+	margin-bottom: 30px
+	padding: 15px 15px 20px
+	border-radius: 8px
+	background-color: #3155a3
+	box-shadow: 0 1px 2px rgba(2,26,75,.5)
+	box-sizing: border-box
+	+g(#4274c3, #203883)
+	color: #FFF 
+	.cart__head
+		margin-bottom: 10px
+		+clr
+	.cart__title
+		a
+			font-size: 16px
+			font-weight: 700 
+			color: #FFF
+			&:hover
+				color: $orange 
+	.cart__flight
+		margin-bottom: 10px
+		font-size: 0
+	.cart__flight-city
+		display: inline-block
+		margin-right: 20px 
+		i, span
+			display: inline-block
+		i
+			margin-right: 3px
+			+s(cart-plane)
+		span
+			font-weight: 700 
+			font-size: 12px
+	.cart__flight-more
+		display: inline-block
+		a
+			font-size: 12px
+			border-bottom: 1px dotted
+			text-decoration: none
+			color: #FFF
+			&:hover
+				color: $orange 
+	.cart__date
+		margin-bottom: 10px 
+		span
+			font-weight: 700 
+	.cart__service
+		margin-bottom: 10px
+		li
+			margin-bottom: 3px
+			+clr
+		span
+			float: left
+			width: 55px
+			margin-right: 10px
+	.cart__more
+		margin-top: 15px
+		padding-top: 15px
+		border-top: 1px solid #4d6aac
+	.cart__more-title
+		margin-bottom: 7px
+		font-weight: 700 
+		font-size: 16px
+	.cart__more-in
+		+clr
+	.cart__more-content
+		span
+			display: block
+			margin-bottom: 2px
+			font-weight: bold
+	.cart__footer
+		position: relative
+		margin-top: 15px
+		padding-top: 20px
+		&:before
+			content: ""
+			position: absolute
+			top: 0
+			left: -13px
+			right: -13px
+			height: 6px
+			background: url(../img/white-dots.png)  
+	.cart__bonuses
+		margin-bottom: 15px
+		+clr
+		li
+			float: right
+			font-weight: 700 
+			&:first-child
+				float: left
+	.cart__total
+		+clr
+	.cart__total-title
+		float: left
+		margin-top: 10px
+		font-weight: 700 
+		font-size: 16px
+	.rating
+		margin-bottom: 15px 
+	.rating__counter
+		display: none
+	.price
+		float: right
+		color: $cl 
+	.price_small
+		margin: 0 12px 0 20px
 
+.popup
+	display: none
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	padding: 50px 0
+	background: rgb(0,39,81) 
+	background: rgba(0,39,81,.8) 
+	overflow: auto
+	+vertical
+	z-index: 999 
+	&.popup_catalog
+		.popup__in
+			width: 708px 
+			+rt(764)
+				width: 300px
+	.popup__close
+		position: absolute
+		top: 30px
+		right: 30px
+		+s(popup-close)
+	.popup__in
+		display: inline-block
+		vertical-align: middle
+		font-size: 14px
+		text-align: left
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.order
+	.order__block
+		padding: 15px
+		margin-bottom: 30px
+		border-radius: 8px
+		background-color: #f7f5f1
+		box-shadow: 0 1px 2px #b7bfc5
+		+gh(#f9f8f5, #f5f4ed)
+	.order__row
+		padding: 15px 0
+		border-top: 1px solid #d9d8d3
+		&:first-child
+			border: none
+			padding: 0 0 15px
+		&:last-child
+			padding: 15px 0 0 
+	.order__attention
+		position: relative
+		padding-left: 30px
+		font-size: 12px
+		&:before
+			content: ""
+			position: absolute
+			top: 0
+			left: 0
+			+s(attention)
+	.order__fieldset
+		>*
+			display: inline-block
+			margin: 0 10px 10px 0
+			vertical-align: middle
+		.field
+			width: 160px
+		.select
+			width: 140px
+		.select_date
+			width: 135px 
+		.select__date
+			&:before
+				width: 134px 
+		.checkbox
+			margin: 0 30px 10px 0
+	.order__scan-toggle
+		line-height: 1.2
+		a
+			color: $cl
+			border-bottom: 1px dotted
+			text-decoration: none
+			&:hover
+				color: $orange 
+	.order__scans
+		padding-bottom: 5px
+		+clr
+	.order__scans-item, .order__scans-add
+		float: left
+		width: 80px
+		height: 80px
+		margin-right: 10px
+	.order__scans-item
+		img
+			display: block
+			border-radius: 3px
+	.order__scans-add
+		+s(order-scan)
 
 
 

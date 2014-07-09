@@ -98,7 +98,7 @@ head.ready(function() {
 	function select() {
 	  var el = $('.js-select'),
 	      el_date = $('.js-select-date');
-	  el.find('.select__head').bind('click', function(){      
+	  el.find('.select__head').on('click', function(){      
 	    if ($(this).parent().hasClass('is-open')) {
 	      $(this).parent().removeClass('is-open');
 	      $(this).next().hide();
@@ -112,12 +112,13 @@ head.ready(function() {
 	      $(this).next().slideDown();
 	    }
 	  });
-	  el.find('.select__list li').bind('click', function(){
+	  el.find('.select__list li').on('click', function(){
 	    var val = $(this).html();
 	    $(this).parent().prev().find('.select__current').html(val);
 	    $(this).parent().next().val(val);
 	    $(this).parent().hide();
 	    $(this).parent().parent().removeClass('is-open');
+	    $(this).parent().parent().addClass('is-selected');
 	  });
 	  el.click(function(event){
 	    event.stopPropagation();
@@ -136,21 +137,11 @@ head.ready(function() {
 	      'Июл','Авг','Сен','Окт','Ноя','Дек'], 
 	      dayNames: ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'], 
 	      dayNamesShort: ['Вск','Пнд','Втр','Срд','Чтв','Птн','Сбт'], 
-	      dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'], 
-	      dateFormat: 'dd.mm.yy', 
-	      firstDay: 1, 
-	      isRTL: false,
-	      minDate: '+1d',
-	      onSelect: function(date) {
-	        el_date.find('.select__current').html(date);
-	        el_date.removeClass('is-open');
-	        dp.hide();
-	      }
+	      dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб']
 	    }; 
 	    $.datepicker.setDefaults($.datepicker.regional['ru']); 
-	    dp.datepicker();
 	  }; 
-	  el_date.find('.select__head').bind('click', function(){    
+	  el_date.find('.select__head').on('click', function(){    
 	    if ($(this).parent().hasClass('is-open')) {
 	      $(this).parent().removeClass('is-open');
 	      $(this).next().hide();
@@ -158,7 +149,21 @@ head.ready(function() {
 	    else {
 	      el.removeClass('is-open');
 	      el.find('.select__list').hide();
+	      el_date.removeClass('is-open');
+	      el_date.find('.select__date').hide();
 	      $(this).parent().addClass('is-open');
+	      $(this).next().datepicker({
+	    		dateFormat: 'dd.mm.yy', 
+	    		firstDay: 1, 
+	    		isRTL: false,
+	    		minDate: '+1d',
+	    		onSelect: function(date) {
+	    		  $(this).parent().find('.select__current').html(date);
+	    		  $(this).parent().removeClass('is-open');
+	    		  $(this).parent().addClass('is-selected');
+	    		  dp.hide();
+	    		}
+	    	});
 	      $(this).next().slideDown();
 	    };
 	  });
@@ -211,6 +216,7 @@ head.ready(function() {
 			watched = $('.js-watched'),
 			benefits = $('.js-benefits'),
 			read_more = $('.js-read-more'),
+			response_slider = $('.js-response-slider'),
 			tours = $('.js-tours'),
 			tours_item = tours.find('.tour'),
 			tours_item_val = tours_item.length,
@@ -354,6 +360,15 @@ head.ready(function() {
 			]
 		});
 	};
+	if (response_slider.length) {
+		response_slider.slick({
+			slide: '.response__item',
+			slidesToShow: 1,
+			infinite: false
+		});
+	};
+
+	
 
 	// mobile menu
 	var top_menu = $('.js-topper-menu'),
@@ -375,6 +390,8 @@ head.ready(function() {
 		 			filter_slider_min = $(this).data('min'),
 		 			filter_slider_max = $(this).data('max'),
 		 			filter_slider_step = $(this).data('step'),
+		 			filter_slider_first_value = $(this).data('first-value'),
+		 			filter_slider_last_value = $(this).data('last-value'),
 		 			filter_slider_from = $(this).find('.filter__slider-from'),
 		 			filter_slider_to = $(this).find('.filter__slider-to');
 		 	filter_slider_el.slider({
@@ -382,7 +399,7 @@ head.ready(function() {
 		 		min: filter_slider_min,
 		 		max: filter_slider_max,
 		 		step: filter_slider_step,
-		 		values: [filter_slider_min, filter_slider_max],
+		 		values: [filter_slider_first_value, filter_slider_last_value],
 		 		slide: function( event, ui ) {
 		 		  filter_slider_from.val(ui.values[0]);
 		 		  filter_slider_to.val(ui.values[1]);
@@ -431,6 +448,26 @@ head.ready(function() {
 			 }
 		})
 	};
+
+	// popup
+	var popup = $('.popup'),
+			popup_in = popup.find('.popup__in'),
+			popup_trigger = $('.js-popup-trigger'),
+			body = $('body');
+	popup_trigger.on('click', function(){
+		body.addClass('no-scroll');
+		var el = $(this).data('popup');
+		$('.'+el).fadeIn();
+		return false;
+	});
+	
+
+	popup.on('click', function(){
+		popup.fadeOut();
+	});
+	popup_in.on('click', function(event){
+		event.stopPropagation();
+	})
 
 });
 
