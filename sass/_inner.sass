@@ -106,9 +106,6 @@
 		text-align: center
 		color: $cl 
 		z-index: 4 
-	.tours__price-in
-		display: inline-block
-		vertical-align: top
 	.tour__price-in
 		position: relative
 		display: inline-block
@@ -119,6 +116,7 @@
 		+g(#fff100, #ffe300)
 		line-height: 38px
 		font-size: 14px
+		vertical-align: top
 		z-index: 2 
 		&:before, &:after
 			content: ""
@@ -620,7 +618,6 @@
 			+rt(764)
 				display: none
 		.native-select
-			display: none
 			+rt(764)
 				display: inline-block
 				vertical-align: top
@@ -730,12 +727,18 @@
 		margin-bottom: 5px
 		font-size: 14px
 		font-weight: 700 
-	.price
+	.similar__price
 		position: absolute
 		left: 0
 		right: 0
 		bottom: 40px
-		color: #4a4a4a 
+		text-align: center
+		font-size: 0
+		.price
+			float: none
+			display: inline-block
+			vertical-align: top
+			color: $cl 
 	.slick-prev, .slick-next
 		top: 50%
 		margin-top: -20px
@@ -1093,10 +1096,7 @@
 			+rt(764)
 				display: none
 		.native-select
-			display: none
 			margin-bottom: 10px
-			+rt(764)
-				display: block
 	.field
 		overflow: hidden
 		.field__el
@@ -1163,6 +1163,8 @@
 		vertical-align: middle
 	.pager__list
 		padding: 0 8px
+		+rt(764)
+			padding: 10px 0
 		a, span
 			display: inline-block
 			min-width: 20px
@@ -1188,6 +1190,8 @@
 		li
 			float: left
 			margin: 0 10px 10px 0
+			+rt(764)
+				margin: 0 5px 5px 0
 		a
 			display: block
 			height: 28px
@@ -1517,11 +1521,23 @@
 	.order__row
 		padding: 15px 0
 		border-top: 1px solid #d9d8d3
+		&:last-child
+			padding: 15px 0 0 
 		&:first-child
 			border: none
 			padding: 0 0 15px
-		&:last-child
-			padding: 15px 0 0 
+	.order__layout
+		+clr
+	.order__col
+		float: left
+		width: 50%
+		+rt(764)
+			float: none
+			width: 200px
+			margin-bottom: 15px
+		.field, .select
+			width: 200px 
+			margin-bottom: 15px
 	.order__attention
 		position: relative
 		padding-left: 30px
@@ -1533,29 +1549,40 @@
 			left: 0
 			+s(attention)
 	.order__fieldset
+		margin-right: -10px
 		>*
 			display: inline-block
 			margin: 0 10px 10px 0
 			vertical-align: middle
+			+rt(764)
+				display: block
 		.field
 			width: 160px
-		.select
+		.select, .native-select
 			width: 140px
+			+rt(764)
+				width: 160px
+		.select
+			+rt(764)
+				display: none
+		.native-select
+			display: none
+			+rt(764)
+				display: inline-block
 		.select_date
+			display: inline-block
 			width: 135px 
+			+rt(764)
+				width: 160px
 		.select__date
 			&:before
 				width: 134px 
+				+rt(764)
+					width: 159px
 		.checkbox
 			margin: 0 30px 10px 0
 	.order__scan-toggle
 		line-height: 1.2
-		a
-			color: $cl
-			border-bottom: 1px dotted
-			text-decoration: none
-			&:hover
-				color: $orange 
 	.order__scans
 		padding-bottom: 5px
 		+clr
@@ -1570,16 +1597,131 @@
 			border-radius: 3px
 	.order__scans-add
 		+s(order-scan)
-
-
-
-
-
-
-
-
-
-
+	.order__add-comment
+		margin-bottom: 20px
+	.order__bonus-in
+		position: relative
+		padding: 25px 0 0 0
+		&:before
+			content: ""
+			position: absolute
+			top: 0
+			left: -13px
+			right: -13px
+			height: 6px 
+			opacity: .6 
+			background: url(../img/white-dots.png)  
+		>a
+			float: right
+			margin-left: 20px
+			+rt(764)
+				float: none
+				display: block
+				margin: 0 0 15px
+	.order__bonus-counter
+		position: relative
+		display: table
+		padding-left: 60px
+		font-weight: 700 
+		&:before
+			content: ""
+			position: absolute
+			top: -3px
+			left: 0
+			+s(order-bonus)
+		span
+			color: #ec441e 
+	.order__bonus-payment
+		padding-left: 60px
+		+clr
+		.field
+			float: right
+			+rt(764)
+				float: none
+		.field__el, .field__label
+			display: inline-block
+			vertical-align: middle
+		.field__el	
+			width: 75px
+			margin-right: 5px
+	.order__bonus-label
+		float: left
+		margin-top: 10px
+		font-weight: 700 
+		+rt(764)
+			margin: 0 0 15px
+	.order__text
+		font-size: 14px 
+	.order__service
+		.toggle
+			padding-left: 23px 
+	.order__service-head
+		+clr
+		.price
+			float: right
+			margin: 0 8px 0 20px
+		.radio
+			display: table
+			margin-bottom: 10px
+		.radio__text	
+			font-size: 14px
+			font-weight: 700 
+			line-height: 1.1 
+		& +	.order__service-text
+			padding-left: 23px
+	.order__service-text
+		font-size: 14px
+		li
+			position: relative
+			&:before
+				content: "— "
+	.order__balance
+		padding-left: 23px
+		+clr
+		.field
+			float: left
+		.field__el, .field__label
+			display: inline-block
+			vertical-align: middle
+		.field__el
+			width: 75px
+			margin-right: 5px 
+		.price
+			margin-top: 5px
+	.order__balance-title
+		float: left
+		margin: 10px 15px 0 0
+		font-size: 14px
+		font-weight: 700 
+		+rt(764)
+			float: none
+			margin: 0 0 15px 0
+	.order__terms
+		margin-bottom: 25px
+		font-size: 14px
+		.checkbox__text
+			line-height: 1.1
+	.order__payment
+		position: relative
+		+clr
+		+rt(764)
+			padding-bottom: 50px
+			.btn
+				position: absolute
+				bottom: 0
+				right: 0
+		.btn
+			float: right
+		.price
+			margin: 0 20px 0 30px
+			+rt(764)
+				margin: 0 8px 0 30px
+	.order__payment-title
+		float: right
+		margin-top: 9px
+		font-size: 16px 
+		font-weight: 700 
+	
 
 
 

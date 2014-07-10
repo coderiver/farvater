@@ -79,7 +79,7 @@
 					</ul>
 				</div>
 				<!-- l-layout -->
-				<div class="l-layout l-center">
+				<div class="l-layout l-layout_visible-sidebar">
 					<div class="l-aside">
 						<!-- cart -->
 						<div class="cart">
@@ -191,6 +191,17 @@
 												</ul>
 												<input class="select__value" type="hidden">
 											</div>
+											<!-- native-select -->
+											<div class="native-select native-select_default is-full js-native-select">
+												<div class="native-select__head">
+													<span>Украинское</span><i></i>
+												</div>
+												<select class="native-select__el" name="" id="">
+													<option value="">Украинское</option>
+													<option value="">Клятий москаль</option>
+													<option value="">Русское</option>
+												</select>
+											</div>
 											<!-- field -->
 											<div class="field is-full">
 												<div class="field__el">
@@ -213,7 +224,7 @@
 											</label>
 											<!-- add scan -->
 											<div class="order__scan-toggle">
-												<a href="#">Прикрепить скан паспорта и/или визы</a>
+												<a class="pseudo-link js-add-order-scan" href="#">Прикрепить скан паспорта и/или визы</a>
 											</div>
 										</div>
 										<div class="order__scans">
@@ -266,6 +277,17 @@
 												</ul>
 												<input class="select__value" type="hidden">
 											</div>
+											<!-- native-select -->
+											<div class="native-select native-select_default is-full js-native-select">
+												<div class="native-select__head">
+													<span>Гражданство</span><i></i>
+												</div>
+												<select class="native-select__el" name="" id="">
+													<option value="">Украинское</option>
+													<option value="">Клятий москаль</option>
+													<option value="">Русское</option>
+												</select>
+											</div>
 											<!-- field -->
 											<div class="field">
 												<div class="field__el">
@@ -288,7 +310,189 @@
 											</label>
 											<!-- add scan -->
 											<div class="order__scan-toggle">
-												<a href="#">Прикрепить скан паспорта и/или визы</a>
+												<a class="pseudo-link js-add-order-scan" href="#">Прикрепить скан паспорта и/или визы</a>
+											</div>
+										</div>
+										<div class="order__scans" style="display: none">
+											<div class="order__scans-item">
+												<img src="http://placehold.it/80x80" alt=""/>
+											</div>
+											<button class="order__scans-add"></button>
+										</div>
+									</div>
+									<!-- 3 -->
+									<div class="order__row">
+										<div class="title title_level-3">Ребенок №1</div>
+										<div class="order__fieldset">
+											<!-- field -->
+											<div class="field">
+												<div class="field__el">
+													<input type="text" placeholder="Имя">
+												</div>
+											</div>
+											<!-- field -->
+											<div class="field">
+												<div class="field__el">
+													<input type="text" placeholder="Фамилия">
+												</div>
+											</div>
+											<!-- sex -->
+											<div class="sex">
+												<label class="sex__item"><input type="radio" name="sex1"><span>м</span></label>
+												<label class="sex__item"><input type="radio" name="sex1"><span>ж</span></label>
+											</div>
+											<!-- select -->
+											<div class="select select_default select_date js-select-date">
+												<div class="select__head">
+													<div class="select__current">Дата рождения</div>
+													<i class="select__ico-date"></i>
+												</div>
+												<div class="select__date"></div>
+												<input class="select__value" type="hidden">
+											</div>
+											<!-- select -->
+											<div class="select select_default js-select is-selected is-full">
+												<div class="select__head">
+													<div class="select__current">Вписан в паспорт</div>
+													<i class="select__arr"></i>
+												</div>
+												<ul class="select__list">
+													<li>Украинское</li>
+													<li>Клятий москаль</li>
+													<li>Русское</li>
+												</ul>
+												<input class="select__value" type="hidden">
+											</div>
+											<!-- native-select -->
+											<div class="native-select native-select_default is-full js-native-select">
+												<div class="native-select__head">
+													<span>Вписан в паспорт</span><i></i>
+												</div>
+												<select class="native-select__el" name="" id="">
+													<option value="">Украинское</option>
+													<option value="">Клятий москаль</option>
+													<option value="">Русское</option>
+												</select>
+											</div>
+											<!-- radio -->
+											<label class="radio">
+												<input type="radio" name="passport-parent">
+												<span class="radio__text">Паспорт мамы</span>
+											</label>
+											<!-- radio -->
+											<label class="radio">
+												<input type="radio" name="passport-parent" checked="">
+												<span class="radio__text">Паспорт папы</span>
+											</label>
+											<!-- checkbox -->
+											<label class="checkbox is-error">
+												<input type="checkbox">
+												<span class="checkbox__text">Фото вклеено</span>
+											</label>
+										</div>
+										<div class="order__attention">фотография должна быть вклеена в паспорт иначе вы не сможете получить разрешение на проезд ребенка и не улетите в ваш тур.</div>
+									</div>
+									<!-- 4 -->
+									<div class="order__row">
+										<div class="title title_level-3">Ребенок №1</div>
+										<div class="order__fieldset">
+											<!-- field -->
+											<div class="field">
+												<div class="field__el">
+													<input type="text" placeholder="Имя">
+												</div>
+											</div>
+											<!-- field -->
+											<div class="field">
+												<div class="field__el">
+													<input type="text" placeholder="Фамилия">
+												</div>
+											</div>
+											<!-- sex -->
+											<div class="sex">
+												<label class="sex__item"><input type="radio" name="sex1"><span>м</span></label>
+												<label class="sex__item"><input type="radio" name="sex1"><span>ж</span></label>
+											</div>
+											<!-- select -->
+											<div class="select select_default select_date js-select-date">
+												<div class="select__head">
+													<div class="select__current">Дата рождения</div>
+													<i class="select__ico-date"></i>
+												</div>
+												<div class="select__date"></div>
+												<input class="select__value" type="hidden">
+											</div>
+											<!-- select -->
+											<div class="select select_default js-select is-full">
+												<div class="select__head">
+													<div class="select__current">Свой паспорт</div>
+													<i class="select__arr"></i>
+												</div>
+												<ul class="select__list">
+													<li>Украинское</li>
+													<li>Клятий москаль</li>
+													<li>Русское</li>
+												</ul>
+												<input class="select__value" type="hidden">
+											</div>
+											<!-- native-select -->
+											<div class="native-select native-select_default is-full js-native-select">
+												<div class="native-select__head">
+													<span>Свой паспорт</span><i></i>
+												</div>
+												<select class="native-select__el" name="" id="">
+													<option value="">Украинское</option>
+													<option value="">Клятий москаль</option>
+													<option value="">Русское</option>
+												</select>
+											</div>
+											<!-- select -->
+											<div class="select select_default js-select">
+												<div class="select__head">
+													<div class="select__current">Гражданство</div>
+													<i class="select__arr"></i>
+												</div>
+												<ul class="select__list">
+													<li>Украинское</li>
+													<li>Клятий москаль</li>
+													<li>Русское</li>
+												</ul>
+												<input class="select__value" type="hidden">
+											</div>
+											<!-- native-select -->
+											<div class="native-select native-select_default is-full js-native-select">
+												<div class="native-select__head">
+													<span>Гражданство</span><i></i>
+												</div>
+												<select class="native-select__el" name="" id="">
+													<option value="">Украинское</option>
+													<option value="">Клятий москаль</option>
+													<option value="">Русское</option>
+												</select>
+											</div>
+											<!-- field -->
+											<div class="field">
+												<div class="field__el">
+													<input type="text" placeholder="Серия, № паспорта">
+												</div>
+											</div>
+											<!-- select -->
+											<div class="select select_default select_date js-select-date">
+												<div class="select__head">
+													<div class="select__current">Срок действия</div>
+													<i class="select__ico-date"></i>
+												</div>
+												<div class="select__date"></div>
+												<input class="select__value" type="hidden">
+											</div>
+											<!-- checkbox -->
+											<label class="checkbox">
+												<input type="checkbox">
+												<span class="checkbox__text">Есть шенген виза</span>
+											</label>
+											<!-- add scan -->
+											<div class="order__scan-toggle">
+												<a class="pseudo-link js-add-order-scan" href="#">Прикрепить скан паспорта и/или визы</a>
 											</div>
 										</div>
 										<div class="order__scans" style="display: none">
@@ -302,11 +506,250 @@
 							</div>
 							<!-- 2 -->
 							<div class="order__block">
-
+								<div class="title title_level-3">Данные о покупателе</div>
+								<div class="order__in">
+									<!-- 1 -->
+									<div class="order__row">
+										<div class="order__layout">
+											<div class="order__col">
+												<!-- field -->
+												<div class="field">
+													<div class="field__el">
+														<input type="text" placeholder="Имя">
+													</div>
+												</div>
+												<!-- field -->
+												<div class="field">
+													<div class="field__el">
+														<input type="text" placeholder="Телефон">
+													</div>
+												</div>
+											</div>
+											<div class="order__col">
+												<!-- field -->
+												<div class="field">
+													<div class="field__el">
+														<input type="text" placeholder="E-mail">
+													</div>
+												</div>
+												<!-- select -->
+												<div class="select select_default js-select">
+													<div class="select__head">
+														<div class="select__current">Оплата</div>
+														<i class="select__arr"></i>
+													</div>
+													<ul class="select__list">
+														<li>Украинское</li>
+														<li>Клятий москаль</li>
+														<li>Русское</li>
+													</ul>
+													<input class="select__value" type="hidden">
+												</div>
+												<!-- native-select -->
+												<div class="native-select native-select_default js-native-select">
+													<div class="native-select__head">
+														<span>Оплата</span><i></i>
+													</div>
+													<select class="native-select__el" name="" id="">
+														<option value="">Украинское</option>
+														<option value="">Клятий москаль</option>
+														<option value="">Русское</option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<div class="order__add-comment">
+											<a class="pseudo-link" href="#">Оставить комментарий к заказу</a>
+										</div>
+										<div class="order__bonus">
+											<div class="order__bonus-in">
+												<a href="#">Бонусная программа</a>
+												<div class="order__bonus-counter">
+													<p>С этой покупки вы получите 32.05 бонусов = 32.05 грн</p>
+													<p>Ваш текущий баланс — <span>82.81бонус</span></p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- 2 -->
+									<div class="order__row">
+										<div class="order__bonus">
+											<div class="order__bonus-payment">
+												<div class="order__bonus-label">Используйте бонусы для оплаты:</div>
+												<!-- field -->
+												<div class="field">
+													<div class="field__el">
+														<input type="text" placeholder="0">
+													</div>
+													<div class="field__label">бонусов</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
-							<div class="order__block"></div>
-							<div class="order__block"></div>
-							<div class="order__block"></div>
+							<!-- 3 -->
+							<div class="order__block">
+								<div class="title title_level-3">Страховка</div>
+								<div class="order__in">
+									<!-- 1 -->
+									<div class="order__row">
+										<div class="order__text">
+											<p><strong>Добавьте страховой полис на время путешествия</strong></p>
+											<p>Застрахуйте себя и своих близких от несчастного случая и потери багажа</p>
+										</div>
+									</div>
+									<!-- 2 -->
+									<div class="order__row">
+										<div class="order__service">
+											<div class="order__service-head">
+												<!-- price -->
+												<div class="price price_small"><span>89</span><sup>56</sup>грн</div>
+												<!-- radio -->
+												<label class="radio">
+													<input type="radio" name="service1" checked="">
+													<span class="radio__text">Пакет «Эконом» (покрытие Европа)</span>
+												</label>
+											</div>
+											<!-- toggle -->
+											<div class="toggle js-toggle">
+												<div class="toggle__in" style="height: 36px" data-height="36">
+													<div class="order__service-text">
+														<ul>
+															<li>Медицинское страхование на сумму 30 000 евро</li>
+															<li>Страхование от несчастного случая на сумму 3 000 евро</li>
+															<li>Медицинское страхование на сумму 30 000 евро</li>
+															<li>Страхование от несчастного случая на сумму 3 000 евро</li>
+															<li>Страхование багажа на сумму 300 евро</li>
+															<li>Медицинское страхование на сумму 30 000 евро</li>
+															<li>Страхование от несчастного случая на сумму 3 000 евро</li>
+															<li>Страхование багажа на сумму 300 евро</li>
+														</ul>
+													</div>
+												</div>
+												<div class="toggle__link">
+													<a class="pseudo-link" href="#">полные условия страхования</a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- 3 -->
+									<div class="order__row">
+										<div class="order__service">
+											<div class="order__service-head">
+												<!-- price -->
+												<div class="price price_small"><span>189</span><sup>56</sup>грн</div>
+												<!-- radio -->
+												<label class="radio">
+													<input type="radio" name="service1">
+													<span class="radio__text">Пакет «Стандарт» (покрытие Европа)</span>
+												</label>
+											</div>
+											<!-- toggle -->
+											<div class="toggle js-toggle">
+												<div class="toggle__in" style="height: 54px" data-height="54">
+													<div class="order__service-text">
+														<ul>
+															<li>Медицинское страхование на сумму 30 000 евро</li>
+															<li>Страхование от несчастного случая на сумму 3 000 евро</li>
+															<li>Страхование багажа на сумму 300 евро</li>
+															<li>Медицинское страхование на сумму 30 000 евро</li>
+															<li>Страхование от несчастного случая на сумму 3 000 евро</li>
+															<li>Медицинское страхование на сумму 30 000 евро</li>
+															<li>Страхование от несчастного случая на сумму 3 000 евро</li>
+															<li>Страхование багажа на сумму 300 евро</li>
+															<li>Медицинское страхование на сумму 30 000 евро</li>
+															<li>Страхование от несчастного случая на сумму 3 000 евро</li>
+															<li>Страхование багажа на сумму 300 евро</li>
+														</ul>
+													</div>
+												</div>
+												<div class="toggle__link">
+													<a class="pseudo-link" href="#">полные условия страхования</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- 4 -->
+							<div class="order__block">
+								<div class="title title_level-3">Travelsim</div>
+								<div class="order__in">
+									<!-- 1 -->
+									<div class="order__row">
+										<div class="order__text">
+											<p><strong>Закажите Sim-карту для международных звонков</strong></p>
+											<p>Скидки на роуминг убедят вас, что сим карты Simtravel – это дешево!</p>
+										</div>
+									</div>
+									<!-- 2 -->
+									<div class="order__row">
+										<div class="order__service">
+											<div class="order__service-head">
+												<!-- price -->
+												<div class="price price_small"><span>0</span>грн</div>
+												<div class="price price_small is-old"><span>200</span>грн</div>
+												<!-- radio -->
+												<label class="radio">
+													<input type="radio" name="services2" checked="">
+													<span class="radio__text">Карточка Travelsim Europe</span>
+												</label>
+											</div>
+											<div class="order__service-text">
+												<p>(0.00 грн на балансе)</p>
+											</div>
+										</div>
+									</div>
+									<!-- 3 -->
+									<div class="order__row">
+										<div class="order__service">
+											<div class="order__service-head">
+												<!-- price -->
+												<div class="price price_small"><span>189</span><sup>56</sup>грн</div>
+												<!-- radio -->
+												<label class="radio">
+													<input type="radio" name="services2">
+													<span class="radio__text">Пакет «Стандарт» (покрытие Европа)</span>
+												</label>
+											</div>
+											<div class="order__service-text">
+												<p>(0.00 грн на балансе)</p>
+											</div>
+										</div>
+									</div>
+									<!-- 4 -->
+									<div class="order__row">
+										<div class="order__balance">
+											<div class="order__balance-title">Пополните баланс карты сразу:</div>
+											<!-- field -->
+											<div class="field">
+												<div class="field__el">
+													<input type="text" placeholder="0">
+												</div>
+												<div class="field__label">бонусов</div>
+											</div>
+											<!-- price -->
+											<div class="price price_small"><span>0</span>грн</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- 5 -->
+							<div class="order__terms">
+								<!-- checkbox -->
+								<label class="checkbox">
+									<input type="checkbox" checked="">
+									<span class="checkbox__text">Я принимаю <a href="#">условия конфиденциальности</a> сервиса «Фарватер»</span>
+								</label>
+							</div>
+							<!-- 6 -->
+							<div class="order__payment">
+								<button class="btn btn_orange">Оплатить</button>
+								<!-- price -->
+								<div class="price"><span>3 989</span><sup>56</sup>грн</div>
+								<div class="order__payment-title">Итого к оплате:</div>
+							</div>
 						</div>
 					</div>
 				</div>

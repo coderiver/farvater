@@ -2,11 +2,11 @@ head.ready(function() {
 
 	// agent
 	var agent = navigator.userAgent,
-	event = (agent.match(/iPad/i)) ? "touchstart" : "click";
+	event = (agent.match(/iPad/i)) ? 'touchstart' : 'click';
 
 	// popups
 	$(document).bind(event, function(e){
-		$(".js-popup").hide();
+		$('.js-popup').hide();
 	});
 
 	// raty
@@ -195,8 +195,8 @@ head.ready(function() {
 	var autocomplete = $('.js-autocomplete');
 	if (autocomplete.length) {
 		var autocomplete_variants = [
-		  "Турция",
-		  "Украина"
+		  'Турция',
+		  'Украина'
 		];
 		autocomplete.autocomplete({
 		  source: autocomplete_variants,
@@ -418,7 +418,7 @@ head.ready(function() {
 				el_next = $(this).find('.next'),
 				el_prev = $(this).find('.prev'),
 				el_caption = $(this).find('.photogallery__description'),
-				el_caption_template = "{{alt}}",
+				el_caption_template = '{{alt}}',
 				el_in = $(this).find('.photogallery__list');
 				el_in.cycle({
 					fx: 'fade',
@@ -460,14 +460,52 @@ head.ready(function() {
 		$('.'+el).fadeIn();
 		return false;
 	});
-	
-
 	popup.on('click', function(){
 		popup.fadeOut();
 	});
 	popup_in.on('click', function(event){
 		event.stopPropagation();
 	})
+
+	// add scan
+	var add_order_scan = $('.js-add-order-scan');
+	add_order_scan.on('click', function(){
+		$(this).parent().parent().parent().find('.order__scans').slideToggle();
+		return false;
+	});	
+
+	// toggle
+	jQuery.fn.animateAuto = function(prop, speed, callback){
+		var elem, height, width;
+		return this.each(function(i, el){
+		  el = jQuery(el), elem = el.clone().css({'height':'auto','width':'auto'}).appendTo('body');
+		  height = elem.css('height'),
+		  width = elem.css('width'),
+		  elem.remove();
+		  if(prop === 'height')
+		    el.animate({'height': height}, speed, callback);
+		  else if(prop === 'width')
+		    el.animate({'width': width}, speed, callback);  
+		  else if(prop === 'both')
+		    el.animate({'width': width,'height': height}, speed, callback);
+		});  
+	}
+	var el_toggle = $('.js-toggle');
+	el_toggle.find('.toggle__link .pseudo-link').on('click', function(){
+		var text = $(this).parent().prev();
+				text_height = text.data('height');
+				text_height = text_height + 'px';
+				console.log(text_height);
+		if (!$(this).hasClass('is-active')) {
+			$(this).addClass('is-active');
+			text.animateAuto('height', 300); 
+		}
+		else {
+			$(this).removeClass('is-active');
+			text.animate({height: text_height}, 300); 
+		}
+		return false;
+	});
 
 });
 
