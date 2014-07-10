@@ -1499,6 +1499,13 @@
 			width: 708px 
 			+rt(764)
 				width: 300px
+	&.popup_map
+		.popup__in
+			width: 960px
+			+rt(1020)
+				width: 720px
+			+rt(764)
+				width: 300px
 	.popup__close
 		position: absolute
 		top: 30px
@@ -1722,15 +1729,114 @@
 		font-size: 16px 
 		font-weight: 700 
 	
+.error
+	padding: 120px 0 180px
+	.error__in
+		position: relative
+		min-height: 65px 
+		margin-bottom: 30px
+		padding: 20px 20px 20px 150px
+		border-radius: 8px
+		background-color: #e93636
+		box-shadow: 0 1px 2px #b7bfc5
+		+g(#ef4444, #e52828)
+		color: #fff 
+	.error__ico
+		position: absolute
+		top: 20px
+		left: 50px
+		+s(error)
+	.error__title
+		margin-bottom: 10px
+		font-size: 20px
+		font-weight: 700 
+	.error__footer
+		text-align: center
+		.btn
+			margin: 0 7px
 
+.contacts
+	.contacts__list	
+		margin-bottom: 30px
+		font-size: 0
+		text-align: center
+	.contacts__item
+		display: inline-block
+		width: 33.3%
+		padding: 0 20px 
+		margin-bottom: 20px
+		box-sizing: border-box
+		vertical-align: top
+		+rt(764)
+			width: 100%
+			padding: 0
+			margin-bottom: 15px
+		.title
+			margin-bottom: 10px
+	.contacts__details
+		font-size: 16px
+		p
+			margin-bottom: 2px
 
+.team
+	.team__list	
+		margin-bottom: 30px
+		font-size: 0
+		text-align: center
+	.team__item
+		display: inline-block
+		width: 33.3%
+		padding: 0 20px 
+		margin-bottom: 20px
+		box-sizing: border-box
+		vertical-align: top
+		+rt(764)
+			width: 100%
+			padding: 0
+			margin-bottom: 15px
+	.team__avatar
+		margin-bottom: 5px
+		font-size: 0
+		img
+			border-radius: 50%
+	.team__name
+		margin-bottom: 3px
+		font-weight: 700 
+		font-size: 14px
+	.team__mail	
+		font-size: 12px
 
-
-
-
-
-
-
+.countries
+	.countries__layout
+		+clr
+	.countries__col
+		float: left
+		width: 20%
+		padding-left: 30px
+		box-sizing: border-box
+		&:first-child
+			padding: 0
+	.countries__list
+		margin-bottom: 20px
+		font-size: 16px
+		li
+			position: relative
+			padding-left: 17px 
+			margin-bottom: 5px
+			&.is-active
+				&:before
+					content: ""
+					position: absolute
+					top: 7px
+					left: 0
+					width: 7px
+					height: 7px
+					background: #6dbc42
+					border-radius: 50% 
+			span
+				padding-left: 5px
+				font-style: italic
+				color: #6DBC42 
 
 
 
