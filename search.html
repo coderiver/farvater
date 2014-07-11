@@ -107,15 +107,15 @@
 								<!-- 3 -->
 								<div class="search__item">
 									<div class="search__label">Курорт</div>
-									<!-- select-drop -->
-									<div class="select-drop">
-										<div class="select-drop__head">
+									<!-- select-list -->
+									<div class="select-list">
+										<div class="select-list__head">
 											<label class="checkbox">
 												<input type="checkbox">
 												<span class="checkbox__text">Любой</span>
 											</label>
 										</div>
-										<div class="select-drop__list">
+										<div class="select-list__items">
 											<label class="checkbox">
 												<input type="checkbox">
 												<span class="checkbox__text">Аланья</span>
@@ -160,8 +160,351 @@
 									</div>
 								</div>
 							</div>
-							<div class="search__col">dsf</div>
-							<div class="search__col">dsf</div>
+							<div class="search__col">
+								<!-- 1 -->
+								<div class="search__item">
+									<div class="search__fieldset">
+										<div class="search__field">
+											<div class="search__label">Туда</div>
+											<!-- select -->
+											<div class="select select_default select_date is-selected js-select-date">
+												<div class="select__head">
+													<div class="select__current">03.05.2014</div>
+													<i class="select__ico-date"></i>
+												</div>
+												<div class="select__date"></div>
+												<input class="select__value" type="hidden">
+											</div>
+										</div>
+										<div class="search__field">
+											<div class="search__label">Обратно</div>
+											<!-- select -->
+											<div class="select select_default select_date is-selected js-select-date">
+												<div class="select__head">
+													<div class="select__current">03.05.2014</div>
+													<i class="select__ico-date"></i>
+												</div>
+												<div class="select__date"></div>
+												<input class="select__value" type="hidden">
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- 2 -->
+								<div class="search__item">
+									<div class="search__fieldset">
+										<div class="search__field">
+											<div class="search__label">Ночей от</div>
+											<!-- select -->
+											<div class="select select_default is-selected js-select">
+												<div class="select__head">
+													<div class="select__current">5 ночей</div>
+													<i class="select__arr"></i>
+												</div>
+												<ul class="select__list">
+													<li>3 ночей</li>
+													<li>4 ночей</li>
+													<li>5 ночей</li>
+													<li>6 ночей</li>
+													<li>7 ночей</li>
+												</ul>
+												<input class="select__value" type="hidden">
+											</div>
+											<!-- native-select -->
+											<div class="native-select native-select_default js-native-select">
+												<div class="native-select__head">
+													<span>Туры</span><i></i>
+												</div>
+												<select class="native-select__el" name="" id="">
+													<option value="">Туры</option>
+													<option value="">Авиабилеты</option>
+													<option value="">Отели</option>
+													<option value="">Роуминг</option>
+													<option value="">Страхование</option>
+												</select>
+											</div>
+										</div>
+										<div class="search__field">
+											<div class="search__label">Ночей до</div>
+											<!-- select -->
+											<div class="select select_default is-selected js-select">
+												<div class="select__head">
+													<div class="select__current">5 ночей</div>
+													<i class="select__arr"></i>
+												</div>
+												<ul class="select__list">
+													<li>3 ночей</li>
+													<li>4 ночей</li>
+													<li>5 ночей</li>
+													<li>6 ночей</li>
+													<li>7 ночей</li>
+												</ul>
+												<input class="select__value" type="hidden">
+											</div>
+											<!-- native-select -->
+											<div class="native-select native-select_default js-native-select">
+												<div class="native-select__head">
+													<span>Туры</span><i></i>
+												</div>
+												<select class="native-select__el" name="" id="">
+													<option value="">Туры</option>
+													<option value="">Авиабилеты</option>
+													<option value="">Отели</option>
+													<option value="">Роуминг</option>
+													<option value="">Страхование</option>
+												</select>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- 3 -->
+								<div class="search__item">
+									<div class="search__people">
+										<div class="search__adults">
+											<div class="search__label">Взрослых: <span id="counter-adults">2</span></div>
+											<div class="search__adults-list"></div>
+										</div>
+										<div class="search__kids">
+											<div class="search__label">Детей: <span id="counter-kids">1</span></div>
+											<div class="search__kids-list"></div>
+										</div>
+										<div class="search__babies">
+											<div class="search__label">Младенцев: <span id="counter-babies">1</span></div>
+											<div class="search__babies-list"></div>
+										</div>
+									</div>
+								</div>
+								<!-- 4 -->
+								<div class="search__item">
+									<div class="search__fieldset">
+										<div class="search__field">
+											<div class="search__label">Цена от</div>
+											<div class="search__el">
+												<input type="text" placeholder="">
+											</div>
+										</div>
+										<div class="search__field">
+											<div class="search__label">Цена до</div>
+											<div class="search__el">
+												<input type="text" placeholder="">
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- 5 -->
+								<div class="search__item">
+									<div class="radio-group">
+										<label class="radio">
+											<input type="radio" name="currency">
+											<span class="radio__text">UAH</span>
+										</label>
+										<label class="radio">
+											<input type="radio" name="currency">
+											<span class="radio__text">USD</span>
+										</label>
+										<label class="radio">
+											<input type="radio" name="currency">
+											<span class="radio__text">EUR</span>
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="search__col">
+								<!-- 1 -->
+								<div class="search__item">
+									<div class="search__category">
+										<div class="search__category-head">
+											<div class="search__label">Категория</div>
+											<label class="checkbox">
+												<input type="checkbox">
+												<span class="checkbox__text">Любая</span>
+											</label>
+										</div>
+										<div class="search__category-list">
+											<label class="checkbox">
+												<input type="checkbox">
+												<span class="checkbox__text">5*</span>
+											</label>
+											<label class="checkbox">
+												<input type="checkbox">
+												<span class="checkbox__text">4*</span>
+											</label>
+											<label class="checkbox">
+												<input type="checkbox">
+												<span class="checkbox__text">3*</span>
+											</label>
+											<label class="checkbox">
+												<input type="checkbox">
+												<span class="checkbox__text">2*</span>
+											</label>
+											<label class="checkbox">
+												<input type="checkbox">
+												<span class="checkbox__text">Apts</span>
+											</label>
+											<label class="checkbox">
+												<input type="checkbox">
+												<span class="checkbox__text">Villas</span>
+											</label>
+											<label class="checkbox">
+												<input type="checkbox">
+												<span class="checkbox__text">HV-1</span>
+											</label>
+											<label class="checkbox">
+												<input type="checkbox">
+												<span class="checkbox__text">HV-2</span>
+											</label>
+										</div>
+									</div>
+								</div>
+								<!-- 2 -->
+								<div class="search__item">
+									<div class="search__category">
+										<div class="search__category-head">
+											<div class="search__label">Питание</div>
+											<label class="checkbox">
+												<input type="checkbox">
+												<span class="checkbox__text">Любое</span>
+											</label>
+										</div>
+										<div class="search__category-list">
+											<label class="checkbox">
+												<input type="checkbox">
+												<span class="checkbox__text">AI</span>
+											</label>
+											<label class="checkbox">
+												<input type="checkbox">
+												<span class="checkbox__text">BB</span>
+											</label>
+											<label class="checkbox">
+												<input type="checkbox">
+												<span class="checkbox__text">FB</span>
+											</label>
+											<label class="checkbox">
+												<input type="checkbox">
+												<span class="checkbox__text">FB+</span>
+											</label>
+											<label class="checkbox">
+												<input type="checkbox">
+												<span class="checkbox__text">HB</span>
+											</label>
+											<label class="checkbox">
+												<input type="checkbox">
+												<span class="checkbox__text">HB+</span>
+											</label>
+											<label class="checkbox">
+												<input type="checkbox">
+												<span class="checkbox__text">RO</span>
+											</label>
+											<label class="checkbox">
+												<input type="checkbox">
+												<span class="checkbox__text">UAI</span>
+											</label>
+										</div>
+									</div>
+								</div>
+								<!-- 3 -->
+								<div class="search__item">
+									<div class="search__field">
+										<div class="search__label">Отель</div>
+										<div class="search__el">
+											<input type="text" placeholder="Поиск по названию отеля">
+										</div>
+									</div>
+									<!-- select-list -->
+									<div class="select-list select-list_small">
+										<div class="select-list__head">
+											<label class="checkbox">
+												<input type="checkbox">
+												<span class="checkbox__text">Любой</span>
+											</label>
+										</div>
+										<div class="select-list__items">
+											<label class="checkbox">
+												<input type="checkbox">
+												<span class="checkbox__text">2000 Anittepe</span>
+											</label>
+											<label class="checkbox">
+												<input type="checkbox">
+												<span class="checkbox__text">3S Beach Club</span>
+											</label>
+											<label class="checkbox">
+												<input type="checkbox">
+												<span class="checkbox__text">3T Residence</span>
+											</label>
+											<label class="checkbox">
+												<input type="checkbox">
+												<span class="checkbox__text">2000 Anittepe</span>
+											</label>
+											<label class="checkbox">
+												<input type="checkbox">
+												<span class="checkbox__text">3S Beach Club</span>
+											</label>
+											<label class="checkbox">
+												<input type="checkbox">
+												<span class="checkbox__text">3T Residence</span>
+											</label>
+											<label class="checkbox">
+												<input type="checkbox">
+												<span class="checkbox__text">2000 Anittepe</span>
+											</label>
+											<label class="checkbox">
+												<input type="checkbox">
+												<span class="checkbox__text">3S Beach Club</span>
+											</label>
+											<label class="checkbox">
+												<input type="checkbox">
+												<span class="checkbox__text">3T Residence</span>
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="search__btn">
+							<button class="btn">Найти</button>
+						</div>
+					</div>
+					<!-- benefits -->
+					<div class="benefits">
+						<!-- title -->
+						<div class="title">Преимущества</div>
+						<div class="benefits__list js-benefits">
+							<div class="benefits__item">
+								<a class="benefits__link" href="#">
+									<div class="benefits__pic">
+										<i class="benefits__ico-1"></i>
+									</div>
+									<div class="benefits__title">Мгновенная покупка с доставкой</div>
+									<div class="benefits__text">Приобретайте тур в любую точку мира всего за 2 минуты. Работает доставка! Вы можете оплатить и получить весь пакет документов, не выходя из дома.</div>
+								</a>
+							</div>
+							<div class="benefits__item">
+								<a class="benefits__link" href="#">
+									<div class="benefits__pic">
+										<i class="benefits__ico-2"></i>
+									</div>
+									<div class="benefits__title">Минимальные цены, горящие путевки, бонусы</div>
+									<div class="benefits__text">Мы делаем своим клиентам самые выгодные предложения! Система бонусов позволит максимально экономить на всех поездках.</div>
+								</a>
+							</div>
+							<div class="benefits__item">
+								<a class="benefits__link" href="#">
+									<div class="benefits__pic">
+										<i class="benefits__ico-3"></i>
+									</div>
+									<div class="benefits__title">52 000 000 туров, доступных здесь и сейчас</div>
+									<div class="benefits__text">Самый большой выбор предложений: 881 курорт, 182 страны, 27 операторов, 12988 отелей.</div>
+								</a>
+							</div>
+							<div class="benefits__item">
+								<a class="benefits__link" href="#">
+									<div class="benefits__pic">
+										<i class="benefits__ico-4"></i>
+									</div>
+									<div class="benefits__title">Надежные операторы</div>
+									<div class="benefits__text">Мы сотрудничаем с 35 лучшими  туристическими операторами страны. Наши менеджеры лично посетили 750 отелей по всему миру, и их число увеличивается.</div>
+								</a>
+							</div>
 						</div>
 					</div>
 				</div>

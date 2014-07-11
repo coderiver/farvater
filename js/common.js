@@ -215,6 +215,7 @@ head.ready(function() {
 			similar = $('.js-similar'),
 			watched = $('.js-watched'),
 			benefits = $('.js-benefits'),
+			hotels = $('.js-hotels'),
 			read_more = $('.js-read-more'),
 			response_slider = $('.js-response-slider'),
 			tours = $('.js-tours'),
@@ -258,6 +259,30 @@ head.ready(function() {
 				  breakpoint: 1020,
 				  settings: {
 				    slidesToShow: 3,
+				    arrows: true
+				  }
+				}
+			]
+		});
+	};
+	if (hotels.length) {
+		hotels.slick({
+			slide: '.hotels__item',
+			slidesToShow: 0,
+			infinite: true,
+			arrows: false,
+			responsive: [
+				{
+				  breakpoint: 1020,
+				  settings: {
+				    slidesToShow: 3,
+				    arrows: true
+				  }
+				},
+				{
+				  breakpoint: 764,
+				  settings: {
+				    slidesToShow: 1,
 				    arrows: true
 				  }
 				}

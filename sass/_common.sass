@@ -377,6 +377,13 @@ input, button, textarea
 	+rt(1020)
 		display: none
 
+
+.radio-group
+	.radio
+		display: inline-block
+		margin-right: 25px 
+		vertical-align: top
+
 .checkbox, .radio
 	position: relative
 	display: block
@@ -401,7 +408,6 @@ input, button, textarea
 			&:before
 				+sp(checkbox-a)
 		&:checked + .radio__text
-			color: $cl
 			&:before
 				+sp(radio-a)
 	.checkbox__text, .radio__text
@@ -906,29 +912,34 @@ a
 	.select__list
 		border-radius: 0 9px 9px 9px
 		
-.select-drop
+.select-list
 	border-radius: 3px
 	background-color: #fff
 	box-shadow: inset 0 1px 2px rgba(49,86,163,.35)
-	.select-drop__head
+	overflow: hidden
+	.select-list__head
 		border-bottom: 1px solid #d8dfee 
 		.checkbox
 			padding: 7px 10px 7px 34px
 		.checkbox__text
 			&:before
-				top: 5px
+				top: 8px
 				left: 9px
-	.select-drop__in
+	.select-list__in
 		padding: 6px 5px 6px 0
-	.select-drop__list
+	.select-list__items
 		max-height: 125px
 		overflow: auto
+		&::-webkit-scrollbar
+			width: 15px
+		&::-webkit-scrollbar-thumb
+			background: #98AAD1 
+			border: 5px solid #fff
+			border-radius: 10px
+		&::-webkit-scrollbar-track-piece
+			background: white
 		.checkbox
 			padding: 4px 5px 4px 34px
-			&:first-child
-				padding: 8px 5px 4px 34px
-			&:last-child
-				padding: 4px 5px 8px 34px 
 		.checkbox__text
 			&:before
 				top: 5px
@@ -1081,6 +1092,12 @@ a
 	+g(#4274c3, #203883)
 	&.search_pro
 		width: 100%
+		padding: 18px 20px
+		.search__fieldset
+			.search__field
+				width: 135px
+				+rt(764)
+					width: 120px
 	.search__item
 		position: relative
 		margin-top: 15px
@@ -1183,9 +1200,9 @@ a
 	.search__kids
 		width: 80px
 	.search__btn
-		margin-bottom: 20px
 		text-align: center
 	.search__link
+		margin-top: 20px
 		text-align: center
 		a
 			color: #8DA9E3 
@@ -1202,23 +1219,64 @@ a
 			margin-left: 5px
 			border-bottom: 1px dotted 
 	.search__layout
-		+clr
+		margin-bottom: 25px
+		font-size: 0
+		text-align: center
 	.search__col
-		float: left
-		width: 290px
+		display: inline-block
+		width: 290px§
 		margin-left: 20px
+		font-size: 13px
+		vertical-align: top
+		text-align: left
+		+rt(1020)
+			margin-bottom: 20px
+			&:last-child
+				margin: 0
+		+rt(764)
+			width: 260px
+			margin: 0 0 15px
 		&:first-child
-			margin: 0
+			margin-left: 0
 	.search__variants
 		padding-top: 2px
 		color: #8DA9E3 
 		font-style: italic
 		font-size: 12px
+	.search__category	
+		.checkbox
+			color: #fff 
+	.search__category-head
+		+clr
+		.search__label
+			float: left
+		.checkbox
+			float: right
+	.search__category-list
+		padding: 8px 9px 0
+		border: 1px solid #668bd0
+		border-radius: 5px
+		font-size: 0
+		.checkbox
+			display: inline-block
+			width: 25%
+			padding-right: 5px
+			margin-bottom: 8px
+			vertical-align: top
+			font-size: 13px
+			box-sizing: border-box
+	.search__field + .select-list
+		margin-top: 10px 
 	.checkbox
 		color: #8DA9E3 
-	.select-drop
+	.radio
+		color: #FFF 
+	.select-list
 		.checkbox
 			color: $cl   
+	.select-list_small
+		.select-list__items
+			max-height: 77px
 
 .title
 	margin-bottom: 30px 
@@ -1438,15 +1496,22 @@ a
 				background: #edf7ff
 	.field__el
 		display: block
-		input
-			padding: 0 10px
-			height: 37px
+		input, textarea
 			border-radius: 3px
 			background: #fff
 			box-shadow: inset 0 1px 2px rgba(49,86,163,.35)
+			box-sizing: border-box
 			&:focus
 				background: #edf7ff
 				+placeholder-color($cl)
+		input
+			padding: 0 10px
+			height: 37px
+		textarea
+			padding: 7px 10px
+			height: 100px
+			border: none
+			resize: vertical
 	&.field_small
 		.field__el
 			input
@@ -1584,6 +1649,8 @@ a
 				height: 6px
 				border-radius: 50%
 				+g(#4d79c3, #355097)
+				+rt(764)
+					top: 6px
 	blockquote
 		padding: 15px 20px
 		border-radius: 8px

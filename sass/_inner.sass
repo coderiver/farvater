@@ -77,14 +77,16 @@
 			width: auto
 			padding: 10px
 	.tour__pic
-		position: relative
-		font-size: 0
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		border-radius: 0 8px 8px 0
+		background-size: cover
 		z-index: 2 
-		img
-			width: 100%
-			border-radius: 0 8px 8px 0
-			+rt(764)
-				border-radius: 8px 8px 0 0
+		+rt(764)
+			border-radius: 8px 8px 0 0
 	.tour__head
 		margin-bottom: 10px
 		font-size: 0
@@ -1708,22 +1710,23 @@
 		font-size: 14px
 		.checkbox__text
 			line-height: 1.1
-	.order__payment
-		position: relative
-		+clr
-		+rt(764)
-			padding-bottom: 50px
-			.btn
-				position: absolute
-				bottom: 0
-				right: 0
+		
+.go-payment
+	position: relative
+	+clr
+	+rt(764)
+		padding-bottom: 50px
 		.btn
-			float: right
-		.price
-			margin: 0 20px 0 30px
-			+rt(764)
-				margin: 0 8px 0 30px
-	.order__payment-title
+			position: absolute
+			bottom: 0
+			right: 0
+	.btn
+		float: right
+	.price
+		margin: 0 20px 0 30px
+		+rt(764)
+			margin: 0 8px 0 30px
+	.go-payment__title
 		float: right
 		margin-top: 9px
 		font-size: 16px 
@@ -1838,14 +1841,136 @@
 				font-style: italic
 				color: #6DBC42 
 
+.hotels
+	.title
+		position: relative
+		a
+			position: absolute
+			top: 0
+			right: 0
+			font-weight: 400
+			font-size: 13px 
+			+rt(764)
+				display: block
+				position: relative
+				margin-top: 5px
+				top: auto
+				right: auto
+	.hotels__list
+		margin-bottom: 30px
+		font-size: 0
+		+rt(1020)
+			padding: 0 0 2px
+			overflow: hidden
+	.hotels__list-in
+		margin-right: -20px 
+		+rt(1020)
+			margin: 0
+	.hotels__item
+		float: left
+		width: 180px
+		margin: 0 15px 15px 0
+		text-align: center
+		+rt(1020)
+			margin: 0
+	.hotels__item-in
+		position: relative
+		display: inline-block
+		width: 180px
+		border-radius: 5px
+		box-shadow: 0 1px 2px #b7bfc5
+		vertical-align: top
+		text-decoration: none
+	.hotels__title
+		display: table-cell
+		width: 180px
+		height: 120px
+		padding: 7px
+		+g(rgba(0,0,0,.1), rgba(0,0,0,.5))
+		border-radius: 5px
+		color: #FFF
+		font-size: 14px
+		vertical-align: bottom
+		box-sizing: border-box
+		span
+			display: block
+			font-weight: 700 
+	.slick-prev, .slick-next
+		top: 50%
+		margin-top: -20px
+	.slick-prev
+		left: 0
+	.slick-next
+		right: 0
 
+.insurance
+	padding: 20px
+	margin-bottom: 30px
+	border-radius: 8px
+	background-color: #fdf5e0
+	box-shadow: 0 1px 2px #b7bfc5
+	+g(#fef8e8, #fcf4d8)
+	.insurance__item
+		margin-top: 20px
+		padding-top: 20px
+		border-top: #DFD9C5 1px solid
+		&:first-child
+			padding: 0
+			margin: 0
+			border: none
+	.insurance__head
+		+clr
+		.price
+			float: right
+			margin: 0 8px 0 20px
+		.radio
+			display: table
+			margin-bottom: 10px
+		.radio__text	
+			font-size: 18px
+			font-weight: 700 
+			+rt(764)
+				font-size: 16px
+			&:before
+				top: 5px 
+		& +	.insurance__text
+			padding-left: 23px
+	.insurance__text
+		font-size: 16px
 
-
-
-
-
-
-
+.question
+	height: 406px
+	background: url(../img/bg-question.png) no-repeat 0 0 
+	border-radius: 8px
+	box-shadow: 0 1px 3px #c1c9cd
+	+vertical
+	+rt(764)
+		height: 400px
+		background: url(../img/bg-question-small.png) no-repeat 0 0 
+	.question__form, .question__ok
+		display: inline-block
+		vertical-align: middle
+	.question__form
+		width: 260px
+		.field
+			margin-bottom: 15px
+		.btn
+			margin-top: 10px
+	.question__ok-title
+		margin-bottom: 20px
+		i
+			display: inline-block
+				margin-bottom: 10px
+			vertical-align: top
+			+s(ok-green)
+		span
+			display: block
+			font-size: 20px
+			font-weight: 700
+			color: #6dbc42   
+	.question__ok-text
+		font-size: 13px
+		color: #64707D 
 
 
 
