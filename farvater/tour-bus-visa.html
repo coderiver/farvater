@@ -1,0 +1,711 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Template</title>
+	<meta name="viewport" content="initial-scale=1"/>
+	<link rel="stylesheet" media="screen" href="css/screen.css" >
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,700|Roboto+Slab&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	<!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
+</head>
+<body>
+<!-- wrapper -->
+<div class="wrapper">
+	<div class="wrapper__in">
+		<!-- topper -->
+		<div class="topper">
+			<div class="l-center">
+				<button class="topper__menu js-topper-menu"></button>
+				<div class="topper__phones">(044) 555-55-55<span>•</span>(050) 432-70-70</div>
+				<div class="topper__ask"><a href="#">Задать вопрос</a></div>
+				<!-- enter -->
+				<div class="enter">
+					<div class="enter__link"><a href="#">Войти</a></div>
+					<div class="enter__throw">через</div>
+					<!-- social -->
+					<div class="social">
+						<a class="social__fb" href="#"></a>
+						<a class="social__vk" href="#"></a>
+						<a class="social__gp" href="#"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- mob-menu -->
+		<nav class="mob-menu js-mob-menu">
+			<a href="#">О компании</a>
+			<a href="#">Блог</a>
+			<a href="#">Контакты</a>
+			<a href="#">Задать вопрос</a>
+			<a href="#">Программа лояльности</a>
+			<a href="#">Вход в личный кабинет</a>
+		</nav>
+		<!-- container -->
+		<div class="container">
+			<div class="container__in">
+				<!-- header -->
+				<div class="header">
+					<div class="l-center">
+						<a class="logo" href="#"></a>
+						<div class="stamp"></div>
+						<!-- nav -->
+						<nav class="nav">
+							<a class="is-active" href="#">Туры</a>
+							<a href="#">Авиабилеты</a>
+							<a href="#">Отели</a>
+							<a href="#">Роуминг</a>
+							<a href="#">Страхование</a>
+						</nav>
+						<!-- native-select -->
+						<div class="mob-nav native-select js-native-select">
+							<div class="native-select__head">
+								<span>Туры</span><i></i>
+							</div>
+							<select class="native-select__el" name="" id="">
+								<option value="">Туры</option>
+								<option value="">Авиабилеты</option>
+								<option value="">Отели</option>
+								<option value="">Роуминг</option>
+								<option value="">Страхование</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<!-- breadcrumbs -->
+				<div class="l-center">
+					<ul class="breadcrumbs">
+						<li><a href="#">Главная</a><i></i></li>
+						<li>Каталог туров</li>
+					</ul>
+				</div>
+				<!-- l-layout -->
+				<div class="l-layout l-center">
+					<div class="l-aside">
+						<!-- search -->
+						<div class="search">
+							<div class="search__item">
+								<div class="search__label">Откуда?</div>
+								<div class="search__field">
+									<div class="search__el search__el_plain">
+										<input type="text" value="Киев, Украина">
+										<i class="search__ico"></i>
+									</div>
+								</div>
+							</div>
+							<div class="search__item">
+								<div class="search__fieldset">
+									<div class="search__field">
+										<div class="search__label">Туда</div>
+										<!-- select -->
+										<div class="select select_default select_date is-selected js-select-date">
+											<div class="select__head">
+												<div class="select__current">03.05.2014</div>
+												<i class="select__ico-date"></i>
+											</div>
+											<div class="select__date"></div>
+											<input class="select__value" type="hidden">
+										</div>
+									</div>
+									<div class="search__field">
+										<div class="search__label">Ночей</div>
+										<!-- select -->
+										<div class="select select_default is-selected js-select">
+											<div class="select__head">
+												<div class="select__current">5 ночей</div>
+												<i class="select__arr"></i>
+											</div>
+											<ul class="select__list">
+												<li>3 ночей</li>
+												<li>4 ночей</li>
+												<li>5 ночей</li>
+												<li>6 ночей</li>
+												<li>7 ночей</li>
+											</ul>
+											<input class="select__value" type="hidden">
+										</div>
+										<!-- native-select -->
+										<div class="native-select native-select_default js-native-select">
+											<div class="native-select__head">
+												<span>Туры</span><i></i>
+											</div>
+											<select class="native-select__el" name="" id="">
+												<option value="">Туры</option>
+												<option value="">Авиабилеты</option>
+												<option value="">Отели</option>
+												<option value="">Роуминг</option>
+												<option value="">Страхование</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<!-- checkbox -->
+								<label class="checkbox checkbox_white">
+									<input type="checkbox">
+									<span class="checkbox__text">Гибкие даты (±3 дня)</span>
+								</label>
+							</div>
+							<div class="search__item">
+								<div class="search__people">
+									<div class="search__adults">
+										<div class="search__label">Взрослых: <span id="counter-adults">2</span></div>
+										<div class="search__adults-list"></div>
+									</div>
+									<div class="search__kids">
+										<div class="search__label">Детей: <span id="counter-kids">1</span></div>
+										<div class="search__kids-list"></div>
+									</div>
+									<div class="search__babies">
+										<div class="search__label">Младенцев: <span id="counter-babies">1</span></div>
+										<div class="search__babies-list"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- research -->
+						<div class="research">
+							<button class="btn btn_gray">Изменить параметры поиска</button>
+						</div>
+						<!-- similar -->
+						<div class="similar similar_aside">
+							<div class="title title_level-3">Вас также может заинтересовать</div>
+							<div class="similar__slider">
+								<!-- 1 -->
+								<div class="similar__item">
+									<div class="similar__item-in">
+										<div class="similar__pic">
+											<a href="#">
+												<img src="http://placehold.it/300x200" alt="">
+												<div class="similar__price"><div class="price"><span>13 300</span>грн</div></div>
+												<div class="similar__discount"><span>-8%</span></div>
+											</a>
+										</div>
+										<div class="similar__data">
+											<div class="similar__title"><a href="#">Киев — Львов — Краков — Дрезден — Франкфурт — Мюнхен</a></div>
+											<div class="similar__days"><span>7–14 мая</span> (8 ночей)</div>
+										</div>
+									</div>
+								</div>
+								<!-- 2 -->
+								<div class="similar__item">
+									<div class="similar__item-in">
+										<div class="similar__pic">
+											<a href="#">
+												<img src="http://placehold.it/300x200" alt="">
+												<div class="similar__price"><div class="price"><span>13 300</span>грн</div></div>
+												<div class="similar__discount"><span>-8%</span></div>
+											</a>
+										</div>
+										<div class="similar__data">
+											<div class="similar__title"><a href="#">Киев — Львов — Краков — Дрезден — Франкфурт — Мюнхен</a></div>
+											<div class="similar__days"><span>7–14 мая</span> (8 ночей)</div>
+										</div>
+									</div>
+								</div>
+								<!-- 3 -->
+								<div class="similar__item">
+									<div class="similar__item-in">
+										<div class="similar__pic">
+											<a href="#">
+												<img src="http://placehold.it/300x200" alt="">
+												<div class="similar__price"><div class="price"><span>13 300</span>грн</div></div>
+												<div class="similar__discount"><span>-8%</span></div>
+											</a>
+										</div>
+										<div class="similar__data">
+											<div class="similar__title"><a href="#">Киев — Львов — Краков — Дрезден — Франкфурт — Мюнхен</a></div>
+											<div class="similar__days"><span>7–14 мая</span> (8 ночей)</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="l-section">
+						<!-- tour-info -->
+						<div class="tour-info js-tour-info">
+							<div class="tour-info__in">
+								<div class="tour-info__head">
+									<button class="btn">КУПИТЬ</button>
+									<!-- price -->
+									<div class="price"><span>13 300</span>грн</div>
+									<div class="tour-info__title">Львов — Берлин — Лондон — Амстердам</div>
+								</div>
+								<div class="tour-info__details">
+									<!-- rating -->
+									<div class="rating rating_big js-rating-read">
+										<div class="rating__stars" data-score="3.5" data-number="3"></div>
+										<div class="rating__counter"><span>3.5</span>/5</div>
+									</div>
+									<div class="tour-info__comment-counter">
+										<a href="#">3 отзыва</a>
+									</div>
+									<div class="tour-info__bonus">Вы получите 133 балла</div>
+								</div>
+								<div class="tour-info__shadow"></div>
+							</div>
+						</div>
+						<!-- actions -->
+						<div class="actions">
+							<a class="actions__item actions__item_mob" href="#"><i class="actions__ico-fav"></i><span>В избранное</span></a>
+							<a class="actions__item" href="#"><i class="actions__ico-send"></i><span>Отправить</span></a>
+							<a class="actions__item" href="#"><i class="actions__ico-print"></i><span>Печать</span></a>
+							<a class="actions__item actions__item_mob" href="#"><i class="actions__ico-save"></i><span>Сохранить<span></span></a>
+							<div class="actions__like"><img src="img/actions-like-fb.png" alt=""></div>
+							<div class="actions__like"><img src="img/actions-like-vk.png" alt=""></div>
+						</div>
+						<!-- gallery -->
+						<div class="gallery js-gallery">
+							<div class="gallery__pic">
+								<button class="prev"></button>
+								<button class="next"></button>
+								<div class="gallery__list">
+								  <img src="http://placehold.it/630x420" alt="">
+								  <img src="http://placehold.it/630x420" alt="">
+								  <img src="http://placehold.it/630x420" alt="">
+								  <img src="http://placehold.it/630x420" alt="">
+								  <img src="http://placehold.it/630x420" alt="">
+								  <img src="http://placehold.it/630x420" alt="">
+								</div>
+							</div>
+							<div class="gallery__preview"></div>
+						</div>
+						<div class="title title_level-3">Тур, в котором мы проведем 3 дня в Лондоне и 3 дня в Париже!!! А также в цене тура: несравненный Берлин, яркий Амстердам и любимая Прага!!!</div>
+						<div class="title title_level-3">Маршрут на карте</div>
+						<!-- tour map -->
+						<div class="tour-map">
+							<img src="http://placehold.it/630x320" style="width: 100%;" alt=""/>
+						</div>
+						<!-- tabs -->
+						<div class="tabs">
+							<div class="tabs__nav">
+								<!-- sort wrapper -->
+								<div class="sort-wrapper">
+									<!-- sort -->
+									<div class="sort">
+										<div class="sort__list">
+											<a href="#">Программа тура</a>
+											<a class="is-active" href="#">Стоимость тура</a>
+											<a href="#">Тур включает</a>
+											<a href="#">Виза</a>
+											<a href="#">Отзывы<span>7</span></a>
+										</div>
+									</div>
+									<!-- native select -->
+									<div class="native-select native-select_basic js-native-select">
+										<div class="native-select__head">
+											<span>Программа тура</span><i></i>
+										</div>
+										<select class="native-select__el" name="" id="">
+											<option value="">Программа тура</option>
+											<option value="">Стоимость тура</option>
+											<option value="">Тур включает</option>
+											<option value="">Виза</option>
+											<option value="">Отзывы (7)</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="tabs__container">
+								<div class="tabs__item">
+									<!-- tour visa -->
+									<div class="tour-visa">
+										<div class="tour-visa__form">
+											<!-- select -->
+											<div class="select select_default js-select">
+												<div class="select__head">
+													<div class="select__current">Место проживания</div>
+													<i class="select__arr"></i>
+												</div>
+												<ul class="select__list">
+													<li>Место проживания</li>
+													<li>Место проживания</li>
+													<li>Место проживания</li>
+													<li>Место проживания</li>
+													<li>Место проживания</li>
+												</ul>
+												<input class="select__value" type="hidden">
+											</div>
+											<!-- native-select -->
+											<div class="native-select native-select_default js-native-select">
+												<div class="native-select__head">
+													<span>Место проживания</span><i></i>
+												</div>
+												<select class="native-select__el" name="" id="">
+													<option value="">Место проживания</option>
+													<option value="">Место проживания</option>
+													<option value="">Место проживания</option>
+													<option value="">Место проживания</option>
+													<option value="">Место проживания</option>
+												</select>
+											</div>
+											<!-- select -->
+											<div class="select select_default js-select">
+												<div class="select__head">
+													<div class="select__current">Тип визы</div>
+													<i class="select__arr"></i>
+												</div>
+												<ul class="select__list">
+													<li>Тип визы</li>
+													<li>Тип визы</li>
+													<li>Тип визы</li>
+													<li>Тип визы</li>
+													<li>Тип визы</li>
+												</ul>
+												<input class="select__value" type="hidden">
+											</div>
+											<!-- native-select -->
+											<div class="native-select native-select_default js-native-select">
+												<div class="native-select__head">
+													<span>Тип визы</span><i></i>
+												</div>
+												<select class="native-select__el" name="" id="">
+													<option value="">Тип визы</option>
+													<option value="">Тип визы</option>
+													<option value="">Тип визы</option>
+													<option value="">Тип визы</option>
+													<option value="">Тип визы</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<!-- content -->
+									<div class="content">
+										<ol>
+											<li>
+												<h4>Раннее бронирование (полная оплата не позднее, чем за 183 дня до начала тура)</h4>
+												<p>Чем раньше заказали и оплатили тур, тем лучше места и тем лучше условия. Ранее бронирование это — продуманность решения, большой выбор туров, выгодные «ценовые» предложения — именно в этом смысл.</p>
+											</li>
+											<li>
+												<h4>Раннее бронирование (полная оплата не позднее, чем за 183 дня до начала тура)</h4>
+												<p>Чем раньше заказали и оплатили тур, тем лучше места и тем лучше условия. Ранее бронирование это — продуманность решения, большой выбор туров, выгодные «ценовые» предложения — именно в этом смысл.</p>
+											</li>
+											<li>
+												<h4>Раннее бронирование (полная оплата не позднее, чем за 183 дня до начала тура)</h4>
+												<p>Чем раньше заказали и оплатили тур, тем лучше места и тем лучше условия. Ранее бронирование это — продуманность решения, большой выбор туров, выгодные «ценовые» предложения — именно в этом смысл.</p>
+											</li>
+											<li>
+												<h4>Раннее бронирование (полная оплата не позднее, чем за 183 дня до начала тура)</h4>
+												<p>Чем раньше заказали и оплатили тур, тем лучше места и тем лучше условия. Ранее бронирование это — продуманность решения, большой выбор туров, выгодные «ценовые» предложения — именно в этом смысл.</p>
+											</li>
+											<li>
+												<h4>Раннее бронирование (полная оплата не позднее, чем за 183 дня до начала тура)</h4>
+												<p>Чем раньше заказали и оплатили тур, тем лучше места и тем лучше условия. Ранее бронирование это — продуманность решения, большой выбор туров, выгодные «ценовые» предложения — именно в этом смысл.</p>
+											</li>
+											<li>
+												<h4>Раннее бронирование (полная оплата не позднее, чем за 183 дня до начала тура)</h4>
+												<p>Чем раньше заказали и оплатили тур, тем лучше места и тем лучше условия. Ранее бронирование это — продуманность решения, большой выбор туров, выгодные «ценовые» предложения — именно в этом смысл.</p>
+											</li>
+										</ol>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- actions -->
+						<div class="actions actions_mob">
+							<a class="actions__item" href="#"><i class="actions__ico-fav"></i><span>В избранное</span></a>
+							<a class="actions__item" href="#"><i class="actions__ico-send"></i><span>Отправить</span></a>
+							<a class="actions__item" href="#"><i class="actions__ico-print"></i><span>Печать</span></a>
+							<a class="actions__item" href="#"><i class="actions__ico-save"></i><span>Сохранить<span></span></a>
+							<div class="actions__like"><img src="img/actions-like-fb.png" alt=""></div>
+							<div class="actions__like"><img src="img/actions-like-vk.png" alt=""></div>
+						</div>
+					</div>
+				</div>
+				<!-- l-center -->
+				<div class="l-center">
+					<!-- similar -->
+					<div class="similar">
+						<div class="title title_level-2">Похожие отели</div>
+						<div class="similar__slider js-similar">
+							<!-- 1 -->
+							<div class="similar__item">
+								<div class="similar__item-in">
+									<div class="similar__pic">
+										<a href="#">
+											<img src="http://placehold.it/180x112" alt="">
+											<div class="similar__price"><div class="price"><span>13 300</span>грн</div></div>
+										</a>
+									</div>
+									<div class="similar__data">
+										<div class="similar__title"><a href="#">Ilkay Hotel</a></div>
+										<div class="similar__days">7–14 мая (8 дней)</div>
+									</div>
+								</div>
+							</div>
+							<!-- 2 -->
+							<div class="similar__item">
+								<div class="similar__item-in">
+									<div class="similar__pic">
+										<a href="#">
+											<img src="http://placehold.it/180x112" alt="">
+											<div class="similar__price"><div class="price"><span>13 300</span>грн</div></div>
+										</a>
+									</div>
+									<div class="similar__data">
+										<div class="similar__title"><a href="#">Ilkay Hotel</a></div>
+										<div class="similar__days">7–14 мая (8 дней)</div>
+									</div>
+								</div>
+							</div>
+							<!-- 3 -->
+							<div class="similar__item">
+								<div class="similar__item-in">
+									<div class="similar__pic">
+										<a href="#">
+											<img src="http://placehold.it/180x112" alt="">
+											<div class="similar__price"><div class="price"><span>13 300</span>грн</div></div>
+										</a>
+									</div>
+									<div class="similar__data">
+										<div class="similar__title"><a href="#">Ilkay Hotel</a></div>
+										<div class="similar__days">7–14 мая (8 дней)</div>
+									</div>
+								</div>
+							</div>
+							<!-- 4 -->
+							<div class="similar__item">
+								<div class="similar__item-in">
+									<div class="similar__pic">
+										<a href="#">
+											<img src="http://placehold.it/180x112" alt="">
+											<div class="similar__price"><div class="price"><span>13 300</span>грн</div></div>
+										</a>
+									</div>
+									<div class="similar__data">
+										<div class="similar__title"><a href="#">Ilkay Hotel</a></div>
+										<div class="similar__days">7–14 мая (8 дней)</div>
+									</div>
+								</div>
+							</div>
+							<!-- 5 -->
+							<div class="similar__item">
+								<div class="similar__item-in">
+									<div class="similar__pic">
+										<a href="#">
+											<img src="http://placehold.it/180x112" alt="">
+											<div class="similar__price"><div class="price"><span>13 300</span>грн</div></div>
+										</a>
+									</div>
+									<div class="similar__data">
+										<div class="similar__title"><a href="#">Ilkay Hotel</a></div>
+										<div class="similar__days">7–14 мая (8 дней)</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- watched -->
+					<div class="watched">
+						<div class="title title_level-2">Просмотренные отели</div>
+						<div class="watched__slider js-watched">
+							<!-- 1 -->
+							<div class="watched__item">
+								<div class="watched__item-in">
+									<div class="watched__pic">
+										<a href="#">
+											<img src="http://placehold.it/100x65" alt="">
+										</a>
+									</div>
+									<div class="watched__data">
+										<div class="watched__title"><a href="#">Ilkay Hotel</a></div>
+									</div>
+								</div>
+							</div>
+							<!-- 2 -->
+							<div class="watched__item">
+								<div class="watched__item-in">
+									<div class="watched__pic">
+										<a href="#">
+											<img src="http://placehold.it/100x65" alt="">
+										</a>
+									</div>
+									<div class="watched__data">
+										<div class="watched__title"><a href="#">Ilkay Hotel</a></div>
+									</div>
+								</div>
+							</div>
+							<!-- 3 -->
+							<div class="watched__item">
+								<div class="watched__item-in">
+									<div class="watched__pic">
+										<a href="#">
+											<img src="http://placehold.it/100x65" alt="">
+										</a>
+									</div>
+									<div class="watched__data">
+										<div class="watched__title"><a href="#">Ilkay Hotel</a></div>
+									</div>
+								</div>
+							</div>
+							<!-- 4 -->
+							<div class="watched__item">
+								<div class="watched__item-in">
+									<div class="watched__pic">
+										<a href="#">
+											<img src="http://placehold.it/100x65" alt="">
+										</a>
+									</div>
+									<div class="watched__data">
+										<div class="watched__title"><a href="#">Ilkay Hotel</a></div>
+									</div>
+								</div>
+							</div>
+							<!-- 5 -->
+							<div class="watched__item">
+								<div class="watched__item-in">
+									<div class="watched__pic">
+										<a href="#">
+											<img src="http://placehold.it/100x65" alt="">
+										</a>
+									</div>
+									<div class="watched__data">
+										<div class="watched__title"><a href="#">Ilkay Hotel</a></div>
+									</div>
+								</div>
+							</div>
+							<!-- 6 -->
+							<div class="watched__item">
+								<div class="watched__item-in">
+									<div class="watched__pic">
+										<a href="#">
+											<img src="http://placehold.it/100x65" alt="">
+										</a>
+									</div>
+									<div class="watched__data">
+										<div class="watched__title"><a href="#">Ilkay Hotel</a></div>
+									</div>
+								</div>
+							</div>
+							<!-- 7 -->
+							<div class="watched__item">
+								<div class="watched__item-in">
+									<div class="watched__pic">
+										<a href="#">
+											<img src="http://placehold.it/100x65" alt="">
+										</a>
+									</div>
+									<div class="watched__data">
+										<div class="watched__title"><a href="#">Ilkay Hotel</a></div>
+									</div>
+								</div>
+							</div>
+							<!-- 8 -->
+							<div class="watched__item">
+								<div class="watched__item-in">
+									<div class="watched__pic">
+										<a href="#">
+											<img src="http://placehold.it/100x65" alt="">
+										</a>
+									</div>
+									<div class="watched__data">
+										<div class="watched__title"><a href="#">Ilkay Hotel</a></div>
+									</div>
+								</div>
+							</div>
+							<!-- 9 -->
+							<div class="watched__item">
+								<div class="watched__item-in">
+									<div class="watched__pic">
+										<a href="#">
+											<img src="http://placehold.it/100x65" alt="">
+										</a>
+									</div>
+									<div class="watched__data">
+										<div class="watched__title"><a href="#">Ilkay Hotel</a></div>
+									</div>
+								</div>
+							</div>
+							<!-- 10 -->
+							<div class="watched__item">
+								<div class="watched__item-in">
+									<div class="watched__pic">
+										<a href="#">
+											<img src="http://placehold.it/100x65" alt="">
+										</a>
+									</div>
+									<div class="watched__data">
+										<div class="watched__title"><a href="#">Ilkay Hotel</a></div>
+									</div>
+								</div>
+							</div>
+							<!-- 11 -->
+							<div class="watched__item">
+								<div class="watched__item-in">
+									<div class="watched__pic">
+										<a href="#">
+											<img src="http://placehold.it/100x65" alt="">
+										</a>
+									</div>
+									<div class="watched__data">
+										<div class="watched__title"><a href="#">Ilkay Hotel</a></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- container angle -->
+				<i class="container__shadow-angle"></i>
+			</div>
+			<i class="container__shadow-tl"></i>
+			<i class="container__shadow-tr"></i>
+			<i class="container__shadow-dl"></i>
+			<i class="container__shadow-dr"></i>
+		</div>
+	</div>
+	<div class="wrapper__push"></div>
+</div>
+<!-- footer -->
+<footer class="footer">
+	<div class="l-center">
+		<div class="footer__about">
+			<div class="footer__logo"></div>
+			<div class="footer__text">«Фарватер» объединил вокруг себя людей, для которых путешествия и ежедневные открытия являются необходимой частью жизни.</div>
+			<label class="footer__subscribe">
+				<input type="text" placeholder="Рассылка горящих туров">
+				<i class="footer__subscribe-arr"></i>
+				<span class="footer__subscribe-discount"><span>-50%</span></span>
+			</label>
+		</div>
+		<nav class="footer__nav">
+			<ul>
+				<li><div class="footer__nav-title">О проекте</div></li>
+				<li><a href="#">Как это работает</a></li>
+				<li><a href="#">Оплата и доставка</a></li>
+				<li><a href="#">Ответы на вопросы</a></li>
+				<li><a href="#">Компания</a></li>
+				<li><a href="#">Программа лояльности</a></li>
+			</ul>
+			<ul>
+				<li><div class="footer__nav-title">Дополнительно</div></li>
+				<li><a href="#">Купить туры</a></li>
+				<li><a href="#">Ответы на вопросы</a></li>
+				<li><a href="#">Советы туристам</a></li>
+				<li><a href="#">Отели</a></li>
+				<li><a href="#">Пресса</a></li>
+			</ul>
+		</nav>
+		<div class="footer__right">
+			<div class="footer__license">Номер лицензии Ассоциации лидеров турбизнеса Украины <span>АВ566760</span><i></i></div>
+			<div class="footer__social">
+				<!-- social -->
+				<div class="social">
+					<a class="social__fb" href="#"></a>
+					<a class="social__vk" href="#"></a>
+					<a class="social__gp" href="#"></a>
+				</div>
+				<div class="footer__pay">
+					<i class="footer__pay-visa"></i>
+					<i class="footer__pay-master-card"></i>
+				</div>
+			</div>
+			<div class="footer__kiselev">
+				<a class="#" href="#"></a>
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- load script -->
+<script src="js/lib/head.js" data-headjs-load="js/init.js"></script>
+</body>
+</html>

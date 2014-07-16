@@ -1,0 +1,875 @@
+// Normally mainpage styles
+.map
+	position: relative
+	height: 543px
+	margin-bottom: 45px
+	+rt(1024)
+		margin-bottom: 25px
+	+rt(768)
+		height: auto
+	&:after
+		content: ""
+		position: absolute
+		left: 0
+		right: 0
+		bottom: 0
+		height: 20px
+		border-radius: 50%
+		box-shadow: 0 0 10px #90aac5
+		z-index: 2 
+	.map__el
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		height: 543px
+		background: #FFF 
+		z-index: 4 
+		+rt(768)
+			display: none
+	.map__sort
+		position: absolute
+		top: 40px
+		right: 50%
+		margin-right: -480px
+		z-index: 6 
+		+rt(1024)
+			right: 20px
+			margin: 0
+		+rt(768)
+			display: none
+		.select
+			float: right
+			margin-left: 10px
+		.select_fancy
+			display: none
+			.select__current
+				span
+					max-width: 160px
+			+rt(1024)
+				display: block
+		.select_fancy-right
+			.select__current
+				span
+					max-width: 85px
+	.map__marker
+		&:hover
+			.map__marker-link:before, .map__marker-in	
+				opacity: 1
+			.map__marker-in
+				overflow: visible
+	.map__marker-link
+		display: block
+		position: relative
+		+s(marker)
+		&:before
+			content: ""
+			display: block
+			opacity: 0
+			+tr(opacity .2s linear) 
+			+s(marker-h)
+		img
+			position: absolute
+			top: 8px
+			left: 10px
+			border-radius: 50%
+		i
+			position: absolute
+			top: 8px
+			left: 10px
+			width: 40px
+			height: 40px
+			border-radius: 50%
+			box-shadow: inset 0 2px 5px rgba(0,0,0,.25)
+	.map__marker-in
+		position: absolute
+		top: 70px
+		left: 40px
+		padding: 7px 10px
+		border-radius: 5px
+		background-clip: padding-box
+		background-color: #fffbcf
+		box-shadow: 0 5px 12px rgba(63,76,85,.75)
+		font-size: 11px
+		color: $cl 
+		opacity: 0
+		cursor: default
+		overflow: hidden
+		+tr(opacity .2s linear) 
+		a
+			font-weight: bold
+		ul
+			padding-top: 3px
+		li
+			white-space: nowrap
+	.search
+		position: absolute
+		top: 40px
+		left: 50%
+		margin-left: -480px
+		z-index: 6 
+		+rt(1024)
+			left: 20px
+			margin: 0
+		+rt(768)
+			position: relative
+			top: auto
+			left: auto
+			margin: 0
+	.sort
+		float: right
+		+rt(1024)
+			display: none
+
+.pop
+	+rt(1024)
+		padding: 0 0 45px
+		overflow: hidden
+	+rt(768)
+		padding: 0 0 25px
+	.pop__list
+		text-align: center
+		font-size: 0
+	.pop__item
+		display: inline-block
+		width: 20%
+		margin-bottom: 45px
+		vertical-align: top
+		+rt(1024)
+			margin: 0
+	.pop__link
+		display: block
+		text-decoration: none
+		&:hover
+			.pop__pic
+				i
+					+transform(rotate(-10deg) scale(1.1))
+	.pop__title
+		margin-bottom: 10px
+		padding: 0 10px
+		font-size: 19px
+		font-weight: 700
+		line-height: 1
+		text-decoration: underline
+		+rt(768)
+			padding: 0 20px
+	.pop__counter
+		font-size: 14px
+		color: $cl 
+	.pop__pic
+		margin-bottom: 5px
+		text-align: center
+		i
+			display: inline-block
+			+tr(transform .2s)
+			vertical-align: top
+	@for $i from 1 through 10
+		.pop__ico-#{$i}
+			+sm(pop#{$i})
+	.slick-prev, .slick-next
+		top: 80px
+
+.tours
+	&.tours_main
+		margin-bottom: 45px
+		padding: 45px 0 50px
+		background: url(../img/tours-bg.jpg) no-repeat 50% 50%
+		background-size: cover 
+		+rt(1024)
+			padding: 30px 10px
+		+rt(768)
+			padding: 0 
+			margin: 0
+			background: none 
+		.tours__list
+			float: right
+			width: 630px
+			padding: 30px
+			border-radius: 8px
+			background: #fff
+			background: rgba(255,255,255,.95)
+			box-shadow: 0 7px 15px rgba(100,129,158,.75)
+			+rt(1024)
+				float: none
+				width: auto
+				padding: 20px 10px
+			+rt(768)
+				padding: 0 
+				background: none 
+				box-shadow: none
+	.tours__head
+		position: relative
+		margin-bottom: 15px
+		text-align: center
+		font-weight: 700 
+		font-size: 26px
+		color: #fff 
+		z-index: 20 
+		+rt(768)
+			font-size: 20px
+			color: $cl
+			line-height: 1
+		.select
+			position: relative
+			display: inline-block
+			vertical-align: top
+			margin-left: -15px
+			line-height: 1
+			z-index: 2 
+			+rt(768)
+				display: none
+			&.is-open
+				color: $blue 
+				.select__head
+					+g(#fbfbfb, #faf9f9)
+					text-shadow: none
+				.select__current
+					box-shadow: none
+				.select__arr
+					right: 11px
+					+s(tours-select-arr-a)
+				.select__circle
+					display: block
+		.select__head
+			position: relative
+			padding: 0 25px 6px 15px
+			border-radius: 18px 18px 0 0
+			text-shadow: 0 1px 2px #63819d
+			cursor: pointer
+			+nosel
+		.select__current
+			display: inline-block
+			border-bottom: 1px dotted
+			box-shadow: 0 2px 1px -1px rgba(0,0,0,.1) 
+			vertical-align: middle
+		.select__arr
+			position: absolute
+			top: 17px
+			right: 10px
+			+s(tours-select-arr)
+		.select__circle
+			display: none
+			position: absolute
+			bottom: 0
+			right: -14px
+			width: 14px
+			height: 14px
+			overflow: hidden
+			i
+				position: absolute
+				left: 0
+				bottom: 0
+				width: 28px
+				height: 28px
+				box-shadow: 0 0 0 10px #faf9f9
+				border-radius: 50%
+		.select__list
+			display: none
+			position: absolute
+			top: 100%
+			left: 0 
+			min-width: 100%
+			padding: 10px 15px
+			border-radius: 0 18px 18px 18px
+			box-shadow: 0 1px 2px #c1c9cd
+			+g(#faf9f9, #f3f1f1)
+			text-align: left
+			white-space: nowrap
+			li
+				margin-top: 7px
+				cursor: pointer
+				&:first-child
+					margin: 0
+		.native-select
+			vertical-align: top
+			+rt(768)
+				display: inline-block
+		.native-select__head
+			span, i
+				display: inline-block
+			span
+				margin-right: 4px 
+				border-bottom: 1px dotted 
+				font-size: 20px 
+			i
+				position: relative
+				top: -7px
+				+arr(6,4,$cl,b)
+	.tours__title
+		position: relative
+		display: inline-block
+		vertical-align: top
+		text-shadow: 0 1px 2px #63819d
+		z-index: 4
+		+rt(768)
+			text-shadow: none 
+	.tours__sort
+		position: relative
+		margin-bottom: 25px
+		text-align: center
+		+clr
+		z-index: 12 
+		.sort
+			display: inline-block
+			vertical-align: top
+			+rt(1024)
+				float: left
+			+rt(768)
+				display: none
+		.select
+			display: none
+			float: right
+			.select__current
+				span
+					max-width: 180px
+			+rt(1024)
+				display: block
+			+rt(768)
+				display: none
+	.tours__in
+		position: relative
+		max-width: 960px
+		margin: 0 auto
+		+clr
+		z-index: 10
+	.tours__nav
+		float: left
+		width: 270px
+		margin-top: 7px
+		+rt(1024)
+			display: none
+		li
+			position: relative
+			background: #000
+			background: rgba(0,0,0,.5)
+			&:first-child
+				border-radius: 8px 0 0 0
+			&:last-child
+				border-radius: 0 0 0 8px
+			&.is-active-prev
+				border-radius: 0 0 0 8px
+				&:first-child
+					border-radius: 8px 0 0 8px
+			&.is-active
+				background: #fff
+				background: rgba(255,255,255,.95)
+				border-radius: 8px 0 0 8px
+				z-index: 2 
+				i
+					position: absolute
+					top: -6px
+					right: 0
+					bottom: -6px
+					width: 6px
+					overflow: hidden
+					&:before, &:after
+						content: ""
+						position: absolute
+						right: 0
+						width: 12px
+						height: 12px
+						border-radius: 50%
+						box-shadow: 0 0 0 10px rgba(255,255,255,.95)
+					&:before
+						top: -6px
+					&:after
+						bottom: -6px
+				a
+					cursor: default
+					span
+						border-color: transparent
+						font-weight: 700
+						color: $green 
+				& + li
+					border-radius: 8px 0 0 0
+		a
+			display: block
+			padding: 10px 35px 10px 17px
+			text-decoration: none
+			&:hover
+				span
+					color: $orange 
+					border-bottom: 1px dotted rgba(236,68,30,.5)
+			span
+				display: inline-block
+				font-size: 15px
+				color: #FFF
+				border-bottom: 1px dotted rgba(255,255,255,.5)
+				line-height: 1   
+	.tours__items
+		+rt(768)
+			+g(#fef8e8, #fcf4d8)
+			box-shadow: 0 1px 2px #b7bfc5
+			border-radius: 8px
+			overflow: hidden
+	.tours__counter
+		display: none
+		padding: 15px
+		text-align: center
+		font-size: 12px
+		color: #64707d 
+		span
+			padding: 0 5px
+		+rt(768)
+			display: block
+	.more
+		+rt(768)
+			display: none
+
+.benefits
+	overflow: hidden
+	+rt(1024)
+		padding: 0 20px
+	+rt(768)
+		display: none
+	.benefits__list
+		font-size: 0
+		text-align: center
+	.benefits__item
+		display: inline-block
+		width: 25%
+		vertical-align: top
+		font-size: 13px
+	.benefits__link
+		text-decoration: none
+		&:hover
+			i
+				&:before
+					+transform(rotate(20deg) scale(1))
+		&:active
+			i
+				&:before
+					+transform(rotate(0) scale(.8))
+	.benefits__title
+		padding: 0 20px
+		min-height: 65px
+		margin-bottom: 15px
+		font-weight: 700
+		font-size: 19px
+		line-height: 1.1
+		text-decoration: underline
+	.benefits__text
+		padding: 0 20px
+		color: #808080 
+	.benefits__pic
+		position: relative
+		margin-bottom: 20px
+		text-align: center
+		z-index: 5 
+		i
+			position: relative
+			display: inline-block
+			vertical-align: top
+			&:before
+				content: ""
+				position: absolute
+				top: 0
+				left: 0
+				+transform(rotate(0) scale(.92))
+				+tr(transform .2s)
+				z-index: 1
+			&:after	
+				position: relative
+				content: ""
+				display: block
+				z-index: 2 
+	.benefits__ico-1
+		&:before
+			+sm(benefits1-h)
+		&:after
+			+sm(benefits1-a)
+	.benefits__ico-2
+		&:before
+			+sm(benefits2-h)
+		&:after
+			+sm(benefits2-a)
+	.benefits__ico-3
+		&:before
+			+sm(benefits3-h)
+		&:after
+			+sm(benefits3-a)
+	.benefits__ico-4
+		&:before
+			+sm(benefits4-h)
+		&:after
+			+sm(benefits4-a)
+	.slick-prev, .slick-next
+		top: 42px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

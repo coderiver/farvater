@@ -1,0 +1,3592 @@
+// Normally inner pages styles
+.tour
+	position: relative
+	margin-bottom: 30px
+	width: 100%
+	cursor: pointer
+	+rt(768)
+		margin: 0
+	&:hover
+		&:before
+			visibility: visible
+			opacity: 1 
+		.tour__in
+			box-shadow: 0 0 0 #b7bfc5
+		.tour__title
+			color: $orange
+	&:before
+		content: ""
+		position: absolute
+		top: -2px
+		left: -2px
+		right: -2px
+		bottom: -2px
+		+g(#f7a84c, #ed4c22)
+		box-shadow: 0 8px 20px rgba(255,55,0,.55)
+		border-radius: 9px
+		visibility: hidden
+		opacity: 0
+		z-index: 2 
+		+rt(768)
+			display: none
+	.tour__in
+		position: relative
+		+g(#fef8e8, #fcf4d8)
+		box-shadow: 0 1px 2px #b7bfc5
+		border-radius: 8px
+		+tr(box-shadow .2s linear)
+		+clr
+		z-index: 4 
+		+rt(768)	
+			box-shadow: none
+			border-radius: none
+			background: none 
+	.tour__right
+		float: right
+		position: relative
+		width: 240px
+		height: 160px
+		+rt(768)
+			float: none
+			display: block
+			width: auto
+			height: 200px 
+		&:before
+			content: ""
+			position: absolute
+			top: 2px
+			left: -3px
+			bottom: 2px
+			width: 6px
+			background: url(../img/tour-circles.png) repeat-y
+			z-index: 4 
+			+rt(768)
+				top: auto
+				left: 2px
+				right: 2px
+				bottom: -3px
+				width: auto
+				height: 6px
+				background: url(../img/tour-circles-horz.png) repeat-x
+	.tour__left
+		position: relative
+		padding: 10px 15px
+		overflow: hidden
+		+rt(768)
+			float: none
+			width: auto
+			padding: 10px
+	.tour__pic
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		border-radius: 0 8px 8px 0
+		background-size: cover
+		z-index: 2 
+		+rt(768)
+			border-radius: 8px 8px 0 0
+	.tour__head
+		margin-bottom: 10px
+		font-size: 0
+		white-space: nowrap
+	.tour__title
+		display: inline-block
+		vertical-align: middle
+		font-size: 21px
+		font-weight: 700 
+		color: $blue
+		text-decoration: underline 
+		+rt(768)
+			display: block
+	.tour__price
+		position: absolute
+		bottom: 15px
+		left: 0
+		right: 0 
+		text-align: center
+		color: $cl 
+		z-index: 4 
+	.tour__price-in
+		position: relative
+		display: inline-block
+		height: 38px
+		padding: 0 10px
+		margin-top: 5px
+		border-radius: 3px
+		+g(#fff100, #ffe300)
+		line-height: 38px
+		font-size: 14px
+		vertical-align: top
+		z-index: 2 
+		&:before, &:after
+			content: ""
+			position: absolute
+			top: 4px
+			width: 20px
+			height: 30px
+			border-radius: 50%
+			+g(#fff000, #ffe400)
+			z-index: -1 
+		&:before
+			left: -4px
+		&:after
+			right: -4px
+		span
+			font-size: 28px
+			font-weight: 700
+		.tour__price-old
+			position: absolute
+			top: 13px
+			left: 50%
+			margin-left: -59px
+			+s(tour-price-old)
+		.tour__price-hot
+			position: relative
+			top: 8px
+			display: inline-block
+			margin-right: 10px
+			vertical-align: top
+			+s(tour-price-hot)
+	.tour__way
+		margin-bottom: 10px
+		+clr
+		i, a
+			float: left
+		i
+			margin: 4px 9px 0 0 
+			&.tour__way-plain
+				+sr(plain)
+			&.tour__way-train
+				+sr(train)
+		a
+			border-bottom: 1px dotted 
+			font-size: 13px
+			color: $cl
+			text-decoration: none
+			&:hover
+				color: $orange 
+	.tour__date
+		margin-bottom: 15px
+		span
+			font-weight: 700  
+	.tour__details
+		+clr
+		ul
+			float: left
+			+rt(768)
+				float: none
+			&:first-child
+				margin-right: 25px
+				span
+					width: 65px
+				+rt(768)
+					margin: 0
+					span
+						width: 95px
+		li
+			+clr
+			+rt(768)
+				margin-bottom: 3px
+			&:first-child
+				margin-bottom: 3px
+		span
+			float: left
+			width: 95px
+			color: #64707D 
+	.tour__discount
+		position: absolute
+		top: -4px
+		right: -4px
+		+s(tour-discount)
+		z-index: 4 
+		span
+			display: block
+			width: 58px
+			height: 58px
+			text-align: center
+			line-height: 22px
+			+transform(rotate(45deg) translate3d(0,0,0))
+			font-size: 15px
+			color: #FFF 
+	.tour__only-today
+		position: absolute
+		top: 30px
+		right: 165px
+		+s(tour-only-today)
+		z-index: 4
+		+rt(768)
+			top: 10px
+			left: 10px
+	.rating
+		margin-left: 10px
+		+rt(768)
+			margin: 7px 0 0 0
+		
+.more
+	width: 100%
+	height: 50px
+	border-radius: 5px
+	background-color: #f7f5f1
+	+g(#f9f8f5, #f5f4ed)
+	box-shadow: 0 1px 2px #b7bfc5
+	text-align: center
+	font-size: 0
+	i, span
+		display: inline-block
+		vertical-align: middle
+		line-height: 1
+	i
+		margin-right: 10px 
+		+s(more)
+	span
+		border-bottom: 1px dotted
+		font-size: 14px
+	&:hover
+		color: $orange
+		i
+			+sp(more-h)
+		
+.breadcrumbs
+	padding: 17px 0
+	font-size: 0
+	+rt(768)
+		padding: 10px 0
+	li
+		display: inline
+		font-size: 12px
+		color: #99A8B7
+		+rt(768)
+			display: none 
+	i
+		display: inline-block
+		margin: 0 6px
+		+s(breadcrumbs-arr)
+
+.catalog
+	.catalog__head
+		margin-bottom: 15px
+		+rt(1024)
+			display: none
+	.catalog__title
+		margin-bottom: 10px
+		font-size: 24px
+		line-height: 1
+		span
+			font-weight: 700 
+	.catalog__details
+		margin-bottom: 5px
+		li
+			display: inline
+		span
+			font-weight: 700
+	.catalog__top
+		position: relative
+		display: none
+		margin-bottom: 20px
+		+clr
+		+rt(1024)
+			display: block
+		.catalog__head
+			position: relative
+			float: left
+			width: 340px
+			margin: 0
+			padding: 11px 20px
+			border-radius: 8px
+			background-color: #3155a3
+			+g(#4274c3, #203883)
+			box-shadow: 0 1px 2px rgba(2,26,75,.5)
+			+box
+			color: #fff 
+			text-decoration: none 
+			&.is-active
+				z-index: 9999 
+			+rt(1024)
+				display: block
+			+rt(768)
+				float: none
+				width: auto
+				margin-bottom: 30px
+		.catalog__title
+			position: relative
+			padding-left: 34px
+			i
+				position: absolute
+				top: 3px
+				left: 0
+				+s(menu)
+		.catalog__details
+			margin: 0
+			li
+				display: block
+				margin-top: 5px
+	.catalog__filter-button
+		position: relative
+		float: right
+		width: 340px
+		height: 114px 
+		border-radius: 8px
+		background-color: #e3f1fb
+		box-shadow: 0 1px 2px #b7bfc5
+		+g(#eaf5fd, #dceffb)
+		font-size: 0
+		+rt(768)
+			float: none
+			width: 100%
+			height: 40px
+			padding: 0 15px
+			text-align: left
+		i, span
+			display: inline-block
+			vertical-align: middle
+		i
+			position: relative
+			top: 1px
+			margin-right: 8px
+			+s(menu-dark)
+			+rt(768)
+				margin-right: 15px
+		span
+			color: #636f7d
+			font-size: 24px
+			font-weight: 700 
+			+rt(768)
+				font-size: 16px
+		&.is-active
+			z-index: 9999 
+	.catalog__sort
+		margin-bottom: 30px
+		+clr
+		+rt(768)
+			display: none
+		.sort
+			float: left
+		.select
+			float: right
+		.select__current
+			span
+				max-width: 90px
+	.catalog__sort-info
+		float: left
+		padding: 8px 30px
+		border-radius: 18px
+		+g(#ec5a21, #f59456)
+		font-size: 16px
+		text-shadow: 0 1px 2px rgba(228,104,50,.75)
+		color: #FFF 
+
+.filter
+	.filter__row
+		+clr
+	.filter__col
+		float: left
+		width: 340px
+		+rt(768)
+			width: 300px
+		&:first-child
+			margin-right: 28px 
+			+rt(768)
+				margin: 0
+	.filter__item
+		padding: 16px 20px
+		margin-bottom: 30px
+		border-radius: 8px
+		background-color: #e3f1fc
+		box-shadow: 0 1px 2px #b7bfc5
+		+g(#eaf5fd, #dceffb)
+		&.is-active
+			.filter__title
+				i
+					+rotate(180)
+	.filter__item_rating
+		.checkbox
+			margin-top: 3px
+			&:first-child
+				margin: 0
+	.filter__item_hotel
+		.filter__container
+			+clr
+		.field
+			float: left
+			width: 200px
+		.btn
+			float: right
+			margin-top: 3px
+	.filter__title
+		position: relative
+		padding-right: 15px
+		font-size: 16px
+		font-weight: 700 
+		line-height: 1
+		cursor: pointer
+		i
+			position: absolute
+			top: 5px
+			right: 0
+			+arr(8,6,#979da1,b)
+		& + .filter__container
+			padding-top: 16px
+	.filter__container
+		.checkbox
+			margin-top: 7px
+			&:first-child
+				margin: 0
+	.filter__map-link
+		padding: 10px 0 0 25px
+		font-size: 0
+		text-decoration: none 
+		i, span
+			display: inline-block
+			vertical-align: middle
+		i
+			margin-right: 5px
+			+s(filter-map-point)
+		span
+			border-bottom: 1px dotted 
+			font-size: 12px
+			color: $cl
+			&:hover
+				color: $orange 
+	.filter__slider
+		padding-top: 8px
+	.filter__slider-el
+		position: relative
+		height: 4px
+		margin-bottom: 18px
+		background: #D3DCDB 
+		.ui-slider-range
+			position: absolute
+			top: 0
+			left: 0
+			height: 4px
+			margin-left: 4px
+			background: #eba37c
+		.ui-slider-handle
+			position: absolute
+			top: -8px
+			+s(filter-slider-prev)
+			&:last-child
+				+s(filter-slider-next)
+	.filter__slider-details	
+		.field, .field__label, .field__el, .btn
+			display: inline-block
+			margin-right: 5px
+			vertical-align: middle
+			input
+				width: 65px
+
+.research
+	margin-bottom: 30px
+	.btn
+		width: 100%
+
+.widgets
+	.widgets__item
+		margin-bottom: 30px
+	.widgets__title
+		margin-bottom: 15px
+		font-size: 16px
+		font-weight: 700
+
+.tour-info
+	position: relative
+	margin-bottom: 10px
+	&.is-fixed
+		+rt_nomob
+			padding-top: 76px
+			.tour-info__in
+				position: fixed
+				top: 0
+				left: 50%
+				width: 630px
+				padding: 5px 20px
+				margin-left: -170px
+				background: #FFF
+				z-index: 888   
+				+rt(1024)
+					width: 708px
+					padding: 5px 20px
+					margin-left: -374px
+			.tour-info__shadow
+				display: block
+	+rt(768)
+		padding-bottom: 50px
+		margin-bottom: 15px
+	.tour-info__head
+		+clr
+		.btn
+			float: right
+			+rt(768)
+				position: absolute
+				bottom: 0
+				right: 0
+	.tour-info__shadow
+		display: none
+		position: absolute
+		bottom: -5px
+		left: 0
+		right: 0
+		height: 5px
+		overflow: hidden
+		&:before
+			content: ""
+			position: absolute
+			bottom: 5px
+			left: 0
+			right: 0
+			height: 10px
+			border-radius: 50%
+			box-shadow: 0 0 10px rgba(0,0,0,.2)
+	.tour-info__title
+		padding: 7px 0
+		font-size: 26px
+		font-weight: 700 
+		line-height: 1
+		+rt(768)
+			white-space: normal
+	.tour-info__details
+		+clr
+	.tour-info__comment-counter
+		float: left
+		margin: 10px 0 0 15px 
+		font-size: 14px
+	.tour-info__bonus
+		float: right
+		margin-top: 10px
+		font-size: 14px
+		color: #64707D 
+		+rt(768)
+			float: none
+			padding-top: 5px
+			margin: 0
+			clear: both
+	.rating
+		float: left
+	.price
+		float: right
+		margin: 0 23px
+		+rt(768)
+			position: absolute
+			left: 0
+			bottom: 0
+			margin: 0 8px
+
+.actions
+	margin-bottom: 20px
+	padding: 11px 15px
+	border-radius: 8px
+	background-color: #f7f5f1
+	box-shadow: 0 1px 2px #b7bfc5
+	+g(#f9f8f5, #f5f4ed)
+	+clr
+	&.actions_mob
+		+rt(768)
+			display: none
+	.actions__item
+		float: left
+		margin: 1px 15px 0 0
+		+rt(768)
+			display: none
+		i, span
+			display: inline-block
+			vertical-align: middle
+		i
+			margin-right: 5px
+		span
+			border-bottom: 1px dotted 
+			font-size: 13px
+	.actions__item_mob
+		+rt(768)
+			display: block
+	.actions__ico-fav
+		+s(actions-fav)
+	.actions__ico-send
+		+s(actions-send)
+	.actions__ico-print
+		+s(actions-print)
+	.actions__ico-save
+		+s(actions-save)
+	.actions__like
+		float: right
+		margin-left: 10px
+		font-size: 0
+		+rt(768)
+			display: none
+
+.gallery
+	position: relative
+	margin-bottom: 25px
+	.gallery__pic
+		position: relative
+		margin-bottom: 5px
+		img
+			display: block
+			width: 100%
+	.gallery__list
+		border-radius: 8px
+		overflow: hidden
+	.gallery__preview
+		font-size: 0
+		a
+			display: inline-block
+			margin: 0 5px 5px 0
+			border-radius: 3px
+			vertical-align: top
+			&.cycle-pager-active
+				box-shadow: 0 0 0 3px #68b039
+		img
+			border-radius: 3px
+	.prev, .next
+		z-index: 101
+
+.tour-settings
+	margin-bottom: 30px
+	padding: 15px 20px
+	border-radius: 8px
+	background-color: #e3f1fb
+	box-shadow: 0 1px 2px #b7bfc5
+	+g(#eaf5fd, #dceffb)
+	+rt(768)
+		padding: 15px
+	.tour-settings__title
+		margin-bottom: 15px
+		font-size: 20px
+		font-weight: 700
+		text-align: center
+	.tour-settings__list
+		font-size: 0
+	.tour-settings__item
+		display: inline-block
+		width: 50%
+		padding-right: 20px
+		margin-bottom: 15px
+		vertical-align: top
+		+box
+		+rt(768)
+			width: 100%
+			padding: 0
+		&.tour-settings__item_big
+			padding: 0
+		.radio
+			margin-bottom: 7px
+		.radio__text
+			font-size: 14px
+			line-height: 1.2
+			overflow: hidden
+		.radio__right
+			float: right
+			margin-left: 3px
+			&.is-red
+				color: #eb331b 
+			&.is-green	
+				color: #5ea533 
+		.radio__left
+			float: left
+			margin-right: 3px
+			border-bottom: 1px dotted 
+			font-size: 14px
+		.radio__dots
+			display: block
+			height: 12px
+			border-bottom: 1px dotted #b8c3ca
+			overflow: hidden
+	.tour-settings__name
+		margin-bottom: 10px
+		font-weight: 700
+		font-size: 16px  
+	.tour-settings__price
+		text-align: right
+		font-size: 0
+		+rt(768)
+			text-align: center
+		.btn, .price
+			display: inline-block
+			vertical-align: middle
+		.btn
+			+rt(768)
+				margin-top: 17px
+		.price
+			float: none
+			margin: 0 23px
+			+rt(768)
+				padding: 0 3px
+				margin: 0 8px
+	.tour-settings__price-title
+		display: inline-block
+		font-size: 16px
+		font-weight: 700 
+		vertical-align: middle
+		+rt(768)
+			margin-right: 10px
+	.tour-settings__help
+		padding-top: 20px
+		font-size: 11px
+		span
+			font-weight: 700 
+
+.tour-price
+	margin-bottom: 30px
+	padding: 15px 20px
+	border-radius: 8px
+	background-color: #e3f1fb
+	box-shadow: 0 1px 2px #b7bfc5
+	+g(#eaf5fd, #dceffb)
+	+rt(768)
+		padding: 15px
+	.tour-price__title	
+		margin-bottom: 15px
+		font-size: 20px
+		font-weight: 700
+		text-align: center
+	.tour-price__head
+		margin-bottom: 15px
+		+clr
+		.help
+			margin: 11px 0 0 10px 
+	.tour-price__people
+		float: right
+		li
+			float: left
+			width: 120px
+			text-align: center
+			font-weight: 700 
+			line-height: 37px
+	.tour-price__date
+		float: left
+	.tour-price__list
+		margin-bottom: 15px
+	.tour-price__item
+		padding: 14px 10px 8px
+		border-radius: 3px
+		cursor: pointer
+		+clr
+		&:hover
+			background: #F0F8FE 
+			.tour-price__type
+				color: $orange 
+		&.is-active
+			background: #cfe7f7
+			box-shadow: inset 0 1px 2px rgba(49,86,163,.35)
+		.radio
+			float: right
+			width: 103px
+		.price
+			float: none
+			position: relative
+			top: -4px
+			display: inline-block
+			vertical-align: middle
+	.tour-price__type
+		display: table
+		font-size: 14px
+		line-height: 24px
+
+.tour-map
+	margin-bottom: 30px
+
+.tour-visa
+	margin-bottom: 30px
+	padding: 15px 15px 0
+	border-radius: 8px
+	background-color: #f7f5eb
+	text-align: center
+	+rt(768)
+		padding: 10px 10px 0
+	.tour-visa__form
+		display: inline-block
+		width: 220px
+		vertical-align: top
+		text-align: left
+		+rt(768)
+			width: 100%
+		.select, .native-select
+			margin-bottom: 15px
+			+rt(768)
+				margin-bottom: 10px
+
+.similar
+	margin-bottom: 35px
+	+rt(1024)
+		margin: 0 50px 35px
+	+rt(768)
+		margin: 0 0 35px
+	&.similar_aside
+		overflow: visible
+		.similar__item
+			margin-bottom: 30px
+		.similar__item-in
+			width: 100%
+		.similar__price
+			bottom: 15px
+		.similar__title
+			font-size: 18px
+		.similar__days
+			span
+				font-weight: 700 
+		.similar__discount
+			position: absolute
+			top: -4px
+			right: -4px
+			+s(tour-discount)
+			z-index: 4 
+			span
+				display: block
+				width: 58px
+				height: 58px
+				text-align: center
+				line-height: 22px
+				+transform(rotate(45deg) translate3d(0,0,0))
+				font-size: 15px
+				color: #FFF 
+	.similar__item
+		text-align: center
+	.similar__item-in	
+		display: inline-block
+		width: 180px
+		min-height: 200px
+		+g(#fef8e8, #fcf4d8)
+		box-shadow: 0 1px 2px #b7bfc5
+		border-radius: 8px
+		vertical-align: middle
+		text-align: left
+	.similar__data
+		padding: 12px
+	.similar__pic
+		position: relative
+		&:after
+			content: ""
+			position: absolute
+			left: 2px
+			right: 2px
+			bottom: -3px
+			width: auto
+			height: 6px
+			background: url(../img/tour-circles-horz.png) repeat-x
+		img
+			display: block
+			border-radius: 8px 8px 0 0
+	.similar__title
+		margin-bottom: 5px
+		font-size: 14px
+		font-weight: 700 
+	.similar__price
+		position: absolute
+		left: 0
+		right: 0
+		bottom: 40px
+		text-align: center
+		font-size: 0
+		.price
+			float: none
+			display: inline-block
+			vertical-align: top
+			color: $cl 
+	.slick-prev, .slick-next
+		top: 50%
+		margin-top: -20px
+		
+.watched
+	margin-bottom: 35px
+	+rt(1024)
+		margin: 0 50px
+	+rt(768)
+		margin: 0
+	.watched__item
+		text-align: center
+	.watched__item-in	
+		display: inline-block
+		width: 100px
+		min-height: 150px
+		+g(#fef8e8, #fcf4d8)
+		box-shadow: 0 1px 2px #b7bfc5
+		border-radius: 8px
+		vertical-align: top
+		text-align: left
+	.watched__data
+		padding: 12px
+	.watched__pic
+		position: relative
+		&:after
+			content: ""
+			position: absolute
+			left: 2px
+			right: 2px
+			bottom: -3px
+			width: auto
+			height: 6px
+			background: url(../img/tour-circles-horz.png) repeat-x
+		img
+			display: block
+			border-radius: 8px 8px 0 0
+	.watched__title
+		margin-bottom: 5px
+		font-size: 14px
+		font-weight: 700 
+
+.read-more
+	margin-bottom: 35px
+	.read-more__item
+		text-align: center
+	.read-more__item-in	
+		display: inline-block
+		width: 225px
+		vertical-align: top
+		text-align: left	
+	.read-more__pic
+		margin-bottom: 10px
+		img
+			display: block
+			border-radius: 8px
+			box-shadow: 0 1px 2px #b7bfc5
+	.read-more__title
+		font-size: 16px
+		font-weight: 700 
+
+.watched, .similar, .read-more
+	padding: 0 0 5px 
+	overflow: hidden
+	.slick-prev, .slick-next
+		top: 50%
+		margin-top: -20px
+		background: none 
+		z-index: 10 
+		&:before
+			content: ""
+			display: block
+		&:after
+			content: ""
+			position: absolute
+			top: -100px
+			bottom: -100px
+			right: 0
+			width: 50px
+			z-index: -2 
+	.slick-prev
+		left: 0
+		&:after
+			+gh(rgba(255,255,255,1), rgba(255,255,255,0))
+		&:before
+			+s(prev)
+		&:hover
+			&:before
+				+sp(prev-h)
+	.slick-next
+		right: 0
+		&:after
+			+gh(rgba(255,255,255,0), rgba(255,255,255,1))
+		&:before
+			+s(next)
+		&:hover
+			&:before
+				+sp(next-h)
+		
+.page
+	margin-bottom: 40px
+	.page__title
+		margin-bottom: 15px
+		font-size: 32px
+		font-weight: 700 
+		text-align: center
+		line-height: 1.2
+	.page__details
+		margin-bottom: 20px
+		font-size: 14px
+		color: #99A8B7 
+		+clr
+	.page__author
+		float: left
+	.page__date
+		float: right
+	.l-center
+		margin-bottom: 30px
+	.photogallery
+		margin-bottom: 25px
+		
+.photogallery
+	position: relative
+	.photogallery__slider
+		position: relative
+	.photogallery__list	
+		overflow: hidden
+		img
+			display: block
+			width: 100%
+			border-radius: 8px
+	.photogallery__description
+		padding-top: 7px
+		color: #64707D 
+		text-align: center 
+	.prev, .next
+		z-index: 101 
+
+.p404
+	padding: 120px 0
+	text-align: center
+	color: #FFF
+	+rt(768)
+		padding: 50px 10px
+	.p404__ico
+		display: inline-block
+		margin-bottom: 40px
+		+s(p404)
+		vertical-align: top
+		+rt(1024)
+			margin-bottom: 30px
+	.p404__title
+		margin-bottom: 40px
+		font-size: 65px 
+		font-weight: 100 
+		line-height: 1
+		+rt(1024)
+			margin-bottom: 30px
+			font-size: 40px
+	.p404__content	
+		font-size: 28px
+		font-weight: 300 
+		+rt(1024)
+			font-size: 18px
+		a
+			color: #FFF
+			text-decoration: underline 
+
+.p503
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	background: url(../img/p503.jpg) 50% 50% no-repeat
+	background-size: cover  
+	+vertical
+	color: #fff 
+	.p503__center
+		display: inline-block
+		max-width: 640px
+		padding: 0 10px
+		vertical-align: middle
+	.p503__ico
+		display: inline-block
+		margin-bottom: 35px
+		+s(p503)
+		vertical-align: top
+		+rt(768)
+			margin-bottom: 10px
+	.p503__title
+		margin-bottom: 10px
+		font-weight: 100
+		font-size: 65px 
+		+rt(768)
+			font-size: 40px 
+	.p503__content
+		font-size: 28px
+		font-weight: 300 
+		+rt(768)
+			font-size: 18px
+		p
+			margin-bottom: 15px
+		a
+			color: #fff 
+
+.about
+	.l-center_small
+		margin-bottom: 10px
+	.about__how
+		margin-bottom: 40px
+		padding: 35px 0 40px
+		background: url(../img/bg-about.jpg) no-repeat 50% 0
+		background-size: cover 
+		+rt(768)
+			padding: 25px 0 30px
+			background: #A0CCEA 
+		.title
+			margin-bottom: 25px
+			color: #FFF 
+			text-shadow: 0 1px 2px #63819d
+	.about__how-list
+		font-size: 0
+		text-align: center
+	.about__how-item
+		position: relative
+		display: inline-block
+		width: 320px
+		vertical-align: top
+		+rt(1024)
+			margin-bottom: 10px
+		+rt(768)
+			width: 100%
+		img
+			display: block
+			+rt(768)
+				width: 100%
+	.about__how-text
+		i, span
+			display: inline-block
+			vertical-align: middle
+		i
+			margin-right: 7px 
+		span
+			max-width: 180px
+			+flow
+			font-size: 24px
+			text-shadow: 0 1px 2px #63819d
+			color: #FFF
+			text-align: left
+			line-height: 1
+	.about__one
+		+s(about-one)
+	.about__two
+		+s(about-two)
+	.about__three
+		+s(about-three)
+	.about__arr
+		position: absolute
+	.about__arr_1
+		right: -35px
+		bottom: 90px
+		+s(about-arr1)
+		+rt(768)
+			display: none
+	.about__arr_2
+		right: -40px
+		bottom: 300px
+		+s(about-arr2)
+		+rt(1024)
+			display: none
+	.about__benefits-item
+		+clr
+		&:nth-child(2n)
+			.about__benefits-ico
+				float: right
+				margin: 0 0 30px 30px
+		.content
+			display: table
+	.about__benefits-ico
+		float: left
+		margin: 0 30px 30px 0 
+		+rt(768)
+			display: none
+		img
+			width: 100%
+	.about__video-title
+		margin-bottom: 30px
+		+flow
+		font-size: 24px
+		text-align: center
+		+rt(768)
+			font-size: 18px
+			
+.avia
+	.avia__banner
+		position: relative
+		height: 476px
+		background: url(../img/avia-banner.jpg) no-repeat 50% 50%
+		background-size: cover
+		border-radius: 8px
+		box-shadow: 0 1px 2px rgba(2,26,75,.5)
+	.avia__banner-title
+		position: absolute
+		top: 40px
+		left: 40px
+		right: 40px
+		text-align: center
+		font-size: 29px
+		color: #FFF
+		text-shadow: 0 1px 2px rgba(0,0,0,.2)
+		line-height: 1.2
+		span
+			display: block
+		+rt(768)
+			left: 10px
+			right: 10px
+			font-size: 18px
+	.avia__banner-footer
+		position: absolute
+		bottom: 25px
+		left: 40px
+		right: 40px
+		text-align: center
+		color: #fff
+		+rt(768)
+			left: 10px
+			right: 10px
+	.avia__banner-text
+		margin-bottom: 20px
+		font-size: 18px
+		+rt(768)
+			font-size: 14px
+	.avia__banner-use
+		>span
+			padding-left: 10px
+			text-transform: uppercase
+			font-size: 18px 
+			font-weight: bold
+			+rt(768)
+				display: block
+				padding: 20px 0 0 0 
+	.avia__ticket
+		position: relative
+		margin-bottom: 30px
+		cursor: pointer
+		&:hover
+			&:before
+				visibility: visible
+				opacity: 1 
+			.tour__in
+				box-shadow: 0 0 0 #b7bfc5
+			.tour__title
+				color: $orange
+		&:before
+			content: ""
+			position: absolute
+			top: -2px
+			left: -2px
+			right: -2px
+			bottom: -2px
+			+g(#f7a84c, #ed4c22)
+			box-shadow: 0 8px 20px rgba(255,55,0,.55)
+			border-radius: 9px
+			visibility: hidden
+			opacity: 0
+			z-index: 2 
+			+rt(768)
+				display: none
+	.avia__ticket-in
+		position: relative
+		+g(#fef8e8, #fcf4d8)
+		box-shadow: 0 1px 2px #b7bfc5
+		border-radius: 8px
+		+tr(box-shadow .2s linear)
+		+clr
+		z-index: 4 
+		+rt(768)	
+			box-shadow: none
+			border-radius: none
+			background: none 
+	.avia__logo
+		position: relative
+		float: right
+		width: 210px
+		height: 220px
+		background-size: cover 
+		border-radius: 0 8px 8px 0 
+		&:before
+			content: ""
+			position: absolute
+			top: 2px
+			left: -3px
+			bottom: 2px
+			width: 6px
+			background: url(../img/tour-circles.png) repeat-y
+			z-index: 4 
+			+rt(768)
+				top: auto
+				left: 2px
+				right: 2px
+				bottom: -3px
+				width: auto
+				height: 6px
+				background: url(../img/tour-circles-horz.png) repeat-x
+	.avia__price
+		position: absolute
+		bottom: 15px
+		left: 0
+		right: 0
+		text-align: center
+		.price
+			float: none
+			display: inline-block
+			vertical-align: top
+	.avia__data
+		padding: 15px
+		overflow: hidden
+	.avia__flight
+		margin-bottom: 20px
+		overflow: hidden
+	.avia__flight-from, .avia__flight-to, .avia__time
+		position: relative
+		float: left
+		box-sizing: border-box
+	.avia__flight-from, .avia__flight-to
+		width: 36%
+		padding-left: 30px
+	.avia__time
+		width: 28%
+		padding-right: 20px
+		text-align: center
+	.avia__time-ico
+		position: absolute
+		top: 1px
+		right: 0
+		+s(avia-plain)
+	.avia__time-value	
+		overflow: hidden
+		text-align: center
+		span
+			position: relative
+			display: inline-block
+			vertical-align: middle
+			font-size: 12px
+			color: #3156A3 
+			&:before, &:after
+				content: ""
+				position: absolute
+				top: 7px
+				width: 200px
+				height: 1px
+				background: #dfded8 
+			&:before
+				left: 120%
+			&:after
+				right: 120%
+	.avia__flight-time
+		margin-bottom: 5px
+		font-weight: 700 
+	.avia__city, .avia__aeroport
+		margin-bottom: 5px
+		color: #64707D 
+	.avia__plain-up, .avia__plain-down
+		position: absolute
+		top: 2px
+		left: 0
+	.avia__plain-up
+		+s(avia-plain-up)
+	.avia__plain-down
+		+s(avia-plain-down)
+	.avia__more-head
+		.pseudo-link
+			font-weight: 700 
+			font-size: 14px
+		
+
+.blog
+	.l-center
+		margin-bottom: 30px
+	.blog__search
+		padding: 15px
+		border-radius: 8px
+		background-color: #f7f5eb
+		+clr
+		+rt(768)
+			padding: 10px
+		.select
+			float: left
+			margin-right: 15px
+			+rt(768)
+				display: none
+		.native-select
+			margin-bottom: 10px
+	.field
+		overflow: hidden
+		.field__el
+			position: relative
+			&:after
+				content: ""
+				position: absolute
+				top: 12px
+				right: 15px
+				+s(blog-search-ico)
+			input
+				padding: 0 40px 0 10px 
+	.blog__list
+		margin: 0 auto
+	.blog__item
+		width: 225px
+		margin-bottom: 20px
+		&.blog__item_a
+			.blog__pic
+				&:after
+					+s(blog-a)
+		&.blog__item_video
+			.blog__pic
+				&:after
+					+s(blog-video)
+		&.blog__item_photo
+			.blog__pic
+				&:after
+					+s(blog-photo)
+	.blog__pic
+		position: relative
+		display: block
+		margin-bottom: 7px
+		&:after
+			content: ""
+			position: absolute
+			left: 10px
+			bottom: 17px
+		img
+			display: block
+			border-radius: 8px
+			background-color: #f7f5f1
+			box-shadow: 0 1px 2px #b7bfc5
+	.blog__category
+		margin-bottom: 5px
+		a
+			color: #64707d
+			text-decoration: none
+			&:hover
+				color: $orange 
+	.blog__title
+		margin-bottom: 7px
+		line-height: 1.1
+		a
+			font-size: 18px
+			font-weight: 700 
+
+.pager
+	margin-top: 20px
+	text-align: center
+	font-size: 0
+	.btn, .pager__list
+		display: inline-block
+		vertical-align: middle
+	.pager__list
+		padding: 0 8px
+		+rt(768)
+			padding: 10px 0
+		a, span
+			display: inline-block
+			min-width: 20px
+			height: 30px
+			padding: 0 5px
+			margin: 0 2px
+			border-radius: 15px
+			font-size: 14px
+			vertical-align: top
+			line-height: 30px
+		a
+			&.is-active
+				background-color: #6dbb41
+				box-shadow: inset 0 2px 3px rgba(24,120,44,.75)
+				+g(#4ea329, #8fce6a)
+				cursor: default
+				text-decoration: none
+				color: #FFF 
+
+.tags
+	.tags__list
+		+clr
+		li
+			float: left
+			margin: 0 10px 10px 0
+			+rt(768)
+				margin: 0 5px 5px 0
+		a
+			display: block
+			height: 28px
+			padding: 0 15px
+			border-radius: 15px
+			border: 1px solid #ccc 
+			line-height: 28px
+			text-decoration: none
+			color: $cl
+			&:hover
+				color: $orange 
+
+.bonus
+	&.bonus_banner
+		position: relative
+		margin-bottom: 40px
+		+rt(768)
+			margin-bottom: 20px
+		&:after
+			content: ""
+			position: absolute
+			left: 0
+			right: 0
+			bottom: 0
+			height: 20px
+			border-radius: 50%
+			box-shadow: 0 0 10px #90aac5
+			z-index: 2 
+	&.bonus_cab
+		.bonus__counter
+			margin-bottom: 30px
+			text-align: center
+		.bonus__content
+			padding: 0
+			margin: 0
+		.bonus__content-col
+			&:first-child
+				margin-right: 60px
+	.bonus__in
+		position: relative
+		height: 540px
+		padding: 50px 40px 0 50%
+		background: url(../img/bg-bonus.jpg) no-repeat 50% 0
+		box-sizing: border-box
+		z-index: 4 
+		+rt(1024)
+			padding: 30px 30px 0 50% 
+		+rt(768)
+			height: auto
+			padding: 10px
+			background: #d9e6f6 
+	.bonus__title
+		margin-bottom: 40px
+		font-size: 65px
+		font-weight: 100
+		line-height: 1
+		+rt(1024)	
+			margin-bottom: 30px
+		+rt(768)
+			margin-bottom: 20px
+			font-size: 50px
+	.bonus__title-sub
+		margin-bottom: 40px
+		font-size: 28px
+		font-weight: 300 
+		+rt(1024)
+			margin-bottom: 30px
+		+rt(768)
+			margin-bottom: 20px
+			font-size: 20px
+	.bonus__counter
+		margin-bottom: 50px
+		+rt(1024)
+			margin-bottom: 30px
+		+rt(768)
+			margin-bottom: 20px
+		.counter, .bonus__counter-text
+			display: inline-block
+			vertical-align: middle
+		.counter
+			margin-right: 10px 
+	.bonus__counter-text
+		font-weight: 300
+		font-size: 28px
+		+rt(768)
+			font-size: 20px
+	.bonus__content
+		margin-bottom: 40px
+		padding: 0 80px
+		+clr
+		+rt(768)
+			margin-bottom: 20px
+			padding: 0 10px
+	.bonus__content-col
+		float: left
+		width: 360px
+		+rt(1024)
+			float: none
+			width: 100%
+			margin-bottom: 20px
+		&:first-child
+			margin-right: 80px
+			+rt(1024)
+				margin: 0
+		.content
+			img
+				+rt(768)
+					width: 100%
+
+.counter
+	font-size: 0
+	.counter__digital, .counter__dot
+		display: inline-block
+		margin-left: 3px
+		vertical-align: top
+		&:first-child
+			margin: 0
+	.counter__digital
+		+s(counter-digital)
+		text-align: center
+		font-size: 36px
+		font-weight: 700
+		line-height: 48px
+		color: #FFF  
+	.counter__dot
+		position: relative
+		top: 33px
+		+s(counter-dot)
+		
+.response
+	margin-bottom: 25px
+	+clr
+	&.response_small
+		max-width: 800px
+		margin: 0 auto 25px
+	.response__user
+		float: left
+		width: 130px
+		margin-right: 15px
+		text-align: center
+		+rt(768)
+			float: none
+			margin: 0 auto 15px  
+	.response__avatar
+		margin-bottom: 5px
+		img
+			border-radius: 50%
+	.response__name
+		margin-bottom: 3px
+		font-size: 14px
+		font-weight: bold 
+	.response__position
+		font-size: 12px
+	.response__comment
+		position: relative
+		display: table
+		padding: 15px 20px
+		border-radius: 8px
+		background-color: #f7f5f1
+		+g(#f9f8f5, #f5f4ed)
+		box-shadow: 0 1px 2px #b7bfc5
+		+slab
+		font-size: 16px
+		+rt(768)
+			display: block
+		p
+			margin-top: 10px
+			&:first-child
+				margin: 0
+		&:after
+			content: ""
+			position: absolute
+			top: 45px
+			left: -11px
+			+s(man-arr)
+			+rt(768)
+				display: none
+	.response__slider
+		min-height: 200px
+		overflow: hidden
+		.response__item-in
+			padding: 0 90px 5px
+			overflow: hidden
+			+rt(768)
+				padding: 0 10px 5px
+		.slick-prev, .slick-next
+			top: 80px
+		.slick-prev
+			left: 0
+		.slick-next
+			right: 0
+
+.cart
+	margin-bottom: 30px
+	padding: 15px 15px 20px
+	border-radius: 8px
+	background-color: #3155a3
+	box-shadow: 0 1px 2px rgba(2,26,75,.5)
+	box-sizing: border-box
+	+g(#4274c3, #203883)
+	color: #FFF 
+	.cart__head
+		margin-bottom: 10px
+		+clr
+	.cart__title
+		a
+			font-size: 16px
+			font-weight: 700 
+			color: #FFF
+			&:hover
+				color: $orange 
+	.cart__flight
+		margin-bottom: 10px
+		font-size: 0
+	.cart__flight-city
+		display: inline-block
+		margin-right: 20px 
+		i, span
+			display: inline-block
+		i
+			margin-right: 3px
+			+s(cart-plane)
+		span
+			font-weight: 700 
+			font-size: 12px
+	.cart__flight-more
+		display: inline-block
+		a
+			font-size: 12px
+			border-bottom: 1px dotted
+			text-decoration: none
+			color: #FFF
+			&:hover
+				color: $orange 
+	.cart__date
+		margin-bottom: 10px 
+		span
+			font-weight: 700 
+	.cart__service
+		margin-bottom: 10px
+		li
+			margin-bottom: 3px
+			+clr
+		span
+			float: left
+			width: 55px
+			margin-right: 10px
+	.cart__more
+		margin-top: 15px
+		padding-top: 15px
+		border-top: 1px solid #4d6aac
+	.cart__more-title
+		margin-bottom: 7px
+		font-weight: 700 
+		font-size: 16px
+	.cart__more-in
+		+clr
+	.cart__more-content
+		span
+			display: block
+			margin-bottom: 2px
+			font-weight: bold
+	.cart__footer
+		position: relative
+		margin-top: 15px
+		padding-top: 20px
+		&:before
+			content: ""
+			position: absolute
+			top: 0
+			left: -13px
+			right: -13px
+			height: 6px
+			background: url(../img/white-dots.png)  
+	.cart__bonuses
+		margin-bottom: 15px
+		+clr
+		li
+			float: right
+			font-weight: 700 
+			&:first-child
+				float: left
+	.cart__total
+		+clr
+	.cart__total-title
+		float: left
+		margin-top: 10px
+		font-weight: 700 
+		font-size: 16px
+	.rating
+		margin-bottom: 15px 
+	.rating__counter
+		display: none
+	.price
+		float: right
+		color: $cl 
+	.price_small
+		margin: 0 12px 0 20px
+
+.popup
+	display: none
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	padding: 50px 0
+	background: rgb(0,39,81) 
+	background: rgba(0,39,81,.8) 
+	overflow: auto
+	+vertical
+	z-index: 999 
+	&.popup_catalog
+		.popup__in
+			width: 708px 
+			+rt(768)
+				width: 300px
+	&.popup_map
+		.popup__in
+			width: 960px
+			+rt(1024)
+				width: 720px
+			+rt(768)
+				width: 300px
+	&.popup_gallery
+		.popup__in
+			width: 630px
+			padding: 15px 30px
+			background: #FFF 
+			border-radius: 8px 
+			box-shadow: 0 7px 15px rgba(0,0,0,.25)
+			+rt(768)
+				width: 300px
+				padding: 10px
+		.gallery
+			margin-bottom: 15px
+		.content
+			margin: 0
+			font-size: 14px
+	&.popup_enter
+		background: url(../img/bg-enter.jpg) no-repeat 50% 50%
+		background-size: cover  
+		.popup__in
+			width: 265px
+			padding: 20px 30px 
+			border-radius: 8px
+			background: rgba(255,255,255,.95)
+			box-shadow: 0 7px 15px rgba(100,129,158,.75)
+			+rt(768)
+				padding: 15px
+	.popup__close
+		position: absolute
+		top: 30px
+		right: 30px
+		+s(popup-close)
+		+rt(768)
+			top: 15px
+	.popup__in
+		display: inline-block
+		vertical-align: middle
+		font-size: 14px
+		text-align: left
+
+.order
+	.order__block
+		padding: 15px
+		margin-bottom: 30px
+		border-radius: 8px
+		background-color: #f7f5f1
+		box-shadow: 0 1px 2px #b7bfc5
+		+gh(#f9f8f5, #f5f4ed)
+	.order__row
+		padding: 15px 0
+		border-top: 1px solid #d9d8d3
+		&:last-child
+			padding: 15px 0 0 
+		&:first-child
+			border: none
+			padding: 0 0 15px
+	.order__layout
+		+clr
+	.order__col
+		float: left
+		width: 50%
+		+rt(768)
+			float: none
+			width: 200px
+			margin-bottom: 15px
+		.field, .select
+			width: 200px 
+			margin-bottom: 15px
+	.order__attention
+		position: relative
+		padding-left: 30px
+		font-size: 12px
+		&:before
+			content: ""
+			position: absolute
+			top: 0
+			left: 0
+			+s(attention)
+	.order__fieldset
+		margin-right: -10px
+		>*
+			display: inline-block
+			margin: 0 10px 10px 0
+			vertical-align: middle
+			+rt(768)
+				display: block
+		.field
+			width: 160px
+		.select, .native-select
+			width: 140px
+			+rt(768)
+				width: 160px
+		.select
+			+rt(768)
+				display: none
+		.native-select
+			display: none
+			+rt(768)
+				display: inline-block
+		.select_date
+			display: inline-block
+			width: 135px 
+			+rt(768)
+				width: 160px
+		.select__date
+			&:before
+				width: 134px 
+				+rt(768)
+					width: 159px
+		.checkbox
+			margin: 0 30px 10px 0
+	.order__scan-toggle
+		line-height: 1.2
+	.order__scans
+		padding-bottom: 5px
+		+clr
+	.order__scans-item, .order__scans-add
+		float: left
+		width: 80px
+		height: 80px
+		margin-right: 10px
+	.order__scans-item
+		img
+			display: block
+			border-radius: 3px
+	.order__scans-add
+		+s(order-scan)
+	.order__add-comment
+		margin-bottom: 20px
+	.order__bonus-in
+		position: relative
+		padding: 25px 0 0 0
+		&:before
+			content: ""
+			position: absolute
+			top: 0
+			left: -13px
+			right: -13px
+			height: 6px 
+			opacity: .6 
+			background: url(../img/white-dots.png)  
+		>a
+			float: right
+			margin-left: 20px
+			+rt(768)
+				float: none
+				display: block
+				margin: 0 0 15px
+	.order__bonus-counter
+		position: relative
+		display: table
+		padding-left: 60px
+		font-weight: 700 
+		&:before
+			content: ""
+			position: absolute
+			top: -3px
+			left: 0
+			+s(order-bonus)
+		span
+			color: #ec441e 
+	.order__bonus-payment
+		padding-left: 60px
+		+clr
+		.field
+			float: right
+			+rt(768)
+				float: none
+		.field__el, .field__label
+			display: inline-block
+			vertical-align: middle
+		.field__el	
+			width: 75px
+			margin-right: 5px
+	.order__bonus-label
+		float: left
+		margin-top: 10px
+		font-weight: 700 
+		+rt(768)
+			margin: 0 0 15px
+	.order__text
+		font-size: 14px 
+	.order__service
+		.toggle
+			padding-left: 23px 
+	.order__service-head
+		+clr
+		.price
+			float: right
+			margin: 0 8px 0 20px
+		.radio
+			display: table
+			margin-bottom: 10px
+		.radio__text	
+			font-size: 14px
+			font-weight: 700 
+			line-height: 1.1 
+		& +	.order__service-text
+			padding-left: 23px
+	.order__service-text
+		font-size: 14px
+		li
+			position: relative
+			&:before
+				content: "— "
+	.order__balance
+		padding-left: 23px
+		+clr
+		.field
+			float: left
+		.field__el, .field__label
+			display: inline-block
+			vertical-align: middle
+		.field__el
+			width: 75px
+			margin-right: 5px 
+		.price
+			margin-top: 5px
+	.order__balance-title
+		float: left
+		margin: 10px 15px 0 0
+		font-size: 14px
+		font-weight: 700 
+		+rt(768)
+			float: none
+			margin: 0 0 15px 0
+	.order__terms
+		margin-bottom: 25px
+		font-size: 14px
+		.checkbox__text
+			line-height: 1.1
+		
+.go-payment
+	position: relative
+	+clr
+	+rt(768)
+		padding-bottom: 50px
+		.btn
+			position: absolute
+			bottom: 0
+			right: 0
+	.btn
+		float: right
+	.price
+		margin: 0 20px 0 30px
+		+rt(768)
+			margin: 0 8px 0 30px
+	.go-payment__title
+		float: right
+		margin-top: 9px
+		font-size: 16px 
+		font-weight: 700 
+	
+.error
+	padding: 120px 0 180px
+	+rt(768)
+		padding: 20px 0
+	.error__in
+		position: relative
+		min-height: 65px 
+		margin-bottom: 30px
+		padding: 20px 20px 20px 150px
+		border-radius: 8px
+		background-color: #e93636
+		box-shadow: 0 1px 2px #b7bfc5
+		+g(#ef4444, #e52828)
+		color: #fff 
+		+rt(768)
+			padding: 10px 10px 10px 90px
+			margin-bottom: 10px
+	.error__ico
+		position: absolute
+		top: 20px
+		left: 50px
+		+s(error)
+		+rt(768)
+			top: 10px
+			left: 10px
+	.error__title
+		margin-bottom: 10px
+		font-size: 20px
+		font-weight: 700 
+	.error__footer
+		text-align: center
+		.btn
+			margin: 0 7px
+			+rt(768)
+				margin: 5px 0
+
+.success
+	margin-bottom: 30px 
+	+rt(768)	
+		margin-bottom: 15px
+	.success__in
+		position: relative
+		min-height: 65px 
+		margin-bottom: 30px
+		padding: 20px 20px 20px 150px
+		border-radius: 8px
+		background-color: #a5d67b
+		box-shadow: 0 1px 2px #b7bfc5
+		+g(#a5d67b, #69ba4a)
+		color: #fff 
+		+rt(768)
+			padding: 10px 10px 10px 90px
+			margin-bottom: 10px
+	.success__ico
+		position: absolute
+		top: 20px
+		left: 50px
+		+s(success)
+		+rt(768)
+			top: 10px  
+			left: 10px
+	.success__title
+		margin-bottom: 5px
+		font-size: 20px
+		font-weight: 700 
+	.success__content
+		margin-bottom: 20px
+	.success__manager
+		li
+			margin-top: 5px
+			&:first-child
+				margin: 0
+		span
+			font-weight: 700 
+		a
+			color: #FFF
+			text-decoration: none
+			&:hover
+				color: $orange 
+
+
+.contacts
+	.contacts__list	
+		margin-bottom: 30px
+		font-size: 0
+		text-align: center
+	.contacts__item
+		display: inline-block
+		width: 33.3%
+		padding: 0 20px 
+		margin-bottom: 20px
+		box-sizing: border-box
+		vertical-align: top
+		+rt(768)
+			width: 100%
+			padding: 0
+			margin-bottom: 15px
+		.title
+			margin-bottom: 10px
+	.contacts__details
+		font-size: 16px
+		p
+			margin-bottom: 2px
+
+.team
+	.team__list	
+		margin-bottom: 30px
+		font-size: 0
+		text-align: center
+	.team__item
+		display: inline-block
+		width: 33.3%
+		padding: 0 20px 
+		margin-bottom: 20px
+		box-sizing: border-box
+		vertical-align: top
+		+rt(768)
+			width: 100%
+			padding: 0
+			margin-bottom: 15px
+	.team__avatar
+		margin-bottom: 5px
+		font-size: 0
+		img
+			border-radius: 50%
+	.team__name
+		margin-bottom: 3px
+		font-weight: 700 
+		font-size: 14px
+	.team__mail	
+		font-size: 12px
+
+.countries
+	.countries__layout
+		+clr
+	.countries__col
+		float: left
+		width: 20%
+		padding-left: 30px
+		box-sizing: border-box
+		&:first-child
+			padding: 0
+	.countries__list
+		margin-bottom: 20px
+		font-size: 16px
+		li
+			position: relative
+			padding-left: 17px 
+			margin-bottom: 5px
+			&.is-active
+				&:before
+					content: ""
+					position: absolute
+					top: 7px
+					left: 0
+					width: 7px
+					height: 7px
+					background: #6dbc42
+					border-radius: 50% 
+			span
+				padding-left: 5px
+				font-style: italic
+				color: #6DBC42 
+
+.hotels
+	.title
+		position: relative
+		a
+			position: absolute
+			top: 0
+			right: 0
+			font-weight: 400
+			font-size: 13px 
+			+rt(768)
+				display: block
+				position: relative
+				margin-top: 5px
+				top: auto
+				right: auto
+	.hotels__list
+		margin-bottom: 30px
+		font-size: 0
+		+rt(1024)
+			padding: 0 0 2px
+			overflow: hidden
+	.hotels__list-in
+		margin-right: -20px 
+		+rt(1024)
+			margin: 0
+	.hotels__item
+		float: left
+		width: 180px
+		margin: 0 15px 15px 0
+		text-align: center
+		+rt(1024)
+			margin: 0
+	.hotels__item-in
+		position: relative
+		display: inline-block
+		width: 180px
+		border-radius: 5px
+		box-shadow: 0 1px 2px #b7bfc5
+		vertical-align: top
+		text-decoration: none
+	.hotels__title
+		display: table-cell
+		width: 180px
+		height: 120px
+		padding: 7px
+		+g(rgba(0,0,0,.1), rgba(0,0,0,.5))
+		border-radius: 5px
+		color: #FFF
+		font-size: 14px
+		vertical-align: bottom
+		box-sizing: border-box
+		span
+			display: block
+			font-weight: 700 
+	.slick-prev, .slick-next
+		top: 50%
+		margin-top: -20px
+	.slick-prev
+		left: 0
+	.slick-next
+		right: 0
+
+.insurance
+	padding: 20px
+	margin-bottom: 30px
+	border-radius: 8px
+	background-color: #fdf5e0
+	box-shadow: 0 1px 2px #b7bfc5
+	+g(#fef8e8, #fcf4d8)
+	.insurance__item
+		margin-top: 20px
+		padding-top: 20px
+		border-top: #DFD9C5 1px solid
+		&:first-child
+			padding: 0
+			margin: 0
+			border: none
+	.insurance__head
+		+clr
+		.price
+			float: right
+			margin: 0 8px 0 20px
+		.radio
+			display: table
+			margin-bottom: 10px
+		.radio__text	
+			font-size: 18px
+			font-weight: 700 
+			+rt(768)
+				font-size: 16px
+			&:before
+				top: 5px 
+		& +	.insurance__text
+			padding-left: 23px
+	.insurance__text
+		.content
+			margin: 0
+
+.question
+	height: 406px
+	background: url(../img/bg-question.png) no-repeat 0 0 
+	border-radius: 8px
+	box-shadow: 0 1px 3px #c1c9cd
+	+vertical
+	+rt(768)
+		height: 400px
+		background: url(../img/bg-question-small.png) no-repeat 0 0 
+	.question__form, .question__ok
+		display: inline-block
+		vertical-align: middle
+	.question__form
+		width: 260px
+		.field
+			margin-bottom: 15px
+		.btn
+			margin-top: 10px
+	.question__ok-title
+		margin-bottom: 20px
+		i
+			display: inline-block
+				margin-bottom: 10px
+			vertical-align: top
+			+s(ok-green)
+		span
+			display: block
+			font-size: 20px
+			font-weight: 700
+			color: #6dbc42   
+	.question__ok-text
+		font-size: 13px
+		color: #64707D 
+
+.roaming
+	.roaming__in
+		position: relative
+		padding: 30px 55px
+		border-radius: 8px
+		background-color: #fdf5e0
+		box-shadow: 0 1px 2px #b7bfc5
+		+g(#fef8e8, #fcf4d8)
+		font-size: 0
+		text-align: center
+		z-index: 4 
+		+rt(768)
+			padding: 10px
+	.roaming__item
+		display: inline-block
+		width: 50%
+		vertical-align: top
+		+rt(768)
+			width: 100%
+			&:first-child
+				margin-bottom: 15px
+	.roaming__sim
+		margin-bottom: 15px
+		i
+			display: inline-block
+	.roaming__sim-usa
+		+s(travelsim-usa)
+	.roaming__sim-europe
+		+s(travelsim-europe)
+	.roaming__title
+		margin-bottom: 5px
+		font-weight: bold 
+		font-size: 18px
+	.roaming__price
+		margin-bottom: 15px
+		.price
+			float: none
+			display: inline-block
+			vertical-align: top
+	.roaming__text
+		padding-top: 5px
+		color: #64707D 
+		font-size: 13px
+	.roamig__info
+		position: relative
+		margin: 0 15px 45px
+		text-align: center
+		z-index: 2 
+		+rt(768)
+			margin: 0 0 15px
+		.btn
+			position: relative
+			border-radius: 0 0 6px 6px
+			border-width: 0 1px 1px
+			z-index: 2 
+			&:before, &:after
+				border-radius: 0 0 6px 6px
+	.roaming__tariff
+		display: none
+		position: relative
+		margin-top: -10px
+		padding: 30px 15px 20px
+		border-radius: 0 0 5px 5px
+		box-shadow: 0 3px 5px #c1c9cd
+		text-align: left
+		z-index: 4 
+		+rt(768)
+			padding: 20px 10px 10px 
+	.roaming__tariff-text
+		padding-bottom: 15px
+		margin-bottom: 15px
+		border-bottom: #E9E9E9 1px solid 
+	.roaming__tariff-head
+		margin-bottom: 30px 
+		+clr
+		.title
+			float: left
+			margin-top: 7px
+			+rt(768)
+				float: none
+				margin: 0 0 20px
+		.sort-wrapper
+			float: right
+			margin: 0
+			+rt(768)
+				float: none
+	.roaming__tariff-table
+		width: 100%
+		margin-bottom: 15px
+		+rt(768)
+			width: auto
+			margin: 0 -10px 15px
+		thead
+			th
+				padding: 0 15px 5px 
+				text-align: right
+				+rt(768)
+					padding: 0 5px 5px 0
+					font-size: 11px
+					text-align: center
+				&:first-child, &:nth-child(2)
+					text-align: left
+				&:first-child
+					padding: 0 15px 0 20px
+					+rt(768)
+						padding: 0 5px 5px 5px
+		tbody
+			tr
+				&.hide-on-mob
+					+rt(768)
+						display: none
+				&.show-on-mob
+					display: none
+					+rt(768)
+						display: table-row
+				&:first-child
+					td
+						&:first-child
+							border-radius: 8px 0 0 0
+							+rt(768)
+								border-radius: 0
+						&:last-child
+							border-radius: 0 8px 0 0
+							+rt(768)
+								border-radius: 0
+				&:last-child
+					td
+						&:first-child
+							border-radius: 0 0 0 8px
+							+rt(768)
+								border-radius: 0
+						&:last-child
+							border-radius: 0 0 8px 0
+							+rt(768)
+								border-radius: 0
+				&:nth-child(2n+1)
+					td
+						background: #F8F5EC 
+						+rt(768)
+							background: #FFF 
+				&:nth-child(2n)
+					td
+						+rt(768)
+							background: #F8F5EC 
+			td
+				padding: 15px
+				font-size: 16px
+				+rt(768)
+					padding: 5px 5px 5px 0
+					font-size: 11px
+					text-align: center
+				&:first-child
+					padding: 15px 15px 15px 20px 
+					+rt(768)
+						padding: 5px 
+				.field, .select, .native-select
+					min-width: 220px
+					font-size: 13px
+					+rt(1024)
+						min-width: 150px
+					+rt(768)
+						width: 100%
+						min-width: 100%
+						text-align: left
+	.roaming__tariff-note
+		color: #64707d
+		p
+			margin-top: 10px
+			&:first-child
+				margin: 0
+	.roaming__form
+		position: relative
+		display: inline-block
+		width: 210px
+		vertical-align: top
+		+rt(768)
+			width: 100%
+		.field
+			margin-bottom: 20px
+			+rt(768)
+				margin-bottom: 10px
+		.btn
+			margin-top: 10px
+		.roaming__sim-europe
+			position: absolute
+			top: 0
+			left: 230px
+			+rt(768)
+				position: relative
+				left: auto
+				display: inline-block
+				margin-bottom: 10px
+				vertical-align: top
+
+.tabs
+	margin-bottom: 25px
+
+.bars
+	.bars__item
+		padding: 15px 20px
+		border-radius: 8px
+		+clr
+		&:nth-child(2n+1)	
+			background: #F8F5EC 
+	.bars__pic
+		float: left
+		width: 160px
+		height: 200px
+		margin-right: 20px 
+		background-position: 50% 50%
+		background-size: cover 
+		+rt(768)
+			float: none
+			width: 100%
+			margin: 0 0 15px
+	.bars__details
+		display: table
+	.bars__title
+		margin-bottom: 5px
+		font-weight: 700 
+		font-size: 16px
+	.bars__time
+		margin-bottom: 10px
+		+clr
+	.bars__time-title
+		float: left
+		margin-right: 10px
+		color: #64707D 
+	.bars__time-list
+		display: table
+		font-weight: 700 
+		span
+			display: block
+
+.accordeon
+	margin-bottom: 20px
+	+g(#f9f8f5, #f5f4ed)
+	border-radius: 8px
+	background-color: #f7f5f1
+	box-shadow: 0 1px 2px #b7bfc5
+	+rt(768)
+		margin-bottom: 10px
+	&.is-open
+		.accordeon__head
+			&:after	
+				border-width: 0 4px 6px 4px
+				border-color: transparent transparent #363636 transparent
+	.accordeon__head
+		position: relative
+		padding: 10px 40px 10px 20px 
+		font-weight: 700 
+		font-size: 18px
+		cursor: pointer
+		+rt(768)
+			padding: 5px 30px 5px 10px 
+			font-size: 16px
+		&:after
+			content: ""
+			position: absolute
+			top: 17px
+			right: 21px
+			+arr(8,6,$cl,b)
+			+rt(768)
+				top: 12px
+				right: 12px
+	.accordeon__content
+		display: none
+		padding: 0 20px 10px
+		+rt(768)
+			padding: 0 10px 5px
+	.accordeon__table
+		width: 100%
+		td
+			padding: 0 10px 10px 0 
+			font-size: 16px
+			vertical-align: middle
+			+rt(768)
+				font-size: 14px
+			&:first-child
+				color: #64707D 
+
+.suites
+	display: table
+	width: 100%
+	.suites__row
+		display: table-row
+		+rt(768)
+			display: block
+		&:first-child
+			.suites__cell
+				&:first-child
+					border-radius: 8px 0 0 0
+				&:last-child
+					border-radius: 0 8px 0 0
+		&:last-child
+			.suites__cell
+				&:first-child
+					border-radius: 0 0 0 8px
+				&:last-child
+					border-radius: 0 0 8px 0
+		&:nth-child(2n+1)
+			+rt(768)
+				background: #F8F5EC 
+			.suites__cell	
+				background: #F8F5EC 
+				+rt(768)
+					background: none 
+	.suites__cell
+		display: table-cell
+		padding: 20px 10px
+		vertical-align: middle
+		+rt(768)
+			display: inline-block
+			vertical-align: middle
+			padding: 10px
+		&:last-child
+			padding: 20px 20px 20px 10px
+			text-align: right
+			+rt(768)
+				padding: 10px 10px 10px 0
+		&:first-child
+			padding: 20px 0 20px 20px
+			+rt(768)
+				padding: 10px 0 10px 10px 
+		.price
+			float: none
+			display: inline-block
+	.suites__cell_pic
+		width: 75px
+		img
+			display: block
+			border-radius: 5px
+			background-color: #fff
+			box-shadow: 0 1px 2px #b7bfc5
+	.suites__cell_people
+		text-align: center
+	.suites__cell_price
+		text-align: right
+	.suites__cell_details
+		vertical-align: top
+		+rt(768)
+			display: block
+			padding: 0 10px
+	.suites__title
+		margin-bottom: 5px
+		a
+			border-bottom: 1px dashed
+			text-decoration: none 
+			color: $cl
+			font-size: 16px
+			font-weight: 700  
+	.suites__details
+		+clr
+	.suites__details-type
+		float: left
+		margin-right: 5px
+		color: #64707d 
+	.suites__details-text
+		display: table
+		font-weight: 700 
+		span
+			display: block
+
+.add-comment
+	margin-bottom: 30px
+	padding: 15px 20px
+	border-radius: 8px
+	background-color: #e3f1fb
+	box-shadow: 0 1px 2px #b7bfc5
+	+g(#eaf5fd, #dceffb)
+	font-size: 14px
+	+rt(768)
+		padding: 15px
+		margin-bottom: 15px
+	.add-comment__title
+		margin-bottom: 15px
+		font-size: 20px
+		font-weight: 700
+		text-align: center
+	.add-comment__in
+		+clr
+		.field
+			padding-top: 25px
+			overflow: hidden
+			+rt(768)
+				padding: 0
+				clear: both
+	.add-comment__type
+		float: left
+		padding-top: 25px
+		margin-right: 15px
+		li
+			margin-bottom: 10px 
+	.add-comment__rating
+		float: left
+		margin-right: 20px 
+		+rt(768)
+			float: right
+			margin: 0
+		ul
+			overflow: hidden
+			margin-bottom: 14px
+			&:first-child
+				height: 27px
+				margin: 0
+				li
+					width: 14px
+					text-align: center
+					font-weight: 700 
+		li
+			float: left
+			margin-right: 10px
+	.add-comment__btn
+		padding-top: 10px
+		text-align: right
+				
+.comments
+	.comments__item
+		margin-bottom: 30px
+		padding: 15px
+		border-radius: 8px
+		background-color: #f7f5f1
+		box-shadow: 0 1px 2px #b7bfc5			
+		+g(#f9f8f5, #f5f4ed)
+		+rt(768)
+			margin-bottom: 15px
+			padding: 10px
+		.toggle__link
+			text-align: right	
+	.comments__head
+		margin-bottom: 15px
+		font-size: 12px
+		+clr
+		+rt(768)
+			margin-bottom: 10px
+	.comments__user
+		float: left
+		+rt(768)
+			float: none
+			margin-bottom: 5px
+		span
+			font-weight: 700 
+	.comments__date
+		float: right
+		+rt(768)
+			float: none
+	.comments__rating
+		margin-bottom: 20px
+		padding: 7px 15px
+		border-radius: 8px
+		background: #6dbb41
+		box-shadow: 0 1px 2px #b7bfc5
+		+g(#c0e2a3, #a5d192)
+		+clr
+	.comments__rating-common
+		float: left
+		font-size: 16px
+		font-weight: 700
+		+rt(768)
+			float: none
+			margin-bottom: 5px
+		span
+			font-weight: 400 
+			font-size: 12px
+	.comments__rating-parts
+		float: right
+		margin-top: 2px
+		+rt(768)
+			float: none
+		li
+			float: left
+			margin-left: 15px  
+			+rt(768)
+				float: none
+				margin: 0
+	.comments__pics
+		margin-bottom: 5px
+		+clr
+		li
+			float: left
+			margin: 0 10px 10px 0
+			+rt(765)
+				margin: 0 5px 5px 0
+			img
+				display: block
+				border-radius: 8px
+		
+.popup-enter
+	text-align: center
+	.title
+		margin-bottom: 15px
+		text-align: center
+	.field
+		margin-bottom: 10px
+	.field__el
+		input
+			text-align: center
+	.btn
+		margin-top: 15px
+	.popup-enter__social
+		font-size: 0
+		button
+			width: 126px
+			height: 40px
+			margin-bottom: 12px
+			border-radius: 20px 
+			box-shadow: 0 2px 2px rgba(0,0,0,.1), inset 0 1px 0 rgba(255,255,255,.3)
+			font-size: 16px
+			text-shadow: 0 1px 2px rgba(49,83,154,.75)
+			font-weight: 700 
+			color: #fff 
+	.popup-enter__fb
+		border: 1px solid #3c62b2
+		background-color: #5a86d1
+		+g(#5a86d1, #3863bc)
+	.popup-enter__vk
+		border: 1px solid #3d5797
+		background-color: #6080b5
+		+g(#6080b5, #3d5d99)
+	.popup-enter__tw
+		border: 1px solid #3487cf
+		background-color: #68b7f0
+		+g(#68b7f0, #449ce9)
+	.popup-enter__gp
+		border: 1px solid #b13128
+		background-color: #de5145
+		+g(#de5145, #ce3026)
+	.popup-enter__vk, .popup-enter__gp
+		margin-left: 12px
+	.popup-enter__or
+		margin-bottom: 20px
+		overflow: hidden
+		span
+			position: relative
+			display: inline-block
+			vertical-align: top
+			font-size: 14px
+			color: #CBCDCE 
+			&:before, &:after
+				content: ""
+				position: absolute
+				top: 9px
+				width: 200px
+				height: 1px
+				background: rgba(0,0,0,.15)
+			&:before
+				left: 35px
+			&:after
+				right: 35px
+	.popup-enter__pass
+		padding-top: 20px
+
+.buy-insurance
+	margin-bottom: 30px
+	padding: 15px 20px 30px
+	background: url(../img/bg-buy-insurance.jpg) no-repeat 0 0
+	background-size: cover
+	border-radius: 8px
+	box-shadow: 0 1px 2px #b7bfc5 
+	+rt(768)
+		margin-bottom: 15px
+		padding: 10px
+		background: #52b5e6 
+	>.title
+		margin-bottom: 10px
+		color: #FFF
+		text-shadow: 0 1px 2px rgba(0,0,0,.2)
+	.buy-insurance__text
+		margin-bottom: 25px
+		color: #FFF
+		text-shadow: 0 1px 2px rgba(0,0,0,.2)
+		font-size: 16px 
+		a
+			color: #FFF
+			&:hover
+				color: $orange
+	.buy-insurance__variants
+		margin-bottom: 20px
+		+clr
+	.buy-insurance__list
+		float: right
+		width: 600px
+		+rt(768)
+			width: 100%
+		.radio
+			margin-bottom: 10px
+	.buy-insurance__item
+		position: relative
+		top: -2px
+		+clr
+		.title
+			margin: 0
+		.price
+			margin-left: 30px
+
+.social-widgets
+	padding: 15px
+	margin-bottom: 30px
+	border-radius: 8px
+	background: #f7f5f1
+	box-shadow: 0 1px 2px #b7bfc5
+	+g(#f9f8f5, #f5f4ed)
+	+rt(768)
+		padding: 10px
+		margin-bottom: 15px
+	.title
+		margin-bottom: 10px
+	.social-widgets__list
+		+clr
+		+rt(768)
+			margin-left: -10px
+	.social-widgets__item
+		float: left
+		width: 300px
+		margin-left: 15px
+		+rt(768)
+			margin: 0 0 10px
+		&:first-child
+			margin: 0
+			+rt(768)
+				margin: 0 0 10px
+				
+.cab
+	.cab__nav
+		position: relative
+		float: left
+		width: 110px
+		background: #E9E4D5
+		border-radius: 8px 0 0 8px 
+		+rt(1024)
+			width: auto
+			border-radius: 8px 8px 0 0
+			+clr
+		a
+			position: relative
+			display: block
+			padding: 10px
+			text-decoration: none
+			z-index: 2 
+			+rt(1024)
+				float: left
+				padding: 0
+				z-index: inherit 
+			&:hover
+				.cab__nav-in
+					background: #F3F0E8
+					+rt(1024)
+						background: none  
+			&.is-active
+				background: #F8F7F2 
+				box-shadow: 0 1px 2px #b7bfc5 
+				border-radius: 8px 0 0 8px 
+				cursor: default
+				z-index: 4 
+				+rt(1024)
+					border-radius: 8px 8px 0 0
+					z-index: inherit 
+				&:after
+					content: ""
+					position: absolute
+					top: 0
+					bottom: 0
+					right: -2px
+					width: 2px
+					background: #F8F7F2
+					+rt(1024)
+						display: none 
+				.cab__nav-in
+					background: none 
+					span
+						color: #57B026 
+				.cab__nav-ico1
+					+s(cab-nav1-a)	
+				.cab__nav-ico2
+					+s(cab-nav2-a)
+				.cab__nav-ico3
+					+s(cab-nav3-a)
+				.cab__nav-ico4
+					+s(cab-nav4-a)
+	.cab__nav-in
+		display: table-cell
+		width: 90px
+		height: 90px
+		vertical-align: middle
+		text-align: center
+		+rt(1024)
+			position: relative
+			height: 70px
+			padding-bottom: 20px
+		+rt(768)
+			width: 75px
+			height: 55px
+		i
+			display: inline-block
+			vertical-align: top
+		span
+			display: block
+			padding-top: 5px
+			font-size: 14px
+			color: #9B988E 
+			+rt(1024)
+				position: absolute
+				bottom: 10px
+				left: 0
+				right: 0
+	.cab__nav-ico1
+		+s(cab-nav1)	
+	.cab__nav-ico2
+		+s(cab-nav2)
+	.cab__nav-ico3
+		+s(cab-nav3)
+	.cab__nav-ico4
+		+s(cab-nav4)
+	.cab__container
+		position: relative
+		min-height: 430px
+		padding: 30px
+		background: #F8F7F2 
+		border-radius: 0 8px 8px 8px
+		box-shadow: 0 1px 2px #b7bfc5 
+		overflow: hidden
+		+rt(1024)
+			clear: both
+		+rt(768)
+			min-height: 0
+			padding: 10px
+			border-radius: 0 0 8px 8px
+	.cab__history-item
+		.tour
+			margin-bottom: 10px
+			+rt(768)
+				+g(#fef8e8, #fcf4d8)
+				box-shadow: 0 1px 2px #b7bfc5
+				border-radius: 8px
+				overflow: hidden
+	.cab__history-status
+		margin-bottom: 20px
+		text-align: right
+		.btn
+			margin-left: 10px
+			vertical-align: top
+	.cab__history-paid, .cab__history-no-paid
+		position: relative
+		display: inline-block
+		padding: 6px 0 6px 14px
+		vertical-align: top
+		font-size: 14px
+		&:before
+			content: ""
+			position: absolute
+			left: 0
+	.cab__history-paid
+		color: #54a333 
+		&:before
+			top: 9px
+			+s(cab-status-paid)
+	.cab__history-no-paid
+		color: #ff5e43 
+		&:before
+			top: 10px
+			+s(cab-status-no-paid)
+	.cab__subscribe
+		+clr
+	.cab__subscribe-title
+		float: left
+		width: 180px
+		margin-right: 20px
+		font-size: 14px
+		color: #64707D 
+		+rt(768)
+			float: none
+			width: 100%
+			margin: 0 0 5px
+	.cab__subscribe-in
+		display: table
+	.cab__subscribe-types
+		margin-bottom: 30px
+		.checkbox
+			margin-bottom: 10px
+	.cab__subscribe-btn
+		.btn, a
+			display: inline-block
+			vertical-align: middle
+		.btn
+			margin-right: 15px
+			+rt(768)
+				margin: 0 15px 10px 0
+	.cab__pass
+		.field
+			display: block
+			margin-bottom: 15px
+			+clr
+		.field_btn
+			padding-top: 10px
+			a
+				margin-left: 15px
+		.field__label
+			float: left
+			width: 190px
+			padding-top: 10px
+			margin-right: 20px
+			color: #64707D 
+			+rt(768)
+				display: block
+				float: none
+				padding: 0
+				margin: 0 0 5px
+		.field__el
+			float: left
+			width: 250px
+			+rt(768)
+				float: none
+				width: 100% 
+	.cab__data
+		margin-bottom: 30px
+		.field
+			margin-bottom: 15px
+			+clr
+			+rt(768)
+				margin-bottom: 10px
+		.field_social
+			.field__label
+				padding-top: 3px
+		.field_bigger-margin
+			margin-bottom: 30px 
+			+rt(768)
+				margin-bottom: 20px
+		.field_w250
+			.field__el
+				>input, >.select
+					width: 250px
+		.field_w200
+			.field__el
+				>input, >.select
+					width: 200px
+		.field_w120
+			.field__el
+				>input, >.select
+					width: 120px
+		.field__label
+			float: left
+			width: 190px
+			padding-top: 10px
+			margin-right: 20px
+			color: #64707d 
+			+rt(768)
+				float: none
+				width: 100%
+				margin: 0 0 2px
+		.field__el	
+			display: table
+		.field__scans
+			padding-top: 5px
+		.field__scans-toggle
+			line-height: 1.2
+		.field__scans-list
+			display: none
+			padding-top: 10px
+			+clr
+		.field__scans-item, .field__scans-add
+			float: left
+			width: 80px
+			height: 80px
+			margin-right: 10px
+		.field__scans-item
+			img
+				display: block
+				border-radius: 3px
+		.field__scans-add
+			+s(order-scan)
+		.field__set
+			+clr
+			.field__scans
+				padding-bottom: 10px
+				clear: both
+			.select, .native-select
+				float: left
+				+rt(768)
+					float: none
+			.select_default
+				width: 150px
+			.select_date
+				width: 120px
+			.field__remove
+				margin: 10px 0 0 10px 
+		.field__to
+			float: left
+			padding: 0 6px
+			color: #64707D 
+			line-height: 37px
+			+rt(768)
+				float: none
+				padding: 2px 0
+				line-height: 1.3
+		.field__add-wrap
+			.pseudo-link
+				display: inline-block
+				margin-left: 10px
+				vertical-align: middle
+		.field__add
+			display: inline-block
+			+s(cab-field-add)
+			vertical-align: middle
+			&:hover
+				+sp(cab-field-add-h)
+		.field__social
+			.social
+				margin-bottom: 10px
+				i, a, .field__remove
+					display: inline-block
+					margin-right: 5px
+					vertical-align: middle
+				i
+					position: relative
+					top: 2px
+		.field__social-types
+			display: none
+			padding-top: 10px
+		.field__remove
+			opacity: .5 
+			+s(field-social-remove)
+			&:hover
+				opacity: 1 
+	.cab__profile
+		position: relative
+	.cab__profile-links
+		position: absolute
+		top: 0
+		right: 0
+		+rt(768)
+			position: relative
+			right: auto
+			margin-bottom: 10px
+			+clr
+		li, i, a
+			float: left
+		li
+			margin-left: 20px
+			&:first-child
+				margin: 0
+		i
+			margin-right: 8px
+	.cab__profile-ico-edit
+		+s(cab-tab-edit)
+	.cab__profile-ico-pass
+		+s(cab-tab-pass)
+	.cab__profile-data
+		.field__label
+			padding: 0
+		.field__scans
+			padding: 0
+		.field__scans-list
+			display: block
+			padding: 0
+	.cab__prodile-save
+		padding: 20px 0 0 210px 
+		+rt(768)
+			padding: 0
+		a
+			display: inline-block
+			margin-left: 15px
+
+.ico
+	display: inline-block
+	vertical-align: middle
+.ico_green-ok
+	+s(ico-green-ok)
+.ico_orange-dollar
+	+s(ico-orange-dollar)
+.ico_people-three
+	+s(ico-people-three)
+.ico_people-two
+	+s(ico-people-two)
+.ico_people-one
+	+s(ico-people-one)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
