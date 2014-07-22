@@ -1661,7 +1661,7 @@ a.btn_smaller { line-height: 24px; }
 .pop .pop__item { display: inline-block; width: 20%; margin-bottom: 45px; vertical-align: top; }
 @media only screen and (max-width: 1024px) { .pop .pop__item { margin: 0; } }
 .pop .pop__link { display: block; text-decoration: none; }
-.pop .pop__link:hover .pop__pic i { -webkit-transform: rotate(-10deg); -moz-transform: rotate(-10deg); -ms-transform: rotate(-10deg); -o-transform: rotate(-10deg); transform: rotate(-10deg); }
+.pop .pop__link:hover .pop__pic i { -ms-transform: scale(1.07); -webkit-transform: scale(1.07); transform: scale(1.07); }
 .pop .pop__title { margin-bottom: 10px; padding: 0 10px; font-size: 19px; font-weight: 700; line-height: 1; text-decoration: underline; }
 @media only screen and (max-width: 768px) { .pop .pop__title { padding: 0 20px; } }
 .pop .pop__counter { font-size: 14px; color: #363636; }
