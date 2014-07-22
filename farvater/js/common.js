@@ -213,6 +213,7 @@ head.ready(function() {
 	var pop = $('.js-pop'),
 			benefits = $('.js-benefits'),
 			similar = $('.js-similar'),
+			similar_discounts = $('.js-similar-discounts'),
 			watched = $('.js-watched'),
 			benefits = $('.js-benefits'),
 			hotels = $('.js-hotels'),
@@ -323,6 +324,30 @@ head.ready(function() {
 				  breakpoint: 1024,
 				  settings: {
 				    slidesToShow: 3,
+				    infinite: false,
+				    arrows: true
+				  }
+				},
+				{
+				  breakpoint: 768,
+				  settings: {
+				  	infinite: false,
+				    slidesToShow: 1
+				  }
+				}
+			]
+		});
+	};
+	if (similar_discounts.length) {
+		similar_discounts.slick({
+			slide: '.similar__item',
+			slidesToShow: 3,
+			infinite: false,
+			responsive: [
+				{
+				  breakpoint: 1024,
+				  settings: {
+				    slidesToShow: 2,
 				    infinite: false,
 				    arrows: true
 				  }
@@ -576,6 +601,7 @@ head.ready(function() {
 			$(this).prev().slideDown();
 			$(this).text(text_on);
 		}
+		return false;
 	});
 
 	// tour info fixed
@@ -621,6 +647,43 @@ head.ready(function() {
 			pagerTemplate: gallery_template
 		});
 	});
+
+	// avia information
+	$('.js-avia-info').on('click', function(){
+		var text_on = $(this).data('text-on');
+		var text_off = $(this).data('text-off');
+		if ($(this).hasClass('is-active')) {
+			$(this).removeClass('is-active');
+			$(this).prev().slideUp();
+			$(this).text(text_on);
+		}
+		else {
+			$(this).addClass('is-active');
+			$(this).prev().slideDown();
+			$(this).text(text_off);
+		}
+		return false;
+	});
+
+	// cart info fixed
+	function cart_info() {
+		var el = $('.js-cart-info'),
+				el_fixed_top = 20;
+		if (el.length) {
+			el_top = el.offset().top;
+			el_top = el_top - el_fixed_top;
+			$(window).scroll(function(){
+				var scroll_top = $(document).scrollTop();
+				if (scroll_top >= el_top) {
+					el.addClass('is-fixed');
+				}
+				else {
+					el.removeClass('is-fixed');
+				}
+			})
+		};
+	};
+	cart_info();
 
 });
 

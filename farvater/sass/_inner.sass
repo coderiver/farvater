@@ -265,10 +265,27 @@
 		+s(breadcrumbs-arr)
 
 .catalog
+	&.catalog_margin
+		margin-bottom: 40px
+		+rt(768)
+			margin-bottom: 20px
+		.catalog__head_zero
+			display: block
 	.catalog__head
 		margin-bottom: 15px
 		+rt(1024)
 			display: none
+	.catalog__head_zero
+		padding: 30px 20px
+		border-radius: 8px
+		background-color: #fde9e3
+		box-shadow: 0 1px 2px #f9bbaf
+		+g(#feefeb, #fee3dd)
+		text-align: center
+		+rt(768)
+			padding: 10px
+			.catalog__title
+				font-size: 18px
 	.catalog__title
 		margin-bottom: 10px
 		font-size: 24px
@@ -370,12 +387,15 @@
 				max-width: 90px
 	.catalog__sort-info
 		float: left
-		padding: 8px 30px
-		border-radius: 18px
-		+g(#ec5a21, #f59456)
-		font-size: 16px
-		text-shadow: 0 1px 2px rgba(228,104,50,.75)
-		color: #FFF 
+		.btn
+			padding: 0 35px
+			+g(#ec5a21, #f59456)
+			box-shadow: none
+			font-size: 16px
+			text-shadow: 0 1px 2px rgba(228,104,50,.75)
+			color: #FFF 
+			font-weight: normal 
+			text-transform: none
 
 .filter
 	.filter__row
@@ -812,12 +832,9 @@
 		margin: 0 50px 35px
 	+rt(768)
 		margin: 0 0 35px
-	&.similar_aside
-		overflow: visible
+	&.similar_aside, &.similar_discounts
 		.similar__item
 			margin-bottom: 30px
-		.similar__item-in
-			width: 100%
 		.similar__price
 			bottom: 15px
 		.similar__title
@@ -840,6 +857,18 @@
 				+transform(rotate(45deg) translate3d(0,0,0))
 				font-size: 15px
 				color: #FFF 
+	&.similar_aside
+		overflow: visible
+		.similar__item-in
+			width: 100%
+	&.similar_discounts
+		padding: 5px 0
+		+rt(1024)
+			margin: 0 0 35px
+		.similar__item-in
+			width: 300px
+			+rt(768)
+				width: 260px
 	.similar__item
 		text-align: center
 	.similar__item-in	
@@ -851,8 +880,13 @@
 		border-radius: 8px
 		vertical-align: middle
 		text-align: left
+		text-decoration: none
+		&:hover
+			.similar__title
+				color: $orange 
 	.similar__data
 		padding: 12px
+		color: $cl 
 	.similar__pic
 		position: relative
 		&:after
@@ -866,11 +900,14 @@
 			background: url(../img/tour-circles-horz.png) repeat-x
 		img
 			display: block
+			width: 100%
 			border-radius: 8px 8px 0 0
 	.similar__title
 		margin-bottom: 5px
 		font-size: 14px
 		font-weight: 700 
+		color: $blue
+		text-decoration: underline 
 	.similar__price
 		position: absolute
 		left: 0
@@ -934,6 +971,10 @@
 		width: 225px
 		vertical-align: top
 		text-align: left	
+		text-decoration: none
+		&:hover
+			.read-more__title
+				color: $orange 
 	.read-more__pic
 		margin-bottom: 10px
 		img
@@ -943,6 +984,7 @@
 	.read-more__title
 		font-size: 16px
 		font-weight: 700 
+		text-decoration: underline
 
 .watched, .similar, .read-more
 	padding: 0 0 5px 
@@ -958,8 +1000,8 @@
 		&:after
 			content: ""
 			position: absolute
-			top: -100px
-			bottom: -100px
+			top: -200px
+			bottom: -200px
 			right: 0
 			width: 50px
 			z-index: -2 
@@ -1229,14 +1271,14 @@
 		position: relative
 		margin-bottom: 30px
 		cursor: pointer
+		+rt(764)
+			margin-bottom: 20px
 		&:hover
 			&:before
 				visibility: visible
 				opacity: 1 
-			.tour__in
+			.avia__ticket-in
 				box-shadow: 0 0 0 #b7bfc5
-			.tour__title
-				color: $orange
 		&:before
 			content: ""
 			position: absolute
@@ -1260,17 +1302,22 @@
 		+tr(box-shadow .2s linear)
 		+clr
 		z-index: 4 
-		+rt(768)	
-			box-shadow: none
-			border-radius: none
-			background: none 
 	.avia__logo
-		position: relative
-		float: right
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
 		width: 210px
-		height: 220px
-		background-size: cover 
 		border-radius: 0 8px 8px 0 
+		background-repeat: no-repeat 
+		+rt(768)
+			position: relative
+			top: auto
+			right: auto
+			bottom: auto
+			width: 100%
+			height: 200px 
+			border-radius: 8px 8px 0 0
 		&:before
 			content: ""
 			position: absolute
@@ -1299,8 +1346,12 @@
 			display: inline-block
 			vertical-align: top
 	.avia__data
-		padding: 15px
-		overflow: hidden
+		padding: 15px 235px 15px 15px
+		+rt(768)
+			padding: 10px
+		>.pseudo-link
+			font-weight: 700 
+			font-size: 14px
 	.avia__flight
 		margin-bottom: 20px
 		overflow: hidden
@@ -1311,15 +1362,27 @@
 	.avia__flight-from, .avia__flight-to
 		width: 36%
 		padding-left: 30px
+	.avia__flight-from
+		+rt(768)
+			width: 46%
+	.avia__flight-to
+		+rt(764)
+			width: 38%
+			padding-left: 10px
 	.avia__time
 		width: 28%
 		padding-right: 20px
 		text-align: center
+		+rt(768)
+			width: 16%
+			padding: 0
 	.avia__time-ico
 		position: absolute
 		top: 1px
 		right: 0
 		+s(avia-plain)
+		+rt(768)
+			display: none
 	.avia__time-value	
 		overflow: hidden
 		text-align: center
@@ -1354,10 +1417,20 @@
 		+s(avia-plain-up)
 	.avia__plain-down
 		+s(avia-plain-down)
-	.avia__more-head
-		.pseudo-link
-			font-weight: 700 
-			font-size: 14px
+	.avia__details
+		display: none
+	.avia__details-in
+		display: table
+		padding-bottom: 10px
+		ul
+			display: table-row
+		li
+			display: table-cell
+			&:first-child
+				padding: 0 10px 5px 0
+				color: #64707d 
+	.avia__terms
+		padding-top: 5px
 		
 
 .blog
@@ -1394,6 +1467,11 @@
 	.blog__item
 		width: 225px
 		margin-bottom: 20px
+		text-decoration: none
+		color: $cl 
+		&:hover
+			.blog__title
+				color: $orange 
 		&.blog__item_a
 			.blog__pic
 				&:after
@@ -1422,17 +1500,14 @@
 			box-shadow: 0 1px 2px #b7bfc5
 	.blog__category
 		margin-bottom: 5px
-		a
-			color: #64707d
-			text-decoration: none
-			&:hover
-				color: $orange 
+		color: #64707d
 	.blog__title
 		margin-bottom: 7px
 		line-height: 1.1
-		a
-			font-size: 18px
-			font-weight: 700 
+		font-size: 18px
+		font-weight: 700 
+		text-decoration: underline
+		color: $blue 
 
 .pager
 	margin-top: 20px
@@ -1673,6 +1748,13 @@
 	box-sizing: border-box
 	+g(#4274c3, #203883)
 	color: #FFF 
+	&.is-fixed
+		+rt_table
+			position: fixed
+			top: 20px
+			left: 50%
+			width: 300px
+			margin-left: -480px
 	.cart__head
 		margin-bottom: 10px
 		+clr
@@ -1789,6 +1871,12 @@
 			width: 708px 
 			+rt(768)
 				width: 300px
+	&.popup_catalog-search
+		.popup__in
+			width: auto
+			margin-left: -408px
+			+rt(768)
+				margin: 0 
 	&.popup_map
 		.popup__in
 			width: 960px
@@ -2252,6 +2340,9 @@
 		box-shadow: 0 1px 2px #b7bfc5
 		vertical-align: top
 		text-decoration: none
+		&:hover
+			.hotels__title
+				color: $orange 
 	.hotels__title
 		display: table-cell
 		width: 180px
