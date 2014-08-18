@@ -386,8 +386,8 @@ input, button, textarea
 		display: none
 
 
-.radio-group
-	.radio
+.radio-group, .checkbox-group
+	.radio, .checkbox
 		display: inline-block
 		margin-right: 25px 
 		vertical-align: top
@@ -1123,6 +1123,9 @@ a
 				width: 135px
 				+rt(768)
 					width: 120px
+		.select__date
+			&:before
+				width: 135px
 	.search__item
 		position: relative
 		margin-top: 15px
@@ -1270,7 +1273,32 @@ a
 		font-size: 12px
 	.search__category	
 		.checkbox
+			color: #fff
+	.search__to-title
+		display: none
+		position: relative
+		padding: 10px 25px 11px 10px
+		color: #95ADD8
+		cursor: pointer
+		span
 			color: #fff 
+		&:after
+			content: ""
+			position: absolute
+			top: 16px
+			right: 10px
+			+arr(8,5,#95add8,b) 
+	.search__to-in
+		padding: 10px
+	.search__to-item
+		border: 1px solid #6183c7
+		border-radius: 5px
+		& + .search__to-item
+			margin-top: 20px
+		.search__item
+			margin: 0
+			& + .search__item
+				margin-top: 20px
 	.search__category-head
 		+clr
 		.search__label
@@ -1294,6 +1322,9 @@ a
 		margin-top: 10px 
 	.checkbox
 		color: #8DA9E3 
+	.checkbox-group
+		.checkbox
+			color: #fff
 	.radio
 		color: #FFF 
 	.select-list
