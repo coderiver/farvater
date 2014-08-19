@@ -92,16 +92,24 @@
 		+rt(768)
 			border-radius: 8px 8px 0 0
 	.tour__head
+		display: inline-block
+		max-width: 100%
 		margin-bottom: 10px
 		font-size: 0
-		white-space: nowrap
+		.rating
+			float: right
+			margin: 2px 0 0 20px
+			+rt(768)
+				float: none
+				margin: 0
 	.tour__title
-		display: inline-block
-		vertical-align: middle
 		font-size: 21px
 		font-weight: 700 
 		color: $blue
 		text-decoration: underline 
+		text-overflow: ellipsis
+		white-space: nowrap
+		overflow: hidden
 		+rt(768)
 			display: block
 	.tour__price
@@ -156,21 +164,24 @@
 	.tour__way
 		margin-bottom: 10px
 		+clr
-		i, a
+		i, a, span
 			float: left
+			font-size: 13px
 		i
 			margin: 4px 9px 0 0 
 			&.tour__way-plain
 				+sr(plain)
-			&.tour__way-train
+			&.tour__way-noplain
 				+sr(train)
 		a
+			margin-right: 9px
 			border-bottom: 1px dotted 
-			font-size: 13px
 			color: $cl
 			text-decoration: none
 			&:hover
 				color: $orange 
+		span
+			color: #ff4c4c 
 	.tour__date
 		margin-bottom: 15px
 		span
@@ -413,6 +424,18 @@
 			margin-right: 28px 
 			+rt(768)
 				margin: 0
+		.filter__selected
+			position: relative
+			left: auto
+			bottom: auto
+			width: 100%
+			margin: 0 0 30px
+			&.is-static
+				position: relative
+				left: auto
+				bottom: auto
+				width: 100%
+				margin: 0 0 30px
 	.filter__item
 		padding: 16px 20px
 		margin-bottom: 30px
@@ -500,6 +523,48 @@
 			vertical-align: middle
 			input
 				width: 65px
+	.filter__selected
+		position: fixed
+		bottom: 20px
+		left: 50%
+		width: 300px
+		margin-left: -480px
+		padding: 16px 20px
+		border-radius: 8px
+		background-color: #f7f5f1
+		box-shadow: 0 1px 2px #b7bfc5
+		box-sizing: border-box
+		+g(#f9f8f5, #f5f4ed)
+		z-index: 30 
+		&.is-static
+			position: absolute
+			bottom: 0
+			left: 0
+			margin: 0
+		.filter__title
+			margin-bottom: 15px
+	.filter__selected-item
+		position: relative
+		margin-bottom: 10px
+		padding-left: 27px
+		font-size: 0
+		i, span
+			display: inline-block
+		span
+			font-size: 14px
+		button
+			position: absolute
+			top: 0
+			left: 0
+			+s(filter-selected-remove)
+	.filter__selected-plain
+		margin-right: 4px
+		+sr(plain)
+	.filter__selected-star
+		+s(star)
+	.filter__selected-reset
+		padding-left: 27px
+
 
 .research
 	margin-bottom: 30px
@@ -1970,7 +2035,7 @@
 		>*
 			display: inline-block
 			margin: 0 10px 10px 0
-			vertical-align: middle
+			vertical-align: top
 			+rt(768)
 				display: block
 		.field
@@ -1996,9 +2061,12 @@
 				width: 134px 
 				+rt(768)
 					width: 159px
+		.radio
+			margin-top: 10px
 		.checkbox
-			margin: 0 30px 10px 0
+			margin: 10px 30px 10px 0
 	.order__scan-toggle
+		margin-top: 10px
 		line-height: 1.2
 	.order__scans
 		padding-bottom: 5px
@@ -2016,6 +2084,9 @@
 		+s(order-scan)
 	.order__add-comment
 		margin-bottom: 20px
+		.field
+			display: none
+			padding-bottom: 10px
 	.order__bonus-in
 		position: relative
 		padding: 25px 0 0 0
@@ -2851,6 +2922,30 @@
 		li
 			float: left
 			margin-right: 10px
+	.add-comment__load
+		margin-bottom: 20px
+		.btn
+			margin: 0 15px
+	.add-comment__pics
+		margin-bottom: 10px
+		font-size: 0
+		li
+			position: relative
+			display: inline-block
+			width: 50px
+			height: 50px
+			margin: 0 10px 10px 0
+			vertical-align: top
+			+vertical
+			img
+				max-width: 100%
+				max-height: 100%
+				vertical-align: middle
+			button
+				position: absolute
+				top: 2px
+				right: 2px
+				+s(delete-file)
 	.add-comment__btn
 		padding-top: 10px
 		text-align: right
@@ -3415,10 +3510,38 @@
 .ico_people-one
 	+s(ico-people-one)
 
+.loader
+	padding: 45px 0 85px 
+	text-align: center
+	.loader__pic
+		margin-bottom: 10px 
+		font-size: 0
+		text-align: center
+	.loader__time
+		font-size: 22px
+		font-weight: 700 
 
-
-
-
+.intfact
+	position: relative
+	margin-bottom: 30px
+	padding: 10px 20px 10px 90px
+	border-radius: 8px
+	background-color: #f7f5f1
+	box-shadow: 0 1px 2px #b7bfc5
+	+g(#f9f8f5, #f5f4ed)
+	color: #717B87 
+	.intfact__ico
+		position: absolute
+		top: 14px
+		left: 15px
+		+s(intfact) 
+	.intfact__title
+		margin-bottom: 10px
+		font-size: 20px
+		font-weight: 700
+		line-height: 1.2
+	.intfact__text
+		font-size: 16px
 
 
 

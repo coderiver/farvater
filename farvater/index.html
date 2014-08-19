@@ -71,6 +71,25 @@
 				</div>
 			</div>
 		</div>
+		<!-- topper -->
+		<div class="topper">
+			<div class="l-center">
+				<button class="topper__menu js-topper-menu"></button>
+				<div class="topper__phones">(044) 555-55-55<span>•</span>(050) 432-70-70</div>
+				<div class="topper__ask"><a href="#">Задать вопрос</a></div>
+				<!-- login -->
+				<div class="login">
+					<div class="login__ava">
+						<img src="img/login-ava.png" alt="">
+					</div>
+					<div class="login__user">Здравствуйте, <a href="#">Константин</a>!</div>
+					<div class="login__divide">|</div>
+					<div class="login__out">
+						<a href="#">Выйти</a>
+					</div>
+				</div>
+			</div>
+		</div>
 		<!-- mob-menu -->
 		<nav class="mob-menu js-mob-menu">
 			<a href="#">О компании</a>
@@ -114,6 +133,7 @@
 				<!-- map -->
 				<div class="map">
 					<!-- search -->
+					<!-- 1 -->
 					<div class="search">
 						<div class="search__item">
 							<div class="search__label">Где хотите отдохнуть?</div>
@@ -126,6 +146,47 @@
 								<div class="search__field">
 									<div class="search__el">
 										<input class="js-autocomplete" type="text" placeholder="Стамбул">
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- 2 -->
+						<div class="search__item">
+							<div class="search__fieldset">
+								<div class="search__field">
+									<div class="search__el">
+										<input class="js-autocomplete" type="text" placeholder="Турция">
+									</div>
+								</div>
+								<div class="search__field">
+									<!-- select -->
+									<div class="select select_checkboxes js-select-checkboxes">
+										<div class="select__head">
+											<div class="select__current">Любой</div>
+											<i class="select__arr"></i>
+										</div>
+										<div class="select__list">
+											<label class="checkbox">
+												<input type="checkbox">
+												<span class="checkbox__text"><b>Выбрать все</b></span>
+											</label>
+											<label class="checkbox">
+												<input type="checkbox">
+												<span class="checkbox__text">Сидней</span>
+											</label>
+											<label class="checkbox">
+												<input type="checkbox">
+												<span class="checkbox__text">Канберра</span>
+											</label>
+											<label class="checkbox">
+												<input type="checkbox">
+												<span class="checkbox__text">Новый Южный Уэльс</span>
+											</label>
+											<label class="checkbox">
+												<input type="checkbox">
+												<span class="checkbox__text">Виктория и Тасмания</span>
+											</label>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -476,16 +537,17 @@
 										</div>
 										<div class="tour__left">
 											<div class="tour__head">
-												<div class="tour__title">Le Meridien Istanbul</div>
 												<!-- rating -->
 												<div class="rating js-rating-read">
 													<div class="rating__stars" data-score="4.5" data-number="4"></div>
 													<div class="rating__counter"><span></span>/5</div>
 												</div>
+												<div class="tour__title">Le Meridien Istanbul Le Meridien Istanbul Le Meridien Istanbul</div>
 											</div>
 											<div class="tour__way">
 												<i class="tour__way-plain"></i>
 												<a href="#">Taksim, Istanbul, Turkey</a>
+												<span>(перелет не включен)</span>
 											</div>
 											<div class="tour__date"><span>3—8 мая</span> (5 ночей)</div>
 											<div class="tour__details">
@@ -519,15 +581,15 @@
 										</div>
 										<div class="tour__left">
 											<div class="tour__head">
-												<div class="tour__title">A’jia Hotel</div>
 												<!-- rating -->
 												<div class="rating js-rating-read">
 													<div class="rating__stars" data-score="3.5" data-number="3"></div>
 													<div class="rating__counter"><span></span>/5</div>
 												</div>
+												<div class="tour__title">A’jia Hotel</div>
 											</div>
 											<div class="tour__way">
-												<i class="tour__way-train"></i>
+												<i class="tour__way-noplain"></i>
 												<a href="#">Taksim, Istanbul, Turkey</a>
 											</div>
 											<div class="tour__date"><span>3—8 мая</span> (5 ночей)</div>
@@ -558,12 +620,12 @@
 										</div>
 										<div class="tour__left">
 											<div class="tour__head">
-												<div class="tour__title">Le Meridien Istanbul</div>
 												<!-- rating -->
 												<div class="rating js-rating-read">
 													<div class="rating__stars" data-score="4.5" data-number="4"></div>
 													<div class="rating__counter"><span></span>/5</div>
 												</div>
+												<div class="tour__title">Le Meridien Istanbul</div>
 											</div>
 											<div class="tour__way">
 												<i class="tour__way-plain"></i>

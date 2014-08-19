@@ -97,7 +97,8 @@ head.ready(function() {
 	// select
 	function select() {
 	  var el = $('.js-select'),
-	      el_date = $('.js-select-date');
+	      el_date = $('.js-select-date'),
+	      el_checkboxes = $('.js-select-checkboxes');
 	  el.find('.select__head').on('click', function(){      
 	    if ($(this).parent().hasClass('is-open')) {
 	      $(this).parent().removeClass('is-open');
@@ -106,8 +107,10 @@ head.ready(function() {
 	    else {
 	      el.removeClass('is-open');
 	      el_date.removeClass('is-open');
+	      el_checkboxes.removeClass('is-open');
 	      el.find('.select__list').hide();
 	      el_date.find('.select__date').hide();
+	      el_checkboxes.find('.select__list').hide();
 	      $(this).parent().addClass('is-open');
 	      $(this).next().slideDown();
 	    }
@@ -148,7 +151,9 @@ head.ready(function() {
 	    }
 	    else {
 	      el.removeClass('is-open');
+	      el_checkboxes.removeClass('is-open');
 	      el.find('.select__list').hide();
+	      el_checkboxes.find('.select__list').hide();
 	      el_date.removeClass('is-open');
 	      el_date.find('.select__date').hide();
 	      $(this).parent().addClass('is-open');
@@ -170,11 +175,30 @@ head.ready(function() {
 	  el_date.click(function(event){
 	    event.stopPropagation();
 	  });
+	  el_checkboxes.find('.select__head').on('click', function(){      
+	    if ($(this).parent().hasClass('is-open')) {
+	      $(this).parent().removeClass('is-open');
+	      $(this).next().hide();
+	    }
+	    else {
+	      el.removeClass('is-open');
+	      el_date.removeClass('is-open');
+	      el.find('.select__list').hide();
+	      el_date.find('.select__date').hide();
+	      $(this).parent().addClass('is-open');
+	      $(this).next().slideDown();
+	    }
+	  });
+	  el_checkboxes.click(function(event){
+	    event.stopPropagation();
+	  });
 	  $(document).click(function() {
 	    el.find('.select__list').hide();
 	    el_date.find('.select__date').hide();
+	    el_checkboxes.find('.select__list').hide();
 	    el.removeClass('is-open');
 	    el_date.removeClass('is-open');
+	    el_checkboxes.removeClass('is-open');
 	  });
 	}
 	select();
@@ -429,7 +453,8 @@ head.ready(function() {
 
 	// filter
 	var filter = $('.js-filter'),
-			filter_slider = $('.js-filter-slider');
+			filter_slider = $('.js-filter-slider'),
+			filter_selected = filter.find('.filter__selected');
 	filter.find('.filter__title').on('click', function(){
 		$(this).next().slideToggle();
 		$(this).parent().toggleClass('is-active');
@@ -459,6 +484,25 @@ head.ready(function() {
 		 	filter_slider_to.val(filter_slider_el.slider('values', 1));
 		 })
 	};
+	$(document).scroll(function () {
+		var scroll_top = $(document).scrollTop();
+		if (filter_selected.length) {
+			var filter_top = filter.offset().top,
+					filter_height = filter.height(),
+					filter_selected_height = filter_selected.height(),
+					filter_selected_height = filter_selected_height + 30,
+					wnd_height = $(window).height();
+			filter.css('padding-bottom', filter_selected_height + 'px');
+			if ((scroll_top + wnd_height) >= (filter_top + filter_height)) {
+				filter_selected.addClass('is-static');
+			}
+			else {
+				filter_selected.removeClass('is-static');
+			}
+		};
+
+
+	});
 	
 	// photogallery
 	function photogallery () {
@@ -701,6 +745,11 @@ head.ready(function() {
 		$(this).next().slideDown();
 	});
 
+	// order add comment
+	$('.js-order-add-comment').on('click', function () {
+		$(this).prev().slideDown();
+		return false;
+	});
 
 
 });

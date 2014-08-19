@@ -239,33 +239,37 @@
 										<div class="title title_level-3">Пассажир №2</div>
 										<div class="order__fieldset">
 											<!-- field -->
-											<div class="field">
+											<div class="field is-error">
 												<div class="field__el">
-													<input type="text" placeholder="Имя">
+													<input type="text" placeholder="Имя" value="Василіса">
 												</div>
+												<div class="field__error">О ні! Як ти міг? Тепер ми не можемо бути разом! Шукай мене у Кащея Безсмертного!</div>
 											</div>
 											<!-- field -->
-											<div class="field">
+											<div class="field is-error">
 												<div class="field__el">
-													<input type="text" placeholder="Фамилия">
+													<input type="text" placeholder="Фамилия" value="Прекрасна">
 												</div>
+												<div class="field__error">Якщо я тобі не байдужа - то ти врятуєш мене!</div>
 											</div>
 											<!-- sex -->
-											<div class="sex">
+											<div class="sex is-error">
 												<label class="sex__item"><input type="radio" name="sex1"><span>м</span></label>
 												<label class="sex__item"><input type="radio" name="sex1"><span>ж</span></label>
+												<div class="sex__error">Тобі пора визначитися мужик ти, Іван, чи баба!</div>
 											</div>
 											<!-- select -->
-											<div class="select select_default select_date js-select-date">
+											<div class="select select_default select_date is-error js-select-date">
 												<div class="select__head">
 													<div class="select__current">Дата рождения</div>
 													<i class="select__ico-date"></i>
 												</div>
 												<div class="select__date"></div>
 												<input class="select__value" type="hidden">
+												<div class="select__error">Іване, тобі вже 12 років! Ти можеш, Ваня!</div>
 											</div>
 											<!-- select -->
-											<div class="select select_default js-select">
+											<div class="select select_default is-error js-select">
 												<div class="select__head">
 													<div class="select__current">Гражданство</div>
 													<i class="select__arr"></i>
@@ -276,6 +280,7 @@
 													<li>Русское</li>
 												</ul>
 												<input class="select__value" type="hidden">
+												<div class="select__error">Ваня, ти ж не клятий москаль!</div>
 											</div>
 											<!-- native-select -->
 											<div class="native-select native-select_default is-full js-native-select">
@@ -289,22 +294,24 @@
 												</select>
 											</div>
 											<!-- field -->
-											<div class="field">
+											<div class="field is-error">
 												<div class="field__el">
 													<input type="text" placeholder="Серия, № паспорта">
 												</div>
+												<div class="field__error">Ваня, ти не зможеш виїхати з королівства, в мене твій паспорт!</div>
 											</div>
 											<!-- select -->
-											<div class="select select_default select_date js-select-date">
+											<div class="select select_default select_date is-error js-select-date">
 												<div class="select__head">
 													<div class="select__current">Срок действия</div>
 													<i class="select__ico-date"></i>
 												</div>
 												<div class="select__date"></div>
 												<input class="select__value" type="hidden">
+												<div class="select__error">Ваня, даю тобі 2 дні на подвиг, інакше мене буде рятувати твій друг Василь!</div>
 											</div>
 											<!-- checkbox -->
-											<label class="checkbox">
+											<label class="checkbox is-error">
 												<input type="checkbox">
 												<span class="checkbox__text">Есть шенген виза</span>
 											</label>
@@ -513,7 +520,7 @@
 										<div class="order__layout">
 											<div class="order__col">
 												<!-- field -->
-												<div class="field">
+												<div class="field is-error">
 													<div class="field__el">
 														<input type="text" placeholder="Имя">
 													</div>
@@ -559,7 +566,12 @@
 											</div>
 										</div>
 										<div class="order__add-comment">
-											<a class="pseudo-link" href="#">Оставить комментарий к заказу</a>
+											<div class="field">
+												<div class="field__el">
+													<textarea name="" id="" cols="30" rows="10"></textarea>
+												</div>
+											</div>
+											<a class="pseudo-link js-order-add-comment" href="#">Оставить комментарий к заказу</a>
 										</div>
 										<div class="order__bonus">
 											<div class="order__bonus-in">
