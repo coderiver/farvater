@@ -666,14 +666,14 @@ a.btn_smaller { line-height: 24px; }
 .catalog .catalog__sort-info { float: left; }
 .catalog .catalog__sort-info .btn { padding: 0 35px; background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ec5a21), color-stop(100%, #f59456)); background-image: -webkit-linear-gradient(#ec5a21, #f59456); background-image: -moz-linear-gradient(#ec5a21, #f59456); background-image: -o-linear-gradient(#ec5a21, #f59456); background-image: linear-gradient(#ec5a21, #f59456); box-shadow: none; font-size: 16px; text-shadow: 0 1px 2px rgba(228, 104, 50, 0.75); color: white; font-weight: normal; text-transform: none; }
 
+.filter .filter__in { padding-bottom: 40px; }
+.filter .filter__in.is-fixed { position: fixed; bottom: 0; left: 50%; width: 300px; margin-left: -480px; }
 .filter .filter__row { *zoom: 1; }
 .filter .filter__row:after { content: " "; display: table; clear: both; }
 .filter .filter__col { float: left; width: 340px; }
 @media only screen and (max-width: 768px) { .filter .filter__col { width: 300px; } }
 .filter .filter__col:first-child { margin-right: 28px; }
 @media only screen and (max-width: 768px) { .filter .filter__col:first-child { margin: 0; } }
-.filter .filter__col .filter__selected { position: relative; left: auto; bottom: auto; width: 100%; margin: 0 0 30px; }
-.filter .filter__col .filter__selected.is-static { position: relative; left: auto; bottom: auto; width: 100%; margin: 0 0 30px; }
 .filter .filter__item { padding: 16px 20px; margin-bottom: 30px; border-radius: 8px; background-color: #e3f1fc; box-shadow: 0 1px 2px #b7bfc5; background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eaf5fd), color-stop(100%, #dceffb)); background-image: -webkit-linear-gradient(#eaf5fd, #dceffb); background-image: -moz-linear-gradient(#eaf5fd, #dceffb); background-image: -o-linear-gradient(#eaf5fd, #dceffb); background-image: linear-gradient(#eaf5fd, #dceffb); }
 .filter .filter__item.is-active .filter__title i { -ms-transform: rotate(180deg); -webkit-transform: rotate(180deg); transform: rotate(180deg); }
 .filter .filter__item_rating .checkbox { margin-top: 3px; }
@@ -699,9 +699,8 @@ a.btn_smaller { line-height: 24px; }
 .filter .filter__slider-el .ui-slider-handle:last-child { background: url('../img/icons-s8e3422ee69.png') 0 -4644px no-repeat; width: 8px; height: 20px; }
 .filter .filter__slider-details .field, .filter .filter__slider-details .field__label, .filter .filter__slider-details .field__el, .filter .filter__slider-details .btn { display: inline-block; margin-right: 5px; vertical-align: middle; }
 .filter .filter__slider-details .field input, .filter .filter__slider-details .field__label input, .filter .filter__slider-details .field__el input, .filter .filter__slider-details .btn input { width: 65px; }
-.filter .filter__selected { position: fixed; bottom: 20px; left: 50%; width: 300px; margin-left: -480px; padding: 16px 20px; border-radius: 8px; background-color: #f7f5f1; box-shadow: 0 1px 2px #b7bfc5; box-sizing: border-box; background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f9f8f5), color-stop(100%, #f5f4ed)); background-image: -webkit-linear-gradient(#f9f8f5, #f5f4ed); background-image: -moz-linear-gradient(#f9f8f5, #f5f4ed); background-image: -o-linear-gradient(#f9f8f5, #f5f4ed); background-image: linear-gradient(#f9f8f5, #f5f4ed); z-index: 30; }
-.filter .filter__selected.is-static { position: absolute; bottom: 0; left: 0; margin: 0; }
-.filter .filter__selected .filter__title { margin-bottom: 15px; }
+.filter .filter__item_selected { margin: 0; background-color: #f7f5f1; box-shadow: 0 1px 2px #b7bfc5; box-sizing: border-box; background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f9f8f5), color-stop(100%, #f5f4ed)); background-image: -webkit-linear-gradient(#f9f8f5, #f5f4ed); background-image: -moz-linear-gradient(#f9f8f5, #f5f4ed); background-image: -o-linear-gradient(#f9f8f5, #f5f4ed); background-image: linear-gradient(#f9f8f5, #f5f4ed); }
+.filter .filter__selected { padding-top: 16px; }
 .filter .filter__selected-item { position: relative; margin-bottom: 10px; padding-left: 27px; font-size: 0; }
 .filter .filter__selected-item i, .filter .filter__selected-item span { display: inline-block; }
 .filter .filter__selected-item span { font-size: 14px; }

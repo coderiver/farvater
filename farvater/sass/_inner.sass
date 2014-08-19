@@ -413,6 +413,14 @@
 			text-transform: none
 
 .filter
+	.filter__in
+		padding-bottom: 40px
+		&.is-fixed
+			position: fixed
+			bottom: 0
+			left: 50%
+			width: 300px
+			margin-left: -480px
 	.filter__row
 		+clr
 	.filter__col
@@ -424,18 +432,6 @@
 			margin-right: 28px 
 			+rt(768)
 				margin: 0
-		.filter__selected
-			position: relative
-			left: auto
-			bottom: auto
-			width: 100%
-			margin: 0 0 30px
-			&.is-static
-				position: relative
-				left: auto
-				bottom: auto
-				width: 100%
-				margin: 0 0 30px
 	.filter__item
 		padding: 16px 20px
 		margin-bottom: 30px
@@ -523,26 +519,14 @@
 			vertical-align: middle
 			input
 				width: 65px
-	.filter__selected
-		position: fixed
-		bottom: 20px
-		left: 50%
-		width: 300px
-		margin-left: -480px
-		padding: 16px 20px
-		border-radius: 8px
+	.filter__item_selected
+		margin: 0
 		background-color: #f7f5f1
 		box-shadow: 0 1px 2px #b7bfc5
 		box-sizing: border-box
 		+g(#f9f8f5, #f5f4ed)
-		z-index: 30 
-		&.is-static
-			position: absolute
-			bottom: 0
-			left: 0
-			margin: 0
-		.filter__title
-			margin-bottom: 15px
+	.filter__selected
+		padding-top: 16px
 	.filter__selected-item
 		position: relative
 		margin-bottom: 10px

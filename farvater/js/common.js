@@ -490,8 +490,7 @@ head.ready(function() {
 
 	// filter
 	var filter = $('.js-filter'),
-			filter_slider = $('.js-filter-slider'),
-			filter_selected = filter.find('.filter__selected');
+			filter_slider = $('.js-filter-slider');
 	filter.find('.filter__title').on('click', function(){
 		$(this).next().slideToggle();
 		$(this).parent().toggleClass('is-active');
@@ -523,22 +522,33 @@ head.ready(function() {
 	};
 	$(document).scroll(function () {
 		var scroll_top = $(document).scrollTop();
-		if (filter_selected.length) {
-			var filter_top = filter.offset().top,
-					filter_height = filter.height(),
-					filter_selected_height = filter_selected.height(),
-					filter_selected_height = filter_selected_height + 30,
-					wnd_height = $(window).height();
-			filter.css('padding-bottom', filter_selected_height + 'px');
-			if ((scroll_top + wnd_height) >= (filter_top + filter_height)) {
-				filter_selected.addClass('is-static');
+		if (filter.length) {
+			var filter_in = filter.find('.filter__in'),
+					filter_top = filter.offset().top,
+					filter_height = filter_in.outerHeight(),
+					window_height = $(window).height(),
+					koef = scroll_top + window_height,
+					wrapper = $('.wrapper'),
+					wrapper_height = wrapper.height(),
+					container = $('.container'),
+					container_top = container.offset().top,
+					container_height = container.height(),
+					container_full = container_top + container_height,
+					pos_bottom = koef - container_full;
+			filter.height(filter_height);
+			if (koef >= (filter_top + filter_height)) {
+				filter_in.addClass('is-fixed');
 			}
 			else {
-				filter_selected.removeClass('is-static');
+				filter_in.removeClass('is-fixed');
+			};
+			if (koef >= container_full) {
+				filter_in.css('bottom', pos_bottom + 'px');
+			}
+			else {
+				filter_in.css('bottom', 0);
 			}
 		};
-
-
 	});
 	
 	// photogallery
