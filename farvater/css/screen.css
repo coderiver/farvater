@@ -242,6 +242,7 @@ a.btn_smaller { line-height: 24px; }
 .select_checkboxes .select__list:before { content: ""; position: absolute; top: -1px; left: 0; width: 120px; height: 5px; background: #edf7ff; box-shadow: inset 1px 0 1px -1px rgba(49, 86, 163, 0.35), inset -1px 0 1px -1px rgba(49, 86, 163, 0.35); z-index: 2; }
 .select_checkboxes .select__list .checkbox { margin-top: 20px; }
 .select_checkboxes .select__list .checkbox:first-child { margin: 0; }
+.select_checkboxes .select__list-all { margin-bottom: 20px; }
 
 .select_fancy, .select_fancy-right { position: relative; color: #64707d; font-size: 14px; text-align: left; }
 .select_fancy.is-open .select__head, .select_fancy-right.is-open .select__head { border-radius: 18px 18px 0 0; background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fbfbfb), color-stop(100%, #faf9f9)); background-image: -webkit-linear-gradient(#fbfbfb, #faf9f9); background-image: -moz-linear-gradient(#fbfbfb, #faf9f9); background-image: -o-linear-gradient(#fbfbfb, #faf9f9); background-image: linear-gradient(#fbfbfb, #faf9f9); }

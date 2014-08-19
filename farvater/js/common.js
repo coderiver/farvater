@@ -183,12 +183,49 @@ head.ready(function() {
 	    else {
 	      el.removeClass('is-open');
 	      el_date.removeClass('is-open');
+	      el_checkboxes.removeClass('is-open');
 	      el.find('.select__list').hide();
 	      el_date.find('.select__date').hide();
+	      el_checkboxes.find('.select__list').hide();
 	      $(this).parent().addClass('is-open');
 	      $(this).next().slideDown();
 	    }
 	  });
+	  var el_checkboxes_input = el_checkboxes.find('.select__list input');
+	  el_checkboxes_input.on('change', function(){ 
+	  	if ($(this).hasClass('is-all')) {
+	  		if ($(this).is(':checked')) {
+	  			var value_all = $(this).next().text();
+	  			$(this).parent().parent().prev().find('.select__current').text(value_all);
+	  			$(this).parent().parent().find('input').each(function(){
+	  			   this.checked = true;
+	  			});
+	  		}
+	  		else {
+	  			$(this).parent().parent().find('input').each(function(){
+	  			   this.checked = false;
+	  			});
+	  		}
+	  	}
+	  	else {
+	  		if ($(this).parent().parent().find('input.is-all').is(':checked')) {
+	  			$(this).parent().parent().find('input').each(function(){
+	  			   this.checked = false;
+	  			});
+	  			this.checked = true;
+	  		};
+	  		var value = $(this).parent().parent().find('input').map(function () {
+	  			if (!$(this).hasClass('is-all')) {
+	  				if ($(this).is(':checked')) {
+	  					return ' ' + $(this).next().text(); 
+	  				};
+	  			};
+	  		}).get(); 
+	  		$(this).parent().parent().prev().find('.select__current').text(value);
+	  	}
+	  });
+
+
 	  el_checkboxes.click(function(event){
 	    event.stopPropagation();
 	  });
