@@ -571,7 +571,7 @@ a.btn_smaller { line-height: 24px; }
 .tour .tour__head { display: inline-block; max-width: 100%; margin-bottom: 10px; font-size: 0; }
 .tour .tour__head .rating { float: right; margin: 2px 0 0 20px; }
 @media only screen and (max-width: 768px) { .tour .tour__head .rating { float: none; margin: 0; } }
-.tour .tour__title { font-size: 21px; font-weight: 700; color: #0094da; text-decoration: underline; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; }
+.tour .tour__title { font-size: 21px; font-weight: 700; color: #0094da; text-decoration: underline; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; display: inline-block; }
 @media only screen and (max-width: 768px) { .tour .tour__title { display: block; } }
 .tour .tour__price { position: absolute; bottom: 15px; left: 0; right: 0; text-align: center; color: #363636; z-index: 4; }
 .tour .tour__price-in { position: relative; display: inline-block; height: 38px; padding: 0 10px; margin-top: 5px; border-radius: 3px; background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fff100), color-stop(100%, #ffe300)); background-image: -webkit-linear-gradient(#fff100, #ffe300); background-image: -moz-linear-gradient(#fff100, #ffe300); background-image: -o-linear-gradient(#fff100, #ffe300); background-image: linear-gradient(#fff100, #ffe300); line-height: 38px; font-size: 14px; vertical-align: top; z-index: 2; }
