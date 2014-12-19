@@ -562,7 +562,7 @@ head.ready(function() {
 				el_caption_template = '{{alt}}',
 				el_in = $(this).find('.photogallery__list');
 				el_in.cycle({
-					fx: 'fade',
+				  fx: 'fade',
 				  timeout: 0,
 				  prev: el_prev,
 				  next: el_next,
