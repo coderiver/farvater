@@ -154,68 +154,104 @@
 										<div class="order__fieldset">
 											<!-- field -->
 											<div class="field is-full">
+												<div class="field__label">Имя</div>
 												<div class="field__el">
 													<input type="text" value="Григорий">
 												</div>
 											</div>
 											<!-- field -->
 											<div class="field is-full">
+												<div class="field__label">Фамилия</div>
 												<div class="field__el">
 													<input type="text" value="Крутий">
 												</div>
 											</div>
 											<!-- sex -->
 											<div class="sex">
-												<label class="sex__item"><input type="radio" name="sex" checked=""><span>м</span></label>
-												<label class="sex__item"><input type="radio" name="sex"><span>ж</span></label>
-											</div>
-											<!-- select -->
-											<div class="select select_default select_date js-select-date is-full is-selected">
-												<div class="select__head">
-													<div class="select__current">03.05.2014</div>
-													<i class="select__ico-date"></i>
+												<div class="sex__label">Пол</div>
+												<div class="sex__in">
+													<label class="sex__item"><input type="radio" name="sex" checked=""><span>м</span></label>
+													<label class="sex__item"><input type="radio" name="sex"><span>ж</span></label>
 												</div>
-												<div class="select__date"></div>
-												<input class="select__value" type="hidden">
 											</div>
-											<!-- select -->
-											<div class="select select_default js-select is-full is-selected">
-												<div class="select__head">
-													<div class="select__current">Украинское</div>
-													<i class="select__arr"></i>
+											<!-- date -->
+											<div class="date">
+												<div class="date__label">Дата рождения</div>
+												<div class="date__in">
+													<div class="field is-full">
+														<div class="field__el">
+															<input type="text" placeholder="ДД" value="20" maxlength="2">
+														</div>
+													</div>
+													<div class="field is-full">
+														<div class="field__el">
+															<input type="text" placeholder="ММ" value="04" maxlength="2">
+														</div>
+													</div>
+													<div class="field is-full">
+														<div class="field__el">
+															<input type="text" placeholder="ГГГГ" value="1989" maxlength="4">
+														</div>
+													</div>
 												</div>
-												<ul class="select__list">
-													<li>Украинское</li>
-													<li>Клятий москаль</li>
-													<li>Русское</li>
-												</ul>
-												<input class="select__value" type="hidden">
 											</div>
-											<!-- native-select -->
-											<div class="native-select native-select_default is-full js-native-select">
-												<div class="native-select__head">
-													<span>Украинское</span><i></i>
+											<!-- field -->
+											<div class="field">
+												<div class="field__label">Гражданство</div>
+												<div class="field__in">
+													<!-- select -->
+													<div class="select select_default js-select is-full is-selected">
+														<div class="select__head">
+															<div class="select__current">Украинское</div>
+															<i class="select__arr"></i>
+														</div>
+														<ul class="select__list">
+															<li>Украинское</li>
+															<li>Клятий москаль</li>
+															<li>Русское</li>
+														</ul>
+														<input class="select__value" type="hidden">
+													</div>
+													<!-- native-select -->
+													<div class="native-select native-select_default is-full js-native-select">
+														<div class="native-select__head">
+															<span>Украинское</span><i></i>
+														</div>
+														<select class="native-select__el" name="" id="">
+															<option value="">Украинское</option>
+															<option value="">Клятий москаль</option>
+															<option value="">Русское</option>
+														</select>
+													</div>
 												</div>
-												<select class="native-select__el" name="" id="">
-													<option value="">Украинское</option>
-													<option value="">Клятий москаль</option>
-													<option value="">Русское</option>
-												</select>
 											</div>
 											<!-- field -->
 											<div class="field is-full">
+												<div class="field__label">Серия, № паспорта</div>
 												<div class="field__el">
 													<input type="text" value="CN 346275">
 												</div>
 											</div>
-											<!-- select -->
-											<div class="select select_default select_date js-select-date is-full is-selected">
-												<div class="select__head">
-													<div class="select__current">20.04.2020</div>
-													<i class="select__ico-date"></i>
+											<!-- date -->
+											<div class="date">
+												<div class="date__label">Срок действия, до</div>
+												<div class="date__in">
+													<div class="field is-full">
+														<div class="field__el">
+															<input type="text" placeholder="ДД" value="20" maxlength="2">
+														</div>
+													</div>
+													<div class="field is-full">
+														<div class="field__el">
+															<input type="text" placeholder="ММ" value="04" maxlength="2">
+														</div>
+													</div>
+													<div class="field is-full">
+														<div class="field__el">
+															<input type="text" placeholder="ГГГГ" value="1989" maxlength="4">
+														</div>
+													</div>
 												</div>
-												<div class="select__date"></div>
-												<input class="select__value" type="hidden">
 											</div>
 											<!-- checkbox -->
 											<label class="checkbox">
@@ -240,79 +276,108 @@
 										<div class="order__fieldset">
 											<!-- field -->
 											<div class="field is-error">
+												<div class="field__label">Имя</div>
 												<div class="field__el">
-													<input type="text" placeholder="Имя" value="Василіса">
+													<input type="text" value="Григорий">
 												</div>
-												<div class="field__error">О ні! Як ти міг? Тепер ми не можемо бути разом! Шукай мене у Кащея Безсмертного!</div>
 											</div>
 											<!-- field -->
 											<div class="field is-error">
+												<div class="field__label">Фамилия</div>
 												<div class="field__el">
-													<input type="text" placeholder="Фамилия" value="Прекрасна">
+													<input type="text" value="Крутий">
 												</div>
-												<div class="field__error">Якщо я тобі не байдужа - то ти врятуєш мене!</div>
 											</div>
 											<!-- sex -->
 											<div class="sex is-error">
-												<label class="sex__item"><input type="radio" name="sex1"><span>м</span></label>
-												<label class="sex__item"><input type="radio" name="sex1"><span>ж</span></label>
-												<div class="sex__error">Тобі пора визначитися мужик ти, Іван, чи баба!</div>
-											</div>
-											<!-- select -->
-											<div class="select select_default select_date is-error js-select-date">
-												<div class="select__head">
-													<div class="select__current">Дата рождения</div>
-													<i class="select__ico-date"></i>
+												<div class="sex__label">Пол</div>
+												<div class="sex__in">
+													<label class="sex__item"><input type="radio" name="sex1"><span>м</span></label>
+													<label class="sex__item"><input type="radio" name="sex1"><span>ж</span></label>
 												</div>
-												<div class="select__date"></div>
-												<input class="select__value" type="hidden">
-												<div class="select__error">Іване, тобі вже 12 років! Ти можеш, Ваня!</div>
 											</div>
-											<!-- select -->
-											<div class="select select_default is-error js-select">
-												<div class="select__head">
-													<div class="select__current">Гражданство</div>
-													<i class="select__arr"></i>
+											<!-- date -->
+											<div class="date">
+												<div class="date__label">Дата рождения</div>
+												<div class="date__in">
+													<div class="field is-error">
+														<div class="field__el">
+															<input type="text" placeholder="ДД" value="20" maxlength="2">
+														</div>
+													</div>
+													<div class="field is-error">
+														<div class="field__el">
+															<input type="text" placeholder="ММ" value="04" maxlength="2">
+														</div>
+													</div>
+													<div class="field is-error">
+														<div class="field__el">
+															<input type="text" placeholder="ГГГГ" value="1989" maxlength="4">
+														</div>
+													</div>
 												</div>
-												<ul class="select__list">
-													<li>Украинское</li>
-													<li>Клятий москаль</li>
-													<li>Русское</li>
-												</ul>
-												<input class="select__value" type="hidden">
-												<div class="select__error">Ваня, ти ж не клятий москаль!</div>
 											</div>
-											<!-- native-select -->
-											<div class="native-select native-select_default is-full js-native-select">
-												<div class="native-select__head">
-													<span>Гражданство</span><i></i>
+											<!-- field -->
+											<div class="field">
+												<div class="field__label">Гражданство</div>
+												<div class="field__in">
+													<!-- select -->
+													<div class="select select_default js-select is-error">
+														<div class="select__head">
+															<div class="select__current">Украинское</div>
+															<i class="select__arr"></i>
+														</div>
+														<ul class="select__list">
+															<li>Украинское</li>
+															<li>Клятий москаль</li>
+															<li>Русское</li>
+														</ul>
+														<input class="select__value" type="hidden">
+													</div>
+													<!-- native-select -->
+													<div class="native-select native-select_default is-full js-native-select">
+														<div class="native-select__head">
+															<span>Украинское</span><i></i>
+														</div>
+														<select class="native-select__el" name="" id="">
+															<option value="">Украинское</option>
+															<option value="">Клятий москаль</option>
+															<option value="">Русское</option>
+														</select>
+													</div>
 												</div>
-												<select class="native-select__el" name="" id="">
-													<option value="">Украинское</option>
-													<option value="">Клятий москаль</option>
-													<option value="">Русское</option>
-												</select>
 											</div>
 											<!-- field -->
 											<div class="field is-error">
+												<div class="field__label">Серия, № паспорта</div>
 												<div class="field__el">
-													<input type="text" placeholder="Серия, № паспорта">
+													<input type="text" value="CN 346275">
 												</div>
-												<div class="field__error">Ваня, ти не зможеш виїхати з королівства, в мене твій паспорт!</div>
 											</div>
-											<!-- select -->
-											<div class="select select_default select_date is-error js-select-date">
-												<div class="select__head">
-													<div class="select__current">Срок действия</div>
-													<i class="select__ico-date"></i>
+											<!-- date -->
+											<div class="date">
+												<div class="date__label">Срок действия, до</div>
+												<div class="date__in">
+													<div class="field is-error">
+														<div class="field__el">
+															<input type="text" placeholder="ДД" value="20" maxlength="2">
+														</div>
+													</div>
+													<div class="field is-error">
+														<div class="field__el">
+															<input type="text" placeholder="ММ" value="04" maxlength="2">
+														</div>
+													</div>
+													<div class="field is-error">
+														<div class="field__el">
+															<input type="text" placeholder="ГГГГ" value="1989" maxlength="4">
+														</div>
+													</div>
 												</div>
-												<div class="select__date"></div>
-												<input class="select__value" type="hidden">
-												<div class="select__error">Ваня, даю тобі 2 дні на подвиг, інакше мене буде рятувати твій друг Василь!</div>
 											</div>
 											<!-- checkbox -->
-											<label class="checkbox is-error">
-												<input type="checkbox">
+											<label class="checkbox">
+												<input type="checkbox" checked="">
 												<span class="checkbox__text">Есть шенген виза</span>
 											</label>
 											<!-- add scan -->
@@ -333,66 +398,89 @@
 										<div class="order__fieldset">
 											<!-- field -->
 											<div class="field">
+												<div class="field__label">Имя</div>
 												<div class="field__el">
-													<input type="text" placeholder="Имя">
+													<input type="text">
 												</div>
 											</div>
 											<!-- field -->
 											<div class="field">
+												<div class="field__label">Фамилия</div>
 												<div class="field__el">
-													<input type="text" placeholder="Фамилия">
+													<input type="text">
 												</div>
 											</div>
 											<!-- sex -->
 											<div class="sex">
-												<label class="sex__item"><input type="radio" name="sex1"><span>м</span></label>
-												<label class="sex__item"><input type="radio" name="sex1"><span>ж</span></label>
-											</div>
-											<!-- select -->
-											<div class="select select_default select_date js-select-date">
-												<div class="select__head">
-													<div class="select__current">Дата рождения</div>
-													<i class="select__ico-date"></i>
+												<div class="sex__label">Пол</div>
+												<div class="sex__in">
+													<label class="sex__item"><input type="radio" name="sex1"><span>м</span></label>
+													<label class="sex__item"><input type="radio" name="sex1"><span>ж</span></label>
 												</div>
-												<div class="select__date"></div>
-												<input class="select__value" type="hidden">
 											</div>
-											<!-- select -->
-											<div class="select select_default js-select is-selected is-full">
-												<div class="select__head">
-													<div class="select__current">Вписан в паспорт</div>
-													<i class="select__arr"></i>
+											<!-- date -->
+											<div class="date">
+												<div class="date__label">Дата рождения</div>
+												<div class="date__in">
+													<div class="field">
+														<div class="field__el">
+															<input type="text" placeholder="ДД" value="" maxlength="2">
+														</div>
+													</div>
+													<div class="field">
+														<div class="field__el">
+															<input type="text" placeholder="ММ" value="" maxlength="2">
+														</div>
+													</div>
+													<div class="field">
+														<div class="field__el">
+															<input type="text" placeholder="ГГГГ" value="" maxlength="4">
+														</div>
+													</div>
 												</div>
-												<ul class="select__list">
-													<li>Украинское</li>
-													<li>Клятий москаль</li>
-													<li>Русское</li>
-												</ul>
-												<input class="select__value" type="hidden">
 											</div>
-											<!-- native-select -->
-											<div class="native-select native-select_default is-full js-native-select">
-												<div class="native-select__head">
-													<span>Вписан в паспорт</span><i></i>
+											<!-- field -->
+											<div class="field">
+												<div class="field__label">Документ</div>
+												<div class="field__in">
+													<!-- select -->
+													<div class="select select_default js-select is-selected is-full">
+														<div class="select__head">
+															<div class="select__current">Вписан в паспорт</div>
+															<i class="select__arr"></i>
+														</div>
+														<ul class="select__list">
+															<li>Украинское</li>
+															<li>Клятий москаль</li>
+															<li>Русское</li>
+														</ul>
+														<input class="select__value" type="hidden">
+													</div>
+													<!-- native-select -->
+													<div class="native-select native-select_default is-full js-native-select">
+														<div class="native-select__head">
+															<span>Вписан в паспорт</span><i></i>
+														</div>
+														<select class="native-select__el" name="" id="">
+															<option value="">Украинское</option>
+															<option value="">Клятий москаль</option>
+															<option value="">Русское</option>
+														</select>
+													</div>
 												</div>
-												<select class="native-select__el" name="" id="">
-													<option value="">Украинское</option>
-													<option value="">Клятий москаль</option>
-													<option value="">Русское</option>
-												</select>
 											</div>
 											<!-- radio -->
-											<label class="radio">
+											<label class="radio radio_mod">
 												<input type="radio" name="passport-parent">
 												<span class="radio__text">Паспорт мамы</span>
 											</label>
 											<!-- radio -->
-											<label class="radio">
+											<label class="radio radio_mod">
 												<input type="radio" name="passport-parent" checked="">
 												<span class="radio__text">Паспорт папы</span>
 											</label>
 											<!-- checkbox -->
-											<label class="checkbox is-error">
+											<label class="checkbox checkbox_mod is-error">
 												<input type="checkbox">
 												<span class="checkbox__text">Фото вклеено</span>
 											</label>
@@ -401,96 +489,138 @@
 									</div>
 									<!-- 4 -->
 									<div class="order__row">
-										<div class="title title_level-3">Ребенок №1</div>
+										<div class="title title_level-3">Ребенок №2</div>
 										<div class="order__fieldset">
 											<!-- field -->
 											<div class="field">
+												<div class="field__label">Имя</div>
 												<div class="field__el">
-													<input type="text" placeholder="Имя">
+													<input type="text">
 												</div>
 											</div>
 											<!-- field -->
 											<div class="field">
+												<div class="field__label">Фамилия</div>
 												<div class="field__el">
-													<input type="text" placeholder="Фамилия">
+													<input type="text">
 												</div>
 											</div>
 											<!-- sex -->
 											<div class="sex">
-												<label class="sex__item"><input type="radio" name="sex1"><span>м</span></label>
-												<label class="sex__item"><input type="radio" name="sex1"><span>ж</span></label>
-											</div>
-											<!-- select -->
-											<div class="select select_default select_date js-select-date">
-												<div class="select__head">
-													<div class="select__current">Дата рождения</div>
-													<i class="select__ico-date"></i>
+												<div class="sex__label">Пол</div>
+												<div class="sex__in">
+													<label class="sex__item"><input type="radio" name="sex1"><span>м</span></label>
+													<label class="sex__item"><input type="radio" name="sex1"><span>ж</span></label>
 												</div>
-												<div class="select__date"></div>
-												<input class="select__value" type="hidden">
 											</div>
-											<!-- select -->
-											<div class="select select_default js-select is-full">
-												<div class="select__head">
-													<div class="select__current">Свой паспорт</div>
-													<i class="select__arr"></i>
+											<!-- date -->
+											<div class="date">
+												<div class="date__label">Дата рождения</div>
+												<div class="date__in">
+													<div class="field">
+														<div class="field__el">
+															<input type="text" placeholder="ДД" value="" maxlength="2">
+														</div>
+													</div>
+													<div class="field">
+														<div class="field__el">
+															<input type="text" placeholder="ММ" value="" maxlength="2">
+														</div>
+													</div>
+													<div class="field">
+														<div class="field__el">
+															<input type="text" placeholder="ГГГГ" value="" maxlength="4">
+														</div>
+													</div>
 												</div>
-												<ul class="select__list">
-													<li>Украинское</li>
-													<li>Клятий москаль</li>
-													<li>Русское</li>
-												</ul>
-												<input class="select__value" type="hidden">
-											</div>
-											<!-- native-select -->
-											<div class="native-select native-select_default is-full js-native-select">
-												<div class="native-select__head">
-													<span>Свой паспорт</span><i></i>
-												</div>
-												<select class="native-select__el" name="" id="">
-													<option value="">Украинское</option>
-													<option value="">Клятий москаль</option>
-													<option value="">Русское</option>
-												</select>
-											</div>
-											<!-- select -->
-											<div class="select select_default js-select">
-												<div class="select__head">
-													<div class="select__current">Гражданство</div>
-													<i class="select__arr"></i>
-												</div>
-												<ul class="select__list">
-													<li>Украинское</li>
-													<li>Клятий москаль</li>
-													<li>Русское</li>
-												</ul>
-												<input class="select__value" type="hidden">
-											</div>
-											<!-- native-select -->
-											<div class="native-select native-select_default is-full js-native-select">
-												<div class="native-select__head">
-													<span>Гражданство</span><i></i>
-												</div>
-												<select class="native-select__el" name="" id="">
-													<option value="">Украинское</option>
-													<option value="">Клятий москаль</option>
-													<option value="">Русское</option>
-												</select>
 											</div>
 											<!-- field -->
-											<div class="field">
-												<div class="field__el">
-													<input type="text" placeholder="Серия, № паспорта">
+											<div class="field field_mod">
+												<div class="field__label">Документ</div>
+												<div class="field__in">
+													<!-- select -->
+													<div class="select select_default js-select is-slected is-full">
+														<div class="select__head">
+															<div class="select__current">Свой паспорт</div>
+															<i class="select__arr"></i>
+														</div>
+														<ul class="select__list">
+															<li>Украинское</li>
+															<li>Клятий москаль</li>
+															<li>Русское</li>
+														</ul>
+														<input class="select__value" type="hidden">
+													</div>
+													<!-- native-select -->
+													<div class="native-select native-select_default is-full js-native-select">
+														<div class="native-select__head">
+															<span>Свой паспорт</span><i></i>
+														</div>
+														<select class="native-select__el" name="" id="">
+															<option value="">Украинское</option>
+															<option value="">Клятий москаль</option>
+															<option value="">Русское</option>
+														</select>
+													</div>
 												</div>
 											</div>
-											<!-- select -->
-											<div class="select select_default select_date js-select-date">
-												<div class="select__head">
-													<div class="select__current">Срок действия</div>
-													<i class="select__ico-date"></i>
+											<!-- field -->
+											<div class="field field_mod">
+												<div class="field__label">Гражданство</div>
+												<div class="field__in">
+													<!-- select -->
+													<div class="select select_default js-select">
+														<div class="select__head">
+															<div class="select__current">Гражданство</div>
+															<i class="select__arr"></i>
+														</div>
+														<ul class="select__list">
+															<li>Украинское</li>
+															<li>Клятий москаль</li>
+															<li>Русское</li>
+														</ul>
+														<input class="select__value" type="hidden">
+													</div>
+													<!-- native-select -->
+													<div class="native-select native-select_default is-full js-native-select">
+														<div class="native-select__head">
+															<span>Гражданство</span><i></i>
+														</div>
+														<select class="native-select__el" name="" id="">
+															<option value="">Украинское</option>
+															<option value="">Клятий москаль</option>
+															<option value="">Русское</option>
+														</select>
+													</div>
 												</div>
-												<div class="select__date"></div>
-												<input class="select__value" type="hidden">
+											</div>
+											<!-- field -->
+											<div class="field field_mod">
+												<div class="field__label">Серия, № паспорта</div>
+												<div class="field__el">
+													<input type="text">
+												</div>
+											</div>
+											<!-- date -->
+											<div class="date">
+												<div class="date__label">Срок действия, до</div>
+												<div class="date__in">
+													<div class="field">
+														<div class="field__el">
+															<input type="text" placeholder="ДД" value="" maxlength="2">
+														</div>
+													</div>
+													<div class="field">
+														<div class="field__el">
+															<input type="text" placeholder="ММ" value="" maxlength="2">
+														</div>
+													</div>
+													<div class="field">
+														<div class="field__el">
+															<input type="text" placeholder="ГГГГ" value="" maxlength="4">
+														</div>
+													</div>
+												</div>
 											</div>
 											<!-- checkbox -->
 											<label class="checkbox">
@@ -521,47 +651,56 @@
 											<div class="order__col">
 												<!-- field -->
 												<div class="field is-error">
+													<div class="field__label">Имя</div>
 													<div class="field__el">
-														<input type="text" placeholder="Имя">
+														<input type="text">
 													</div>
 												</div>
 												<!-- field -->
 												<div class="field">
+													<div class="field__label">Телефон</div>
 													<div class="field__el">
-														<input type="text" placeholder="Телефон">
+														<input type="text">
 													</div>
 												</div>
 											</div>
 											<div class="order__col">
 												<!-- field -->
 												<div class="field">
+													<div class="field__label">E-mail</div>
 													<div class="field__el">
-														<input type="text" placeholder="E-mail">
+														<input type="text">
 													</div>
 												</div>
-												<!-- select -->
-												<div class="select select_default js-select">
-													<div class="select__head">
-														<div class="select__current">Оплата</div>
-														<i class="select__arr"></i>
+												<!-- field -->
+												<div class="field">
+													<div class="field__label">Оплата</div>
+													<div class="field__in">
+														<!-- select -->
+														<div class="select select_default js-select">
+															<div class="select__head">
+																<div class="select__current">Оплата</div>
+																<i class="select__arr"></i>
+															</div>
+															<ul class="select__list">
+																<li>Украинское</li>
+																<li>Клятий москаль</li>
+																<li>Русское</li>
+															</ul>
+															<input class="select__value" type="hidden">
+														</div>
+														<!-- native-select -->
+														<div class="native-select native-select_default js-native-select">
+															<div class="native-select__head">
+																<span>Оплата</span><i></i>
+															</div>
+															<select class="native-select__el" name="" id="">
+																<option value="">Украинское</option>
+																<option value="">Клятий москаль</option>
+																<option value="">Русское</option>
+															</select>
+														</div>
 													</div>
-													<ul class="select__list">
-														<li>Украинское</li>
-														<li>Клятий москаль</li>
-														<li>Русское</li>
-													</ul>
-													<input class="select__value" type="hidden">
-												</div>
-												<!-- native-select -->
-												<div class="native-select native-select_default js-native-select">
-													<div class="native-select__head">
-														<span>Оплата</span><i></i>
-													</div>
-													<select class="native-select__el" name="" id="">
-														<option value="">Украинское</option>
-														<option value="">Клятий москаль</option>
-														<option value="">Русское</option>
-													</select>
 												</div>
 											</div>
 										</div>

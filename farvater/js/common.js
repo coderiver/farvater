@@ -727,15 +727,15 @@ head.ready(function() {
 		var gallery_slider = $(this).find('.gallery__list'),
 				gallery_prev = $(this).find('.prev'),
 				gallery_next = $(this).find('.next'),
-				gallery_preview = $(this).find('.gallery__preview'),
-				gallery_template = '<a href="#"><img src="{{src}}" width="27" height="27"></a>';
+				gallery_preview = $(this).find('.gallery__preview');
 		gallery_slider.cycle({
 			fx: 'scrollHorz',
 			timeout: 0,
 			prev: gallery_prev,
 			next: gallery_next,
+			slides: '>div',
 			pager: gallery_preview,
-			pagerTemplate: gallery_template
+			pagerTemplate: ''
 		});
 	});
 

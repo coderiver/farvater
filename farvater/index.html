@@ -30,18 +30,18 @@
 	    position: myLatLng,
 	    map: map,
 	    content:  '<div class="map__marker">'+
-	    						'<a class="map__marker-link" href="#">'+
-	    							'<img src="http://placehold.it/40x40">'+
-	    							'<i></i>'+
-	    						'</a>'+
-	    						'<div class="map__marker-in">'+
-	    							'<a href="#">Турция</a>'+
-	    							'<ul>'+
-	    								'<li>от 2 450 грн</li>'+
-	    								'<li>до 19 600 грн</li>'+
-	    							'</ul>'+
-	    						'</div'+
-	    					'</div>'
+						'<a class="map__marker-link" href="#">'+
+							'<img src="http://placehold.it/40x40">'+
+							'<i></i>'+
+						'</a>'+
+						'<div class="map__marker-in">'+
+							'<a href="#">Турция</a>'+
+							'<ul>'+
+								'<li>от 2 450 грн</li>'+
+								'<li>до 19 600 грн</li>'+
+							'</ul>'+
+						'</div'+
+					'</div>'
 	  });
 	  marker.setFlat(!marker.getFlat());
 	}
@@ -548,7 +548,7 @@
 											<div class="tour__way">
 												<i class="tour__way-plain"></i>
 												<a href="#">Taksim, Istanbul, Turkey</a>
-												<span>(перелет не включен)</span>
+												<span class="tour__way-no-include">(перелет не включен)</span>
 											</div>
 											<div class="tour__date"><span>3—8 мая</span> (5 ночей)</div>
 											<div class="tour__details">
@@ -592,6 +592,7 @@
 											<div class="tour__way">
 												<i class="tour__way-noplain"></i>
 												<a href="#">Taksim, Istanbul, Turkey</a>
+												<span class="tour__way-early">Раннее бронирование</span>
 											</div>
 											<div class="tour__date"><span>3—8 мая</span> (5 ночей)</div>
 											<div class="tour__details">

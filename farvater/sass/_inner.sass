@@ -110,9 +110,6 @@
 		text-overflow: ellipsis
 		white-space: nowrap
 		overflow: hidden
-		display: inline-block
-		+rt(768)
-			display: block
 	.tour__price
 		position: absolute
 		bottom: 15px
@@ -181,8 +178,11 @@
 			text-decoration: none
 			&:hover
 				color: $orange 
-		span
-			color: #ff4c4c 
+	.tour__way-no-include
+		color: #ff4c4c
+	.tour__way-early
+		color: #6cb367   
+		font-weight: 700 
 	.tour__date
 		margin-bottom: 15px
 		span
@@ -695,25 +695,64 @@
 	.gallery__pic
 		position: relative
 		margin-bottom: 5px
-		img
-			display: block
-			width: 100%
+		z-index: 2 
+		&:after
+			content: ""
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			border-radius: 8px
+			box-shadow: 0 0 0 8px #fff
+			z-index: 101 
 	.gallery__list
 		border-radius: 8px
+	.gallery__slide
+		width: 100%
+		height: 420px
+		+vertical
+		//+transform(translate3d(0,0,0))
+		will-change: -webkit-filter, opacity
 		overflow: hidden
+		img
+			position: relative
+			display: inline-block
+			max-width: 100%
+			max-height: 100%
+			border-radius: 8px
+			vertical-align: middle
+			z-index: 4 
+		span
+			position: absolute
+			top: -20px
+			right: -20px
+			bottom: -20px
+			left: -20px
+			background-position: 50% 50%  
+			background-size: cover
+			border-radius: 8px
+			-webkit-filter: blur(10px)
+			opacity: .8 
 	.gallery__preview
+		position: relative
 		font-size: 0
+		z-index: 4 
 		a
 			display: inline-block
+			width: 27px
+			height: 27px
 			margin: 0 5px 5px 0
 			border-radius: 3px
 			vertical-align: top
 			&.cycle-pager-active
 				box-shadow: 0 0 0 3px #68b039
 		img
+			width: 100%
+			height: 100%
 			border-radius: 3px
 	.prev, .next
-		z-index: 101
+		z-index: 102
 
 .tour-settings
 	margin-bottom: 30px
@@ -2017,7 +2056,7 @@
 			+s(attention)
 	.order__fieldset
 		margin-right: -10px
-		>*
+		.field, .sex, .date, .radio, .checkbox
 			display: inline-block
 			margin: 0 10px 10px 0
 			vertical-align: top
@@ -2025,10 +2064,12 @@
 				display: block
 		.field
 			width: 160px
+		.field_mod
+			width: 135px 
+			.select, .native-select
+				width: 135px
 		.select, .native-select
-			width: 140px
-			+rt(768)
-				width: 160px
+			width: 160px
 		.select
 			+rt(768)
 				display: none
@@ -2036,23 +2077,36 @@
 			display: none
 			+rt(768)
 				display: inline-block
-		.select_date
-			display: inline-block
-			width: 135px 
-			+rt(768)
-				width: 160px
-		.select__date
-			&:before
-				width: 134px 
-				+rt(768)
-					width: 159px
 		.radio
 			margin-top: 10px
 		.checkbox
 			margin: 10px 30px 10px 0
+		.radio_mod, .checkbox_mod
+			margin: 30px 10px 10px 0
+		.date
+			font-size: 0
+			.field
+				display: inline-block
+				width: 52px
+				margin: 0 0 0 5px
+				vertical-align: top
+				&:first-child
+					width: 42px
+					margin: 0
+					& + .field
+						width: 42px
+			.field__el
+				input
+					text-align: center
+		.date__label	
+			margin-bottom: 3px
+			color: #8b8a86 
+			font-size: 13px
 	.order__scan-toggle
-		margin-top: 10px
+		display: inline-block
+		margin: 10px 10px 10px 0
 		line-height: 1.2
+		vertical-align: middle
 	.order__scans
 		padding-bottom: 5px
 		+clr
