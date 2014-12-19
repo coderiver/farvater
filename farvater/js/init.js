@@ -4,4 +4,5 @@ head.load("js/lib/jquery.js",
 					"js/lib/slick.min.js", 
 					"js/lib/cycle2.js", 
 					"js/lib/isotope.min.js", 
+					"js/lib/chosen.jquery.min.js", 
 					"js/common.js");
