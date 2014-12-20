@@ -272,21 +272,22 @@ head.ready(function() {
 
 	// slick slider
 	var pop = $('.js-pop'),
-			benefits = $('.js-benefits'),
-			similar = $('.js-similar'),
-			similar_discounts = $('.js-similar-discounts'),
-			watched = $('.js-watched'),
-			benefits = $('.js-benefits'),
-			hotels = $('.js-hotels'),
-			read_more = $('.js-read-more'),
-			response_slider = $('.js-response-slider'),
-			tours = $('.js-tours'),
-			tours_item = tours.find('.tour'),
-			tours_item_val = tours_item.length,
-			tours_counter = $('.js-tours-counter'),
-			tours_counter = $('.js-tours-counter'),
-			tours_counter_current = tours_counter.find('.tours__counter-current'),
-			tours_counter_all = tours_counter.find('.tours__counter-all');
+		benefits = $('.js-benefits'),
+		similar = $('.js-similar'),
+		flights = $('.js-flights'),
+		similar_discounts = $('.js-similar-discounts'),
+		watched = $('.js-watched'),
+		benefits = $('.js-benefits'),
+		hotels = $('.js-hotels'),
+		read_more = $('.js-read-more'),
+		response_slider = $('.js-response-slider'),
+		tours = $('.js-tours'),
+		tours_item = tours.find('.tour'),
+		tours_item_val = tours_item.length,
+		tours_counter = $('.js-tours-counter'),
+		tours_counter = $('.js-tours-counter'),
+		tours_counter_current = tours_counter.find('.tours__counter-current'),
+		tours_counter_all = tours_counter.find('.tours__counter-all');
 	if (pop.length) {
 		pop.slick({
 			slide: '.pop__item',
@@ -478,6 +479,30 @@ head.ready(function() {
 			infinite: false
 		});
 	};
+	if (flights.length) {
+		flights.slick({
+			slide: '.flight__item',
+			slidesToShow: 5,
+			infinite: true,
+			responsive: [
+				{
+				  breakpoint: 768,
+				  settings: {
+				  	infinite: true,
+				    slidesToShow: 2
+				  }
+				}
+			]
+		});
+	};
+	$('.js-flight-next').click(function () {
+		flights.slickNext();
+		return false;
+	});
+	$('.js-flight-prev').click(function () {
+		flights.slickPrev();
+		return false;
+	});
 
 	
 
@@ -751,6 +776,31 @@ head.ready(function() {
 		else {
 			$(this).addClass('is-active');
 			$(this).prev().slideDown();
+			$(this).text(text_off);
+		}
+		return false;
+	});
+
+	// avia 
+	$('body').on('click', '.js-av-toggle', function () {
+		var item = $(this).parents('.av__item'),
+			details = item.find('.av__details_mod'),
+			foot = item.find('.av__foot-in'),
+			variants = item.find('.av__variants'),
+			text_on = $(this).data('text-on'),
+			text_off = $(this).data('text-off');
+		if ($(this).hasClass('is-active')) {
+			$(this).removeClass('is-active');
+			variants.show();
+			details.hide();
+			foot.slideUp();
+			$(this).text(text_on);
+		}
+		else {
+			$(this).addClass('is-active');
+			variants.hide();
+			details.show();
+			foot.slideDown();
 			$(this).text(text_off);
 		}
 		return false;

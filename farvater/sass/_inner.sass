@@ -3582,15 +3582,457 @@
 	.intfact__text
 		font-size: 16px
 
+.tb
+	margin-bottom: 30px
+	+rt(768)
+		display: none
+	.tb__title
+		position: relative
+		padding: 10px 15px
+		+g(#d1e7f4,#a0d1f0)
+		box-shadow: 0 1px 2px #b7bfc5
+		border-radius: 8px 8px 0 0
+		font-size: 16px
+		z-index: 4
+	.tb__el	
+		position: relative
+		margin-top: -1px
+		box-shadow: 0 1px 2px #b7bfc5
+		border: 1px solid #edeff0
+		border-width: 0 1px 1px
+		border-radius: 0 0 8px 8px
+		overflow: hidden
+		z-index: 2 
+		table
+			width: 100%
+			table-layout: fixed
+		tr
+			&:last-child
+				td
+					border-width: 1px 1px 0
+					&:first-child
+						border-width: 1px 1px 0 0
+					&:last-child
+						border-width: 1px 0 0 1px
+		td
+			border: 1px dotted #c4d2dc
+			text-align: center
+			vertical-align: top
+			&:first-child
+				border-width: 1px 1px 1px 0
+			&:last-child
+				border-width: 1px 0 1px 1px
+	.tb__direction
+		height: 28px
+		padding: 7px 3px
+		background: #e2f2fc
+		font-size: 10px
+		color: #9B9B9B
+		span
+			display: block
+			font-size: 12px
+			color: #000 
+	.tb__price
+		display: block
+		height: 42px
+		padding: 0 3px
+		background: #e2f2fc
+		font-size: 10px
+		line-height: 42px
+		text-decoration: none
+		color: #000 
+		&.is-active
+			background-color: #6dbb41
+			box-shadow: inset 0 3px 7px rgba(24,120,44,.75)
+			+g(#4ea329, #89cb61)
+			color: #FFF 
+			cursor: default
+		span
+			margin-right: 3px
+			font-weight: 700 
+			font-size: 12px
 
+.flight
+	margin-bottom: 30px
+	padding-bottom: 30px
+	border-bottom: 1px dotted #c4d2dc
+	.flight__head
+		margin-bottom: 17px
+		+clr
+		+rt(768)
+			text-align: center
+		.sort
+			float: left
+			+rt(768)
+				float: none
+				display: inline-block
+				vertical-align: top
+	.flight__nav
+		float: right
+		+rt(768)
+			float: none
+	.flight__prev, .flight__next
+		margin-left: 20px
+		+rt(768)
+			margin: 10px 10px 0
+			vertical-align: top
+	.flight__prev
+		+s(prev)
+		&:hover
+			+sp(prev-h)
+		&:active
+			+sp(prev-a)
+	.flight__next
+		+s(next)
+		&:hover
+			+sp(next-h)
+		&:active	
+			+sp(next-a)	
+	.flight__in	
+		background-color: #e3f1fc
+		+g(#eaf5fd, #dceffb)
+		box-shadow: 0 1px 2px #b7bfc5
+		border-radius: 8px
+		overflow: hidden 
+	.flight__list
+		margin-right: 1px
+		margin-left: -1px
+		overflow: hidden
+	.flight__item
+	.flight__item-in 
+		border: 1px dotted #c4d2dc
+		border-width: 0 0 0 1px
+	.flight__logo
+		padding: 10px
+		img
+			width: 100%
+			height: auto
+			vertical-align: middle
+	.flight__info
+		display: block
+		height: 46px
+		padding: 0 10px
+		border: 1px dotted #c4d2dc
+		border-width: 0 1px
+		border-width: 1px 0 
+		text-decoration: none
+		color: #000 
+		+clr
+		&.is-active
+			background-color: #6dbb41
+			box-shadow: inset 0 3px 7px rgba(24,120,44,.75)
+			+g(#4ea329, #89cb61)
+			cursor: default
+			.flight__planes
+				i
+					+sp(flight-plane-a)
+		& + .flight__info
+			border-width: 0 0 1px 
+	.flight__planes, .price
+		float: none
+		display: inline-block
+		vertical-align: middle
+	.price
+		margin: 11px 8px 9px
+		span
+			font-size: 14px
+	.flight__planes
+		margin-right: 5px
+		font-size: 0
+		i
+			display: block
+			+s(flight-plane)
+	.flight__foot
+		padding: 15px 20px
+		+clr
+		+rt(768)
+			padding: 10px
+		a
+			float: right
+			border-bottom: 1px dotted  
+			color: #EC5B22
+			text-decoration: none
+			&:first-child
+				float: left
+				color: $blue 
+	.slick-next, .slick-prev
+		display: none
 
-
-
-
-
-
-
-
+.av
+	.av__item
+		position: relative
+		margin-bottom: 30px
+		cursor: pointer
+		+rt(764)
+			margin-bottom: 20px
+		&:hover
+			&:before
+				visibility: visible
+				opacity: 1 
+			.av__item-in
+				box-shadow: 0 0 0 #b7bfc5
+		&:before
+			content: ""
+			position: absolute
+			top: -2px
+			left: -2px
+			right: -2px
+			bottom: -2px
+			+g(#f7a84c, #ed4c22)
+			box-shadow: 0 8px 20px rgba(255,55,0,.55)
+			border-radius: 9px
+			visibility: hidden
+			opacity: 0
+			z-index: 2 
+			+rt(768)
+				display: none
+	.av__item-in
+		position: relative
+		box-shadow: 0 1px 2px #b7bfc5
+		border-radius: 8px
+		+tr(box-shadow .2s linear)
+		z-index: 4
+	.av__from
+		background: #FDF6E0 
+		border-radius: 8px 8px 0 0
+		.av__head	
+			border-radius: 8px 8px 0 0
+	.av__to
+		background: #FDF6E0
+		border-radius: 0 0 8px 8px
+	.av__head
+		position: relative
+		padding: 10px 18px
+		box-shadow: 0 1px 2px #b7bfc5
+		+g(#fdebb1,#fbdf7e)
+		font-size: 0
+		+clr
+		z-index: 4 
+		+rt(768)
+			padding: 5px 10px
+	.av__head-right
+		float: right
+		margin-left: 20px
+	.av__head-info
+		font-size: 0
+		li
+			display: inline-block
+			margin-left: 10px
+			vertical-align: middle
+			&:hover
+				span
+					display: block
+		i
+			display: block
+		span
+			display: none
+			position: absolute
+			top: 35px
+			right: 10px
+			padding: 5px 12px
+			border-radius: 8px
+			background: #ed6025
+			font-size: 12px
+			color: #fff
+	.av__head-home
+		+s(av-home)
+	.av__head-clock
+		+s(av-clock)
+	.av__head-left
+		overflow: hidden
+	.av__ico,
+	.av__title,
+	.av__date
+		display: inline-block
+		vertical-align: middle
+	.av__ico
+		margin-right: 18px
+		i
+			display: block
+	.av__ico-from
+		+s(av-from)
+	.av__ico-to
+		+s(av-to)
+	.av__title
+		margin-right: 15px
+		font-weight: 700
+		font-size: 14px
+	.av__date
+		padding-top: 1px
+		font-size: 12px
+		color: #998D64 
+	.av__in
+		position: relative
+		padding: 15px 10px 15px 18px
+		+clr
+		z-index: 2 
+		+rt(768)
+			padding: 10px
+	.av__logo
+		float: left
+		width: 105px
+		margin-right: 15px
+		font-size: 0
+		+rt(768)
+			float: none
+			margin: 0 0 10px
+	.av__info
+		float: left
+		margin-right: 10px
+		+rt(768)
+			float: none
+			margin: 0 0 10px
+	.av__info-data
+		float: left
+		width: 90px
+		margin-right: 5px
+		color: #64707D
+		+rt(768)
+			float: none
+			width: 100%
+			margin: 0 0 10px
+		span
+			display: block
+			margin-bottom: 3px
+			font-size: 12px
+			&:first-child
+				font-weight: 700
+				color: #000 
+	.av__time
+		float: left
+		width: 105px
+		margin-right: 15px
+		+rt(768)
+			float: none
+			width: 100%
+			margin: 0 0 10px
+	.av__time-ico
+		float: right
+		margin-left: 2px
+		+s(av-plain)
+	.av__time-in
+		display: block
+		text-align: center
+		overflow: hidden
+		span
+			position: relative
+			display: inline-block
+			padding-top: 1px
+			font-size: 12px
+			color: #3156a3 
+			vertical-align: top
+			&:before, &:after
+				content: ""
+				position: absolute
+				top: 8px
+				width: 100px
+				height: 1px
+				background: #dfe0dd
+			&:before
+				right: 110%
+			&:after
+				left: 110%
+	.av__right
+		overflow: hidden
+		+rt(768)
+			padding-top: 10px
+	.av__variants
+		.radio
+			margin-top: 10px
+			font-size: 12px
+			&:first-child
+				margin: 0
+		.radio__text
+			span
+				padding-left: 3px
+				color: #3156a3 
+	.av__transfer
+		padding-top: 7px
+		font-size: 12px
+		clear: both
+		color: #3156A3 
+		span
+			margin-right: 5px
+			color: #000 
+			&:first-child
+				font-weight: 700
+				& + span
+					color: #64707d
+	.av__foot
+		border-top: 1px dotted #DBD5BF 
+	.av__foot-down
+		padding: 15px 18px
+		+clr
+		+rt(768)
+			padding: 10px
+	.av__foot-left
+		padding-right: 10px
+		overflow: hidden
+	.av__toggle
+		display: inline-block
+		border-bottom: 1px dotted 
+		font-weight: 700 
+		color: #000
+		text-decoration: none 
+		line-height: 1
+		+rt(768)
+			display: inline
+		&:hover
+			color: $orange 
+	.av__foot-info
+		padding-top: 5px
+		font-size: 12px
+		color: #64707d 
+	.av__foot-in
+		border-bottom: 1px dotted #DBD5BF
+	.av__more
+		padding: 10px 18px
+		border-bottom: 1px dotted #DBD5BF
+		background: #FFF
+		+clr 
+	.av__way
+		float: right
+		font-size: 0
+		+rt(768)
+			float: none
+			margin-bottom: 10px
+	.av__way-item,
+	.av__way-ico,
+	.av__way-in
+		display: inline-block
+		vertical-align: middle
+	.av__way-item
+		margin-left: 10px
+		&:first-child
+			margin: 0
+	.av__way-ico
+		margin-right: 3px
+		i
+			display: block
+	.av__way-bus
+		+s(av-bus)
+	.av__way-man
+		+s(av-man)
+	.av__way-in
+		font-size: 12px
+		font-weight: 700 
+	.av__more-transfer
+		overflow: hidden
+		font-size: 12px
+		color: #64707d 
+		span
+			font-weight: 700
+			color: #000  
+	.av__details
+		p
+			margin-bottom: 5px
+			color: #64707D
+			font-size: 12px 
+		span
+			font-weight: 700
+			color: #000 
+	.av__foot-in, .av__details_mod
+		display: none 
 
 
 
