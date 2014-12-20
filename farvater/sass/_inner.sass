@@ -817,15 +817,13 @@
 		.btn, .price
 			display: inline-block
 			vertical-align: middle
-		.btn
 			+rt(768)
-				margin-top: 17px
+				vertical-align: top
 		.price
 			float: none
 			margin: 0 23px
 			+rt(768)
-				padding: 0 3px
-				margin: 0 8px
+				margin: 10px 23px
 	.tour-settings__price-title
 		display: inline-block
 		font-size: 16px
@@ -839,6 +837,109 @@
 		span
 			font-weight: 700 
 
+.tour-total
+	margin-bottom: 30px
+	border-radius: 8px
+	background-color: #e3f1fb
+	box-shadow: 0 1px 2px #b7bfc5
+	+g(#eaf5fd, #dceffb)
+	.tour-total__info
+		padding: 15px 20px
+		font-size: 13px
+		p
+			margin-bottom: 2px
+		+rt(768)
+			padding: 10px
+	.tour-total__include,
+	.tour-total__no-include
+		font-weight: 700 
+	.tour-total__include
+		color: #6bb167
+	.tour-total__no-include 
+		color: #f27a37
+	.tour-total__foot
+		position: relative
+		padding: 15px 20px
+		border-top: 1px solid #d2e3f2 
+		text-align: right
+		font-size: 0
+		+rt(768)
+			text-align: center
+		.btn, .price
+			display: inline-block
+			vertical-align: middle
+			+rt(768)
+				vertical-align: top
+		.price
+			float: none
+			margin: 0 23px
+			+rt(768)
+				margin: 10px 23px
+	.tour-total__price
+		display: inline-block
+		font-size: 16px
+		font-weight: 700 
+		vertical-align: middle
+		+rt(768)
+			display: block
+			margin-right: 10px
+	.tour-total__flights
+		padding: 15px 20px
+		border-top: 1px solid #d2e3f2
+		+box
+	.tour-total__cell
+		display: table-cell
+		padding-left: 25px
+		vertical-align: top
+		+rt(768)
+			display: block
+			padding: 10px 0 0 0 
+			br
+				display: none
+		&:first-child
+			padding: 0
+	.tour-total__class
+		margin-bottom: 5px
+		font-weight: 700 
+	.tour-total__data
+		font-size: 0
+		li, i, span
+			display: inline-block
+			vertical-align: middle
+		li
+			margin-left: 15px
+			&:first-child
+				margin: 0
+		span
+			font-weight: 700
+			font-size: 13px
+		i
+			margin-right: 3px
+	.tour-total__from
+		+s(av-plain)
+	.tour-total__to
+		+s(av-plain-to)
+	.tour-total__help
+		position: absolute
+		top: 15px
+		left: 20px
+		opacity: .3
+		text-align: left
+		+rt(768)
+			display: inline-block
+			position: relative
+			top: auto
+			left: auto
+			margin-bottom: 10px
+			vertical-align: top
+		i, span
+			display: inline-block
+			vertical-align: middle
+		i
+			margin-right: 8px
+		span
+			font-size: 13px
+	
 .tour-price
 	margin-bottom: 30px
 	padding: 15px 20px
@@ -3759,6 +3860,18 @@
 		display: none
 
 .av
+	&.av_best
+		margin-bottom: 30px
+		padding-bottom: 30px
+		border-bottom: 1px dotted #c4d2dc
+		.av__data,
+		.av__details_mod
+			display: block
+		.av__variants
+			display: none
+	&.av_no-border
+		padding-bottom: 0
+		border: none
 	.av__item
 		position: relative
 		margin-bottom: 30px
@@ -3786,20 +3899,16 @@
 			z-index: 2 
 			+rt(768)
 				display: none
-	.av__item-in
+	.av__item-in, .av__el
 		position: relative
 		box-shadow: 0 1px 2px #b7bfc5
 		border-radius: 8px
+		background: #FDF6E0
 		+tr(box-shadow .2s linear)
 		z-index: 4
 	.av__from
-		background: #FDF6E0 
-		border-radius: 8px 8px 0 0
 		.av__head	
 			border-radius: 8px 8px 0 0
-	.av__to
-		background: #FDF6E0
-		border-radius: 0 0 8px 8px
 	.av__head
 		position: relative
 		padding: 10px 18px
@@ -3958,16 +4067,32 @@
 				font-weight: 700
 				& + span
 					color: #64707d
+	.av__data
+		display: none
 	.av__foot
+		display: table
+		width: 100%
 		border-top: 1px dotted #DBD5BF 
-	.av__foot-down
 		padding: 15px 18px
-		+clr
+		+box
+		.btn
+			float: right
+			margin-left: 20px
+			+rt(768)
+				margin-left: 10px
 		+rt(768)
 			padding: 10px
-	.av__foot-left
-		padding-right: 10px
-		overflow: hidden
+	.av__foot-left,
+	.av__foot-right
+		display: table-cell
+		vertical-align: top
+		+rt(768)
+			display: block
+			+clr
+	.av__foot-right
+		padding-left: 20px
+		+rt(768)
+			padding: 10px 0 0 0
 	.av__toggle
 		display: inline-block
 		border-bottom: 1px dotted 
@@ -3985,9 +4110,12 @@
 		color: #64707d 
 	.av__foot-in
 		border-bottom: 1px dotted #DBD5BF
+	.av__change
+		margin-top: 5px
 	.av__more
 		padding: 10px 18px
-		border-bottom: 1px dotted #DBD5BF
+		border: 1px dotted #DBD5BF
+		border-width: 1px 0
 		background: #FFF
 		+clr 
 	.av__way
@@ -4031,9 +4159,61 @@
 		span
 			font-weight: 700
 			color: #000 
-	.av__foot-in, .av__details_mod
-		display: none 
+	.av__details_mod
+		display: none
+	.av__best
+		.av__head
+			border-radius: 8px 8px 0 0
+	.av__el-item
+		display: none
+	.av__row
+		display: table
+		width: 100%
+		table-layout: fixed
+	.av__col
+		display: table-cell
+		width: 33.33%
+		padding: 10px
+		border: 1px dotted #DBD5BF
+		border-width: 0 0 0 1px
+		font-size: 12px
+		vertical-align: top
+		+rt(768)
+			display: block
+			width: auto
+			border-width: 1px 0 0 0
+		&:first-child
+			padding: 10px 10px 10px 18px
+			border: none
+			+rt(768)
+				padding: 10px
+	.av__col-title
+		margin-bottom: 5px 
+		color: #64707d 
+	.av__route
+		font-size: 18px
+		font-weight: 700 
+	.av__best-to, .av__best-from
+		+clr
+		i
+			float: left
+			margin: 8px 10px 0 0
+		ul
+			display: table
+		li
+			margin-top: 5px
+			&:first-child
+				margin: 0
+	.av__best-to
+		i
+			+s(av-plain-to)
+	.av__best-from
+		i
+			+s(av-plain)
 
+
+	
+		
 
 
 

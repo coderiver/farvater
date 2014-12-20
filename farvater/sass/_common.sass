@@ -425,6 +425,7 @@ input, button, textarea
 	display: block
 	padding-left: 23px
 	+nosel
+	cursor: pointer
 	&.is-error
 		.checkbox__text, .radio__text
 			color: #ed1c24 
@@ -567,6 +568,12 @@ input, button, textarea
 		+g(#b32d0d, #ec894e)
 		box-shadow: inset 0 3px 7px rgba(151,41,1,.75)
 		z-index: -1 
+	&.is-disable
+		opacity: .4
+		cursor: default
+		&:hover
+			&:before
+				display: none
 	&.btn_gray
 		border-color: #c5c5c5
 		+g(#fdfdfd, #eeeeee)

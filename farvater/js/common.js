@@ -785,7 +785,7 @@ head.ready(function() {
 	$('body').on('click', '.js-av-toggle', function () {
 		var item = $(this).parents('.av__item'),
 			details = item.find('.av__details_mod'),
-			foot = item.find('.av__foot-in'),
+			data = item.find('.av__data'),
 			variants = item.find('.av__variants'),
 			text_on = $(this).data('text-on'),
 			text_off = $(this).data('text-off');
@@ -793,14 +793,34 @@ head.ready(function() {
 			$(this).removeClass('is-active');
 			variants.show();
 			details.hide();
-			foot.slideUp();
+			data.slideUp();
 			$(this).text(text_on);
 		}
 		else {
 			$(this).addClass('is-active');
 			variants.hide();
 			details.show();
-			foot.slideDown();
+			data.slideDown();
+			$(this).text(text_off);
+		}
+		return false;
+	});
+	$('body').on('click', '.js-av-best-toggle', function () {
+		var item = $(this).parents('.av__el'),
+			best = item.find('.av__best'),
+			el = item.find('.av__el-item'),
+			text_on = $(this).data('text-on'),
+			text_off = $(this).data('text-off');
+		if ($(this).hasClass('is-active')) {
+			$(this).removeClass('is-active');
+			best.slideDown();
+			el.slideUp();
+			$(this).text(text_on);
+		}
+		else {
+			$(this).addClass('is-active');
+			best.slideUp();
+			el.slideDown();
 			$(this).text(text_off);
 		}
 		return false;
