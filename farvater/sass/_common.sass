@@ -1326,28 +1326,37 @@ a
 				color: #FFF 
 	.search__adults, .search__kids, .search__babies
 		float: left
-	.search__adults-list, .search__kids-list, .search__babies-list
+	.search__list
 		display: table-cell
 		height: 34px
 		vertical-align: bottom
 		font-size: 0
-		//&:hover
-		//	img[src^="img/adult-h.png"],
-		//	img[src^="img/kid-h.png"],
-		//	img[src^="img/baby-h.png"]
-		//		opacity: .25 
-		img
+		+nosel
+		i
+			display: inline-block
 			margin-left: 2px
-			//+tr(opacity .2s linear)
+			cursor: pointer
 			&:first-child
 				margin: 0
-	.search__babies-list
-		img
-			margin: 0
-	.search__adults, .search__babies
+	.search__adults
 		width: 90px
+		i
+			+s(adult)
+			&.is-active
+				+s(adult-h)
 	.search__kids
 		width: 80px
+		i
+			+s(kid)
+			&.is-active
+				+s(kid-h)
+	.search__babies
+		width: 90px
+		i
+			margin: 0
+			+s(baby)
+			&.is-active
+				+sp(baby-h)
 	.search__btn
 		text-align: center
 	.search__link

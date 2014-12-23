@@ -10,77 +10,70 @@ head.ready(function() {
 	});
 
 	// raty
-		// read
-		var raty_read = $('.js-rating-read');
-		if (raty_read.length) {
-			raty_read.each(function(){
-				var raty_counter = $(this).find('.rating__counter span'),
-						raty_stars = $(this).find('.rating__stars');
-				raty_stars.raty({
-					readOnly: true,
-					starOn: 'img/icons/star.png',
-					starOff: '',
-					target: raty_counter,
-					targetKeep: true,
-					precision: true,
-					halfShow: false,
-					width: 'auto',
-					score: function() {
-					  return $(this).attr('data-score');
-					},
-					number: function() {
-					  return $(this).attr('data-number');
-					}
-				});
+	var raty_read = $('.js-rating-read');
+	if (raty_read.length) {
+		raty_read.each(function(){
+			var raty_counter = $(this).find('.rating__counter span'),
+					raty_stars = $(this).find('.rating__stars');
+			raty_stars.raty({
+				readOnly: true,
+				starOn: 'img/icons/star.png',
+				starOff: '',
+				target: raty_counter,
+				targetKeep: true,
+				precision: true,
+				halfShow: false,
+				width: 'auto',
+				score: function() {
+				  return $(this).attr('data-score');
+				},
+				number: function() {
+				  return $(this).attr('data-number');
+				}
 			});
-		};
-		// search
-		var search_adults = $('.search__adults-list'),
-				search_kids = $('.search__kids-list'),
-				search_babies = $('.search__babies-list');
-		if (search_adults.length) {
-			search_adults.raty({
-			  starOff: 'img/adult.png',
-			  starOn: 'img/adult-h.png',
-			  target: '#counter-adults',
-			  targetType: 'number',
-			  targetText: 2,
-			  score: 2,
-			  width: 90,
-			  mouseout: function(score, evt) {
-			    $('#counter-adults').html(score);
-			  }
-			});
-		};
-		if (search_kids.length) {
-			search_kids.raty({
-			  starOff: 'img/kid.png',
-			  starOn: 'img/kid-h.png',
-			  target: '#counter-kids',
-			  targetType: 'number',
-			  targetText: 1,
-			  score: 1,
-			  width: 80,
-			  mouseout: function(score, evt) {
-			    $('#counter-kids').html(score);
-			  }
-			});
-		};
-		if (search_babies.length) {
-			search_babies.raty({
-			  starOff: 'img/baby.png',
-			  starOn: 'img/baby-h.png',
-			  target: '#counter-babies',
-			  targetType: 'number',
-			  targetText: 0,
-			  score: 0,
-			  width: 95,
-			  mouseout: function(score, evt) {
-			    $('#counter-babies').html(score);
-			  }
-			});
-		};
+		});
+	}
 
+	// search man
+	var search_raty = $('.js-search-man');
+	search_raty.each(function () {
+		var score = $(this).data('score'),
+			score = parseInt(score),
+			label = $(this).find('.search__label span'),
+			item = $(this).find('.search__list i'),
+			input = $(this).find('.search__list input');
+		item.eq(score).prevAll().addClass('is-active');
+		label.html(score);
+		input.val(score);
+		// click
+		item.on('click', function () {
+			var new_score = $(this).index(),
+				new_score = ++new_score;
+			if ($(this).hasClass('is-chousen')) {
+				$(this).removeClass('is-chousen');
+				item.removeClass('is-active');
+				label.html(0);
+				input.val(0);
+			} else {
+				item.removeClass('is-chousen');
+				$(this).addClass('is-chousen');
+				item.removeClass('is-active');
+				$(this).addClass('is-active');
+				$(this).prevAll().addClass('is-active');
+				label.html(new_score);
+				input.val(new_score);
+			}
+			
+		});
+	});
+
+	// chosen
+	var el_chosen = $('.js-chosen');
+	if (el_chosen.length) {
+		el_chosen.chosen();
+	};
+
+ 
 	// add country 
 	var add_country = $('.js-add-country'),
 			add_country_template = $('.js-add-country-template').html();
