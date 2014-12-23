@@ -16,12 +16,13 @@
     position: absolute
     top: 100%
     left: -9999px
+    margin-top: -3px
+    padding-top: 3px
     z-index: 1010
     width: 100%
-    border: 1px solid #aaa
-    border-top: 0
-    background: #fff
-    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15)
+    background: #FFF 
+    border-radius: 0 0 3px 3px
+    box-shadow: inset 0 -1px 1px rgba(49, 86, 163, 0.35)
   &.chosen-with-drop .chosen-drop
     left: 0
   a
@@ -99,7 +100,6 @@
       background: white url(../img/chosen-sprite.png) no-repeat 100% -20px
       background: url(../img/chosen-sprite.png) no-repeat 100% -20px
       font-size: 1em
-      font-family: sans-serif
       line-height: normal
       border-radius: 0
   .chosen-drop
@@ -122,9 +122,8 @@
   li
     display: none
     margin: 0
-    padding: 5px 6px
+    padding: 10px
     list-style: none
-    line-height: 15px
     word-wrap: break-word
     -webkit-touch-callout: none
     &.active-result
@@ -135,17 +134,10 @@
       color: #ccc
       cursor: default
     &.highlighted
-      background-color: #3875d7
-      background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(20%, #3875d7), color-stop(90%, #2a62bc))
-      background-image: -webkit-linear-gradient(#3875d7 20%, #2a62bc 90%)
-      background-image: -moz-linear-gradient(#3875d7 20%, #2a62bc 90%)
-      background-image: -o-linear-gradient(#3875d7 20%, #2a62bc 90%)
-      background-image: linear-gradient(#3875d7 20%, #2a62bc 90%)
-      color: #fff
+      background: #fbdad2
     &.no-results
-      color: #777
+      color: #000
       display: list-item
-      background: #f4f4f4
     &.group-result
       display: list-item
       font-weight: 700
@@ -161,7 +153,7 @@
     position: relative
     overflow: hidden
     margin: 0
-    padding: 0 10px
+    padding: 0 5px
     width: 100%
     height: auto!important
     height: 1%
@@ -177,9 +169,9 @@
         padding: 0
         white-space: nowrap
         input[type=text]
-          margin: 1px 0
-          padding: 0
-          height: 35px
+          margin: 0
+          padding: 0 5px
+          height: 37px
           box-shadow: none
           background: none 
           +placeholder-color($cl)
@@ -187,37 +179,25 @@
             +placeholder-color($cl)
       &.search-choice
         position: relative
-        margin: 3px 5px 3px 0
-        padding: 3px 20px 3px 5px
-        border: 1px solid #aaa
+        height: 27px
+        margin: 5px 5px 0 0
+        padding: 0 25px 0 8px
         max-width: 100%
-        border-radius: 3px
-        background-color: #eee
-        background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(20%, #f4f4f4), color-stop(50%, #f0f0f0), color-stop(52%, #e8e8e8), color-stop(100%, #eeeeee))
-        background-image: -webkit-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%)
-        background-image: -moz-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%)
-        background-image: -o-linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%)
-        background-image: linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%)
-        background-size: 100% 19px
-        background-repeat: repeat-x
-        background-clip: padding-box
-        box-shadow: 0 0 2px white inset, 0 1px 0 rgba(0, 0, 0, 0.05)
-        color: #333
-        line-height: 13px
+        background-color: #F7F6F6
+        +g(#fbfbfb,#f3f1f1)
+        border-radius: 8px
+        box-shadow: 0 1px 3px #C2C9CE
+        line-height: 27px
         cursor: default
         span
           word-wrap: break-word
         .search-choice-close
           position: absolute
-          top: 4px
-          right: 3px
-          display: block
-          width: 12px
-          height: 12px
-          background: url(../img/chosen-sprite.png) -42px 1px no-repeat
-          font-size: 1px
+          top: 7px
+          right: 7px
+          +s(chosen-close)
           &:hover
-            background-position: -42px -10px
+            +sp(chosen-close-h)
       &.search-choice-disabled
         padding-right: 5px
         border: 1px solid #ccc
@@ -321,28 +301,3 @@
       background-position: 6px 2px
     &.chosen-with-drop .chosen-single div b
       background-position: -12px 2px
-  
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 144dpi)
-  .chosen-rtl .chosen-search input[type=text]
-    background-image: url(../img/chosen-sprite@2x.png) !important
-    background-size: 52px 37px!important
-    background-repeat: no-repeat!important
-  .chosen-container-single
-    .chosen-single
-      abbr, div b
-        background-image: url(../img/chosen-sprite@2x.png) !important
-        background-size: 52px 37px!important
-        background-repeat: no-repeat!important
-    .chosen-search input[type=text]
-      background-image: url(../img/chosen-sprite@2x.png) !important
-      background-size: 52px 37px!important
-      background-repeat: no-repeat!important
-  .chosen-container-multi .chosen-choices .search-choice .search-choice-close
-    background-image: url(../img/chosen-sprite@2x.png) !important
-    background-size: 52px 37px!important
-    background-repeat: no-repeat!important
-  .chosen-container
-    .chosen-results-scroll-down span, .chosen-results-scroll-up span
-      background-image: url(../img/chosen-sprite@2x.png) !important
-      background-size: 52px 37px!important
-      background-repeat: no-repeat!important
