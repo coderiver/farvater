@@ -3715,6 +3715,10 @@
 			width: 100%
 			table-layout: fixed
 		tr
+			&:first-child
+				td
+					&:first-child
+						background: #F2F9FE 
 			&:last-child
 				td
 					border-width: 1px 1px 0
@@ -3723,7 +3727,7 @@
 					&:last-child
 						border-width: 1px 0 0 1px
 		td
-			border: 1px dotted #c4d2dc
+			border: 1px dotted #c6d4dc
 			text-align: center
 			vertical-align: top
 			&:first-child
@@ -3733,7 +3737,7 @@
 	.tb__direction
 		height: 28px
 		padding: 7px 3px
-		background: #e2f2fc
+		background: #f6fbfe
 		font-size: 10px
 		color: #9B9B9B
 		span
@@ -3744,7 +3748,7 @@
 		display: block
 		height: 42px
 		padding: 0 3px
-		background: #e2f2fc
+		background: #e4f2fb
 		font-size: 10px
 		line-height: 42px
 		text-decoration: none
@@ -3803,6 +3807,7 @@
 		border-radius: 8px
 		overflow: hidden 
 	.flight__list
+		height: 169px
 		margin-right: 1px
 		margin-left: -1px
 		overflow: hidden

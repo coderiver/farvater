@@ -73,7 +73,6 @@ head.ready(function() {
 		el_chosen.chosen();
 	};
 
- 
 	// add country 
 	var add_country = $('.js-add-country'),
 			add_country_template = $('.js-add-country-template').html();
@@ -116,7 +115,7 @@ head.ready(function() {
 	    $(this).parent().parent().removeClass('is-open');
 	    $(this).parent().parent().addClass('is-selected');
 	  });
-	  el.click(function(event){
+	  el.click(function (event) {
 	    event.stopPropagation();
 	  });
 	  // datepicker
@@ -165,7 +164,7 @@ head.ready(function() {
 	      $(this).next().slideDown();
 	    };
 	  });
-	  el_date.click(function(event){
+	  el_date.click(function (event){
 	    event.stopPropagation();
 	  });
 	  el_checkboxes.find('.select__head').on('click', function(){      
@@ -217,9 +216,7 @@ head.ready(function() {
 	  		$(this).parent().parent().prev().find('.select__current').text(value);
 	  	}
 	  });
-
-
-	  el_checkboxes.click(function(event){
+	  el_checkboxes.click(function (event){
 	    event.stopPropagation();
 	  });
 	  $(document).click(function() {
@@ -268,6 +265,7 @@ head.ready(function() {
 		benefits = $('.js-benefits'),
 		similar = $('.js-similar'),
 		flights = $('.js-flights'),
+		flights_more = $('.js-flights-more'),
 		similar_discounts = $('.js-similar-discounts'),
 		watched = $('.js-watched'),
 		benefits = $('.js-benefits'),
@@ -276,11 +274,10 @@ head.ready(function() {
 		response_slider = $('.js-response-slider'),
 		tours = $('.js-tours'),
 		tours_item = tours.find('.tour'),
-		tours_item_val = tours_item.length,
-		tours_counter = $('.js-tours-counter'),
 		tours_counter = $('.js-tours-counter'),
 		tours_counter_current = tours_counter.find('.tours__counter-current'),
-		tours_counter_all = tours_counter.find('.tours__counter-all');
+		tours_counter_all = tours_counter.find('.tours__counter-all'),
+		go_to = $('.js-go-to');
 	if (pop.length) {
 		pop.slick({
 			slide: '.pop__item',
@@ -358,6 +355,7 @@ head.ready(function() {
 				    slidesToShow: 1,
 				    arrows: false,
 				    onInit: function() {
+				    	var tours_item_val = tours_item.length;
 				    	tours_counter_all.html(tours_item_val);
 				    },
 				    onAfterChange: function(){
@@ -496,8 +494,38 @@ head.ready(function() {
 		flights.slickPrev();
 		return false;
 	});
-
+	// toggle text
+	flights_more.on('click', function () {
+		if (!flights.hasClass('is-activated')) {
+			cur_height = flights.height();
+			flights.addClass('is-activated');
+		};
+		var auto_height = flights.css('height', 'auto').height(),
+		    text_hide = $(this).data('text-hide'),
+		    text_show = $(this).data('text-show');
+		if ($(this).hasClass('is-active')) {
+			$(this).removeClass('is-active');
+			$(this).text(text_show);
+			flights.animate({height: cur_height}, 400);
+		}
+		else {
+			$(this).addClass('is-active');
+			$(this).text(text_hide);
+			flights.height(cur_height).animate({height: auto_height}, 400);
+		}
+		return false;
+	});
 	
+	go_to.on('click', function () {
+		var anchor = $(this).data('go'),
+			pos_top = $('.' + anchor).offset().top;
+		go_to.removeClass('is-active');
+		$(this).addClass('is-active');
+		$('body').animate({
+			scrollTop: pos_top
+		}, 500);
+		return false;
+	});
 
 	// mobile menu
 	var top_menu = $('.js-topper-menu'),
@@ -593,39 +621,117 @@ head.ready(function() {
 	}
 	photogallery();
 
-
 	// blog
 	var blogs_el = $('.js-blogs');
 	if (blogs_el.length) {
 		blogs_el.isotope({
 			itemSelector: '.blog__item',
-			 // layout mode options
-			 masonry: {
+			// layout mode options
+			masonry: {
 			   columnWidth: 225,
 			   isFitWidth: true,
 			   gutter: 15
-			 }
-		})
+			}
+		});
 	};
 
 	// popup
 	var popup = $('.popup'),
-			popup_in = popup.find('.popup__in'),
-			popup_trigger = $('.js-popup-trigger'),
-			body = $('body');
+		popup_in = popup.find('.popup__in'),
+		popup_trigger = $('.js-popup-trigger'),
+		body = $('body'),
+		popup_click = $('.js-popup-click');
 	popup_trigger.on('click', function(){
 		body.addClass('no-scroll');
 		var el = $(this).data('popup');
 		$('.'+el).fadeIn();
 		return false;
 	});
+	popup_click.on('click', function (event) {
+		event.stopPropagation();
+		if ($(this).hasClass('js-av-toggle')) {
+			var item = $(this).parents('.av__item'),
+				details = item.find('.av__details_mod'),
+				data = item.find('.av__data'),
+				variants = item.find('.av__variants'),
+				text_on = $(this).data('text-on'),
+				text_off = $(this).data('text-off');
+			if ($(this).hasClass('is-active')) {
+				$(this).removeClass('is-active');
+				variants.show();
+				details.hide();
+				data.slideUp();
+				$(this).text(text_on);
+			}
+			else {
+				$(this).addClass('is-active');
+				variants.hide();
+				details.show();
+				data.slideDown();
+				$(this).text(text_off);
+			}
+			return false;
+		};
+	});
 	popup.on('click', function(){
 		popup.fadeOut();
 		body.removeClass('no-scroll');
 	});
-	popup_in.on('click', function(event){
+	popup_in.on('click', function (event){
 		event.stopPropagation();
-	})
+	});
+
+	// avia 
+	$('body').on('click', '.js-av-best-toggle', function () {
+		var item = $(this).parents('.av__el'),
+			best = item.find('.av__best'),
+			el = item.find('.av__el-item'),
+			text_on = $(this).data('text-on'),
+			text_off = $(this).data('text-off');
+		if ($(this).hasClass('is-active')) {
+			$(this).removeClass('is-active');
+			best.slideDown();
+			el.slideUp();
+			$(this).text(text_on);
+		}
+		else {
+			$(this).addClass('is-active');
+			best.slideUp();
+			el.slideDown();
+			$(this).text(text_off);
+		}
+		return false;
+	});
+
+	// load tours
+	var add_hotel = $('.js-add-hotel'),
+		add_hotel_from = $('.js-add-hotel-from'),
+		add_hotel_to = $('.js-add-hotel-to'),
+		add_hotel_load = $('.js-add-hotel-load');
+	add_hotel.slick({
+		slide: '.tour',
+		slidesToShow: 0,
+		infinite: true,
+		arrows: false,
+		responsive: [{
+			breakpoint: 768,
+			settings: {
+			    slidesToShow: 1,
+			    arrows: false,
+			    onInit: function() {
+			    	alert(2);
+			    },
+			    onAfterChange: function(){
+			    	alert(3);
+			    }
+			}
+		}]
+	});
+	add_hotel_load.on('click', function () {
+		var items = $('.js-add-hotel-more').html();
+		add_hotel.slickAdd(items);
+		return false;
+	});
 
 	// add scan
 	var add_order_scan = $('.js-add-order-scan');
@@ -769,51 +875,6 @@ head.ready(function() {
 		else {
 			$(this).addClass('is-active');
 			$(this).prev().slideDown();
-			$(this).text(text_off);
-		}
-		return false;
-	});
-
-	// avia 
-	$('body').on('click', '.js-av-toggle', function () {
-		var item = $(this).parents('.av__item'),
-			details = item.find('.av__details_mod'),
-			data = item.find('.av__data'),
-			variants = item.find('.av__variants'),
-			text_on = $(this).data('text-on'),
-			text_off = $(this).data('text-off');
-		if ($(this).hasClass('is-active')) {
-			$(this).removeClass('is-active');
-			variants.show();
-			details.hide();
-			data.slideUp();
-			$(this).text(text_on);
-		}
-		else {
-			$(this).addClass('is-active');
-			variants.hide();
-			details.show();
-			data.slideDown();
-			$(this).text(text_off);
-		}
-		return false;
-	});
-	$('body').on('click', '.js-av-best-toggle', function () {
-		var item = $(this).parents('.av__el'),
-			best = item.find('.av__best'),
-			el = item.find('.av__el-item'),
-			text_on = $(this).data('text-on'),
-			text_off = $(this).data('text-off');
-		if ($(this).hasClass('is-active')) {
-			$(this).removeClass('is-active');
-			best.slideDown();
-			el.slideUp();
-			$(this).text(text_on);
-		}
-		else {
-			$(this).addClass('is-active');
-			best.slideUp();
-			el.slideDown();
 			$(this).text(text_off);
 		}
 		return false;

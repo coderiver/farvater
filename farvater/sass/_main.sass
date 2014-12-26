@@ -170,6 +170,36 @@
 		top: 80px
 
 .tours
+	&.tours_popup
+		max-width: 630px
+		padding: 0 10px
+		+rt(768)
+			width: 300px
+			padding: 0
+		.tours__title-add
+			margin-bottom: 5px
+			font-size: 22px
+			font-weight: 700
+		.tours__tripadvisor
+			margin-bottom: 15px
+			color: #64707D 
+			span
+				font-weight: 700 
+		.tours__foot
+			+clr
+			+rt(768)
+				text-align: center
+			.btn
+				float: right
+				+rt(768)
+					float: none
+			>a
+				float: left
+				margin-top: 9px
+				+rt(768)
+					display: block
+					float: none
+					margin: 0 0 20px
 	&.tours_main
 		margin-bottom: 45px
 		padding: 45px 0 50px
