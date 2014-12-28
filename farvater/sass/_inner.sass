@@ -823,7 +823,7 @@
 			float: none
 			margin: 0 23px
 			+rt(768)
-				margin: 10px 23px
+				margin: 10px 40px
 	.tour-settings__price-title
 		display: inline-block
 		font-size: 16px
@@ -3811,7 +3811,6 @@
 		margin-right: 1px
 		margin-left: -1px
 		overflow: hidden
-	.flight__item
 	.flight__item-in 
 		border: 1px dotted #c4d2dc
 		border-width: 0 0 0 1px
@@ -3929,6 +3928,8 @@
 		font-size: 0
 		+clr
 		z-index: 4 
+		>.av__title
+			font-size: 16px
 		+rt(768)
 			padding: 5px 10px
 	.av__head-right
@@ -4097,7 +4098,7 @@
 	.av__foot-left,
 	.av__foot-right
 		display: table-cell
-		vertical-align: top
+		vertical-align: bottom
 		+rt(768)
 			display: block
 			+clr
@@ -4216,6 +4217,10 @@
 			margin-top: 5px
 			&:first-child
 				margin: 0
+			&.is-yellow
+				padding: 0 2px
+				margin: 0 -2px
+				background: #fee834 
 	.av__best-to
 		i
 			+s(av-plain-to)
@@ -4223,10 +4228,104 @@
 		i
 			+s(av-plain)
 
-
+.chouse-hotel
+	margin: 20px 0 30px
+	padding-bottom: 30px
+	border-bottom: 1px dotted #dddedf 
+	font-size: 0
+	.chouse-hotel__in
+		display: block
+		padding: 10px
+		background-color: #F7F6F1
+		+background-image(linear-gradient(to top, rgba(0, 0, 0, 0.06) 0%, rgba(255, 255, 255, 0.06) 100%))
+		border-radius: 8px
+		box-shadow: 0 1px 2px #B8C0C5
+		overflow: hidden
+		i
+			float: left
+			margin-right: 10px
+			+s(chouse-hotel)
+		span
+			display: table
+			padding: 8px0
+			+slab
+			font-size: 19px 
+			color: #000 
 	
-		
-
+.tour-flight
+	margin-bottom: 20px
+	box-shadow: 0 1px 2px #b7bfc5
+	border-radius: 8px
+	background: #FDF6E0
+	+tr(box-shadow .2s linear)
+	.tour-flight__title
+		position: relative
+		padding: 10px 18px
+		box-shadow: 0 1px 2px #b7bfc5
+		+g(#fdebb1,#fbdf7e)
+		font-size: 16px
+		font-weight: 700 
+		z-index: 4 
+		+rt(768)
+			padding: 5px 10px
+	.tour-flight__in
+		padding: 15px
+		+rt(768)
+			padding: 10px
+	.tour-flight__info
+		margin-bottom: 15px
+	.tour-flight__include,
+	.tour-flight__no-include
+		font-weight: 700
+	.tour-flight__include
+		color: #6bb167
+	.tour-flight__no-include 
+		color: #f27a37
+	.tour-flight__transfer
+		position: relative
+		padding: 10px
+		margin-bottom: 15px
+		background-color: #F7F6F1
+		+background-image(linear-gradient(to top, rgba(0, 0, 0, 0.06) 0%, rgba(255, 255, 255, 0.06) 100%))
+		border-radius: 8px
+		box-shadow: 0 1px 2px #B8C0C5
+		overflow: hidden
+		i
+			float: left
+			+s(gift)
+		span
+			display: block
+			padding: 10px 61px 10px 0
+			text-align: center
+			+slab
+			font-size: 19px
+			overflow: hidden
+			+rt(768)
+				padding: 0 0 0 10px
+				font-size: 16px
+	.tour-flight__foot
+		text-align: right
+		font-size: 0
+		+rt(768)
+			text-align: center
+		.btn, .price
+			display: inline-block
+			vertical-align: middle
+			+rt(768)
+				vertical-align: top
+		.price
+			float: none
+			margin: 0 23px
+			+rt(768)
+				margin: 10px 40px
+	.tour-flight__price
+		display: inline-block
+		font-size: 16px
+		font-weight: 700 
+		vertical-align: middle
+		+rt(768)
+			display: block
+			margin-right: 10px
 
 
 

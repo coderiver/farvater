@@ -277,7 +277,8 @@ head.ready(function() {
 		tours_counter = $('.js-tours-counter'),
 		tours_counter_current = tours_counter.find('.tours__counter-current'),
 		tours_counter_all = tours_counter.find('.tours__counter-all'),
-		go_to = $('.js-go-to');
+		go_to = $('.js-go-to'),
+		go_popup_to = $('.js-go-popup-to');
 	if (pop.length) {
 		pop.slick({
 			slide: '.pop__item',
@@ -516,12 +517,23 @@ head.ready(function() {
 		return false;
 	});
 	
+	// go to
 	go_to.on('click', function () {
 		var anchor = $(this).data('go'),
 			pos_top = $('.' + anchor).offset().top;
 		go_to.removeClass('is-active');
 		$(this).addClass('is-active');
 		$('body').animate({
+			scrollTop: pos_top
+		}, 500);
+		return false;
+	});
+	go_popup_to.on('click', function () {
+		var anchor = $(this).data('go'),
+			pos_top = $('.' + anchor).position().top + 70;
+		go_popup_to.removeClass('is-active');
+		$(this).addClass('is-active');
+		popup.animate({
 			scrollTop: pos_top
 		}, 500);
 		return false;
@@ -544,13 +556,13 @@ head.ready(function() {
 	if (filter_slider.length) {
 		 filter_slider.each(function(){
 		 	var filter_slider_el = $(this).find('.filter__slider-el'),
-		 			filter_slider_min = $(this).data('min'),
-		 			filter_slider_max = $(this).data('max'),
-		 			filter_slider_step = $(this).data('step'),
-		 			filter_slider_first_value = $(this).data('first-value'),
-		 			filter_slider_last_value = $(this).data('last-value'),
-		 			filter_slider_from = $(this).find('.filter__slider-from'),
-		 			filter_slider_to = $(this).find('.filter__slider-to');
+	 			filter_slider_min = $(this).data('min'),
+	 			filter_slider_max = $(this).data('max'),
+	 			filter_slider_step = $(this).data('step'),
+	 			filter_slider_first_value = $(this).data('first-value'),
+	 			filter_slider_last_value = $(this).data('last-value'),
+	 			filter_slider_from = $(this).find('.filter__slider-from'),
+	 			filter_slider_to = $(this).find('.filter__slider-to');
 		 	filter_slider_el.slider({
 		 		range: true,
 		 		min: filter_slider_min,
@@ -645,6 +657,56 @@ head.ready(function() {
 		body.addClass('no-scroll');
 		var el = $(this).data('popup');
 		$('.'+el).fadeIn();
+		if (el == 'js-popup-another-variants') {
+			var flights_popup = $('.js-flights-popup'),
+				flights_popup_more = $('.js-flights-popup-more');
+			// slider
+			if (flights_popup.length) {
+				flights_popup.slick({
+					slide: '.flight__item',
+					slidesToShow: 5,
+					infinite: true,
+					responsive: [
+						{
+						  breakpoint: 768,
+						  settings: {
+						  	infinite: true,
+						    slidesToShow: 2
+						  }
+						}
+					]
+				});
+			};
+			$('.js-flight-popup-next').click(function () {
+				flights_popup.slickNext();
+				return false;
+			});
+			$('.js-flight-popup-prev').click(function () {
+				flights_popup.slickPrev();
+				return false;
+			});
+			// toggle
+			flights_popup_more.on('click', function () {
+				if (!flights_popup.hasClass('is-activated')) {
+					cur_height = flights_popup.height();
+					flights_popup.addClass('is-activated');
+				};
+				var auto_height = flights_popup.css('height', 'auto').height(),
+				    text_hide = $(this).data('text-hide'),
+				    text_show = $(this).data('text-show');
+				if ($(this).hasClass('is-active')) {
+					$(this).removeClass('is-active');
+					$(this).text(text_show);
+					flights_popup.animate({height: cur_height}, 400);
+				}
+				else {
+					$(this).addClass('is-active');
+					$(this).text(text_hide);
+					flights_popup.height(cur_height).animate({height: auto_height}, 400);
+				}
+				return false;
+			});
+		};
 		return false;
 	});
 	popup_click.on('click', function (event) {
@@ -718,18 +780,21 @@ head.ready(function() {
 			settings: {
 			    slidesToShow: 1,
 			    arrows: false,
-			    onInit: function() {
-			    	alert(2);
+			    onInit: function(e) {
+			    	var counter = e.slideCount;
+			    	add_hotel_to.html(counter);
 			    },
-			    onAfterChange: function(){
-			    	alert(3);
+			    onAfterChange: function(e){
+			    	var current = e.currentSlide + 1;
+			    	add_hotel_from.html(current);
 			    }
 			}
 		}]
 	});
 	add_hotel_load.on('click', function () {
 		var items = $('.js-add-hotel-more').html();
-		add_hotel.slickAdd(items);
+		add_hotel.append(items);
+		add_hotel.slick('onReinit');
 		return false;
 	});
 
